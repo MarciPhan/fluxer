@@ -33,7 +33,7 @@ import {DesktopDeepLinkPrompt} from '~/components/auth/DesktopDeepLinkPrompt';
 import {GiftHeader} from '~/components/auth/GiftHeader';
 import {HandoffCodeDisplay} from '~/components/auth/HandoffCodeDisplay';
 import MfaScreen from '~/components/auth/MfaScreen';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import type {LoginSuccessPayload} from '~/hooks/useLoginFlow';
 import {useLocation, useParams} from '~/lib/router';
 import {Routes} from '~/Routes';
@@ -152,7 +152,7 @@ const GiftLoginPageContainer = observer(() => {
 	const loginState = AuthenticationStore.loginState;
 	const {code} = useParams() as {code: string};
 
-	useFluxerDocumentTitle(t`Claim Gift`);
+	useAppDocumentTitle(t`Claim Gift`);
 
 	const giftState = GiftStore.gifts.get(code) ?? null;
 

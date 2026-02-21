@@ -17,18 +17,18 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {useLingui} from '@lingui/react/macro';
+import { useLingui } from '@lingui/react/macro';
 import type React from 'react';
-import {Controller} from 'react-hook-form';
-import {Input, Textarea} from '~/components/form/Input';
-import {UsernameValidationRules} from '~/components/form/UsernameValidationRules';
-import {AvatarUploader} from '~/components/modals/tabs/MyProfileTab/AvatarUploader';
-import {BannerUploader} from '~/components/modals/tabs/MyProfileTab/BannerUploader';
-import {ImagePreviewField} from '~/components/shared/ImagePreviewField';
-import type {DeveloperApplication} from '~/records/DeveloperApplicationRecord';
+import { Controller } from 'react-hook-form';
+import { Input, Textarea } from '~/components/form/Input';
+import { UsernameValidationRules } from '~/components/form/UsernameValidationRules';
+import { AvatarUploader } from '~/components/modals/tabs/MyProfileTab/AvatarUploader';
+import { BannerUploader } from '~/components/modals/tabs/MyProfileTab/BannerUploader';
+import { ImagePreviewField } from '~/components/shared/ImagePreviewField';
+import type { DeveloperApplication } from '~/records/DeveloperApplicationRecord';
 import styles from './ApplicationDetail.module.css';
-import {SectionCard} from './SectionCard';
-import type {ApplicationDetailForm} from './types';
+import { SectionCard } from './SectionCard';
+import type { ApplicationDetailForm } from './types';
 
 interface BotProfileSectionProps {
 	application: DeveloperApplication;
@@ -61,7 +61,7 @@ export const BotProfileSection: React.FC<BotProfileSectionProps> = ({
 	onBannerChange,
 	onBannerClear,
 }) => {
-	const {t} = useLingui();
+	const { t } = useLingui();
 	return (
 		<SectionCard title={t`Bot profile`} subtitle={t`Avatar, tag, and rich profile details for your bot.`}>
 			<div className={styles.fieldStack}>
@@ -87,21 +87,21 @@ export const BotProfileSection: React.FC<BotProfileSectionProps> = ({
 						control={form.control}
 						rules={{
 							required: t`Username is required`,
-							minLength: {value: 1, message: t`Username must be at least 1 character`},
-							maxLength: {value: 32, message: t`Username must be at most 32 characters`},
+							minLength: { value: 1, message: t`Username must be at least 1 character` },
+							maxLength: { value: 32, message: t`Username must be at most 32 characters` },
 							pattern: {
 								value: /^[a-zA-Z0-9_]+$/,
 								message: t`Username can only contain letters, numbers, and underscores`,
 							},
 						}}
-						render={({field}) => (
+						render={({ field }) => (
 							<Input
 								{...field}
 								aria-label={t`Bot Username`}
 								placeholder={t`BotName`}
 								maxLength={32}
 								required
-								label={t`FluxerTag`}
+								label={t`Tag`}
 							/>
 						)}
 					/>
@@ -124,7 +124,7 @@ export const BotProfileSection: React.FC<BotProfileSectionProps> = ({
 										return true;
 									},
 								}}
-								render={({field}) => (
+								render={({ field }) => (
 									<Input {...field} aria-label={t`Discriminator`} placeholder="0000" maxLength={4} />
 								)}
 							/>

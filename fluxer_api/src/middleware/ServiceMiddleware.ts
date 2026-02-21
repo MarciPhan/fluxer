@@ -17,102 +17,102 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {createMiddleware} from 'hono/factory';
-import {Redis} from 'ioredis';
-import type {HonoEnv} from '~/App';
-import {AdminRepository} from '~/admin/AdminRepository';
-import {AdminService} from '~/admin/AdminService';
-import {AdminArchiveRepository} from '~/admin/repositories/AdminArchiveRepository';
-import {AdminArchiveService} from '~/admin/services/AdminArchiveService';
-import {AuthService} from '~/auth/AuthService';
-import {AuthMfaService} from '~/auth/services/AuthMfaService';
-import {DesktopHandoffService} from '~/auth/services/DesktopHandoffService';
-import {Config} from '~/Config';
-import {ChannelRepository as ProdChannelRepository} from '~/channel/ChannelRepository';
-import {ChannelService} from '~/channel/services/ChannelService';
-import {ScheduledMessageService} from '~/channel/services/ScheduledMessageService';
-import {StreamPreviewService} from '~/channel/services/StreamPreviewService';
-import {FavoriteMemeRepository} from '~/favorite_meme/FavoriteMemeRepository';
-import {FavoriteMemeService} from '~/favorite_meme/FavoriteMemeService';
-import {FeatureFlagRepository} from '~/feature_flag/FeatureFlagRepository';
-import {FeatureFlagService} from '~/feature_flag/FeatureFlagService';
-import {GuildAuditLogService} from '~/guild/GuildAuditLogService';
-import {GuildRepository as ProdGuildRepository} from '~/guild/repositories/GuildRepository';
-import {ExpressionAssetPurger} from '~/guild/services/content/ExpressionAssetPurger';
-import {GuildService} from '~/guild/services/GuildService';
-import {AssetDeletionQueue} from '~/infrastructure/AssetDeletionQueue';
-import {AvatarService} from '~/infrastructure/AvatarService';
+import { createMiddleware } from 'hono/factory';
+import { Redis } from 'ioredis';
+import type { HonoEnv } from '~/App';
+import { AdminRepository } from '~/admin/AdminRepository';
+import { AdminService } from '~/admin/AdminService';
+import { AdminArchiveRepository } from '~/admin/repositories/AdminArchiveRepository';
+import { AdminArchiveService } from '~/admin/services/AdminArchiveService';
+import { AuthService } from '~/auth/AuthService';
+import { AuthMfaService } from '~/auth/services/AuthMfaService';
+import { DesktopHandoffService } from '~/auth/services/DesktopHandoffService';
+import { Config } from '~/Config';
+import { ChannelRepository as ProdChannelRepository } from '~/channel/ChannelRepository';
+import { ChannelService } from '~/channel/services/ChannelService';
+import { ScheduledMessageService } from '~/channel/services/ScheduledMessageService';
+import { StreamPreviewService } from '~/channel/services/StreamPreviewService';
+import { FavoriteMemeRepository } from '~/favorite_meme/FavoriteMemeRepository';
+import { FavoriteMemeService } from '~/favorite_meme/FavoriteMemeService';
+import { FeatureFlagRepository } from '~/feature_flag/FeatureFlagRepository';
+import { FeatureFlagService } from '~/feature_flag/FeatureFlagService';
+import { GuildAuditLogService } from '~/guild/GuildAuditLogService';
+import { GuildRepository as ProdGuildRepository } from '~/guild/repositories/GuildRepository';
+import { ExpressionAssetPurger } from '~/guild/services/content/ExpressionAssetPurger';
+import { GuildService } from '~/guild/services/GuildService';
+import { AssetDeletionQueue } from '~/infrastructure/AssetDeletionQueue';
+import { AvatarService } from '~/infrastructure/AvatarService';
 import {
 	CloudflarePurgeQueue,
 	type ICloudflarePurgeQueue,
 	NoopCloudflarePurgeQueue,
 } from '~/infrastructure/CloudflarePurgeQueue';
-import {DisabledLiveKitService} from '~/infrastructure/DisabledLiveKitService';
-import {DisabledVirusScanService} from '~/infrastructure/DisabledVirusScanService';
-import {DiscriminatorService as ProdDiscriminatorService} from '~/infrastructure/DiscriminatorService';
-import {EmailService as ProdEmailService} from '~/infrastructure/EmailService';
-import {EmbedService} from '~/infrastructure/EmbedService';
-import {EntityAssetService} from '~/infrastructure/EntityAssetService';
-import {GatewayService as ProdGatewayService} from '~/infrastructure/GatewayService';
-import type {IAssetDeletionQueue} from '~/infrastructure/IAssetDeletionQueue';
-import type {ICacheService} from '~/infrastructure/ICacheService';
-import type {IEmailService} from '~/infrastructure/IEmailService';
-import type {ILiveKitService} from '~/infrastructure/ILiveKitService';
-import {InMemoryVoiceRoomStore} from '~/infrastructure/InMemoryVoiceRoomStore';
-import type {IVoiceRoomStore} from '~/infrastructure/IVoiceRoomStore';
-import {LiveKitService} from '~/infrastructure/LiveKitService';
-import {LiveKitWebhookService} from '~/infrastructure/LiveKitWebhookService';
-import {MediaService as ProdMediaService} from '~/infrastructure/MediaService';
-import {PendingJoinInviteStore} from '~/infrastructure/PendingJoinInviteStore';
-import {RateLimitService} from '~/infrastructure/RateLimitService';
-import {RedisAccountDeletionQueueService} from '~/infrastructure/RedisAccountDeletionQueueService';
-import {RedisActivityTracker} from '~/infrastructure/RedisActivityTracker';
-import {RedisBulkMessageDeletionQueueService} from '~/infrastructure/RedisBulkMessageDeletionQueueService';
-import {RedisCacheService} from '~/infrastructure/RedisCacheService';
-import {SMSService} from '~/infrastructure/SMSService';
-import {SnowflakeService} from '~/infrastructure/SnowflakeService';
-import {StorageService as ProdStorageService} from '~/infrastructure/StorageService';
-import {TestEmailService} from '~/infrastructure/TestEmailService';
-import {UnfurlerService as ProdUnfurlerService} from '~/infrastructure/UnfurlerService';
-import {UserCacheService} from '~/infrastructure/UserCacheService';
-import {VirusScanService as ProdVirusScanService} from '~/infrastructure/VirusScanService';
-import {VoiceRoomStore} from '~/infrastructure/VoiceRoomStore';
-import {SnowflakeReservationRepository} from '~/instance/SnowflakeReservationRepository';
-import {SnowflakeReservationService} from '~/instance/SnowflakeReservationService';
-import {InviteRepository as ProdInviteRepository} from '~/invite/InviteRepository';
-import {InviteService} from '~/invite/InviteService';
-import {getReportSearchService} from '~/Meilisearch';
-import {ApplicationService} from '~/oauth/ApplicationService';
-import {BotAuthService} from '~/oauth/BotAuthService';
-import {BotMfaMirrorService} from '~/oauth/BotMfaMirrorService';
-import {OAuth2Service} from '~/oauth/OAuth2Service';
-import {ApplicationRepository} from '~/oauth/repositories/ApplicationRepository';
-import {OAuth2TokenRepository} from '~/oauth/repositories/OAuth2TokenRepository';
-import {PackRepository} from '~/pack/PackRepository';
-import {PackService} from '~/pack/PackService';
-import {ReadStateRepository as ProdReadStateRepository} from '~/read_state/ReadStateRepository';
-import {ReadStateService} from '~/read_state/ReadStateService';
-import {ReportRepository} from '~/report/ReportRepository';
-import {ReportService} from '~/report/ReportService';
-import {RpcService} from '~/rpc/RpcService';
-import {StripeService} from '~/stripe/StripeService';
-import {TenorService as ProdTenorService} from '~/tenor/TenorService';
-import {EmailChangeRepository} from '~/user/repositories/auth/EmailChangeRepository';
-import {ScheduledMessageRepository} from '~/user/repositories/ScheduledMessageRepository';
-import {UserContactChangeLogRepository} from '~/user/repositories/UserContactChangeLogRepository';
-import {EmailChangeService} from '~/user/services/EmailChangeService';
-import {UserContactChangeLogService} from '~/user/services/UserContactChangeLogService';
-import {UserRepository as ProdUserRepository} from '~/user/UserRepository';
-import {UserService} from '~/user/UserService';
-import {UserPermissionUtils} from '~/utils/UserPermissionUtils';
-import {VoiceAvailabilityService} from '~/voice/VoiceAvailabilityService';
-import {VoiceRepository} from '~/voice/VoiceRepository';
-import {VoiceService} from '~/voice/VoiceService';
-import {VoiceTopology} from '~/voice/VoiceTopology';
-import {SendGridWebhookService} from '~/webhook/SendGridWebhookService';
-import {WebhookRepository as ProdWebhookRepository} from '~/webhook/WebhookRepository';
-import {WebhookService} from '~/webhook/WebhookService';
-import {WorkerService as ProdWorkerService} from '~/worker/WorkerService';
+import { DisabledLiveKitService } from '~/infrastructure/DisabledLiveKitService';
+import { DisabledVirusScanService } from '~/infrastructure/DisabledVirusScanService';
+import { DiscriminatorService as ProdDiscriminatorService } from '~/infrastructure/DiscriminatorService';
+import { EmailService as ProdEmailService } from '~/infrastructure/EmailService';
+import { EmbedService } from '~/infrastructure/EmbedService';
+import { EntityAssetService } from '~/infrastructure/EntityAssetService';
+import { GatewayService as ProdGatewayService } from '~/infrastructure/GatewayService';
+import type { IAssetDeletionQueue } from '~/infrastructure/IAssetDeletionQueue';
+import type { ICacheService } from '~/infrastructure/ICacheService';
+import type { IEmailService } from '~/infrastructure/IEmailService';
+import type { ILiveKitService } from '~/infrastructure/ILiveKitService';
+import { InMemoryVoiceRoomStore } from '~/infrastructure/InMemoryVoiceRoomStore';
+import type { IVoiceRoomStore } from '~/infrastructure/IVoiceRoomStore';
+import { LiveKitService } from '~/infrastructure/LiveKitService';
+import { LiveKitWebhookService } from '~/infrastructure/LiveKitWebhookService';
+import { MediaService as ProdMediaService } from '~/infrastructure/MediaService';
+import { PendingJoinInviteStore } from '~/infrastructure/PendingJoinInviteStore';
+import { RateLimitService } from '~/infrastructure/RateLimitService';
+import { RedisAccountDeletionQueueService } from '~/infrastructure/RedisAccountDeletionQueueService';
+import { RedisActivityTracker } from '~/infrastructure/RedisActivityTracker';
+import { RedisBulkMessageDeletionQueueService } from '~/infrastructure/RedisBulkMessageDeletionQueueService';
+import { RedisCacheService } from '~/infrastructure/RedisCacheService';
+import { SMSService } from '~/infrastructure/SMSService';
+import { SnowflakeService } from '~/infrastructure/SnowflakeService';
+import { StorageService as ProdStorageService } from '~/infrastructure/StorageService';
+import { TestEmailService } from '~/infrastructure/TestEmailService';
+import { UnfurlerService as ProdUnfurlerService } from '~/infrastructure/UnfurlerService';
+import { UserCacheService } from '~/infrastructure/UserCacheService';
+import { VirusScanService as ProdVirusScanService } from '~/infrastructure/VirusScanService';
+import { VoiceRoomStore } from '~/infrastructure/VoiceRoomStore';
+import { SnowflakeReservationRepository } from '~/instance/SnowflakeReservationRepository';
+import { SnowflakeReservationService } from '~/instance/SnowflakeReservationService';
+import { InviteRepository as ProdInviteRepository } from '~/invite/InviteRepository';
+import { InviteService } from '~/invite/InviteService';
+import { getReportSearchService } from '~/Meilisearch';
+import { ApplicationService } from '~/oauth/ApplicationService';
+import { BotAuthService } from '~/oauth/BotAuthService';
+import { BotMfaMirrorService } from '~/oauth/BotMfaMirrorService';
+import { OAuth2Service } from '~/oauth/OAuth2Service';
+import { ApplicationRepository } from '~/oauth/repositories/ApplicationRepository';
+import { OAuth2TokenRepository } from '~/oauth/repositories/OAuth2TokenRepository';
+import { PackRepository } from '~/pack/PackRepository';
+import { PackService } from '~/pack/PackService';
+import { ReadStateRepository as ProdReadStateRepository } from '~/read_state/ReadStateRepository';
+import { ReadStateService } from '~/read_state/ReadStateService';
+import { ReportRepository } from '~/report/ReportRepository';
+import { ReportService } from '~/report/ReportService';
+import { RpcService } from '~/rpc/RpcService';
+import { StripeService } from '~/stripe/StripeService';
+import { TenorService as ProdTenorService } from '~/tenor/TenorService';
+import { EmailChangeRepository } from '~/user/repositories/auth/EmailChangeRepository';
+import { ScheduledMessageRepository } from '~/user/repositories/ScheduledMessageRepository';
+import { UserContactChangeLogRepository } from '~/user/repositories/UserContactChangeLogRepository';
+import { EmailChangeService } from '~/user/services/EmailChangeService';
+import { UserContactChangeLogService } from '~/user/services/UserContactChangeLogService';
+import { UserRepository as ProdUserRepository } from '~/user/UserRepository';
+import { UserService } from '~/user/UserService';
+import { UserPermissionUtils } from '~/utils/UserPermissionUtils';
+import { VoiceAvailabilityService } from '~/voice/VoiceAvailabilityService';
+import { VoiceRepository } from '~/voice/VoiceRepository';
+import { VoiceService } from '~/voice/VoiceService';
+import { VoiceTopology } from '~/voice/VoiceTopology';
+import { SendGridWebhookService } from '~/webhook/SendGridWebhookService';
+import { WebhookRepository as ProdWebhookRepository } from '~/webhook/WebhookRepository';
+import { WebhookService } from '~/webhook/WebhookService';
+import { WorkerService as ProdWorkerService } from '~/worker/WorkerService';
 
 const ChannelRepository = ProdChannelRepository;
 const UserRepository = ProdUserRepository;
@@ -132,6 +132,8 @@ const DiscriminatorService = ProdDiscriminatorService;
 
 const VirusScanService = Config.clamav.enabled ? ProdVirusScanService : DisabledVirusScanService;
 const testEmailServiceInstance = Config.dev.testModeEnabled ? new TestEmailService() : null;
+const globalUserRepository = new UserRepository();
+const emailService: IEmailService = testEmailServiceInstance ?? new EmailService(globalUserRepository);
 
 const redis = new Redis(Config.redis.url);
 
@@ -243,7 +245,6 @@ export const ServiceMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => 
 	const avatarService = new AvatarService(storageService, mediaService);
 	const entityAssetService = new EntityAssetService(storageService, mediaService, assetDeletionQueue);
 
-	const emailService: IEmailService = testEmailServiceInstance ?? new EmailService(userRepository);
 	const smsService = new SMSService();
 	const virusScanService = new VirusScanService(cacheService);
 	await virusScanService.initialize();
@@ -364,13 +365,13 @@ export const ServiceMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => 
 	const voiceService =
 		hasVoiceInfrastructure && voiceAvailabilityService
 			? new VoiceService(
-					liveKitService,
-					guildRepository,
-					userRepository,
-					channelRepository,
-					voiceRoomStore,
-					voiceAvailabilityService,
-				)
+				liveKitService,
+				guildRepository,
+				userRepository,
+				channelRepository,
+				voiceRoomStore,
+				voiceAvailabilityService,
+			)
 			: undefined;
 
 	const contactChangeLogRepository = new UserContactChangeLogRepository();

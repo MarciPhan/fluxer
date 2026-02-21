@@ -17,18 +17,18 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans} from '@lingui/react/macro';
+import { Trans } from '@lingui/react/macro';
 import React from 'react';
-import {FluxerIcon} from '~/components/icons/FluxerIcon';
-import {Button} from '~/components/uikit/Button/Button';
+import { Button } from '~/components/uikit/Button/Button';
 import AppStorage from '~/lib/AppStorage';
+import NepornuOfficialLogo from '~/images/nepornu-logo-official.svg';
 import styles from './ErrorFallback.module.css';
 
 interface BootstrapErrorScreenProps {
 	error?: Error;
 }
 
-export const BootstrapErrorScreen: React.FC<BootstrapErrorScreenProps> = ({error}) => {
+export const BootstrapErrorScreen: React.FC<BootstrapErrorScreenProps> = ({ error }) => {
 	const handleRetry = React.useCallback(() => {
 		window.location.reload();
 	}, []);
@@ -40,24 +40,24 @@ export const BootstrapErrorScreen: React.FC<BootstrapErrorScreenProps> = ({error
 
 	return (
 		<div className={styles.errorFallbackContainer}>
-			<FluxerIcon className={styles.errorFallbackIcon} />
+			<img src={NepornuOfficialLogo} alt="NePornu" style={{ height: '48px', marginBottom: '2rem' }} />
 			<div className={styles.errorFallbackContent}>
 				<h1 className={styles.errorFallbackTitle}>
 					<Trans>Failed to Start</Trans>
 				</h1>
 				<p className={styles.errorFallbackDescription}>
-					<Trans>Fluxer failed to start properly. This could be due to corrupted data or a temporary issue.</Trans>
+					<Trans>NePornu failed to start properly. This could be due to corrupted data or a temporary issue.</Trans>
 				</p>
 				{error && (
-					<p className={styles.errorFallbackDescription} style={{fontSize: '0.875rem', opacity: 0.8}}>
+					<p className={styles.errorFallbackDescription} style={{ fontSize: '0.875rem', opacity: 0.8 }}>
 						{error.message}
 					</p>
 				)}
 				<p className={styles.errorFallbackDescription}>
 					<Trans>
 						Check our{' '}
-						<a href="https://bsky.app/profile/fluxer.app" target="_blank" rel="noopener noreferrer">
-							Bluesky (@fluxer.app)
+						<a href="https://status.nepornu.cz/" target="_blank" rel="noopener noreferrer">
+							status page (status.nepornu.cz)
 						</a>{' '}
 						for status updates.
 					</Trans>

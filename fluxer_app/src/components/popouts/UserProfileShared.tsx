@@ -17,21 +17,21 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans, useLingui} from '@lingui/react/macro';
-import {clsx} from 'clsx';
-import {observer} from 'mobx-react-lite';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { clsx } from 'clsx';
+import { observer } from 'mobx-react-lite';
 import type React from 'react';
-import {AddRoleButton, RoleList} from '~/components/guild/RoleManagement';
-import {FluxerIcon} from '~/components/icons/FluxerIcon';
-import {GuildIcon} from '~/components/popouts/GuildIcon';
+import { ChatTeardropIcon } from '@phosphor-icons/react';
+import { AddRoleButton, RoleList } from '~/components/guild/RoleManagement';
+import { GuildIcon } from '~/components/popouts/GuildIcon';
 import styles from '~/components/popouts/UserProfileShared.module.css';
 import FocusRing from '~/components/uikit/FocusRing/FocusRing';
-import {Tooltip} from '~/components/uikit/Tooltip/Tooltip';
-import {SafeMarkdown} from '~/lib/markdown';
-import {MarkdownContext} from '~/lib/markdown/renderers';
-import type {GuildRoleRecord} from '~/records/GuildRoleRecord';
-import type {ProfileRecord} from '~/records/ProfileRecord';
-import type {UserProfile, UserRecord} from '~/records/UserRecord';
+import { Tooltip } from '~/components/uikit/Tooltip/Tooltip';
+import { SafeMarkdown } from '~/lib/markdown';
+import { MarkdownContext } from '~/lib/markdown/renderers';
+import type { GuildRoleRecord } from '~/records/GuildRoleRecord';
+import type { ProfileRecord } from '~/records/ProfileRecord';
+import type { UserProfile, UserRecord } from '~/records/UserRecord';
 import markupStyles from '~/styles/Markup.module.css';
 import * as DateUtils from '~/utils/DateUtils';
 
@@ -39,7 +39,7 @@ export const UserProfileBio: React.FC<{
 	profile: ProfileRecord;
 	profileData?: Readonly<UserProfile> | null;
 	onShowMore?: () => void;
-}> = observer(({profile, profileData, onShowMore}) => {
+}> = observer(({ profile, profileData, onShowMore }) => {
 	const resolvedProfile = profileData ?? profile?.getEffectiveProfile() ?? null;
 
 	if (!resolvedProfile?.bio) {
@@ -53,7 +53,7 @@ export const UserProfileBio: React.FC<{
 		return (
 			<div className={styles.bioContainer}>
 				<div className={clsx(markupStyles.markup, markupStyles.bio)}>
-					<SafeMarkdown content={resolvedProfile.bio} options={{context: MarkdownContext.RESTRICTED_USER_BIO}} />
+					<SafeMarkdown content={resolvedProfile.bio} options={{ context: MarkdownContext.RESTRICTED_USER_BIO }} />
 				</div>
 			</div>
 		);
@@ -71,7 +71,7 @@ export const UserProfileBio: React.FC<{
 					lineHeight: `${lineHeight}em`,
 				}}
 			>
-				<SafeMarkdown content={resolvedProfile.bio} options={{context: MarkdownContext.RESTRICTED_USER_BIO}} />
+				<SafeMarkdown content={resolvedProfile.bio} options={{ context: MarkdownContext.RESTRICTED_USER_BIO }} />
 			</div>
 
 			<FocusRing offset={-2}>
@@ -83,9 +83,9 @@ export const UserProfileBio: React.FC<{
 	);
 });
 
-export const UserProfileMembershipInfo: React.FC<{profile: ProfileRecord; user: UserRecord}> = observer(
-	({profile, user}) => {
-		const {t} = useLingui();
+export const UserProfileMembershipInfo: React.FC<{ profile: ProfileRecord; user: UserRecord }> = observer(
+	({ profile, user }) => {
+		const { t } = useLingui();
 		if (profile?.guild && profile.guildMember) {
 			return (
 				<div className={styles.membershipContainer}>
@@ -94,9 +94,9 @@ export const UserProfileMembershipInfo: React.FC<{profile: ProfileRecord; user: 
 					</span>
 					<div className={styles.membershipDates}>
 						<div className={styles.membershipDate}>
-							<Tooltip text={t`Fluxer`}>
+							<Tooltip text={t`Account Created`}>
 								<div className={styles.membershipIcon}>
-									<FluxerIcon className={clsx(styles.iconSmall, styles.textChat)} />
+									<ChatTeardropIcon className={clsx(styles.iconSmall, styles.textChat)} />
 								</div>
 							</Tooltip>
 							<span className={styles.membershipDateText}>{DateUtils.getFormattedShortDate(user.createdAt)}</span>
@@ -125,7 +125,7 @@ export const UserProfileMembershipInfo: React.FC<{profile: ProfileRecord; user: 
 		return (
 			<div className={styles.membershipContainer}>
 				<span className={styles.membershipTitle}>
-					<Trans>Fluxer Member Since</Trans>
+					<Trans>Account Created</Trans>
 				</span>
 				<span className={styles.membershipDateText}>{DateUtils.getFormattedShortDate(user.createdAt)}</span>
 			</div>
@@ -139,7 +139,7 @@ export const UserProfileRoles: React.FC<{
 	memberRoles: Array<GuildRoleRecord>;
 	canManageRoles: boolean;
 	forceMobile?: boolean;
-}> = observer(({profile, user, memberRoles, canManageRoles, forceMobile}) => {
+}> = observer(({ profile, user, memberRoles, canManageRoles, forceMobile }) => {
 	return profile?.guild && profile?.guildMember && (memberRoles.length > 0 || canManageRoles) ? (
 		<div className={styles.rolesContainer}>
 			<div className={styles.rolesHeader}>

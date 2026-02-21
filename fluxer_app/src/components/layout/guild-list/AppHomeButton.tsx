@@ -17,28 +17,28 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {useLingui} from '@lingui/react/macro';
-import {clsx} from 'clsx';
-import {AnimatePresence, motion} from 'framer-motion';
-import {observer} from 'mobx-react-lite';
+import { useLingui } from '@lingui/react/macro';
+import { clsx } from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
-import {ME, RelationshipTypes} from '~/Constants';
-import {FluxerSymbol} from '~/components/icons/FluxerSymbol';
+import { ME, RelationshipTypes } from '~/Constants';
+import { ChatCircleText } from '@phosphor-icons/react';
 import FocusRing from '~/components/uikit/FocusRing/FocusRing';
-import {MentionBadgeAnimated} from '~/components/uikit/MentionBadge';
-import {Tooltip} from '~/components/uikit/Tooltip/Tooltip';
-import {useHover} from '~/hooks/useHover';
-import {useMergeRefs} from '~/hooks/useMergeRefs';
-import {useLocation} from '~/lib/router';
-import {Routes} from '~/Routes';
+import { MentionBadgeAnimated } from '~/components/uikit/MentionBadge';
+import { Tooltip } from '~/components/uikit/Tooltip/Tooltip';
+import { useHover } from '~/hooks/useHover';
+import { useMergeRefs } from '~/hooks/useMergeRefs';
+import { useLocation } from '~/lib/router';
+import { Routes } from '~/Routes';
 import MobileLayoutStore from '~/stores/MobileLayoutStore';
 import RelationshipStore from '~/stores/RelationshipStore';
 import SelectedChannelStore from '~/stores/SelectedChannelStore';
 import * as RouterUtils from '~/utils/RouterUtils';
 import styles from '../GuildsLayout.module.css';
 
-export const FluxerButton = observer(() => {
-	const {t} = useLingui();
+export const AppHomeButton = observer(() => {
+	const { t } = useLingui();
 	const [hoverRef, isHovering] = useHover();
 	const buttonRef = React.useRef<HTMLButtonElement | null>(null);
 	const iconRef = React.useRef<HTMLDivElement | null>(null);
@@ -50,7 +50,7 @@ export const FluxerButton = observer(() => {
 	const relationships = RelationshipStore.getRelationships();
 
 	const pendingRequests = Object.values(relationships).filter(
-		({type}) => type === RelationshipTypes.INCOMING_REQUEST,
+		({ type }) => type === RelationshipTypes.INCOMING_REQUEST,
 	).length;
 
 	const handleSelect = () => {
@@ -66,7 +66,7 @@ export const FluxerButton = observer(() => {
 			<FocusRing offset={-2} focusTarget={buttonRef} ringTarget={iconRef}>
 				<button
 					type="button"
-					className={styles.fluxerButton}
+					className={styles.appHomeButton}
 					aria-label={t`Direct Messages`}
 					aria-pressed={isSelected}
 					onClick={handleSelect}
@@ -78,9 +78,9 @@ export const FluxerButton = observer(() => {
 								<motion.span
 									className={styles.guildIndicatorBar}
 									initial={false}
-									animate={{opacity: 1, scale: 1, height: indicatorHeight}}
-									exit={{opacity: 0, scale: 0, height: 0}}
-									transition={{duration: 0.2, ease: [0.25, 0.1, 0.25, 1]}}
+									animate={{ opacity: 1, scale: 1, height: indicatorHeight }}
+									exit={{ opacity: 0, scale: 0, height: 0 }}
+									transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
 								/>
 							</div>
 						)}
@@ -88,13 +88,13 @@ export const FluxerButton = observer(() => {
 					<div className={styles.relative}>
 						<motion.div
 							ref={iconRef}
-							className={clsx(styles.fluxerButtonIcon, isSelected && styles.fluxerButtonIconSelected)}
-							animate={{borderRadius: isActive ? '30%' : '50%'}}
+							className={clsx(styles.appHomeButtonIcon, isSelected && styles.appHomeButtonIconSelected)}
+							animate={{ borderRadius: isActive ? '30%' : '50%' }}
 							initial={false}
-							transition={{duration: 0.07, ease: 'easeOut'}}
-							whileHover={{borderRadius: '30%'}}
+							transition={{ duration: 0.07, ease: 'easeOut' }}
+							whileHover={{ borderRadius: '30%' }}
 						>
-							<FluxerSymbol className={styles.fluxerSymbolIcon} />
+							<ChatCircleText size={32} weight="fill" className={styles.appSymbolIcon} />
 						</motion.div>
 
 						<div className={clsx(styles.guildBadge, pendingRequests > 0 && styles.guildBadgeActive)}>

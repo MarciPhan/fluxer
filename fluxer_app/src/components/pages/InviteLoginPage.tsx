@@ -35,7 +35,7 @@ import {GuildInviteHeader, InviteHeader} from '~/components/auth/InviteHeader';
 import MfaScreen from '~/components/auth/MfaScreen';
 import {Button} from '~/components/uikit/Button/Button';
 import {useAuthLayoutContext} from '~/contexts/AuthLayoutContext';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import type {LoginSuccessPayload} from '~/hooks/useLoginFlow';
 import {useLocation, useParams} from '~/lib/router';
 import {Routes} from '~/Routes';
@@ -152,7 +152,7 @@ const InviteLoginPageContainer = observer(() => {
 	const loginState = AuthenticationStore.loginState;
 	const {code} = useParams() as {code: string};
 
-	useFluxerDocumentTitle(t`Accept Invite`);
+	useAppDocumentTitle(t`Accept Invite`);
 
 	const {setSplashUrl, setSplashCardAlignment} = useAuthLayoutContext();
 

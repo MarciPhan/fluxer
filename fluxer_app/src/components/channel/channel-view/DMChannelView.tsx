@@ -38,7 +38,7 @@ import {UserContextMenu} from '~/components/uikit/ContextMenu/UserContextMenu';
 import {CompactVoiceCallView} from '~/components/voice/CompactVoiceCallView';
 import {useChannelMemberListVisibility} from '~/hooks/useChannelMemberListVisibility';
 import {useChannelSearchVisibility} from '~/hooks/useChannelSearchVisibility';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import {useMemberListVisible} from '~/hooks/useMemberListVisible';
 import {Logger} from '~/lib/Logger';
 import type {ChannelRecord} from '~/records/ChannelRecord';
@@ -203,7 +203,7 @@ export const DMChannelView = observer(({channelId}: DMChannelViewProps) => {
 	const isDM = channel?.type === ChannelTypes.DM;
 	const displayName = channel ? ChannelUtils.getDMDisplayName(channel) : null;
 	const title = isDM && displayName ? `@${displayName}` : displayName;
-	useFluxerDocumentTitle(title);
+	useAppDocumentTitle(title);
 	const isGroupDM = channel?.type === ChannelTypes.GROUP_DM;
 	const isPersonalNotes = channel?.type === ChannelTypes.DM_PERSONAL_NOTES;
 	const callHeaderState = useCallHeaderState(channel);

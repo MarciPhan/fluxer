@@ -32,7 +32,7 @@ import {DesktopDeepLinkPrompt} from '~/components/auth/DesktopDeepLinkPrompt';
 import {GuildInviteHeader, InviteHeader} from '~/components/auth/InviteHeader';
 import {Button} from '~/components/uikit/Button/Button';
 import {useAuthLayoutContext} from '~/contexts/AuthLayoutContext';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import {useParams} from '~/lib/router';
 import {Routes} from '~/Routes';
 import InviteStore from '~/stores/InviteStore';
@@ -44,7 +44,7 @@ const InviteRegisterPage = observer(function InviteRegisterPage() {
 	const {code} = useParams() as {code: string};
 	const {setSplashUrl, setSplashCardAlignment} = useAuthLayoutContext();
 
-	useFluxerDocumentTitle(t`Accept Invite`);
+	useAppDocumentTitle(t`Accept Invite`);
 
 	const inviteState = InviteStore.invites.get(code) ?? null;
 	const inviteData = inviteState?.data ?? null;

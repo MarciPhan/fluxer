@@ -24,7 +24,7 @@ import * as AuthenticationActionCreators from '~/actions/AuthenticationActionCre
 import {AuthRouterLink} from '~/components/auth/AuthRouterLink';
 import FormField from '~/components/auth/FormField';
 import {Button} from '~/components/uikit/Button/Button';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import {useForm} from '~/hooks/useForm';
 import styles from './ForgotPasswordPage.module.css';
 
@@ -34,7 +34,7 @@ const ForgotPasswordPage = observer(function ForgotPasswordPage() {
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [_error, setError] = useState<string | null>(null);
 
-	useFluxerDocumentTitle(t`Forgot Password`);
+	useAppDocumentTitle(t`Forgot Password`);
 
 	const form = useForm({
 		initialValues: {email: ''},

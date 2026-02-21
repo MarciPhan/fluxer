@@ -25,7 +25,7 @@ import {AuthRouterLink} from '~/components/auth/AuthRouterLink';
 import FormField from '~/components/auth/FormField';
 import {Button} from '~/components/uikit/Button/Button';
 import {useAuthForm} from '~/hooks/useAuthForm';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import {useHashParam} from '~/hooks/useHashParam';
 import * as RouterUtils from '~/utils/RouterUtils';
 import styles from './ResetPasswordPage.module.css';
@@ -35,7 +35,7 @@ const EmailRevertPage = observer(function EmailRevertPage() {
 	const passwordId = useId();
 	const confirmPasswordId = useId();
 
-	useFluxerDocumentTitle(t`Secure your account`);
+	useAppDocumentTitle(t`Secure your account`);
 
 	const token = useHashParam('token');
 

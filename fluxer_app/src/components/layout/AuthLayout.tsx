@@ -17,29 +17,28 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {I18nProvider} from '@lingui/react';
+import { I18nProvider } from '@lingui/react';
 import clsx from 'clsx';
-import {observer} from 'mobx-react-lite';
-import {type ReactNode, useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import type {GuildSplashCardAlignmentValue} from '~/Constants';
-import {GuildSplashCardAlignment} from '~/Constants';
-import {AuthBackground} from '~/components/auth/AuthBackground';
-import {AuthCardContainer} from '~/components/auth/AuthCardContainer';
-import {NativeDragRegion} from '~/components/layout/NativeDragRegion';
-import {NativeTitlebar} from '~/components/layout/NativeTitlebar';
-import {Scroller, type ScrollerHandle} from '~/components/uikit/Scroller';
-import {AuthLayoutContext} from '~/contexts/AuthLayoutContext';
-import {useSetLayoutVariant} from '~/contexts/LayoutVariantContext';
-import {useAuthBackground} from '~/hooks/useAuthBackground';
-import {useNativePlatform} from '~/hooks/useNativePlatform';
-import i18n, {initI18n} from '~/i18n';
-import FluxerWordmarkMonochrome from '~/images/fluxer-logo-wordmark-monochrome.svg?react';
-import foodPatternUrl from '~/images/i-like-food.svg';
-import {useLocation} from '~/lib/router';
-import {isMobileExperienceEnabled} from '~/utils/mobileExperience';
+import { observer } from 'mobx-react-lite';
+import { type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { GuildSplashCardAlignmentValue } from '~/Constants';
+import { GuildSplashCardAlignment } from '~/Constants';
+import { AuthBackground } from '~/components/auth/AuthBackground';
+import { AuthCardContainer } from '~/components/auth/AuthCardContainer';
+import { NativeDragRegion } from '~/components/layout/NativeDragRegion';
+import { NativeTitlebar } from '~/components/layout/NativeTitlebar';
+import { Scroller, type ScrollerHandle } from '~/components/uikit/Scroller';
+import { AuthLayoutContext } from '~/contexts/AuthLayoutContext';
+import { useSetLayoutVariant } from '~/contexts/LayoutVariantContext';
+import { useAuthBackground } from '~/hooks/useAuthBackground';
+import { useNativePlatform } from '~/hooks/useNativePlatform';
+import i18n, { initI18n } from '~/i18n';
+import NepornuOfficialLogo from '~/images/nepornu-logo-official.svg';
+import { useLocation } from '~/lib/router';
+import { isMobileExperienceEnabled } from '~/utils/mobileExperience';
 import styles from './AuthLayout.module.css';
 
-const AuthLayoutContent = observer(function AuthLayoutContent({children}: {children?: ReactNode}) {
+const AuthLayoutContent = observer(function AuthLayoutContent({ children }: { children?: ReactNode }) {
 	const [viewportHeight, setViewportHeight] = useState(() => window.innerHeight);
 	const [viewportWidth, setViewportWidth] = useState(() => window.innerWidth);
 	const [splashUrl, setSplashUrl] = useState<string | null>(null);
@@ -47,12 +46,12 @@ const AuthLayoutContent = observer(function AuthLayoutContent({children}: {child
 	const [splashAlignment, setSplashAlignment] = useState<GuildSplashCardAlignmentValue>(
 		GuildSplashCardAlignment.CENTER,
 	);
-	const {isNative, isMacOS, platform} = useNativePlatform();
+	const { isNative, isMacOS, platform } = useNativePlatform();
 	const splashUrlRef = useRef<string | null>(null);
 	const scrollerRef = useRef<ScrollerHandle>(null);
 	const location = useLocation();
 
-	const {patternReady, splashLoaded, splashDimensions} = useAuthBackground(splashUrl, foodPatternUrl);
+	const { patternReady, splashLoaded, splashDimensions } = useAuthBackground(splashUrl, '');
 
 	const handleSetSplashUrl = useCallback(
 		(url: string | null) => {
@@ -89,7 +88,7 @@ const AuthLayoutContent = observer(function AuthLayoutContent({children}: {child
 
 	const splashScale = useMemo(() => {
 		if (!splashDimensions) return null;
-		const {width, height} = splashDimensions;
+		const { width, height } = splashDimensions;
 		if (width <= 0 || height <= 0) return null;
 		const heightScale = viewportHeight / height;
 		const widthScale = viewportWidth / width;
@@ -112,7 +111,7 @@ const AuthLayoutContent = observer(function AuthLayoutContent({children}: {child
 					<Scroller ref={scrollerRef} className={styles.mobileContainer} fade={false} key="auth-layout-mobile-scroller">
 						<div className={styles.mobileContent}>
 							<div className={styles.mobileLogoContainer}>
-								<FluxerWordmarkMonochrome className={styles.mobileWordmark} />
+								<img src={NepornuOfficialLogo} alt="NePornu" className={styles.mobileWordmark} style={{ height: '32px', width: 'auto' }} />
 							</div>
 							{children}
 						</div>
@@ -140,7 +139,7 @@ const AuthLayoutContent = observer(function AuthLayoutContent({children}: {child
 							splashDimensions={splashDimensions}
 							splashScale={splashScale}
 							patternReady={patternReady}
-							patternImageUrl={foodPatternUrl}
+							patternImageUrl={''}
 							splashAlignment={splashAlignment}
 							useFullCover={false}
 						/>
@@ -167,7 +166,7 @@ const AuthLayoutContent = observer(function AuthLayoutContent({children}: {child
 	);
 });
 
-export const AuthLayout = observer(function AuthLayout({children}: {children?: ReactNode}) {
+export const AuthLayout = observer(function AuthLayout({ children }: { children?: ReactNode }) {
 	const [isI18nInitialized, setIsI18nInitialized] = useState(false);
 	const setLayoutVariant = useSetLayoutVariant();
 

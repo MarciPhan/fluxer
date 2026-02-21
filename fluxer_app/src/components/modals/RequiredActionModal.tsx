@@ -17,26 +17,26 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import type {MessageDescriptor} from '@lingui/core';
-import {msg} from '@lingui/core/macro';
-import {Trans, useLingui} from '@lingui/react/macro';
-import {WarningIcon} from '@phosphor-icons/react';
-import {clsx} from 'clsx';
-import {observer} from 'mobx-react-lite';
+import type { MessageDescriptor } from '@lingui/core';
+import { msg } from '@lingui/core/macro';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { WarningIcon } from '@phosphor-icons/react';
+import { clsx } from 'clsx';
+import { observer } from 'mobx-react-lite';
 import type React from 'react';
-import {useCallback, useEffect, useMemo, useState} from 'react';
-import {useForm} from 'react-hook-form';
-import {components, type OptionProps, type SingleValueProps} from 'react-select';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { components, type OptionProps, type SingleValueProps } from 'react-select';
 import * as AuthenticationActionCreators from '~/actions/AuthenticationActionCreators';
-import {VerificationResult} from '~/actions/AuthenticationActionCreators';
+import { VerificationResult } from '~/actions/AuthenticationActionCreators';
 import * as ModalActionCreators from '~/actions/ModalActionCreators';
 import * as ToastActionCreators from '~/actions/ToastActionCreators';
 import * as UserActionCreators from '~/actions/UserActionCreators';
-import {Form} from '~/components/form/Form';
-import {Input} from '~/components/form/Input';
-import {Select} from '~/components/form/Select';
+import { Form } from '~/components/form/Form';
+import { Input } from '~/components/form/Input';
+import { Select } from '~/components/form/Select';
 import * as Modal from '~/components/modals/Modal';
-import {Button} from '~/components/uikit/Button/Button';
+import { Button } from '~/components/uikit/Button/Button';
 import {
 	COUNTRY_CODES,
 	type CountryCode,
@@ -45,8 +45,8 @@ import {
 	getDefaultCountry,
 	getE164PhoneNumber,
 } from '~/data/countryCodes';
-import {useFormSubmit} from '~/hooks/useFormSubmit';
-import type {RequiredAction} from '~/records/UserRecord';
+import { useFormSubmit } from '~/hooks/useFormSubmit';
+import type { RequiredAction } from '~/records/UserRecord';
 import DeveloperOptionsStore from '~/stores/DeveloperOptionsStore';
 import LayerManager from '~/stores/LayerManager';
 import UserStore from '~/stores/UserStore';
@@ -75,7 +75,7 @@ const getCountryOptions = (locale: string): ReadonlyArray<CountrySelectOption> =
 	}));
 
 const CountryOption = observer((props: OptionProps<CountrySelectOption>) => {
-	const {country} = props.data;
+	const { country } = props.data;
 	const locale = LocaleUtils.getCurrentLocale();
 	const countryName = getCountryName(country.code, locale);
 	return (
@@ -90,7 +90,7 @@ const CountryOption = observer((props: OptionProps<CountrySelectOption>) => {
 });
 
 const SingleValue = observer((props: SingleValueProps<CountrySelectOption>) => {
-	const {country} = props.data;
+	const { country } = props.data;
 	const locale = LocaleUtils.getCurrentLocale();
 	const countryName = getCountryName(country.code, locale);
 	return (
@@ -140,21 +140,21 @@ const getDescriptionDescriptor = (mode: VerificationMode, reverify = false): Mes
 	switch (mode) {
 		case 'email':
 			return reverify
-				? msg`We've detected suspicious activity on your account. Please reverify your email address to continue using Fluxer.`
-				: msg`We've detected suspicious activity on your account. Please verify your email address to continue using Fluxer.`;
+				? msg`We've detected suspicious activity on your account. Please reverify your email address to continue.`
+				: msg`We've detected suspicious activity on your account. Please verify your email address to continue.`;
 		case 'phone':
 			return reverify
-				? msg`We've detected suspicious activity on your account. Please reverify your phone number to continue using Fluxer.`
-				: msg`We've detected suspicious activity on your account. Please verify your phone number to continue using Fluxer.`;
+				? msg`We've detected suspicious activity on your account. Please reverify your phone number to continue.`
+				: msg`We've detected suspicious activity on your account. Please verify your phone number to continue.`;
 		case 'email_or_phone':
 			return reverify
-				? msg`We've detected suspicious activity on your account. Please reverify your email address or phone number to continue using Fluxer.`
-				: msg`We've detected suspicious activity on your account. Please verify your email address or phone number to continue using Fluxer.`;
+				? msg`We've detected suspicious activity on your account. Please reverify your email address or phone number to continue.`
+				: msg`We've detected suspicious activity on your account. Please verify your email address or phone number to continue.`;
 	}
 };
 
-const RequiredActionModal: React.FC<{mock?: boolean}> = observer(({mock = false}) => {
-	const {t} = useLingui();
+const RequiredActionModal: React.FC<{ mock?: boolean }> = observer(({ mock = false }) => {
+	const { t } = useLingui();
 	const user = UserStore.currentUser;
 
 	const [selectedVerificationType, setSelectedVerificationType] = useState<'email' | 'phone'>(
@@ -182,8 +182,8 @@ const RequiredActionModal: React.FC<{mock?: boolean}> = observer(({mock = false}
 
 	const verificationTabs = useMemo<Array<VerificationTab>>(
 		() => [
-			{id: 'email', label: t`Email`},
-			{id: 'phone', label: t`Phone`},
+			{ id: 'email', label: t`Email` },
+			{ id: 'phone', label: t`Phone` },
 		],
 		[],
 	);
@@ -218,7 +218,7 @@ const RequiredActionModal: React.FC<{mock?: boolean}> = observer(({mock = false}
 
 	const onSubmitPhone = useCallback(async () => {
 		if (!phoneNumber) {
-			phoneForm.setError('phoneNumber', {message: 'Phone number is required'});
+			phoneForm.setError('phoneNumber', { message: 'Phone number is required' });
 			return;
 		}
 		const e164Phone = getE164PhoneNumber(phoneNumber, selectedCountry);
@@ -229,20 +229,20 @@ const RequiredActionModal: React.FC<{mock?: boolean}> = observer(({mock = false}
 	const onSubmitCode = useCallback(
 		async (data: CodeFormInputs) => {
 			const e164Phone = getE164PhoneNumber(phoneNumber, selectedCountry);
-			const {phone_token} = await UserActionCreators.verifyPhone(e164Phone, data.code.split(' ').join(''));
+			const { phone_token } = await UserActionCreators.verifyPhone(e164Phone, data.code.split(' ').join(''));
 			await UserActionCreators.addPhone(phone_token);
-			ToastActionCreators.createToast({type: 'success', children: <Trans>Phone number verified</Trans>});
+			ToastActionCreators.createToast({ type: 'success', children: <Trans>Phone number verified</Trans> });
 		},
 		[phoneNumber, selectedCountry],
 	);
 
-	const {handleSubmit: handlePhoneSubmit, isSubmitting: isPhoneSubmitting} = useFormSubmit({
+	const { handleSubmit: handlePhoneSubmit, isSubmitting: isPhoneSubmitting } = useFormSubmit({
 		form: phoneForm,
 		onSubmit: onSubmitPhone,
 		defaultErrorField: 'phoneNumber',
 	});
 
-	const {handleSubmit: handleCodeSubmit, isSubmitting: isCodeSubmitting} = useFormSubmit({
+	const { handleSubmit: handleCodeSubmit, isSubmitting: isCodeSubmitting } = useFormSubmit({
 		form: codeForm,
 		onSubmit: onSubmitCode,
 		defaultErrorField: 'code',
@@ -345,42 +345,42 @@ const RequiredActionModal: React.FC<{mock?: boolean}> = observer(({mock = false}
 					<div className={styles.contentContainer}>
 						{(effectiveMode === 'email' ||
 							(effectiveMode === 'email_or_phone' && selectedVerificationType === 'email')) && (
-							<>
-								<div className={styles.stepsCard}>
-									<div className={styles.stepsContainer}>
-										<div className={styles.stepRow}>
-											<div className={styles.stepBadge}>1</div>
-											<p className={styles.stepText}>
-												<Trans>
-													Check your inbox at <strong>{user?.email}</strong> for a verification email.
-												</Trans>
-											</p>
-										</div>
-										<div className={styles.stepRow}>
-											<div className={styles.stepBadge}>2</div>
-											<p className={styles.stepText}>
-												<Trans>Click the verification link in the email.</Trans>
-											</p>
-										</div>
-										<div className={styles.stepRow}>
-											<div className={styles.stepBadge}>3</div>
-											<p className={styles.stepText}>
-												<Trans>Return to this page to continue.</Trans>
-											</p>
+								<>
+									<div className={styles.stepsCard}>
+										<div className={styles.stepsContainer}>
+											<div className={styles.stepRow}>
+												<div className={styles.stepBadge}>1</div>
+												<p className={styles.stepText}>
+													<Trans>
+														Check your inbox at <strong>{user?.email}</strong> for a verification email.
+													</Trans>
+												</p>
+											</div>
+											<div className={styles.stepRow}>
+												<div className={styles.stepBadge}>2</div>
+												<p className={styles.stepText}>
+													<Trans>Click the verification link in the email.</Trans>
+												</p>
+											</div>
+											<div className={styles.stepRow}>
+												<div className={styles.stepBadge}>3</div>
+												<p className={styles.stepText}>
+													<Trans>Return to this page to continue.</Trans>
+												</p>
+											</div>
 										</div>
 									</div>
-								</div>
 
-								<div className={styles.resendSection}>
-									<p className={styles.resendText}>
-										<Trans>Didn't receive the email?</Trans>
-									</p>
-									<Button onClick={handleResendEmail} disabled={isEmailResending} submitting={isEmailResending}>
-										<Trans>Resend Verification Email</Trans>
-									</Button>
-								</div>
-							</>
-						)}
+									<div className={styles.resendSection}>
+										<p className={styles.resendText}>
+											<Trans>Didn't receive the email?</Trans>
+										</p>
+										<Button onClick={handleResendEmail} disabled={isEmailResending} submitting={isEmailResending}>
+											<Trans>Resend Verification Email</Trans>
+										</Button>
+									</div>
+								</>
+							)}
 
 						{(effectiveMode === 'phone' ||
 							(effectiveMode === 'email_or_phone' && selectedVerificationType === 'phone')) &&
@@ -400,7 +400,7 @@ const RequiredActionModal: React.FC<{mock?: boolean}> = observer(({mock = false}
 													}
 												}}
 												options={countryOptions}
-												components={{Option: CountryOption as any, SingleValue: SingleValue as any}}
+												components={{ Option: CountryOption as any, SingleValue: SingleValue as any }}
 												placeholder={t`Search countries...`}
 												filterOption={(option: any, inputValue: string) => {
 													const searchTerm = inputValue.toLowerCase();

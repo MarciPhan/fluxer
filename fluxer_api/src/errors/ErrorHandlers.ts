@@ -18,12 +18,12 @@
  */
 
 import * as Sentry from '@sentry/node';
-import type {ErrorHandler, NotFoundHandler} from 'hono';
-import {HTTPException} from 'hono/http-exception';
-import type {HonoEnv} from '~/App';
-import {APIErrorCodes} from '~/Constants';
-import {Logger} from '~/Logger';
-import {FluxerAPIError} from './FluxerAPIError';
+import type { ErrorHandler, NotFoundHandler } from 'hono';
+import { HTTPException } from 'hono/http-exception';
+import type { HonoEnv } from '~/App';
+import { APIErrorCodes } from '~/Constants';
+import { Logger } from '~/Logger';
+import { FluxerAPIError } from './FluxerAPIError';
 
 export const AppErrorHandler: ErrorHandler<HonoEnv> = (err) => {
 	const isExpectedError = err instanceof Error && 'isExpected' in err && err.isExpected;
@@ -33,22 +33,23 @@ export const AppErrorHandler: ErrorHandler<HonoEnv> = (err) => {
 	}
 
 	if (err instanceof FluxerAPIError) {
+		Logger.info({ err }, 'Handled FluxerAPIError');
 		return err.getResponse();
 	}
 	if (err instanceof HTTPException) {
-		return new Response(JSON.stringify({code: APIErrorCodes.GENERAL_ERROR, message: err.message}), {
+		return new Response(JSON.stringify({ code: APIErrorCodes.GENERAL_ERROR, message: err.message }), {
 			status: err.status,
-			headers: {'Content-Type': 'application/json'},
+			headers: { 'Content-Type': 'application/json' },
 		});
 	}
 	if (isExpectedError) {
-		Logger.warn({err}, 'Expected error occurred');
-		return new Response(JSON.stringify({code: APIErrorCodes.GENERAL_ERROR, message: err.message}), {
+		Logger.warn({ err }, 'Expected error occurred');
+		return new Response(JSON.stringify({ code: APIErrorCodes.GENERAL_ERROR, message: err.message }), {
 			status: 400,
-			headers: {'Content-Type': 'application/json'},
+			headers: { 'Content-Type': 'application/json' },
 		});
 	}
-	Logger.error({err}, 'Unhandled error occurred');
+	Logger.error({ err }, 'Unhandled error occurred');
 	const error = new FluxerAPIError({
 		code: APIErrorCodes.GENERAL_ERROR,
 		message: 'An internal server error occurred.',

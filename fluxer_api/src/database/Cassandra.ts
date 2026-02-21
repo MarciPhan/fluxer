@@ -18,8 +18,8 @@
  */
 
 import cassandra from 'cassandra-driver';
-import {Config} from '~/Config';
-import {Logger} from '~/Logger';
+import { Config } from '~/Config';
+import { Logger } from '~/Logger';
 
 const IS_DEV = Config.nodeEnv === 'development';
 
@@ -139,7 +139,7 @@ function logQuery(
 	console.log(lines.join('\n'));
 }
 
-function logBatch(queries: Array<{query: string; params: object}>, durationMs: number): void {
+function logBatch(queries: Array<{ query: string; params: object }>, durationMs: number): void {
 	if (!IS_DEV) return;
 
 	const lines = [
@@ -147,7 +147,7 @@ function logBatch(queries: Array<{query: string; params: object}>, durationMs: n
 	];
 
 	for (let i = 0; i < queries.length; i++) {
-		const {query, params} = queries[i];
+		const { query, params } = queries[i];
 		const queryType = getQueryType(query);
 		const typeColors: Record<string, string> = {
 			SELECT: colors.cyan,
@@ -176,14 +176,14 @@ function logBatch(queries: Array<{query: string; params: object}>, durationMs: n
 	console.log(lines.join('\n'));
 }
 
-export type DbOp<T> = {kind: 'set'; value: T} | {kind: 'clear'};
+export type DbOp<T> = { kind: 'set'; value: T } | { kind: 'clear' };
 
 export const Db = {
 	set<T>(value: T): DbOp<T> {
-		return {kind: 'set', value};
+		return { kind: 'set', value };
 	},
 	clear<T = never>(): DbOp<T> {
-		return {kind: 'clear'};
+		return { kind: 'clear' };
 	},
 } as const;
 
@@ -212,7 +212,7 @@ export interface PreparedQuery<P extends CassandraParams = CassandraParams> {
 }
 
 export function prepared<P extends CassandraParams>(cql: string, params: P): PreparedQuery<P> {
-	return {cql, params};
+	return { cql, params };
 }
 
 export interface QueryTemplate<P extends CassandraParams = CassandraParams> {
@@ -323,7 +323,7 @@ function normalizeExecuteArgs<P extends CassandraParams>(
 		if (!params) {
 			throw new Error('Missing params object for Cassandra query execution');
 		}
-		return {cql: queryOrPrepared, params};
+		return { cql: queryOrPrepared, params };
 	}
 	return queryOrPrepared;
 }
@@ -332,7 +332,7 @@ async function executeQuery<T = Record<string, unknown>, P extends CassandraPara
 	queryOrPrepared: string | PreparedQuery<P>,
 	params?: P,
 ): Promise<Array<T>> {
-	const {cql, params: bound} = normalizeExecuteArgs(queryOrPrepared, params);
+	const { cql, params: bound } = normalizeExecuteArgs(queryOrPrepared, params);
 
 	if (isUnsafePreparedStatement(cql)) {
 		throw new Error('Cannot prepare a statement that looks like `SELECT *`');
@@ -343,7 +343,7 @@ async function executeQuery<T = Record<string, unknown>, P extends CassandraPara
 	const startTime = IS_DEV ? performance.now() : 0;
 
 	try {
-		const result = await client.execute(cql, bound, {prepare: true});
+		const result = await client.execute(cql, bound, { prepare: true });
 		const rows = (result.rows ?? []) as Array<T>;
 
 		if (IS_DEV) {
@@ -355,20 +355,20 @@ async function executeQuery<T = Record<string, unknown>, P extends CassandraPara
 	} catch (err: unknown) {
 		const paramSummary: Record<string, unknown> = {};
 		for (const [k, v] of Object.entries(bound as Record<string, unknown>)) {
-			if (typeof v === 'string') paramSummary[k] = {type: 'string', len: v.length};
-			else if (typeof v === 'bigint') paramSummary[k] = {type: 'bigint'};
-			else if (typeof v === 'number') paramSummary[k] = {type: 'number'};
-			else if (typeof v === 'boolean') paramSummary[k] = {type: 'boolean'};
-			else if (v instanceof Buffer) paramSummary[k] = {type: 'buffer', len: v.length};
-			else if (v instanceof Set) paramSummary[k] = {type: 'set', size: (v as Set<unknown>).size};
-			else if (v instanceof Map) paramSummary[k] = {type: 'map', size: (v as Map<unknown, unknown>).size};
-			else if (v instanceof Date) paramSummary[k] = {type: 'date'};
-			else if (Array.isArray(v)) paramSummary[k] = {type: 'array', len: v.length};
-			else if (v === null) paramSummary[k] = {type: 'null'};
-			else paramSummary[k] = {type: typeof v};
+			if (typeof v === 'string') paramSummary[k] = { type: 'string', len: v.length };
+			else if (typeof v === 'bigint') paramSummary[k] = { type: 'bigint' };
+			else if (typeof v === 'number') paramSummary[k] = { type: 'number' };
+			else if (typeof v === 'boolean') paramSummary[k] = { type: 'boolean' };
+			else if (v instanceof Buffer) paramSummary[k] = { type: 'buffer', len: v.length };
+			else if (v instanceof Set) paramSummary[k] = { type: 'set', size: (v as Set<unknown>).size };
+			else if (v instanceof Map) paramSummary[k] = { type: 'map', size: (v as Map<unknown, unknown>).size };
+			else if (v instanceof Date) paramSummary[k] = { type: 'date' };
+			else if (Array.isArray(v)) paramSummary[k] = { type: 'array', len: v.length };
+			else if (v === null) paramSummary[k] = { type: 'null' };
+			else paramSummary[k] = { type: typeof v };
 		}
 		const errorMessage = err instanceof Error ? err.message : String(err);
-		Logger.warn({error: errorMessage, query: cql, params: paramSummary}, 'Cassandra query failed');
+		Logger.warn({ error: errorMessage, query: cql, params: paramSummary }, 'Cassandra query failed');
 		throw err;
 	}
 }
@@ -437,8 +437,8 @@ export async function deleteOneOrMany<P extends CassandraParams = CassandraParam
 export async function executeConditional<P extends CassandraParams = CassandraParams>(
 	queryOrPrepared: PreparedQuery<P> | string,
 	params?: P,
-): Promise<{applied: boolean; rows: Array<Record<string, unknown>>}> {
-	const {cql, params: bound} = normalizeExecuteArgs(queryOrPrepared, params);
+): Promise<{ applied: boolean; rows: Array<Record<string, unknown>> }> {
+	const { cql, params: bound } = normalizeExecuteArgs(queryOrPrepared, params);
 
 	if (isUnsafePreparedStatement(cql)) {
 		throw new Error('Cannot prepare a statement that looks like `SELECT *`');
@@ -449,7 +449,7 @@ export async function executeConditional<P extends CassandraParams = CassandraPa
 	const startTime = IS_DEV ? performance.now() : 0;
 
 	try {
-		const result = await client.execute(cql, bound, {prepare: true});
+		const result = await client.execute(cql, bound, { prepare: true });
 		interface MaybeApplied {
 			wasApplied?: () => boolean;
 		}
@@ -467,10 +467,10 @@ export async function executeConditional<P extends CassandraParams = CassandraPa
 			);
 		}
 
-		return {applied, rows: result.rows as Array<Record<string, unknown>>};
+		return { applied, rows: result.rows as Array<Record<string, unknown>> };
 	} catch (err: unknown) {
 		const errorMessage = err instanceof Error ? err.message : String(err);
-		Logger.warn({error: errorMessage, query: cql}, 'Cassandra conditional query failed');
+		Logger.warn({ error: errorMessage, query: cql }, 'Cassandra conditional query failed');
 		throw err;
 	}
 }
@@ -483,13 +483,13 @@ interface BatchQuery {
 async function executeBatch(queries: Array<BatchQuery>, atomic = true): Promise<void> {
 	if (queries.length === 0) return;
 
-	for (const {query} of queries) {
+	for (const { query } of queries) {
 		if (isUnsafePreparedStatement(query)) {
 			throw new Error('Cannot prepare a statement that looks like `SELECT *`');
 		}
 	}
 
-	for (const {params} of queries) {
+	for (const { params } of queries) {
 		assertNoUndefinedParams(params as Record<string, unknown>);
 	}
 
@@ -502,7 +502,7 @@ async function executeBatch(queries: Array<BatchQuery>, atomic = true): Promise<
 	const startTime = IS_DEV ? performance.now() : 0;
 
 	await client.batch(
-		queries.map(({query, params}) => ({query, params})),
+		queries.map(({ query, params }) => ({ query, params })),
 		options,
 	);
 
@@ -516,22 +516,22 @@ export class BatchBuilder {
 	private queries: Array<BatchQuery> = [];
 
 	add(query: string, params: object): this {
-		this.queries.push({query, params});
+		this.queries.push({ query, params });
 		return this;
 	}
 
 	addPrepared(q: PreparedQuery): this {
-		this.queries.push({query: q.cql, params: q.params});
+		this.queries.push({ query: q.cql, params: q.params });
 		return this;
 	}
 
 	addIf(condition: boolean, query: string, params: object): this {
-		if (condition) this.queries.push({query, params});
+		if (condition) this.queries.push({ query, params });
 		return this;
 	}
 
 	addPreparedIf(condition: boolean, q: PreparedQuery): this {
-		if (condition) this.queries.push({query: q.cql, params: q.params});
+		if (condition) this.queries.push({ query: q.cql, params: q.params });
 		return this;
 	}
 
@@ -546,16 +546,16 @@ export class BatchBuilder {
 }
 
 export type WhereExpr<Row extends object> =
-	| {kind: 'eq'; col: ColumnName<Row>; param: string}
-	| {kind: 'in'; col: ColumnName<Row>; param: string}
-	| {kind: 'lt'; col: ColumnName<Row>; param: string}
-	| {kind: 'gt'; col: ColumnName<Row>; param: string}
-	| {kind: 'lte'; col: ColumnName<Row>; param: string}
-	| {kind: 'gte'; col: ColumnName<Row>; param: string}
-	| {kind: 'tokenGt'; col: ColumnName<Row>; param: string}
-	| {kind: 'tupleGt'; cols: ReadonlyArray<ColumnName<Row>>; params: ReadonlyArray<string>};
+	| { kind: 'eq'; col: ColumnName<Row>; param: string }
+	| { kind: 'in'; col: ColumnName<Row>; param: string }
+	| { kind: 'lt'; col: ColumnName<Row>; param: string }
+	| { kind: 'gt'; col: ColumnName<Row>; param: string }
+	| { kind: 'lte'; col: ColumnName<Row>; param: string }
+	| { kind: 'gte'; col: ColumnName<Row>; param: string }
+	| { kind: 'tokenGt'; col: ColumnName<Row>; param: string }
+	| { kind: 'tupleGt'; cols: ReadonlyArray<ColumnName<Row>>; params: ReadonlyArray<string> };
 
-export type OrderBy<Row extends object> = {col: ColumnName<Row>; direction?: 'ASC' | 'DESC'};
+export type OrderBy<Row extends object> = { col: ColumnName<Row>; direction?: 'ASC' | 'DESC' };
 
 export interface Table<Row extends object, PK extends ColumnName<Row>, PartKey extends ColumnName<Row> = PK> {
 	name: string;
@@ -585,18 +585,18 @@ export interface Table<Row extends object, PK extends ColumnName<Row>, PartKey e
 
 	patchByPk(
 		pk: Pick<Row, PK>,
-		patch: Partial<{[K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>>}>,
+		patch: Partial<{ [K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>> }>,
 	): PreparedQuery;
 
-	deleteCql(opts?: {where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>>}): string;
+	deleteCql(opts?: { where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>> }): string;
 
-	delete(opts?: {where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>>}): QueryTemplate;
+	delete(opts?: { where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>> }): QueryTemplate;
 
 	deleteByPk(pk: Pick<Row, PK>): PreparedQuery;
 
 	deletePartition(pk: Pick<Row, PartKey>): PreparedQuery;
 
-	insertCql(opts?: {ttlParam?: string}): string;
+	insertCql(opts?: { ttlParam?: string }): string;
 
 	insert(row: Row): PreparedQuery;
 
@@ -606,21 +606,21 @@ export interface Table<Row extends object, PK extends ColumnName<Row>, PartKey e
 
 	insertIfNotExists(row: Row): PreparedQuery;
 
-	selectCountCql(opts?: {where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>>}): string;
+	selectCountCql(opts?: { where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>> }): string;
 
-	selectCount(opts?: {where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>>}): QueryTemplate;
+	selectCount(opts?: { where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>> }): QueryTemplate;
 
 	insertWithNow<NowCol extends ColumnName<Row>>(row: Omit<Row, NowCol>, nowColumn: NowCol): PreparedQuery;
 
 	patchByPkWithTtl(
 		pk: Pick<Row, PK>,
-		patch: Partial<{[K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>>}>,
+		patch: Partial<{ [K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>> }>,
 		ttlSeconds: number,
 	): PreparedQuery;
 
 	patchByPkWithTtlParam(
 		pk: Pick<Row, PK>,
-		patch: Partial<{[K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>>}>,
+		patch: Partial<{ [K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>> }>,
 		ttlParamName: string,
 		ttlValue: number,
 	): PreparedQuery;
@@ -631,8 +631,8 @@ export interface Table<Row extends object, PK extends ColumnName<Row>, PartKey e
 
 	patchByPkIf<CondCol extends Exclude<ColumnName<Row>, PK>>(
 		pk: Pick<Row, PK>,
-		patch: Partial<{[K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>>}>,
-		condition: {col: CondCol; expectedParam: string; expectedValue: RowValue<Row, CondCol>},
+		patch: Partial<{ [K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>> }>,
+		condition: { col: CondCol; expectedParam: string; expectedValue: RowValue<Row, CondCol> },
 	): PreparedQuery;
 
 	where: {
@@ -719,7 +719,7 @@ WHERE ${pk.map((k) => `${k} = :${k}`).join(' AND ')};
 		return params;
 	}
 
-	function buildDynamicUpsertCql(row: Row): {cql: string; params: CassandraParams} {
+	function buildDynamicUpsertCql(row: Row): { cql: string; params: CassandraParams } {
 		const presentColumns: Array<string> = [];
 		const params: CassandraParams = {};
 
@@ -740,7 +740,7 @@ WHERE ${pk.map((k) => `${k} = :${k}`).join(' AND ')};
 `
 				: `INSERT INTO ${def.name} (${pk.join(', ')}) VALUES (${pk.map((c) => `:${c}`).join(', ')});`;
 
-		return {cql, params};
+		return { cql, params };
 	}
 
 	function selectCql(
@@ -786,7 +786,7 @@ WHERE ${pk.map((k) => `${k} = :${k}`).join(' AND ')};
 
 	function patchByPk(
 		pkValues: Pick<Row, PK>,
-		patch: Partial<{[K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>>}>,
+		patch: Partial<{ [K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>> }>,
 	): PreparedQuery {
 		const patchKeys = Object.keys(patch) as Array<Exclude<ColumnName<Row>, PK>>;
 		if (patchKeys.length === 0) {
@@ -809,7 +809,7 @@ WHERE ${pk.map((k) => `${k} = :${k}`).join(' AND ')};
 
 	const deleteByPkCql = `DELETE FROM ${def.name} WHERE ${pk.map((k) => `${k} = :${k}`).join(' AND ')};`;
 
-	function deleteCql(opts: {where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>>} = {}): string {
+	function deleteCql(opts: { where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>> } = {}): string {
 		let where = '';
 		if (opts.where) {
 			const clauses = Array.isArray(opts.where) ? opts.where : [opts.where];
@@ -822,7 +822,7 @@ WHERE ${pk.map((k) => `${k} = :${k}`).join(' AND ')};
 		return `DELETE FROM ${def.name}${where};`;
 	}
 
-	function del(opts: {where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>>} = {}): QueryTemplate {
+	function del(opts: { where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>> } = {}): QueryTemplate {
 		const cql = deleteCql(opts);
 		return {
 			cql,
@@ -850,7 +850,7 @@ WHERE ${pk.map((k) => `${k} = :${k}`).join(' AND ')};
 
 	const insertBaseCql = `INSERT INTO ${def.name} (${columns.join(', ')}) VALUES (${columns.map((c) => `:${c}`).join(', ')})`;
 
-	function insertCql(opts: {ttlParam?: string} = {}): string {
+	function insertCql(opts: { ttlParam?: string } = {}): string {
 		if (opts.ttlParam) return `${insertBaseCql} USING TTL :${opts.ttlParam};`;
 		return `${insertBaseCql};`;
 	}
@@ -878,7 +878,7 @@ WHERE ${pk.map((k) => `${k} = :${k}`).join(' AND ')};
 		return prepared(cql, paramsFromRow(row));
 	}
 
-	function selectCountCql(opts: {where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>>} = {}): string {
+	function selectCountCql(opts: { where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>> } = {}): string {
 		let where = '';
 		if (opts.where) {
 			const clauses = Array.isArray(opts.where) ? opts.where : [opts.where];
@@ -889,7 +889,7 @@ WHERE ${pk.map((k) => `${k} = :${k}`).join(' AND ')};
 		return `SELECT COUNT(*) as count FROM ${def.name}${where};`;
 	}
 
-	function selectCount(opts: {where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>>} = {}): QueryTemplate {
+	function selectCount(opts: { where?: WhereExpr<Row> | ReadonlyArray<WhereExpr<Row>> } = {}): QueryTemplate {
 		const cql = selectCountCql(opts);
 		return {
 			cql,
@@ -919,7 +919,7 @@ WHERE ${pk.map((k) => `${k} = :${k}`).join(' AND ')};
 
 	function patchByPkWithTtl(
 		pkValues: Pick<Row, PK>,
-		patch: Partial<{[K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>>}>,
+		patch: Partial<{ [K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>> }>,
 		ttlSeconds: number,
 	): PreparedQuery {
 		const patchKeys = Object.keys(patch) as Array<Exclude<ColumnName<Row>, PK>>;
@@ -943,7 +943,7 @@ WHERE ${pk.map((k) => `${k} = :${k}`).join(' AND ')};
 
 	function patchByPkWithTtlParam(
 		pkValues: Pick<Row, PK>,
-		patch: Partial<{[K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>>}>,
+		patch: Partial<{ [K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>> }>,
 		ttlParamName: string,
 		ttlValue: number,
 	): PreparedQuery {
@@ -993,8 +993,8 @@ WHERE ${pk.map((k) => `${k} = :${k}`).join(' AND ')};
 
 	function patchByPkIf<CondCol extends Exclude<ColumnName<Row>, PK>>(
 		pkValues: Pick<Row, PK>,
-		patch: Partial<{[K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>>}>,
-		condition: {col: CondCol; expectedParam: string; expectedValue: RowValue<Row, CondCol>},
+		patch: Partial<{ [K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>> }>,
+		condition: { col: CondCol; expectedParam: string; expectedValue: RowValue<Row, CondCol> },
 	): PreparedQuery {
 		const patchKeys = Object.keys(patch) as Array<Exclude<ColumnName<Row>, PK>>;
 		if (patchKeys.length === 0) {
@@ -1037,7 +1037,7 @@ IF ${condition.col} = :${condition.expectedParam};
 			if (hasAllColumns) {
 				return prepared(updateAll, paramsFromRow(row));
 			}
-			const {cql, params} = buildDynamicUpsertCql(row);
+			const { cql, params } = buildDynamicUpsertCql(row);
 			return prepared(cql, params);
 		},
 
@@ -1066,54 +1066,63 @@ IF ${condition.col} = :${condition.expectedParam};
 		patchByPkIf,
 
 		where: {
-			eq: (col, param) => ({kind: 'eq', col, param: param ?? col}),
-			in: (col, param) => ({kind: 'in', col, param}),
-			lt: (col, param) => ({kind: 'lt', col, param: param ?? col}),
-			gt: (col, param) => ({kind: 'gt', col, param: param ?? col}),
-			lte: (col, param) => ({kind: 'lte', col, param: param ?? col}),
-			gte: (col, param) => ({kind: 'gte', col, param: param ?? col}),
-			tokenGt: (col, param) => ({kind: 'tokenGt', col, param}),
-			tupleGt: (cols, params) => ({kind: 'tupleGt', cols, params}),
+			eq: (col, param) => ({ kind: 'eq', col, param: param ?? col }),
+			in: (col, param) => ({ kind: 'in', col, param }),
+			lt: (col, param) => ({ kind: 'lt', col, param: param ?? col }),
+			gt: (col, param) => ({ kind: 'gt', col, param: param ?? col }),
+			lte: (col, param) => ({ kind: 'lte', col, param: param ?? col }),
+			gte: (col, param) => ({ kind: 'gte', col, param: param ?? col }),
+			tokenGt: (col, param) => ({ kind: 'tokenGt', col, param }),
+			tupleGt: (cols, params) => ({ kind: 'tupleGt', cols, params }),
 		},
 	};
 }
 
 const DEFAULT_LWT_RETRIES = 8;
 
-export type PatchObject = {[key: string]: DbOp<unknown>};
+export type PatchObject = { [key: string]: DbOp<unknown> };
 
 export async function executeVersionedUpdate<
-	Row extends {version?: number | null},
+	Row extends { version?: number | null },
 	PK extends ColumnName<Row>,
 	Patch extends PatchObject = PatchObject,
 >(
 	fetchCurrent: () => Promise<Row | null>,
-	buildPatch: (current: Row | null) => {pk: Record<string, unknown>; patch: Patch},
+	buildPatch: (current: Row | null) => { pk: Record<string, unknown>; patch: Patch },
 	table: Table<Row, PK>,
-	opts?: {maxRetries?: number; onFailure?: 'throw' | 'log' | 'silent'},
-): Promise<{applied: boolean; finalVersion: number | null}> {
+	opts?: { maxRetries?: number; onFailure?: 'throw' | 'log' | 'silent' },
+): Promise<{ applied: boolean; finalVersion: number | null }> {
 	const maxRetries = opts?.maxRetries ?? DEFAULT_LWT_RETRIES;
 
 	for (let i = 0; i < maxRetries; i++) {
-		const current = await fetchCurrent();
-		const currentVersion = current?.version ?? null;
-		const newVersion = (currentVersion ?? 0) + 1;
+		try {
+			const current = await fetchCurrent();
+			const currentVersion = current?.version ?? null;
+			const newVersion = (currentVersion ?? 0) + 1;
 
-		const {pk, patch} = buildPatch(current);
+			const { pk, patch } = buildPatch(current);
 
-		const q = table.patchByPkIf(
-			pk as Pick<Row, PK>,
-			{...patch, version: Db.set(newVersion)} as Partial<{[K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>>}>,
-			{
-				col: 'version' as Exclude<ColumnName<Row>, PK>,
-				expectedParam: 'prev_version',
-				expectedValue: currentVersion as RowValue<Row, Exclude<ColumnName<Row>, PK>>,
-			},
-		);
+			const q = table.patchByPkIf(
+				pk as Pick<Row, PK>,
+				{ ...patch, version: Db.set(newVersion) } as Partial<{ [K in Exclude<ColumnName<Row>, PK>]: DbOp<RowValue<Row, K>> }>,
+				{
+					col: 'version' as Exclude<ColumnName<Row>, PK>,
+					expectedParam: 'prev_version',
+					expectedValue: currentVersion as RowValue<Row, Exclude<ColumnName<Row>, PK>>,
+				},
+			);
 
-		const res = await executeConditional(q);
-		if (res.applied) {
-			return {applied: true, finalVersion: newVersion};
+			const res = await executeConditional(q);
+			if (res.applied) {
+				return { applied: true, finalVersion: newVersion };
+			}
+		} catch (err: unknown) {
+			if (opts?.onFailure === 'throw') {
+				throw err;
+			} else if (opts?.onFailure !== 'silent') {
+				Logger.warn({ err }, 'LWT update threw an error');
+			}
+			return { applied: false, finalVersion: null };
 		}
 	}
 
@@ -1123,7 +1132,7 @@ export async function executeVersionedUpdate<
 		Logger.warn({}, 'LWT update failed after max retries');
 	}
 
-	return {applied: false, finalVersion: null};
+	return { applied: false, finalVersion: null };
 }
 
 export function buildPatchFromData<Row extends object>(

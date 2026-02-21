@@ -31,6 +31,9 @@ a {
 }
 
 :root {
+	--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+	--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
 	--saturation-factor: 1;
 	--user-select: auto;
 

@@ -18,20 +18,20 @@
  */
 
 import assert from 'node:assert/strict';
-import type {Context} from 'hono';
-import {HTTPException} from 'hono/http-exception';
+import type { Context } from 'hono';
+import { HTTPException } from 'hono/http-exception';
 import sharp from 'sharp';
 import * as v from 'valibot';
-import {Config} from '~/Config';
-import {toBodyData} from '~/lib/BinaryUtils';
-import {parseRange, setHeaders} from '~/lib/HttpUtils';
-import {processImage} from '~/lib/ImageProcessing';
-import type {InMemoryCoalescer} from '~/lib/InMemoryCoalescer';
-import type {HonoEnv} from '~/lib/MediaTypes';
-import {MEDIA_TYPES} from '~/lib/MediaTypes';
-import {getMimeType} from '~/lib/MimeTypeUtils';
-import {readS3Object} from '~/lib/S3Utils';
-import {ImageParamSchema, ImageQuerySchema} from '~/schemas/ValidationSchemas';
+import { Config } from '~/Config';
+import { toBodyData } from '~/lib/BinaryUtils';
+import { parseRange, setHeaders } from '~/lib/HttpUtils';
+import { processImage } from '~/lib/ImageProcessing';
+import type { InMemoryCoalescer } from '~/lib/InMemoryCoalescer';
+import type { HonoEnv } from '~/lib/MediaTypes';
+import { MEDIA_TYPES } from '~/lib/MediaTypes';
+import { getMimeType } from '~/lib/MimeTypeUtils';
+import { readS3Object } from '~/lib/S3Utils';
+import { ImageParamSchema, ImageQuerySchema } from '~/schemas/ValidationSchemas';
 
 const stripAnimationPrefix = (hash: string) => (hash.startsWith('a_') ? hash.substring(2) : hash);
 
@@ -46,10 +46,10 @@ const processImageRequest = async (params: {
 	quality: string;
 	animated: boolean;
 }): Promise<Response> => {
-	const {coalescer, ctx, cacheKey, s3Key, ext, aspectRatio, size, quality, animated} = params;
+	const { coalescer, ctx, cacheKey, s3Key, ext, aspectRatio, size, quality, animated } = params;
 
 	const result = await coalescer.coalesce(cacheKey, async () => {
-		const {data} = await readS3Object(Config.AWS_S3_BUCKET_CDN, s3Key);
+		const { data } = await readS3Object(Config.AWS_S3_BUCKET_CDN, s3Key);
 		assert(data instanceof Buffer);
 
 		const metadata = await sharp(data).metadata();
@@ -71,7 +71,7 @@ const processImageRequest = async (params: {
 		});
 
 		const mimeType = getMimeType(Buffer.from(''), `image.${ext}`) || 'application/octet-stream';
-		return {data: image, contentType: mimeType};
+		return { data: image, contentType: mimeType };
 	});
 
 	const range = parseRange(ctx.req.header('Range') ?? '', result.data.length);
@@ -83,8 +83,8 @@ const processImageRequest = async (params: {
 
 export const createImageRouteHandler = (coalescer: InMemoryCoalescer) => {
 	return async (ctx: Context<HonoEnv>, pathPrefix: string, aspectRatio = 0): Promise<Response> => {
-		const {id, filename} = v.parse(ImageParamSchema, ctx.req.param());
-		const {size, quality, animated} = v.parse(ImageQuerySchema, ctx.req.query());
+		const { id, filename } = v.parse(ImageParamSchema, ctx.req.param());
+		const { size, quality, animated } = v.parse(ImageQuerySchema, ctx.req.query());
 
 		const parts = filename.split('.');
 		if (parts.length !== 2 || !MEDIA_TYPES.IMAGE.extensions.includes(parts[1])) {
@@ -96,14 +96,14 @@ export const createImageRouteHandler = (coalescer: InMemoryCoalescer) => {
 		const cacheKey = `${pathPrefix}_${id}_${hash}_${ext}_${size}_${quality}_${aspectRatio}_${animated}`;
 		const s3Key = `${pathPrefix}/${id}/${strippedHash}`;
 
-		return processImageRequest({coalescer, ctx, cacheKey, s3Key, ext, aspectRatio, size, quality, animated});
+		return processImageRequest({ coalescer, ctx, cacheKey, s3Key, ext, aspectRatio, size, quality, animated });
 	};
 };
 
 export const createGuildMemberImageRouteHandler = (coalescer: InMemoryCoalescer) => {
 	return async (ctx: Context<HonoEnv>, pathPrefix: string, aspectRatio = 0): Promise<Response> => {
-		const {guild_id, user_id, filename} = ctx.req.param();
-		const {size, quality, animated} = v.parse(ImageQuerySchema, ctx.req.query());
+		const { guild_id, user_id, filename } = ctx.req.param();
+		const { size, quality, animated } = v.parse(ImageQuerySchema, ctx.req.query());
 
 		const parts = filename.split('.');
 		if (parts.length !== 2 || !MEDIA_TYPES.IMAGE.extensions.includes(parts[1])) {
@@ -115,7 +115,7 @@ export const createGuildMemberImageRouteHandler = (coalescer: InMemoryCoalescer)
 		const cacheKey = `${pathPrefix}_${guild_id}_${user_id}_${hash}_${ext}_${size}_${quality}_${aspectRatio}_${animated}`;
 		const s3Key = `guilds/${guild_id}/users/${user_id}/${pathPrefix}/${strippedHash}`;
 
-		return processImageRequest({coalescer, ctx, cacheKey, s3Key, ext, aspectRatio, size, quality, animated});
+		return processImageRequest({ coalescer, ctx, cacheKey, s3Key, ext, aspectRatio, size, quality, animated });
 	};
 };
 
@@ -130,10 +130,10 @@ const processSimpleImageRequest = async (params: {
 	quality: string;
 	animated: boolean;
 }): Promise<Response> => {
-	const {coalescer, ctx, cacheKey, s3Key, ext, aspectRatio, size, quality, animated} = params;
+	const { coalescer, ctx, cacheKey, s3Key, ext, aspectRatio, size, quality, animated } = params;
 
 	const result = await coalescer.coalesce(cacheKey, async () => {
-		const {data} = await readS3Object(Config.AWS_S3_BUCKET_CDN, s3Key);
+		const { data } = await readS3Object(Config.AWS_S3_BUCKET_CDN, s3Key);
 		assert(data instanceof Buffer);
 
 		const metadata = await sharp(data).metadata();
@@ -146,10 +146,10 @@ const processSimpleImageRequest = async (params: {
 		const height = Math.min(requestedHeight, metadata.height || 0);
 
 		const shouldAnimate = ext === 'gif' ? true : ext === 'webp' && animated;
-		const image = await sharp(data, {animated: shouldAnimate})
+		const image = await sharp(data, { animated: shouldAnimate })
 			.resize(width, height, {
 				fit: 'contain',
-				background: {r: 255, g: 255, b: 255, alpha: 0},
+				background: { r: 255, g: 255, b: 255, alpha: 0 },
 				withoutEnlargement: true,
 			})
 			.toFormat(ext as keyof sharp.FormatEnum, {
@@ -158,7 +158,7 @@ const processSimpleImageRequest = async (params: {
 			.toBuffer();
 
 		const mimeType = getMimeType(Buffer.from(''), `image.${ext}`) || 'application/octet-stream';
-		return {data: image, contentType: mimeType};
+		return { data: image, contentType: mimeType };
 	});
 
 	const range = parseRange(ctx.req.header('Range') ?? '', result.data.length);
@@ -170,8 +170,13 @@ const processSimpleImageRequest = async (params: {
 
 export const createSimpleImageRouteHandler = (coalescer: InMemoryCoalescer) => {
 	return async (ctx: Context<HonoEnv>, pathPrefix: string, aspectRatio = 0): Promise<Response> => {
-		const {id} = ctx.req.param();
-		const {size, quality, animated} = v.parse(ImageQuerySchema, ctx.req.query());
+		const params = ctx.req.param();
+		const id = params.id || params.filename;
+		const { size, quality, animated } = v.parse(ImageQuerySchema, ctx.req.query());
+
+		if (!id) {
+			throw new HTTPException(400);
+		}
 
 		const parts = id.split('.');
 		if (parts.length !== 2 || !MEDIA_TYPES.IMAGE.extensions.includes(parts[1])) {
@@ -182,6 +187,6 @@ export const createSimpleImageRouteHandler = (coalescer: InMemoryCoalescer) => {
 		const cacheKey = `${pathPrefix}_${filename}_${ext}_${size}_${quality}_${aspectRatio}_${animated}`;
 		const s3Key = `${pathPrefix}/${filename}`;
 
-		return processSimpleImageRequest({coalescer, ctx, cacheKey, s3Key, ext, aspectRatio, size, quality, animated});
+		return processSimpleImageRequest({ coalescer, ctx, cacheKey, s3Key, ext, aspectRatio, size, quality, animated });
 	};
 };

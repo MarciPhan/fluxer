@@ -894,8 +894,8 @@ msgstr "<0/> inició una llamada."
 
 #. placeholder {0}: guild.name
 #: src/components/layout/GuildLayout.tsx:131
-msgid "<0>{0}</0> is currently only accessible to Fluxer staff members"
-msgstr "<0>{0}</0> actualmente solo es accesible para miembros del personal de Fluxer"
+msgid "<0>{0}</0> is currently only accessible to NePornu staff members"
+msgstr "<0>{0}</0> actualmente solo es accesible para miembros del personal de NePornu"
 
 #. placeholder {0}: targetUser.tag
 #: src/components/modals/TimeoutMemberSheet.tsx:118
@@ -1201,8 +1201,8 @@ msgstr "30 segundos"
 msgid "4 hours"
 msgstr "4 horas"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:196
-#: src/components/modals/FluxerTagChangeModal.tsx:222
+#: src/components/modals/NePornuTagChangeModal.tsx:196
+#: src/components/modals/NePornuTagChangeModal.tsx:222
 msgid "4-digit tag"
 msgstr "Etiqueta de 4 dígitos"
 
@@ -1382,6 +1382,14 @@ msgstr "Acceder a las herramientas de desarrollo"
 msgid "Access granted"
 msgstr "Acceso concedido"
 
+#: src/components/modals/tabs/VoiceTab.tsx:212
+msgid "Access is needed to list the available microphones and speakers."
+msgstr ""
+
+#: src/components/modals/tabs/VideoTab.tsx:127
+msgid "Access is needed to your camera before we can list it here."
+msgstr ""
+
 #: src/components/modals/channelTabs/ChannelPermissionsTab.tsx:723
 #: src/components/modals/channelTabs/ChannelPermissionsTab.tsx:864
 msgid "Access Overrides"
@@ -1416,6 +1424,11 @@ msgstr "La cuenta parece existir únicamente para enviar spam"
 #: src/components/modals/ClaimAccountModal.tsx:107
 msgid "Account claimed successfully"
 msgstr "Cuenta reclamada exitosamente"
+
+#: src/components/popouts/UserProfileShared.tsx:97
+#: src/components/popouts/UserProfileShared.tsx:128
+msgid "Account Created"
+msgstr "Account Created"
 
 #: src/components/modals/tabs/DeveloperOptionsTab/AccountPremiumTab.tsx:54
 msgid "Account State Overrides"
@@ -1939,8 +1952,8 @@ msgid "All Status Types"
 msgstr "Todos los tipos de estado"
 
 #: src/components/modals/tabs/LanguageTab.tsx:193
-msgid "All translations are currently LLM-generated with minimal human revision. We'd love to get real people to help us localize Fluxer into your language! To do so, send an email to <0>i18n@fluxer.app</0> and we'll be happy to accept your contributions."
-msgstr "Todas las traducciones son actualmente generadas por LLM con mínima revisión humana. ¡Nos encantaría que personas reales nos ayuden a localizar Fluxer en tu idioma! Para hacerlo, envía un correo electrónico a <0>i18n@fluxer.app</0> y estaremos encantados de aceptar tus contribuciones."
+msgid "All translations are currently LLM-generated with minimal human revision. We'd love to get real people to help us localize NePornu into your language! To do so, send an email to <0>i18n@fluxer.app</0> and we'll be happy to accept your contributions."
+msgstr "Todas las traducciones son actualmente generadas por LLM con mínima revisión humana. ¡Nos encantaría que personas reales nos ayuden a localizar NePornu en tu idioma! Para hacerlo, envía un correo electrónico a <0>i18n@fluxer.app</0> y estaremos encantados de aceptar tus contribuciones."
 
 #: src/components/modals/guildTabs/GuildAuditLogTab.tsx:201
 #: src/components/modals/guildTabs/GuildAuditLogTab.tsx:365
@@ -1999,18 +2012,6 @@ msgstr "Permitir mensajes directos de otros miembros en esta comunidad"
 msgid "Allow Flexible Text Channel Names"
 msgstr "Permitir nombres flexibles de canales de texto"
 
-#: src/components/modals/tabs/VideoTab.tsx:122
-msgid "Allow Fluxer to access your camera in System Settings → Privacy & Security → Camera to preview and select devices."
-msgstr "Permite que Fluxer acceda a tu cámara en Configuración del sistema → Privacidad y seguridad → Cámara para previsualizar y seleccionar dispositivos."
-
-#: src/components/modals/tabs/VoiceTab.tsx:202
-msgid "Allow Fluxer to access your microphone in System Settings → Privacy & Security → Microphone."
-msgstr "Permite que Fluxer acceda a tu micrófono en Configuración del sistema → Privacidad y seguridad → Micrófono."
-
-#: src/components/modals/tabs/VoiceTab.tsx:206
-msgid "Allow Fluxer to access your microphone. Check your browser address bar or settings to enable permissions."
-msgstr "Permite que Fluxer acceda a tu micrófono. Revisa la barra de direcciones o configuración de tu navegador para habilitar los permisos."
-
 #: src/components/modals/tabs/PrivacySafetyTab/ConnectionsTab.tsx:96
 msgid "Allow for all communities"
 msgstr "Permitir para todas las comunidades"
@@ -2054,6 +2055,18 @@ msgstr "Permitir seleccionar todo el contenido de texto en la aplicación."
 #: src/components/modals/tabs/AccessibilityTab/VisualTab.tsx:103
 msgid "Allow selecting all text content in the app. This setting is disabled on mobile to prevent interference with touch interactions."
 msgstr "Permitir seleccionar todo el contenido de texto en la aplicación. Esta configuración está desactivada en móviles para evitar interferencias con las interacciones táctiles."
+
+#: src/components/modals/tabs/VoiceTab.tsx:202
+msgid "Allow the app to access your microphone in System Settings → Privacy & Security → Microphone."
+msgstr ""
+
+#: src/components/modals/tabs/VoiceTab.tsx:206
+msgid "Allow the app to access your microphone. Check your browser address bar or settings to enable permissions."
+msgstr ""
+
+#: src/components/modals/tabs/VideoTab.tsx:122
+msgid "Allow the application to access your camera in System Settings → Privacy & Security → Camera to preview and select devices."
+msgstr ""
 
 #: src/components/modals/tabs/FeatureFlagsTab.tsx:43
 msgid "Allow users to create, install, and manage custom emoji and sticker packs."
@@ -2293,6 +2306,11 @@ msgstr "Estado de la aplicación"
 msgid "App zoom level"
 msgstr "Nivel de zoom de la app"
 
+#: src/Constants.tsx:148
+#: src/Constants.tsx:149
+msgid "Appearing offline"
+msgstr "Appearing offline"
+
 #: src/components/channel/AutocompleteCommand.tsx:44
 msgid "Appends {content} to your message."
 msgstr "Agrega {content} a tu mensaje."
@@ -2300,6 +2318,10 @@ msgstr "Agrega {content} a tu mensaje."
 #: src/components/modals/utils/settingsConstants.tsx:117
 msgid "Application"
 msgstr "Aplicación"
+
+#: src/components/icons/AppIcon.tsx:31
+msgid "Application icon"
+msgstr "Application icon"
 
 #: src/components/modals/tabs/ApplicationsTab/application-detail/ApplicationHeader.tsx:56
 msgid "Application ID"
@@ -2317,6 +2339,10 @@ msgstr "Nombre de la aplicación"
 #: src/components/modals/tabs/ApplicationsTab/application-detail/ApplicationInfoSection.tsx:52
 msgid "Application name is required"
 msgstr "El nombre de la aplicación es obligatorio"
+
+#: src/components/icons/AppSymbol.tsx:31
+msgid "Application symbol"
+msgstr "Application symbol"
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationDetail.tsx:266
 msgid "Application updated successfully"
@@ -2792,8 +2818,8 @@ msgid "Automatically play GIFs"
 msgstr "Reproducir GIFs automáticamente"
 
 #: src/components/modals/tabs/AccessibilityTab/AnimationTab.tsx:102
-msgid "Automatically play GIFs when Fluxer is focused"
-msgstr "Reproducir GIFs automáticamente cuando Fluxer está enfocado"
+msgid "Automatically play GIFs when NePornu is focused"
+msgstr "Reproducir GIFs automáticamente cuando NePornu está enfocado"
 
 #: src/components/modals/guildTabs/GuildModerationTab.tsx:211
 msgid "Automatically screen messages for explicit content in non-NSFW channels."
@@ -3029,6 +3055,10 @@ msgstr "Configuración básica y URI de redirección permitidos."
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:90
 msgid "Basic Text Inputs"
 msgstr "Entradas de texto básicas"
+
+#: src/Constants.tsx:147
+msgid "Be right back"
+msgstr "Be right back"
 
 #: src/components/modals/guildTabs/GuildAuditLogTab.utils.tsx:451
 msgid "Because {reason}."
@@ -3334,8 +3364,8 @@ msgid "Buying Visionary will cancel your current {currentAccessLabel} immediatel
 msgstr "Comprar Visionary cancelará tu {currentAccessLabel} actual inmediatamente. Es una compra única con acceso de por vida."
 
 #: src/components/modals/AddGuildModal.tsx:356
-msgid "By creating a community, you agree to follow and uphold the <0>Fluxer Community Guidelines</0>."
-msgstr "Al crear una comunidad, aceptas seguir y respetar las <0>Pautas de la comunidad de Fluxer</0>."
+msgid "By creating a community, you agree to follow and uphold the <0>NePornu Community Guidelines</0>."
+msgstr "Al crear una comunidad, aceptas seguir y respetar las <0>Pautas de la comunidad de NePornu</0>."
 
 #: src/components/modals/components/PurchaseDisclaimer.tsx:39
 msgid "By purchasing, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@fluxer.app</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
@@ -3474,8 +3504,8 @@ msgstr "Configuración de cámara"
 #: src/components/modals/EmailChangeModal.tsx:262
 #: src/components/modals/EmailChangeModal.tsx:291
 #: src/components/modals/ExternalLinkWarningModal.tsx:94
-#: src/components/modals/FluxerTagChangeModal.tsx:112
-#: src/components/modals/FluxerTagChangeModal.tsx:253
+#: src/components/modals/NePornuTagChangeModal.tsx:112
+#: src/components/modals/NePornuTagChangeModal.tsx:253
 #: src/components/modals/ForwardModal.tsx:359
 #: src/components/modals/guildTabs/GuildBansTab.tsx:101
 #: src/components/modals/guildTabs/GuildRolesTab.tsx:615
@@ -3515,7 +3545,7 @@ msgstr "Cancelar"
 msgid "Cancel Friend Request"
 msgstr "Cancelar solicitud de amistad"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:107
+#: src/components/modals/NePornuTagChangeModal.tsx:107
 msgid "Cancel if you want to choose a different username instead."
 msgstr "Cancela si quieres elegir un nombre de usuario diferente."
 
@@ -3647,15 +3677,6 @@ msgstr "Cambiar correo electrónico"
 msgid "Change emoji"
 msgstr "Cambiar emoji"
 
-#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:52
-#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:62
-msgid "Change FluxerTag"
-msgstr "Cambiar FluxerTag"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:153
-msgid "Change FluxerTag form"
-msgstr "Formulario para cambiar FluxerTag"
-
 #: src/components/bottomsheets/DMBottomSheet.tsx:435
 #: src/components/uikit/ContextMenu/items/RelationshipMenuItems.tsx:154
 msgid "Change Friend Nickname"
@@ -3712,6 +3733,15 @@ msgstr "Cambiar propietario"
 msgid "Change Password"
 msgstr "Cambiar contraseña"
 
+#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:52
+#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:62
+msgid "Change Tag"
+msgstr "Change Tag"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:153
+msgid "Change Tag form"
+msgstr ""
+
 #: src/components/modals/EmailChangeModal.tsx:184
 msgid "Change your email"
 msgstr "Cambia tu correo electrónico"
@@ -3719,10 +3749,6 @@ msgstr "Cambia tu correo electrónico"
 #: src/components/modals/utils/settingsSearchIndex.ts:96
 msgid "Change your email address"
 msgstr "Cambiar tu dirección de correo electrónico"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:154
-msgid "Change your FluxerTag"
-msgstr "Cambia tu FluxerTag"
 
 #: src/components/channel/AutocompleteCommand.tsx:49
 msgid "Change your nickname in this community."
@@ -3739,6 +3765,10 @@ msgstr "Cambia tu contraseña para mantener tu cuenta segura"
 #: src/components/modals/utils/settingsSearchIndex.ts:45
 msgid "Change your profile picture"
 msgstr "Cambiar tu foto de perfil"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:154
+msgid "Change your Tag"
+msgstr "Change your Tag"
 
 #: src/components/modals/utils/settingsSearchIndex.ts:59
 msgid "Change your username"
@@ -3935,9 +3965,9 @@ msgstr "Canal: {0}."
 msgid "Channels"
 msgstr "Canales"
 
-#: src/Constants.tsx:143
-msgid "Charged up on 1.21 gigawatts, ready to talk"
-msgstr "Cargado con 1.21 gigawatts, listo para hablar"
+#: src/Constants.tsx:145
+msgid "Charged up, ready to talk"
+msgstr "Charged up, ready to talk"
 
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildEmbedSplashUploadField.tsx:79
 msgid "Chat Embed Background"
@@ -3948,9 +3978,9 @@ msgid "Chat font scaling"
 msgstr "Escalado de fuente del chat"
 
 #: src/components/BootstrapErrorScreen.tsx:57
-#: src/components/NetworkErrorScreen.tsx:45
-msgid "Check our <0>Bluesky (@fluxer.app)</0> for status updates."
-msgstr "Revisa nuestro <0>Bluesky (@fluxer.app)</0> para actualizaciones de estado."
+#: src/components/NetworkErrorScreen.tsx:44
+msgid "Check our <0>status page (status.nepornu.cz)</0> for status updates."
+msgstr "Check our <0>status page (status.nepornu.cz)</0> for status updates."
 
 #: src/components/modals/ShareThemeModal.tsx:117
 msgid "Check out my custom theme!"
@@ -4060,8 +4090,8 @@ msgid "Choose what {clientLabel} can do in your community. Uncheck any permissio
 msgstr "Elige lo que {clientLabel} puede hacer en tu comunidad. Desmarca cualquier permiso que no quieras otorgar."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:105
-msgid "Choose what Fluxer remembers about your window between restarts and reloads on this device."
-msgstr "Elige lo que Fluxer recuerda sobre tu ventana entre reinicios y recargas en este dispositivo."
+msgid "Choose what NePornu remembers about your window between restarts and reloads on this device."
+msgstr "Elige lo que NePornu recuerda sobre tu ventana entre reinicios y recargas en este dispositivo."
 
 #: src/components/modals/guildTabs/GuildModerationTab.tsx:183
 msgid "Choose what members must have before they can post or DM community members."
@@ -4136,8 +4166,8 @@ msgid "Claim your account to call"
 msgstr "Reclama tu cuenta para llamar"
 
 #: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:49
-msgid "Claim your account to change your FluxerTag"
-msgstr "Reclama tu cuenta para cambiar tu FluxerTag"
+msgid "Claim your account to change your Tag"
+msgstr "Claim your account to change your Tag"
 
 #: src/components/modals/tabs/ApplicationsTab/index.tsx:146
 msgid "Claim your account to create applications."
@@ -4161,13 +4191,16 @@ msgstr "Reclama tu cuenta para unirte a canales de voz que no posees."
 #: src/components/modals/components/plutonium/GiftSection.tsx:61
 #: src/components/modals/components/plutonium/PricingSection.tsx:63
 #: src/components/modals/components/plutonium/VisionarySection.tsx:62
-#: src/components/modals/components/PlutoniumContent.tsx:99
-msgid "Claim your account to purchase Fluxer Plutonium."
-msgstr "Reclama tu cuenta para comprar Fluxer Plutonium."
+msgid "Claim your account to purchase NePornu Plutonium."
+msgstr "Reclama tu cuenta para comprar NePornu Plutonium."
 
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:112
-msgid "Claim your account to purchase or redeem Fluxer Plutonium."
-msgstr "Reclama tu cuenta para comprar o canjear Fluxer Plutonium."
+msgid "Claim your account to purchase or redeem NePornu Plutonium."
+msgstr "Reclama tu cuenta para comprar o canjear NePornu Plutonium."
+
+#: src/components/modals/components/PlutoniumContent.tsx:99
+msgid "Claim your account to purchase Plutonium."
+msgstr ""
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:239
 msgid "Claim your account to redeem or manage Plutonium gift codes."
@@ -4290,8 +4323,8 @@ msgid "Click \"Create Code\" to generate your first code."
 msgstr "Haz clic en \"Crear código\" para generar tu primer código."
 
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:71
-msgid "Click \"Open Settings\" to open System Settings, then enable Fluxer in Input Monitoring."
-msgstr "Haz clic en \"Abrir configuración\" para abrir la Configuración del sistema, luego habilita Fluxer en Monitoreo de entrada."
+msgid "Click \"Open Settings\" to open System Settings, then enable NePornu in Input Monitoring."
+msgstr "Haz clic en \"Abrir configuración\" para abrir la Configuración del sistema, luego habilita NePornu en Monitoreo de entrada."
 
 #: src/components/modals/tabs/ComponentGalleryTab/ButtonsTab.tsx:58
 msgid "Click any button to see toast notifications with feedback."
@@ -4938,8 +4971,8 @@ msgstr "Los menús contextuales se pueden abrir con clic izquierdo (en botones) 
 #: src/components/modals/BackupCodesRegenerateModal.tsx:63
 #: src/components/modals/BackupCodesViewModal.tsx:66
 #: src/components/modals/DeviceRevokeModal.tsx:68
-#: src/components/modals/FluxerTagChangeModal.tsx:111
-#: src/components/modals/FluxerTagChangeModal.tsx:256
+#: src/components/modals/NePornuTagChangeModal.tsx:111
+#: src/components/modals/NePornuTagChangeModal.tsx:256
 #: src/components/modals/MfaTotpDisableModal.tsx:78
 #: src/components/modals/MfaTotpEnableModal.tsx:105
 #: src/components/modals/PasswordChangeModal.tsx:99
@@ -5147,10 +5180,9 @@ msgid "Copy File Link"
 msgstr "Copiar enlace del archivo"
 
 #: src/components/modals/tabs/BlockedUsersTab.tsx:98
-#: src/components/modals/UserProfileActionsSheet.tsx:208
 #: src/components/modals/UserProfileModal.tsx:1149
-msgid "Copy FluxerTag"
-msgstr "Copiar FluxerTag"
+msgid "Copy NePornuTag"
+msgstr "Copiar NePornuTag"
 
 #: src/components/uikit/ContextMenu/MediaContextMenu.tsx:351
 msgid "Copy GIF"
@@ -5207,6 +5239,10 @@ msgstr "Copiar enlace del mensaje"
 #: src/components/channel/sticker-picker/VirtualRow.tsx:201
 msgid "Copy Sticker ID"
 msgstr "Copiar ID del sticker"
+
+#: src/components/modals/UserProfileActionsSheet.tsx:208
+msgid "Copy Tag"
+msgstr ""
 
 #: src/components/channel/MessageActionBar.tsx:555
 #: src/components/channel/MessageActionBar.tsx:686
@@ -5327,8 +5363,8 @@ msgid "Create and manage applications and bots for your account."
 msgstr "Crear y administrar aplicaciones y bots para tu cuenta."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:119
-msgid "Create and share custom emoji and sticker packs with Fluxer Plutonium."
-msgstr "Crear y compartir paquetes de emojis y stickers personalizados con Fluxer Plutonium."
+msgid "Create and share custom emoji and sticker packs with NePornu Plutonium."
+msgstr "Crear y compartir paquetes de emojis y stickers personalizados con NePornu Plutonium."
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationCreateModal.tsx:80
 #: src/components/modals/tabs/ApplicationsTab/index.tsx:149
@@ -5437,8 +5473,8 @@ msgid "Create Webhook"
 msgstr "Crear webhook"
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationsList.tsx:43
-msgid "Create your first application to get started with the Fluxer API."
-msgstr "Crea tu primera aplicación para empezar con la API de Fluxer."
+msgid "Create your first application to get started with the NePornu API."
+msgstr "Crea tu primera aplicación para empezar con la API de NePornu."
 
 #: src/utils/PermissionUtils.tsx:254
 msgid "Create, edit, or delete channels and categories."
@@ -5597,11 +5633,6 @@ msgstr "Actualmente desestimado"
 msgid "Currently showing"
 msgstr "Actualmente mostrando"
 
-#: src/Constants.tsx:146
-#: src/Constants.tsx:147
-msgid "Currently stuck in 1885, appearing offline"
-msgstr "Actualmente atascado en 1885, apareciendo como desconectado"
-
 #: src/components/bottomsheets/ChannelBottomSheet.tsx:461
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:1047
 #: src/components/bottomsheets/DMBottomSheet.tsx:608
@@ -5721,7 +5752,7 @@ msgstr "Personalizar con CSS"
 msgid "Customize your 4-digit tag (#{discriminator}) to your liking with Plutonium"
 msgstr "Personaliza tu etiqueta de 4 dígitos (#{discriminator}) a tu gusto con Plutonium"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:246
+#: src/components/modals/NePornuTagChangeModal.tsx:246
 msgid "Customize your 4-digit tag or keep it when changing your username"
 msgstr "Personaliza tu etiqueta de 4 dígitos o consérvala al cambiar tu nombre de usuario"
 
@@ -6371,8 +6402,8 @@ msgid "Direct Message"
 msgstr "Mensaje Directo"
 
 #: src/components/channel/dm/DMList.tsx:819
-#: src/components/layout/guild-list/FluxerButton.tsx:65
-#: src/components/layout/guild-list/FluxerButton.tsx:70
+#: src/components/layout/guild-list/AppHomeButton.tsx:65
+#: src/components/layout/guild-list/AppHomeButton.tsx:70
 #: src/components/modals/GuildPrivacySettingsModal.tsx:60
 #: src/components/modals/tabs/PrivacySafetyTab/ConnectionsTab.tsx:182
 #: src/components/modals/utils/settingsSearchIndex.ts:557
@@ -6676,7 +6707,7 @@ msgstr "Notificaciones de MD"
 msgid "DM Settings"
 msgstr "Configuración de MD"
 
-#: src/Constants.tsx:131
+#: src/Constants.tsx:133
 msgid "Do Not Disturb"
 msgstr "No molestar"
 
@@ -6779,8 +6810,8 @@ msgstr "Descargar aplicación de escritorio"
 
 #: src/components/layout/guild-list/DownloadButton.tsx:46
 #: src/components/layout/guild-list/DownloadButton.tsx:50
-msgid "Download Fluxer"
-msgstr "Descargar Fluxer"
+msgid "Download NePornu"
+msgstr "Descargar NePornu"
 
 #: src/components/channel/embeds/media/MediaContainer.tsx:132
 msgid "Download media"
@@ -7500,8 +7531,8 @@ msgid "Enter the 6-digit code sent to your phone."
 msgstr "Ingresa el código de 6 dígitos enviado a tu teléfono."
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:254
-msgid "Enter the API endpoint of the Fluxer instance you want to connect to."
-msgstr "Ingresa el punto de conexión de la API de la instancia de Fluxer a la que quieres conectarte."
+msgid "Enter the API endpoint of the NePornu instance you want to connect to."
+msgstr "Ingresa el punto de conexión de la API de la instancia de NePornu a la que quieres conectarte."
 
 #: src/components/pages/ReportPage.tsx:249
 msgid "Enter the code before continuing."
@@ -8412,125 +8443,81 @@ msgstr "Banderas"
 msgid "Flexible text channel names"
 msgstr "Nombres de canales de texto flexibles"
 
-#: src/components/popouts/UserProfileShared.tsx:97
-msgid "Fluxer"
-msgstr "Fluxer"
-
-#: src/components/icons/FluxerIcon.tsx:31
-msgid "Fluxer application icon"
-msgstr "Icono de la aplicación Fluxer"
-
-#: src/components/icons/FluxerSymbol.tsx:31
-msgid "Fluxer application symbol"
-msgstr "Símbolo de la aplicación Fluxer"
-
 #: src/components/modals/tabs/NotificationsTab/PushSettings.tsx:37
-msgid "Fluxer avoids sending push notifications to your mobile devices when you are at your computer. Use this setting to control how long you need to be inactive on desktop for before you receive push notifications, ranging from 1 minute to 10 minutes."
-msgstr "Fluxer evita enviar notificaciones push a tus dispositivos móviles cuando estás en tu computadora. Usa esta configuración para controlar cuánto tiempo necesitas estar inactivo en el escritorio antes de recibir notificaciones push, desde 1 minuto hasta 10 minutos."
+msgid "NePornu avoids sending push notifications to your mobile devices when you are at your computer. Use this setting to control how long you need to be inactive on desktop for before you receive push notifications, ranging from 1 minute to 10 minutes."
+msgstr "NePornu evita enviar notificaciones push a tus dispositivos móviles cuando estás en tu computadora. Usa esta configuración para controlar cuánto tiempo necesitas estar inactivo en el escritorio antes de recibir notificaciones push, desde 1 minuto hasta 10 minutos."
 
 #: src/components/popouts/UserProfileBadges.tsx:93
-msgid "Fluxer Bug Hunter"
-msgstr "Fluxer Bug Hunter"
+msgid "NePornu Bug Hunter"
+msgstr "NePornu Bug Hunter"
 
 #: src/components/popouts/UserProfileBadges.tsx:75
-msgid "Fluxer Community Team"
-msgstr "Fluxer Community Team"
+msgid "NePornu Community Team"
+msgstr "NePornu Community Team"
 
 #: src/components/modals/tabs/DevicesTab.tsx:98
-msgid "Fluxer Desktop"
-msgstr "Fluxer Desktop"
-
-#: src/components/BootstrapErrorScreen.tsx:49
-msgid "Fluxer failed to start properly. This could be due to corrupted data or a temporary issue."
-msgstr "Fluxer no pudo iniciar correctamente. Esto podría deberse a datos corruptos o un problema temporal."
+msgid "NePornu Desktop"
+msgstr "NePornu Desktop"
 
 #: src/stores/NewDeviceMonitoringStore.tsx:186
-msgid "Fluxer has found a new audio input device named <0>{deviceName}</0>. Do you want to switch to it?"
-msgstr "Fluxer ha encontrado un nuevo dispositivo de entrada de audio llamado <0>{deviceName}</0>. ¿Quieres cambiarlo?"
+msgid "NePornu has found a new audio input device named <0>{deviceName}</0>. Do you want to switch to it?"
+msgstr "NePornu ha encontrado un nuevo dispositivo de entrada de audio llamado <0>{deviceName}</0>. ¿Quieres cambiarlo?"
 
 #: src/stores/NewDeviceMonitoringStore.tsx:191
-msgid "Fluxer has found a new audio output device named <0>{deviceName}</0>. Do you want to switch to it?"
-msgstr "Fluxer ha encontrado un nuevo dispositivo de salida de audio llamado <0>{deviceName}</0>. ¿Quieres cambiarlo?"
-
-#: src/components/popouts/UserProfileShared.tsx:128
-msgid "Fluxer Member Since"
-msgstr "Miembro de Fluxer desde"
-
-#: src/components/modals/tabs/VoiceTab.tsx:212
-msgid "Fluxer needs access to list the available microphones and speakers."
-msgstr "Fluxer necesita acceso para listar los micrófonos y altavoces disponibles."
+msgid "NePornu has found a new audio output device named <0>{deviceName}</0>. Do you want to switch to it?"
+msgstr "NePornu ha encontrado un nuevo dispositivo de salida de audio llamado <0>{deviceName}</0>. ¿Quieres cambiarlo?"
 
 #: src/components/alerts/ScreenRecordingPermissionDeniedModal.tsx:31
-msgid "Fluxer needs access to screen recording. Open System Settings → Privacy & Security → Screen Recording, allow Fluxer, and then try again."
-msgstr "Fluxer necesita acceso a la grabación de pantalla. Abre Configuración del sistema → Privacidad y seguridad → Grabación de pantalla, permite Fluxer y luego inténtalo de nuevo."
-
-#: src/components/modals/tabs/VideoTab.tsx:127
-msgid "Fluxer needs access to your camera before we can list it here."
-msgstr "Fluxer necesita acceso a tu cámara antes de que podamos listarla aquí."
+msgid "NePornu needs access to screen recording. Open System Settings → Privacy & Security → Screen Recording, allow NePornu, and then try again."
+msgstr "NePornu necesita acceso a la grabación de pantalla. Abre Configuración del sistema → Privacidad y seguridad → Grabación de pantalla, permite NePornu y luego inténtalo de nuevo."
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:43
-msgid "Fluxer needs access to your camera to enable video chat. Please grant camera permission in your browser settings and try again."
-msgstr "Fluxer necesita acceso a tu cámara para habilitar el chat de video. Por favor, otorga permiso de cámara en la configuración de tu navegador e inténtalo de nuevo."
+msgid "NePornu needs access to your camera to enable video chat. Please grant camera permission in your browser settings and try again."
+msgstr "NePornu necesita acceso a tu cámara para habilitar el chat de video. Por favor, otorga permiso de cámara en la configuración de tu navegador e inténtalo de nuevo."
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:42
-msgid "Fluxer needs access to your camera. Allow camera access in your operating system privacy settings and restart the app."
-msgstr "Fluxer necesita acceso a tu cámara. Permite el acceso a la cámara en la configuración de privacidad de tu sistema operativo y reinicia la aplicación."
+msgid "NePornu needs access to your camera. Allow camera access in your operating system privacy settings and restart the app."
+msgstr "NePornu necesita acceso a tu cámara. Permite el acceso a la cámara en la configuración de privacidad de tu sistema operativo y reinicia la aplicación."
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:32
-msgid "Fluxer needs access to your camera. Open System Settings → Privacy & Security → Camera, allow Fluxer, and then restart the app."
-msgstr "Fluxer necesita acceso a tu cámara. Abre Configuración del sistema → Privacidad y seguridad → Cámara, permite Fluxer y luego reinicia la aplicación."
+msgid "NePornu needs access to your camera. Open System Settings → Privacy & Security → Camera, allow NePornu, and then restart the app."
+msgstr "NePornu necesita acceso a tu cámara. Abre Configuración del sistema → Privacidad y seguridad → Cámara, permite NePornu y luego reinicia la aplicación."
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:44
-msgid "Fluxer needs access to your microphone to enable voice chat. Please grant microphone permission in your browser settings and try again."
-msgstr "Fluxer necesita acceso a tu micrófono para habilitar el chat de voz. Por favor, otorga permiso de micrófono en la configuración de tu navegador e inténtalo de nuevo."
+msgid "NePornu needs access to your microphone to enable voice chat. Please grant microphone permission in your browser settings and try again."
+msgstr "NePornu necesita acceso a tu micrófono para habilitar el chat de voz. Por favor, otorga permiso de micrófono en la configuración de tu navegador e inténtalo de nuevo."
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:43
-msgid "Fluxer needs access to your microphone. Allow microphone access in your operating system privacy settings and restart the app."
-msgstr "Fluxer necesita acceso a tu micrófono. Permite el acceso al micrófono en la configuración de privacidad de tu sistema operativo y reinicia la aplicación."
+msgid "NePornu needs access to your microphone. Allow microphone access in your operating system privacy settings and restart the app."
+msgstr "NePornu necesita acceso a tu micrófono. Permite el acceso al micrófono en la configuración de privacidad de tu sistema operativo y reinicia la aplicación."
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:33
-msgid "Fluxer needs access to your microphone. Open System Settings → Privacy & Security → Microphone, allow Fluxer, and then restart the app."
-msgstr "Fluxer necesita acceso a tu micrófono. Abre Configuración del sistema → Privacidad y seguridad → Micrófono, permite Fluxer y luego reinicia la aplicación."
+msgid "NePornu needs access to your microphone. Open System Settings → Privacy & Security → Microphone, allow NePornu, and then restart the app."
+msgstr "NePornu necesita acceso a tu micrófono. Abre Configuración del sistema → Privacidad y seguridad → Micrófono, permite NePornu y luego reinicia la aplicación."
 
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:64
-msgid "Fluxer needs Input Monitoring permission to keep push-to-talk and global shortcuts working while the window is in the background."
-msgstr "Fluxer necesita permiso de monitoreo de entrada para mantener el push-to-talk y los atajos globales funcionando mientras la ventana está en segundo plano."
+msgid "NePornu needs Input Monitoring permission to keep push-to-talk and global shortcuts working while the window is in the background."
+msgstr "NePornu necesita permiso de monitoreo de entrada para mantener el push-to-talk y los atajos globales funcionando mientras la ventana está en segundo plano."
 
 #: src/components/modals/InputMonitoringCTAModal.tsx:76
-msgid "Fluxer needs permission to monitor keyboard and mouse input so that <0>Push-to-Talk</0> and <1>Global Shortcuts</1> work even when you're in another app or game."
-msgstr "Fluxer necesita permiso para monitorear la entrada del teclado y el mouse para que <0>Push-to-Talk</0> y <1>Atajos Globales</1> funcionen incluso cuando estás en otra aplicación o juego."
+msgid "NePornu needs permission to monitor keyboard and mouse input so that <0>Push-to-Talk</0> and <1>Global Shortcuts</1> work even when you're in another app or game."
+msgstr "NePornu necesita permiso para monitorear la entrada del teclado y el mouse para que <0>Push-to-Talk</0> y <1>Atajos Globales</1> funcionen incluso cuando estás en otra aplicación o juego."
 
 #: src/components/popouts/UserProfileBadges.tsx:84
-msgid "Fluxer Partner"
-msgstr "Socio de Fluxer"
+msgid "NePornu Partner"
+msgstr "Socio de NePornu"
 
-#: src/components/modals/components/PlutoniumContent.tsx:193
-#: src/components/modals/PremiumModal.tsx:34
-#: src/components/modals/utils/settingsConstants.tsx:147
 #: src/components/popouts/UserProfileBadges.tsx:99
-msgid "Fluxer Plutonium"
-msgstr "Fluxer Plutonium"
+msgid "NePornu Plutonium"
+msgstr "NePornu Plutonium"
 
 #: src/components/popouts/UserProfileBadges.tsx:66
-msgid "Fluxer Staff"
-msgstr "Personal de Fluxer"
+msgid "NePornu Staff"
+msgstr "Personal de NePornu"
 
 #: src/components/modals/tabs/NotificationsTab/Notifications.tsx:114
-msgid "Fluxer uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
-msgstr "Fluxer usa notificaciones push cuando se instala como una PWA móvil. Registrarse asegura que la puerta de enlace pueda alcanzar tu dispositivo incluso cuando el navegador está en segundo plano."
-
-#: src/components/modals/FluxerTagChangeModal.tsx:170
-#: src/components/modals/tabs/ApplicationsTab/application-detail/BotProfileSection.tsx:104
-msgid "FluxerTag"
-msgstr "FluxerTag"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:97
-msgid "FluxerTag already taken"
-msgstr "FluxerTag ya está tomado"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:139
-msgid "FluxerTag updated"
-msgstr "FluxerTag actualizado"
+msgid "NePornu uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
+msgstr "NePornu usa notificaciones push cuando se instala como una PWA móvil. Registrarse asegura que la puerta de enlace pueda alcanzar tu dispositivo incluso cuando el navegador está en segundo plano."
 
 #: src/stores/KeybindStore.ts:370
 msgid "Focus Text Area"
@@ -8874,8 +8861,8 @@ msgid "Friend Requests"
 msgstr "Solicitudes de amistad"
 
 #: src/components/channel/dm/AddFriendForm.tsx:160
-msgid "Friend's FluxerTag"
-msgstr "FluxerTag del amigo"
+msgid "Friend's Tag"
+msgstr "Friend's Tag"
 
 #: src/components/channel/dm/DMList.tsx:781
 #: src/utils/quick-switcher/QuickSwitcherModalUtils.tsx:87
@@ -8980,8 +8967,8 @@ msgid "Generate invite link"
 msgstr "Generar enlace de invitación"
 
 #: src/components/modals/tabs/BetaCodesTab.tsx:340
-msgid "Generate up to {MAX_UNCLAIMED_BETA_CODES} unclaimed beta codes to invite friends to Fluxer. You can create 3 codes per week."
-msgstr "Genera hasta {MAX_UNCLAIMED_BETA_CODES} códigos beta sin reclamar para invitar amigos a Fluxer. Puedes crear 3 códigos por semana."
+msgid "Generate up to {MAX_UNCLAIMED_BETA_CODES} unclaimed beta codes to invite friends to NePornu. You can create 3 codes per week."
+msgstr "Genera hasta {MAX_UNCLAIMED_BETA_CODES} códigos beta sin reclamar para invitar amigos a NePornu. Puedes crear 3 códigos por semana."
 
 #: src/components/auth/HandoffCodeDisplay.tsx:49
 msgid "Generating code..."
@@ -9009,8 +8996,8 @@ msgid "Get desktop app"
 msgstr "Obtener aplicación de escritorio"
 
 #: src/components/layout/app-layout/nagbars/MobileDownloadNagbar.tsx:50
-msgid "Get Fluxer on mobile to receive notifications on the go and stay connected with your friends anytime."
-msgstr "Obtén Fluxer en móvil para recibir notificaciones sobre la marcha y mantenerte conectado con tus amigos en cualquier momento."
+msgid "Get NePornu on mobile to receive notifications on the go and stay connected with your friends anytime."
+msgstr "Obtén NePornu en móvil para recibir notificaciones sobre la marcha y mantenerte conectado con tus amigos en cualquier momento."
 
 #: src/stores/KeybindStore.ts:407
 msgid "Get Help"
@@ -9026,7 +9013,7 @@ msgstr "Recibe notificaciones cuando recibas mensajes. Es posible que necesites 
 
 #: src/components/alerts/FileSizeTooLargeModal.tsx:46
 #: src/components/modals/BackgroundImageGalleryModal.tsx:677
-#: src/components/modals/FluxerTagChangeModal.tsx:214
+#: src/components/modals/NePornuTagChangeModal.tsx:214
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:58
 #: src/components/modals/tabs/MyProfileTab/AvatarUploader.tsx:122
 #: src/components/modals/tabs/NotificationsTab/Sounds.tsx:82
@@ -9044,7 +9031,7 @@ msgstr "Obtén Plutonium para ti y desbloquea límites más altos y funciones ex
 msgid "Get Plutonium to customize your tag"
 msgstr "Obtén Plutonium para personalizar tu etiqueta"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:192
+#: src/components/modals/NePornuTagChangeModal.tsx:192
 msgid "Get Plutonium to customize your tag or keep it when changing your username"
 msgstr "Obtén Plutonium para personalizar tu etiqueta o mantenerla al cambiar tu nombre de usuario"
 
@@ -9053,8 +9040,8 @@ msgid "Get prompted when new audio devices are connected"
 msgstr "Recibir aviso cuando se conecten nuevos dispositivos de audio"
 
 #: src/components/layout/app-layout/nagbars/DesktopDownloadNagbar.tsx:49
-msgid "Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies."
-msgstr "Obtén la aplicación de escritorio de Fluxer para push-to-talk en todo el sistema y algunas otras funciones adicionales."
+msgid "Get the NePornu desktop app for system-wide push-to-talk and a few other goodies."
+msgstr "Get the NePornu desktop app for system-wide push-to-talk and a few other goodies."
 
 #: src/components/modals/MediaModal.tsx:756
 #: src/components/stickers/StickerGridItem.tsx:100
@@ -9656,10 +9643,6 @@ msgstr "Bitrate más alto = mejor calidad y mayor uso de ancho de banda."
 msgid "Hindi"
 msgstr "Hindi"
 
-#: src/components/modals/components/LogoutModal.tsx:31
-msgid "Hit 88mph"
-msgstr "Alcanzar 88 mph"
-
 #: src/components/modals/AddGuildModal.tsx:153
 msgid "Hobby Haven"
 msgstr "Refugio de pasatiempos"
@@ -9782,8 +9765,8 @@ msgid "I understand"
 msgstr "Entiendo"
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:309
-msgid "I want to use a custom Fluxer instance"
-msgstr "Quiero usar una instancia personalizada de Fluxer"
+msgid "I want to use a custom NePornu instance"
+msgstr "Quiero usar una instancia personalizada de NePornu"
 
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildIconUploadField.tsx:65
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildIconUploadField.tsx:78
@@ -9796,7 +9779,7 @@ msgstr "Icono"
 msgid "Icon file is too large. Please choose a file smaller than 10MB."
 msgstr "El archivo del icono es demasiado grande. Por favor, elige un archivo de menos de 10 MB."
 
-#: src/Constants.tsx:132
+#: src/Constants.tsx:134
 msgid "Idle"
 msgstr "Inactivo"
 
@@ -9952,7 +9935,7 @@ msgstr "en un segundo"
 msgid "In the beginning, there was nothing. Then, there was #{0}. And it was good."
 msgstr "En el principio, no había nada. Luego, hubo #{0}. Y fue bueno."
 
-#: src/Constants.tsx:144
+#: src/Constants.tsx:146
 msgid "In the zone, please do not disturb"
 msgstr "En la zona, por favor no molestar"
 
@@ -9961,8 +9944,8 @@ msgid "in two days"
 msgstr "en dos días"
 
 #: src/components/modals/tabs/VoiceTab.tsx:142
-msgid "In your browser, Push-to-Talk will only work when the Fluxer tab is focused. For system-wide Push-to-Talk that works even when gaming or using other apps, download the desktop app."
-msgstr "En tu navegador, Empujar-para-Hablar solo funcionará cuando la pestaña de Fluxer esté enfocada. Para Empujar-para-Hablar en todo el sistema que funcione incluso al jugar o usar otras aplicaciones, descarga la aplicación de escritorio."
+msgid "In your browser, Push-to-Talk will only work when the application tab is focused. For system-wide Push-to-Talk that works even when gaming or using other apps, download the desktop app."
+msgstr ""
 
 #: src/utils/SearchUtils.ts:269
 msgid "in:"
@@ -10222,7 +10205,7 @@ msgstr "Invertido"
 msgid "Inverted button clicked!"
 msgstr "¡Botón invertido presionado!"
 
-#: src/Constants.tsx:133
+#: src/Constants.tsx:135
 msgid "Invisible"
 msgstr "Invisible"
 
@@ -10492,13 +10475,13 @@ msgstr "Unirse a la comunidad"
 msgid "Join community form"
 msgstr "Formulario para unirse a la comunidad"
 
-#: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:97
-msgid "Join Fluxer HQ"
-msgstr "Únete a Fluxer HQ"
-
 #: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:94
-msgid "Join Fluxer HQ to chat with the team and stay up to date on the latest!"
-msgstr "Únete a Fluxer HQ para chatear con el equipo y mantenerte al día con lo último!"
+msgid "Join NePornu HQ"
+msgstr "Únete a NePornu HQ"
+
+#: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:91
+msgid "Join NePornu HQ to chat with the team and stay up to date on the latest!"
+msgstr "Únete a NePornu HQ para chatear con el equipo y mantenerte al día con lo último!"
 
 #: src/components/channel/InviteEmbed.tsx:201
 msgid "Join Group"
@@ -10807,8 +10790,8 @@ msgid "Latvia"
 msgstr "Letonia"
 
 #: src/components/modals/tabs/AdvancedTab.tsx:88
-msgid "Launch Fluxer at login"
-msgstr "Iniciar Fluxer al iniciar sesión"
+msgid "Launch NePornu at login"
+msgstr "Iniciar NePornu al iniciar sesión"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:122
 msgid "Learn about Plutonium"
@@ -11117,6 +11100,7 @@ msgid "Log in with a passkey"
 msgstr "Iniciar sesión con una clave de acceso"
 
 #: src/components/modals/components/DesktopSettingsView.tsx:346
+#: src/components/modals/components/LogoutModal.tsx:31
 #: src/components/modals/components/MobileSettingsView.tsx:357
 #: src/components/pages/PendingVerificationPage.tsx:151
 msgid "Log Out"
@@ -11315,8 +11299,8 @@ msgid "Manage Subscription"
 msgstr "Administrar suscripción"
 
 #: src/components/modals/tabs/AccountSecurityTab/AccountTab.tsx:58
-msgid "Manage the email address you use to sign in to Fluxer"
-msgstr "Administra la dirección de correo electrónico que usas para iniciar sesión en Fluxer"
+msgid "Manage the email address you use to sign in"
+msgstr ""
 
 #: src/utils/PermissionUtils.tsx:284
 #: src/utils/PermissionUtils.tsx:439
@@ -11440,7 +11424,7 @@ msgstr "Marcado el miembro como temporal."
 msgid "Markers Below Slider"
 msgstr "Marcadores debajo del deslizador"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:182
+#: src/components/modals/NePornuTagChangeModal.tsx:182
 msgid "Marty_McFly"
 msgstr "Marty_McFly"
 
@@ -12357,6 +12341,10 @@ msgstr "¿Necesitas una cuenta?"
 msgid "Neighborhood Watch"
 msgstr "Vigilancia del vecindario"
 
+#: src/components/BootstrapErrorScreen.tsx:49
+msgid "NePornu failed to start properly. This could be due to corrupted data or a temporary issue."
+msgstr "NePornu failed to start properly. This could be due to corrupted data or a temporary issue."
+
 #: src/components/pages/report/optionDescriptors.ts:102
 msgid "Netherlands"
 msgstr "Países Bajos"
@@ -12829,8 +12817,8 @@ msgid "No Timer"
 msgstr "Sin temporizador"
 
 #: src/components/channel/dm/AddFriendForm.tsx:93
-msgid "No user found with that FluxerTag."
-msgstr "No se encontró ningún usuario con ese FluxerTag."
+msgid "No user found with that Tag."
+msgstr "No user found with that Tag."
 
 #: src/components/modals/guildTabs/GuildBansTab.tsx:178
 msgid "No users are currently banned from this community."
@@ -13046,7 +13034,7 @@ msgstr "Apagado"
 
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:287
 #: src/components/channel/ChannelMembers.tsx:108
-#: src/Constants.tsx:134
+#: src/Constants.tsx:136
 #: src/utils/MemberListUtils.ts:150
 #: src/utils/MemberListUtils.ts:188
 msgid "Offline"
@@ -13152,7 +13140,7 @@ msgstr "única, de por vida"
 #: src/components/channel/ChannelMembers.tsx:106
 #: src/components/channel/dm/DMFriendsView.tsx:168
 #: src/components/channel/friends/views/FriendsList.tsx:95
-#: src/Constants.tsx:130
+#: src/Constants.tsx:132
 #: src/utils/MemberListUtils.ts:143
 #: src/utils/MemberListUtils.ts:182
 msgid "Online"
@@ -13211,6 +13199,10 @@ msgstr "Opacidad"
 msgid "Open {altText} in full view"
 msgstr "Abrir {altText} en vista completa"
 
+#: src/components/auth/DesktopDeepLinkPrompt.tsx:102
+msgid "Open app"
+msgstr ""
+
 #: src/components/auth/BrowserLoginHandoffModal.tsx:326
 msgid "Open browser"
 msgstr "Abrir navegador"
@@ -13252,10 +13244,6 @@ msgstr "Abrir MD + Comunidades"
 msgid "Open DMs Only"
 msgstr "Abrir solo MD"
 
-#: src/components/auth/DesktopDeepLinkPrompt.tsx:102
-msgid "Open Fluxer"
-msgstr "Abrir Fluxer"
-
 #: src/components/channel/embeds/media/EmbedImage.tsx:187
 msgid "Open image in full view"
 msgstr "Abrir imagen en vista completa"
@@ -13269,13 +13257,13 @@ msgstr "Abrir en navegador"
 msgid "Open in Community"
 msgstr "Abrir en Comunidad"
 
-#: src/components/auth/DesktopDeepLinkPrompt.tsx:89
-msgid "Open in Fluxer for desktop"
-msgstr "Abrir en Fluxer para escritorio"
-
 #: src/components/channel/embeds/media/EmbedYouTube.tsx:117
 msgid "Open in new tab"
 msgstr "Abrir en nueva pestaña"
+
+#: src/components/auth/DesktopDeepLinkPrompt.tsx:89
+msgid "Open in the desktop app"
+msgstr ""
 
 #: src/components/uikit/ContextMenu/MediaContextMenu.tsx:309
 msgid "Open Link"
@@ -13901,20 +13889,20 @@ msgstr "Revisa tu bandeja de entrada para ver el correo de verificación."
 
 #: src/components/modals/InputMonitoringCTAModal.tsx:53
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:51
-msgid "Please enable Fluxer in System Settings → Privacy & Security → Input Monitoring."
-msgstr "Activa Fluxer en Configuración del sistema → Privacidad y seguridad → Monitoreo de entrada."
+msgid "Please enable NePornu in System Settings → Privacy & Security → Input Monitoring."
+msgstr "Activa NePornu en Configuración del sistema → Privacidad y seguridad → Monitoreo de entrada."
 
 #: src/components/pages/ReportPage.tsx:211
 msgid "Please enter a valid email address."
 msgstr "Por favor, introduce una dirección de correo electrónico válida."
 
-#: src/components/channel/dm/AddFriendForm.tsx:97
-msgid "Please enter a valid FluxerTag (Username#0000)."
-msgstr "Ingresa un FluxerTag válido (Usuario#0000)."
-
 #: src/components/pages/ReportPage.tsx:336
 msgid "Please enter a valid message link URL."
 msgstr "Por favor, introduce una URL de enlace de mensaje válida."
+
+#: src/components/channel/dm/AddFriendForm.tsx:97
+msgid "Please enter a valid Tag (Username#0000)."
+msgstr "Please enter a valid Tag (Username#0000)."
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:189
 msgid "Please enter an API endpoint."
@@ -13953,8 +13941,8 @@ msgid "Please try again later."
 msgstr "Vuelve a intentarlo más tarde."
 
 #: src/components/channel/UnknownMessage.tsx:84
-msgid "Please update Fluxer to view this message."
-msgstr "Actualiza Fluxer para ver este mensaje."
+msgid "Please update NePornu to view this message."
+msgstr "Actualiza NePornu para ver este mensaje."
 
 #: src/components/modals/guildTabs/GuildEmojiTab.tsx:144
 msgid "Please upload JPEG, PNG, WebP, or GIF files only."
@@ -13978,6 +13966,9 @@ msgstr "Espera a que se cargue la información de precios."
 #: src/components/channel/dm/DMList.tsx:729
 #: src/components/channel/dm/DMList.tsx:808
 #: src/components/modals/components/FeatureComparisonTable.tsx:41
+#: src/components/modals/components/PlutoniumContent.tsx:193
+#: src/components/modals/PremiumModal.tsx:34
+#: src/components/modals/utils/settingsConstants.tsx:147
 msgid "Plutonium"
 msgstr "Plutonium"
 
@@ -14086,8 +14077,8 @@ msgid "Preview"
 msgstr "Vista previa"
 
 #: src/components/modals/tabs/DeveloperOptionsTab/TypographyTab.tsx:135
-msgid "Preview all available fonts, weights, and styles across different languages supported by Fluxer."
-msgstr "Vista previa de todas las fuentes, pesos y estilos disponibles en los diferentes idiomas compatibles con Fluxer."
+msgid "Preview all available fonts, weights, and styles across different languages supported by NePornu."
+msgstr "Vista previa de todas las fuentes, pesos y estilos disponibles en los diferentes idiomas compatibles con NePornu."
 
 #: src/components/modals/tabs/AccessibilityTab.tsx:97
 msgid "Preview Button"
@@ -14259,8 +14250,8 @@ msgid "Provide at least a user ID or a user tag."
 msgstr "Proporciona al menos un ID de usuario o una etiqueta de usuario."
 
 #: src/components/pages/ReportPage.tsx:354
-msgid "Provide either a user ID or a FluxerTag for the person you are reporting."
-msgstr "Proporciona un ID de usuario o un FluxerTag de la persona que estás reportando."
+msgid "Provide either a user ID or a Tag for the person you are reporting."
+msgstr ""
 
 #: src/components/pages/ReportPage.tsx:305
 msgid "Provide your full legal name for the declaration."
@@ -15007,8 +14998,8 @@ msgid "Renews on <0>{renewalDate}</0>."
 msgstr "Se renueva el <0>{renewalDate}</0>."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:116
-msgid "Reopen in maximized mode if that’s how you last used Fluxer."
-msgstr "Reabrir en modo maximizado si así fue como usaste Fluxer por última vez."
+msgid "Reopen in maximized mode if that’s how you last used NePornu."
+msgstr "Reabrir en modo maximizado si así fue como usaste NePornu por última vez."
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:86
 #: src/components/modals/BackgroundImageGalleryModal.tsx:395
@@ -15500,12 +15491,12 @@ msgid "Row"
 msgstr "Fila"
 
 #: src/components/modals/tabs/AdvancedTab.tsx:85
-msgid "Run Fluxer automatically when your computer starts. Or don't. Your choice!"
-msgstr "Ejecuta Fluxer automáticamente cuando tu computadora se inicie. O no. ¡Tú decides!"
+msgid "Run NePornu automatically when your computer starts. Or don't. Your choice!"
+msgstr "Ejecuta NePornu automáticamente cuando tu computadora se inicie. O no. ¡Tú decides!"
 
 #: src/components/modals/tabs/KeybindsTab.tsx:93
-msgid "Run this shortcut even when Fluxer is not focused."
-msgstr "Ejecuta este atajo incluso cuando Fluxer no esté enfocado."
+msgid "Run this shortcut even when NePornu is not focused."
+msgstr "Ejecuta este atajo incluso cuando NePornu no esté enfocado."
 
 #: src/utils/LocaleUtils.tsx:60
 msgid "Russian"
@@ -17717,6 +17708,19 @@ msgstr "Sistema: Tema claro (se sincroniza automáticamente con la preferencia d
 msgid "Tables"
 msgstr "Tablas"
 
+#: src/components/modals/NePornuTagChangeModal.tsx:170
+#: src/components/modals/tabs/ApplicationsTab/application-detail/BotProfileSection.tsx:104
+msgid "Tag"
+msgstr "Tag"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:97
+msgid "Tag already taken"
+msgstr "Tag already taken"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:139
+msgid "Tag updated"
+msgstr "Tag updated"
+
 #. placeholder {0}: tags.length
 #: src/components/modals/meme-form/MemeFormFields.tsx:117
 msgid "Tags ({0}/{MAX_FAVORITE_MEME_TAGS})"
@@ -17811,13 +17815,13 @@ msgstr "Área de texto"
 msgid "Thai"
 msgstr "Tailandés"
 
-#: src/components/modals/IARModal.tsx:187
-msgid "Thank you for helping keep Fluxer safe. Reports are reviewed by our Safety Team. False reports may result in action against your account."
-msgstr "Gracias por ayudar a mantener Fluxer seguro. Los reportes son revisados por nuestro equipo de seguridad. Los reportes falsos pueden resultar en acciones contra tu cuenta."
-
 #: src/components/pages/report/ReportStepComplete.tsx:37
-msgid "Thank you for helping keep Fluxer safe. We'll review your report as soon as possible."
-msgstr "Gracias por ayudar a mantener Fluxer seguro. Revisaremos tu reporte lo antes posible."
+msgid "Thank you for helping keep NePornu safe. We'll review your report as soon as possible."
+msgstr "Gracias por ayudar a mantener NePornu seguro. Revisaremos tu reporte lo antes posible."
+
+#: src/components/modals/IARModal.tsx:187
+msgid "Thank you for helping keep the application safe. Reports are reviewed by our Safety Team. False reports may result in action against your account."
+msgstr ""
 
 #: src/components/form/ColorPickerField.tsx:274
 msgid "That doesn't look like a valid color. Try hex, rgb(), hsl(), or a CSS color name."
@@ -17884,10 +17888,6 @@ msgstr "El archivo que intentas subir excede el límite máximo de tamaño de 25
 msgid "The file you're trying to upload exceeds the maximum size limit of 500 MB for Plutonium subscribers."
 msgstr "El archivo que intentas subir excede el límite máximo de tamaño de 500 MB para suscriptores de Plutonium."
 
-#: src/components/modals/FluxerTagChangeModal.tsx:101
-msgid "The FluxerTag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
-msgstr "El FluxerTag <0>{fluxerTag}</0> ya está en uso. Continuar hará que tu discriminador se cambie automáticamente."
-
 #: src/components/modals/tabs/PrivacySafetyTab/DataDeletionTab.tsx:71
 msgid "The job starts 24 hours after you confirm and can be canceled or restarted anytime"
 msgstr "El trabajo comienza 24 horas después de que confirmes y se puede cancelar o reiniciar en cualquier momento"
@@ -17916,6 +17916,10 @@ msgstr "El rol <0>\"{roleName}\"</0> no se pudo eliminar en este momento. Por fa
 #: src/components/modals/AddGuildModal.tsx:183
 msgid "The Squad"
 msgstr "El Escuadrón"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:101
+msgid "The Tag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
+msgstr "The Tag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
 
 #: src/components/modals/tabs/PrivacySafetyTab/DataDeletionTab.tsx:74
 msgid "The time to complete depends on how many messages you have sent"
@@ -17992,8 +17996,8 @@ msgid "There's nothing more to see here."
 msgstr "No hay nada más que ver aquí."
 
 #: src/components/modals/tabs/AuthorizedAppsTab.tsx:148
-msgid "These applications have been granted access to your Fluxer account."
-msgstr "Estas aplicaciones han recibido acceso a tu cuenta de Fluxer."
+msgid "These applications have been granted access to your NePornu account."
+msgstr "Estas aplicaciones han recibido acceso a tu cuenta de NePornu."
 
 #: src/components/modals/tabs/VoiceTab.tsx:403
 msgid "These settings use browser-native audio processing to improve call quality. For best results, keep all options enabled."
@@ -18206,8 +18210,8 @@ msgid "This is a custom emoji from a community. Ask the author for an invite to 
 msgstr "Este es un emoji personalizado de una comunidad. Pídele una invitación al autor para usar este emoji."
 
 #: src/components/emojis/EmojiAttributionSubtext.tsx:101
-msgid "This is a default emoji on Fluxer."
-msgstr "Este es un emoji predeterminado en Fluxer."
+msgid "This is a default emoji on NePornu."
+msgstr "Este es un emoji predeterminado en NePornu."
 
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:147
 msgid "This is an error message"
@@ -18613,10 +18617,6 @@ msgstr "Demasiadas solicitudes. Por favor, inténtalo de nuevo más tarde."
 msgid "Too Quiet"
 msgstr "Demasiado bajo"
 
-#: src/Constants.tsx:145
-msgid "Took the DeLorean out, but I'll be back in time"
-msgstr "Saqué el DeLorean, pero volveré a tiempo"
-
 #: src/components/modals/tabs/DeveloperOptionsTab/index.tsx:61
 #: src/components/modals/tabs/DeveloperOptionsTab/Inline.tsx:56
 #: src/components/modals/utils/settingsConstants.tsx:316
@@ -18723,7 +18723,7 @@ msgstr "Inténtalo de nuevo"
 #: src/components/channel/ChannelSearchResults.tsx:663
 #: src/components/modals/channelTabs/ChannelInvitesTab.tsx:146
 #: src/components/modals/channelTabs/ChannelWebhooksTab.tsx:159
-#: src/components/NetworkErrorScreen.tsx:56
+#: src/components/NetworkErrorScreen.tsx:55
 msgid "Try Again"
 msgstr "Intentar de nuevo"
 
@@ -19904,7 +19904,7 @@ msgstr "Volumen de usuario"
 msgid "user, bot or webhook"
 msgstr "usuario, bot o webhook"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:181
+#: src/components/modals/NePornuTagChangeModal.tsx:181
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:101
 #: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:44
 #: src/components/modals/utils/settingsSearchIndex.ts:57
@@ -19935,11 +19935,11 @@ msgstr "El nombre de usuario debe tener como máximo 32 caracteres"
 msgid "Username#0000"
 msgstr "NombreDeUsuario#0000"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:163
+#: src/components/modals/NePornuTagChangeModal.tsx:163
 msgid "Usernames can only contain letters (a-z, A-Z), numbers (0-9), and underscores. Usernames are case-insensitive."
 msgstr "Los nombres de usuario solo pueden contener letras (a-z, A-Z), números (0-9) y guiones bajos. Los nombres de usuario no distinguen entre mayúsculas y minúsculas."
 
-#: src/components/modals/FluxerTagChangeModal.tsx:158
+#: src/components/modals/NePornuTagChangeModal.tsx:158
 msgid "Usernames can only contain letters (a-z, A-Z), numbers (0-9), and underscores. Usernames are case-insensitive. You can pick your own 4-digit tag if it's available."
 msgstr "Los nombres de usuario solo pueden contener letras (a-z, A-Z), números (0-9) y guiones bajos. Los nombres de usuario no distinguen entre mayúsculas y minúsculas. Puedes elegir tu propia etiqueta de 4 dígitos si está disponible."
 
@@ -20671,8 +20671,8 @@ msgid "We'll verify your new email with a one-time code."
 msgstr "Verificaremos tu nuevo correo electrónico con un código de un solo uso."
 
 #: src/components/NetworkErrorScreen.tsx:39
-msgid "We're having trouble connecting to Fluxer's servers. This could be a temporary network issue or scheduled maintenance."
-msgstr "Estamos teniendo problemas para conectarnos a los servidores de Fluxer. Esto podría ser un problema temporal de red o mantenimiento programado."
+msgid "We're having trouble connecting to NePornu's servers. This could be a temporary network issue or scheduled maintenance."
+msgstr "We're having trouble connecting to NePornu's servers. This could be a temporary network issue or scheduled maintenance."
 
 #: src/components/modals/tabs/BetaCodesTab.tsx:322
 #: src/components/modals/tabs/DevicesTab.tsx:233
@@ -20685,28 +20685,28 @@ msgid "We're indexing this channel for the first time. This might take a little 
 msgstr "Estamos indexando este canal por primera vez. Esto podría tomar un momento..."
 
 #: src/components/modals/RequiredActionModal.tsx:151
-msgid "We've detected suspicious activity on your account. Please reverify your email address or phone number to continue using Fluxer."
-msgstr "Hemos detectado actividad sospechosa en tu cuenta. Por favor, re verifica tu dirección de correo electrónico o número de teléfono para continuar usando Fluxer."
+msgid "We've detected suspicious activity on your account. Please reverify your email address or phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:143
-msgid "We've detected suspicious activity on your account. Please reverify your email address to continue using Fluxer."
-msgstr "Hemos detectado actividad sospechosa en tu cuenta. Por favor, re verifica tu dirección de correo electrónico para continuar usando Fluxer."
+msgid "We've detected suspicious activity on your account. Please reverify your email address to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:147
-msgid "We've detected suspicious activity on your account. Please reverify your phone number to continue using Fluxer."
-msgstr "Hemos detectado actividad sospechosa en tu cuenta. Por favor, re verifica tu número de teléfono para continuar usando Fluxer."
+msgid "We've detected suspicious activity on your account. Please reverify your phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:152
-msgid "We've detected suspicious activity on your account. Please verify your email address or phone number to continue using Fluxer."
-msgstr "Hemos detectado actividad sospechosa en tu cuenta. Por favor, verifica tu dirección de correo electrónico o número de teléfono para continuar usando Fluxer."
+msgid "We've detected suspicious activity on your account. Please verify your email address or phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:144
-msgid "We've detected suspicious activity on your account. Please verify your email address to continue using Fluxer."
-msgstr "Hemos detectado actividad sospechosa en tu cuenta. Por favor, verifica tu dirección de correo electrónico para continuar usando Fluxer."
+msgid "We've detected suspicious activity on your account. Please verify your email address to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:148
-msgid "We've detected suspicious activity on your account. Please verify your phone number to continue using Fluxer."
-msgstr "Hemos detectado actividad sospechosa en tu cuenta. Por favor, verifica tu número de teléfono para continuar usando Fluxer."
+msgid "We've detected suspicious activity on your account. Please verify your phone number to continue."
+msgstr ""
 
 #: src/components/pages/ForgotPasswordPage.tsx:65
 msgid "We've sent password reset instructions to your email address. Please check your inbox and follow the link to reset your password."
@@ -20777,8 +20777,8 @@ msgid "Welcome to Favorites"
 msgstr "Bienvenido a Favoritos"
 
 #: src/components/layout/app-layout/nagbars/PremiumOnboardingNagbar.tsx:51
-msgid "Welcome to Fluxer Plutonium! Explore your premium features and manage your subscription."
-msgstr "¡Bienvenido a Fluxer Plutonium! Explora tus funciones premium y administra tu suscripción."
+msgid "Welcome to NePornu Plutonium! Explore your premium features and manage your subscription."
+msgstr "¡Bienvenido a NePornu Plutonium! Explora tus funciones premium y administra tu suscripción."
 
 #: src/utils/SystemMessageUtils.tsx:46
 msgid "Welcome, {username}! Don't forget to park your DeLorean."
@@ -20837,8 +20837,8 @@ msgid "When enabled, quickly tapping your push-to-talk shortcut will keep your m
 msgstr "Cuando está habilitado, pulsar rápidamente tu acceso directo de pulsar para hablar mantendrá tu micrófono encendido hasta que lo pulses de nuevo."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:140
-msgid "When enabled, reveals debugging menus throughout the app to inspect and copy raw JSON objects of internal data structures like messages, channels, users, and communities. Also includes tools to debug the Fluxer Markdown parser performance and AST for any given message."
-msgstr "Cuando está habilitado, muestra menús de depuración en toda la aplicación para inspeccionar y copiar objetos JSON sin procesar de estructuras de datos internas como mensajes, canales, usuarios y comunidades. También incluye herramientas para depurar el rendimiento del analizador Markdown de Fluxer y el AST de cualquier mensaje dado."
+msgid "When enabled, reveals debugging menus throughout the app to inspect and copy raw JSON objects of internal data structures like messages, channels, users, and communities. Also includes tools to debug the NePornu Markdown parser performance and AST for any given message."
+msgstr "Cuando está habilitado, muestra menús de depuración en toda la aplicación para inspeccionar y copiar objetos JSON sin procesar de estructuras de datos internas como mensajes, canales, usuarios y comunidades. También incluye herramientas para depurar el rendimiento del analizador Markdown de NePornu y el AST de cualquier mensaje dado."
 
 #: src/components/modals/tabs/AppearanceTab/InterfaceTab.tsx:135
 msgid "When enabled, shortcut badges are hidden in tooltip popups."
@@ -20889,8 +20889,8 @@ msgid "When they hit 88mph, they'll appear right here."
 msgstr "Cuando alcancen 88 mph, aparecerán justo aquí."
 
 #: src/components/modals/tabs/ChatSettingsTab/DisplayTab.tsx:73
-msgid "When uploaded directly to Fluxer"
-msgstr "Cuando se sube directamente a Fluxer"
+msgid "When uploaded directly to NePornu"
+msgstr "Cuando se sube directamente a NePornu"
 
 #: src/components/shared/ChannelPinsContent.tsx:143
 msgid "Whenever someone pins a message, it'll appear here."
@@ -20950,8 +20950,12 @@ msgid "Write a short bio (max 280 characters)"
 msgstr "Escribe una biografía corta (máx. 280 caracteres)"
 
 #: src/components/modals/tabs/AppearanceTab/ThemeTab.tsx:543
-msgid "Write custom CSS here to override any theme tokens. For example:\n:root { --background-primary: #1E1E2F; }"
-msgstr "Escribe CSS personalizado aquí para anular cualquier token de tema. Por ejemplo:\n:root { --background-primary: #1E1E2F; }"
+msgid ""
+"Write custom CSS here to override any theme tokens. For example:\n"
+":root { --background-primary: #1E1E2F; }"
+msgstr ""
+"Escribe CSS personalizado aquí para anular cualquier token de tema. Por ejemplo:\n"
+":root { --background-primary: #1E1E2F; }"
 
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:174
 msgid "Write your content here... This textarea expands as you type."
@@ -20993,8 +20997,8 @@ msgid "You already have a group with these users. Do you really want to create a
 msgstr "Ya tienes un grupo con estos usuarios. ¿De verdad quieres crear uno nuevo? ¡También está bien!"
 
 #: src/components/modals/ExternalLinkWarningModal.tsx:66
-msgid "You are about to leave Fluxer"
-msgstr "Estás a punto de salir de Fluxer"
+msgid "You are about to leave the application"
+msgstr ""
 
 #. placeholder {0}: targetUser.username
 #: src/components/modals/TransferOwnershipModal.tsx:71
@@ -21022,8 +21026,8 @@ msgid "You are now a developer!"
 msgstr "¡Ahora eres un desarrollador!"
 
 #: src/components/modals/components/plutonium/hooks/useCheckoutActions.tsx:107
-msgid "You are now navigating to Stripe to complete the payment. Return to Fluxer once you've completed it!"
-msgstr "Ahora estás navegando a Stripe para completar el pago. ¡Vuelve a Fluxer una vez que lo hayas completado!"
+msgid "You are now navigating to Stripe to complete the payment. Return to NePornu once you've completed it!"
+msgstr "Ahora estás navegando a Stripe para completar el pago. ¡Vuelve a NePornu una vez que lo hayas completado!"
 
 #. placeholder {0}: Math.max(0, modalLogic.maxSelections - modalLogic.selectedUserIds.length)
 #. placeholder {0}: modalLogic.remainingSlotsCount
@@ -21046,8 +21050,8 @@ msgid "You can add comments before uploading. Hold shift to upload directly."
 msgstr "Puedes agregar comentarios antes de subir. Mantén presionada la tecla shift para subir directamente."
 
 #: src/components/channel/dm/AddFriendView.tsx:35
-msgid "You can add friends with their FluxerTag."
-msgstr "Puedes agregar amigos con su FluxerTag."
+msgid "You can add friends with their NePornuTag."
+msgstr "Puedes agregar amigos con su NePornuTag."
 
 #. placeholder {0}: modalLogic.maxSelections
 #: src/components/bottomsheets/CreateDMBottomSheet.tsx:112
@@ -21334,8 +21338,8 @@ msgid "You haven't created any packs yet."
 msgstr "Aún no has creado ningún paquete."
 
 #: src/components/modals/KeyboardModeIntroModal.tsx:46
-msgid "You just pressed Tab. Keyboard Mode is now on so you can navigate Fluxer without a mouse."
-msgstr "Acabas de presionar Tab. El modo teclado ahora está activado para que puedas navegar Fluxer sin un mouse."
+msgid "You just pressed Tab. Keyboard Mode is now on so you can navigate the application without a mouse."
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:85
 #: src/utils/ExpressionPermissionUtils.tsx:92
@@ -21635,10 +21639,6 @@ msgstr "Tu configuración de sonido de notificaciones existente se conservará."
 msgid "Your export request will be processed"
 msgstr "Tu solicitud de exportación será procesada"
 
-#: src/components/pages/report/ReportStepDetails.tsx:213
-msgid "Your FluxerTag (optional)"
-msgstr "Tu FluxerTag (opcional)"
-
 #: src/components/channel/friends/views/FriendsList.tsx:80
 msgid "Your friends are currently stuck in another timeline"
 msgstr "Tus amigos están actualmente atrapados en otra línea de tiempo"
@@ -21735,6 +21735,10 @@ msgstr "Tu suscripción se ha programado para cancelarse al final de tu período
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:210
 msgid "Your subscription will cancel on <0>{cancelDate}</0>. You'll lose all <1/> after that date."
 msgstr "Tu suscripción se cancelará el <0>{cancelDate}</0>. Perderás todos <1/> después de esa fecha."
+
+#: src/components/pages/report/ReportStepDetails.tsx:213
+msgid "Your Tag (optional)"
+msgstr ""
 
 #: src/components/modals/guildTabs/GuildVanityURLTab.tsx:118
 msgid "Your vanity URL has been removed."

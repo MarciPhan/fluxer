@@ -17,7 +17,7 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {useLingui} from '@lingui/react/macro';
+import { useLingui } from '@lingui/react/macro';
 import {
 	CopyIcon,
 	CrownIcon,
@@ -30,21 +30,21 @@ import {
 	SignOutIcon,
 	UserMinusIcon,
 } from '@phosphor-icons/react';
-import {observer} from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite';
 import * as ModalActionCreators from '~/actions/ModalActionCreators';
-import {modal} from '~/actions/ModalActionCreators';
+import { modal } from '~/actions/ModalActionCreators';
 import * as RelationshipActionCreators from '~/actions/RelationshipActionCreators';
 import * as TextCopyActionCreators from '~/actions/TextCopyActionCreators';
-import {Permissions, RelationshipTypes} from '~/Constants';
-import {BanMemberModal} from '~/components/modals/BanMemberModal';
-import {ChangeNicknameModal} from '~/components/modals/ChangeNicknameModal';
-import {ConfirmModal} from '~/components/modals/ConfirmModal';
-import {KickMemberModal} from '~/components/modals/KickMemberModal';
-import {TransferOwnershipModal} from '~/components/modals/TransferOwnershipModal';
-import {MenuBottomSheet, type MenuGroupType} from '~/components/uikit/MenuBottomSheet/MenuBottomSheet';
-import {useRoleHierarchy} from '~/hooks/useRoleHierarchy';
-import type {GuildMemberRecord} from '~/records/GuildMemberRecord';
-import type {UserRecord} from '~/records/UserRecord';
+import { Permissions, RelationshipTypes } from '~/Constants';
+import { BanMemberModal } from '~/components/modals/BanMemberModal';
+import { ChangeNicknameModal } from '~/components/modals/ChangeNicknameModal';
+import { ConfirmModal } from '~/components/modals/ConfirmModal';
+import { KickMemberModal } from '~/components/modals/KickMemberModal';
+import { TransferOwnershipModal } from '~/components/modals/TransferOwnershipModal';
+import { MenuBottomSheet, type MenuGroupType } from '~/components/uikit/MenuBottomSheet/MenuBottomSheet';
+import { useRoleHierarchy } from '~/hooks/useRoleHierarchy';
+import type { GuildMemberRecord } from '~/records/GuildMemberRecord';
+import type { UserRecord } from '~/records/UserRecord';
 import AuthenticationStore from '~/stores/AuthenticationStore';
 import GuildMemberStore from '~/stores/GuildMemberStore';
 import GuildStore from '~/stores/GuildStore';
@@ -76,19 +76,19 @@ export const UserProfileActionsSheet: React.FC<UserProfileActionsSheetProps> = o
 		guildId,
 		guildMember,
 	}) => {
-		const {t, i18n} = useLingui();
+		const { t, i18n } = useLingui();
 		const relationshipType = RelationshipStore.getRelationship(user.id)?.type;
 
 		const guild = guildId ? GuildStore.getGuild(guildId) : null;
 		const member = guildMember ?? (guildId ? GuildMemberStore.getMember(guildId, user.id) : null);
 		const currentUserId = AuthenticationStore.currentUserId;
 
-		const canKickMembers = guildId ? PermissionStore.can(Permissions.KICK_MEMBERS, {guildId}) : false;
-		const canBanMembers = guildId ? PermissionStore.can(Permissions.BAN_MEMBERS, {guildId}) : false;
-		const hasChangeNicknamePermission = guildId ? PermissionStore.can(Permissions.CHANGE_NICKNAME, {guildId}) : false;
-		const hasManageNicknamesPermission = guildId ? PermissionStore.can(Permissions.MANAGE_NICKNAMES, {guildId}) : false;
+		const canKickMembers = guildId ? PermissionStore.can(Permissions.KICK_MEMBERS, { guildId }) : false;
+		const canBanMembers = guildId ? PermissionStore.can(Permissions.BAN_MEMBERS, { guildId }) : false;
+		const hasChangeNicknamePermission = guildId ? PermissionStore.can(Permissions.CHANGE_NICKNAME, { guildId }) : false;
+		const hasManageNicknamesPermission = guildId ? PermissionStore.can(Permissions.MANAGE_NICKNAMES, { guildId }) : false;
 		const isOwner = guild?.ownerId === currentUserId;
-		const {canManageTarget} = useRoleHierarchy(guild);
+		const { canManageTarget } = useRoleHierarchy(guild);
 
 		const canKick = !isCurrentUser && canKickMembers && member && canManageTarget(user.id);
 		const canBan = !isCurrentUser && canBanMembers && member && canManageTarget(user.id);
@@ -97,7 +97,7 @@ export const UserProfileActionsSheet: React.FC<UserProfileActionsSheetProps> = o
 			member &&
 			((isCurrentUser && hasChangeNicknamePermission) || (hasManageNicknamesPermission && canManageTarget(user.id)));
 
-		const handleCopyFluxerTag = () => {
+		const handleCopyTag = () => {
 			TextCopyActionCreators.copy(i18n, `${user.username}#${user.discriminator}`, true);
 			onClose();
 		};
@@ -205,8 +205,8 @@ export const UserProfileActionsSheet: React.FC<UserProfileActionsSheetProps> = o
 			items: [
 				{
 					icon: <CopyIcon className={styles.icon} />,
-					label: t`Copy FluxerTag`,
-					onClick: handleCopyFluxerTag,
+					label: t`Copy Tag`,
+					onClick: handleCopyTag,
 				},
 				{
 					icon: <IdentificationCardIcon className={styles.icon} />,
@@ -228,7 +228,7 @@ export const UserProfileActionsSheet: React.FC<UserProfileActionsSheetProps> = o
 			}
 
 			if (guildItems.length > 0) {
-				menuGroups.push({items: guildItems});
+				menuGroups.push({ items: guildItems });
 			}
 
 			if (canTransfer) {
@@ -265,7 +265,7 @@ export const UserProfileActionsSheet: React.FC<UserProfileActionsSheetProps> = o
 					});
 				}
 
-				menuGroups.push({items: moderationItems});
+				menuGroups.push({ items: moderationItems });
 			}
 		}
 
@@ -287,7 +287,7 @@ export const UserProfileActionsSheet: React.FC<UserProfileActionsSheetProps> = o
 				{
 					icon: <FlagIcon className={styles.icon} />,
 					label: t`Report User`,
-					onClick: () => {},
+					onClick: () => { },
 					danger: true,
 				},
 			];
@@ -308,7 +308,7 @@ export const UserProfileActionsSheet: React.FC<UserProfileActionsSheetProps> = o
 				});
 			}
 
-			menuGroups.push({items: reportBlockItems});
+			menuGroups.push({ items: reportBlockItems });
 		}
 
 		return <MenuBottomSheet isOpen={isOpen} onClose={onClose} groups={menuGroups} />;

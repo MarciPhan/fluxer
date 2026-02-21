@@ -17,7 +17,7 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {sources} from '@rspack/core';
+import { sources } from '@rspack/core';
 
 function normalizeEndpoint(cdnEndpoint) {
 	if (!cdnEndpoint) return '';
@@ -28,17 +28,17 @@ function generateManifest(cdnEndpointRaw) {
 	const cdnEndpoint = normalizeEndpoint(cdnEndpointRaw);
 
 	const manifest = {
-		name: 'Fluxer',
-		short_name: 'Fluxer',
+		name: 'NePornu',
+		short_name: 'NePornu',
 		description:
-			'Fluxer is an open-source, independent instant messaging and VoIP platform. Built for friends, groups, and communities.',
+			'NePornu Chat — Nebuď na to sám. Bezpečná komunikační platforma.',
 		start_url: '/',
 		display: 'standalone',
 		orientation: 'portrait-primary',
 		theme_color: '#4641D9',
 		background_color: '#2b2d31',
 		categories: ['social', 'communication'],
-		lang: 'en',
+		lang: 'cs',
 		scope: '/',
 		icons: [
 			{

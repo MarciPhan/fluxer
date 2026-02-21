@@ -894,8 +894,8 @@ msgstr "<0/> bir çağrı başlattı."
 
 #. placeholder {0}: guild.name
 #: src/components/layout/GuildLayout.tsx:131
-msgid "<0>{0}</0> is currently only accessible to Fluxer staff members"
-msgstr "<0>{0}</0> şu anda yalnızca Fluxer personeli tarafından erişilebilir"
+msgid "<0>{0}</0> is currently only accessible to NePornu staff members"
+msgstr "<0>{0}</0> şu anda yalnızca NePornu personeli tarafından erişilebilir"
 
 #. placeholder {0}: targetUser.tag
 #: src/components/modals/TimeoutMemberSheet.tsx:118
@@ -1201,8 +1201,8 @@ msgstr "30 saniye"
 msgid "4 hours"
 msgstr "4 saat"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:196
-#: src/components/modals/FluxerTagChangeModal.tsx:222
+#: src/components/modals/NePornuTagChangeModal.tsx:196
+#: src/components/modals/NePornuTagChangeModal.tsx:222
 msgid "4-digit tag"
 msgstr "4 haneli etiket"
 
@@ -1382,6 +1382,14 @@ msgstr "Geliştirici araçlarına eriş"
 msgid "Access granted"
 msgstr "Erişim verildi"
 
+#: src/components/modals/tabs/VoiceTab.tsx:212
+msgid "Access is needed to list the available microphones and speakers."
+msgstr ""
+
+#: src/components/modals/tabs/VideoTab.tsx:127
+msgid "Access is needed to your camera before we can list it here."
+msgstr ""
+
 #: src/components/modals/channelTabs/ChannelPermissionsTab.tsx:723
 #: src/components/modals/channelTabs/ChannelPermissionsTab.tsx:864
 msgid "Access Overrides"
@@ -1416,6 +1424,11 @@ msgstr "Hesap sadece spam için var gibi görünüyor"
 #: src/components/modals/ClaimAccountModal.tsx:107
 msgid "Account claimed successfully"
 msgstr "Hesap başarıyla talep edildi"
+
+#: src/components/popouts/UserProfileShared.tsx:97
+#: src/components/popouts/UserProfileShared.tsx:128
+msgid "Account Created"
+msgstr "Account Created"
 
 #: src/components/modals/tabs/DeveloperOptionsTab/AccountPremiumTab.tsx:54
 msgid "Account State Overrides"
@@ -1939,8 +1952,8 @@ msgid "All Status Types"
 msgstr "Tüm Durum Türleri"
 
 #: src/components/modals/tabs/LanguageTab.tsx:193
-msgid "All translations are currently LLM-generated with minimal human revision. We'd love to get real people to help us localize Fluxer into your language! To do so, send an email to <0>i18n@fluxer.app</0> and we'll be happy to accept your contributions."
-msgstr "Tüm çeviriler şu anda minimum insan revizyonu ile LLM tarafından üretilmektedir. Fluxer'ı dilinize uyarlamamızda gerçek insanların yardımcı olmasını isteriz! Bunu yapmak için <0>i18n@fluxer.app</0> adresine bir e-posta gönderin ve katkılarınızı memnuniyetle kabul ederiz."
+msgid "All translations are currently LLM-generated with minimal human revision. We'd love to get real people to help us localize NePornu into your language! To do so, send an email to <0>i18n@fluxer.app</0> and we'll be happy to accept your contributions."
+msgstr "Tüm çeviriler şu anda minimum insan revizyonu ile LLM tarafından üretilmektedir. NePornu'ı dilinize uyarlamamızda gerçek insanların yardımcı olmasını isteriz! Bunu yapmak için <0>i18n@fluxer.app</0> adresine bir e-posta gönderin ve katkılarınızı memnuniyetle kabul ederiz."
 
 #: src/components/modals/guildTabs/GuildAuditLogTab.tsx:201
 #: src/components/modals/guildTabs/GuildAuditLogTab.tsx:365
@@ -1999,18 +2012,6 @@ msgstr "Bu topluluktaki diğer üyelerden gelen doğrudan mesajlara izin ver"
 msgid "Allow Flexible Text Channel Names"
 msgstr "Esnek Metin Kanalı İsimlerine İzin Ver"
 
-#: src/components/modals/tabs/VideoTab.tsx:122
-msgid "Allow Fluxer to access your camera in System Settings → Privacy & Security → Camera to preview and select devices."
-msgstr "Fluxer'ın kameranıza erişmesine izin vermek için Sistem Ayarları → Gizlilik ve Güvenlik → Kamera'dan cihazları önizleyip seçin."
-
-#: src/components/modals/tabs/VoiceTab.tsx:202
-msgid "Allow Fluxer to access your microphone in System Settings → Privacy & Security → Microphone."
-msgstr "Fluxer'ın mikrofonunuza erişmesine izin vermek için Sistem Ayarları → Gizlilik ve Güvenlik → Mikrofon'a gidin."
-
-#: src/components/modals/tabs/VoiceTab.tsx:206
-msgid "Allow Fluxer to access your microphone. Check your browser address bar or settings to enable permissions."
-msgstr "Fluxer'ın mikrofonunuza erişmesine izin verin. İzinleri etkinleştirmek için tarayıcı adres çubuğunu veya ayarları kontrol edin."
-
 #: src/components/modals/tabs/PrivacySafetyTab/ConnectionsTab.tsx:96
 msgid "Allow for all communities"
 msgstr "Tüm topluluklar için izin ver"
@@ -2054,6 +2055,18 @@ msgstr "Uygulamadaki tüm metin içeriğini seçmeye izin ver."
 #: src/components/modals/tabs/AccessibilityTab/VisualTab.tsx:103
 msgid "Allow selecting all text content in the app. This setting is disabled on mobile to prevent interference with touch interactions."
 msgstr "Uygulamadaki tüm metin içeriğini seçmeye izin ver. Bu ayar, dokunma etkileşimlerini engellememek için mobilde devre dışıdır."
+
+#: src/components/modals/tabs/VoiceTab.tsx:202
+msgid "Allow the app to access your microphone in System Settings → Privacy & Security → Microphone."
+msgstr ""
+
+#: src/components/modals/tabs/VoiceTab.tsx:206
+msgid "Allow the app to access your microphone. Check your browser address bar or settings to enable permissions."
+msgstr ""
+
+#: src/components/modals/tabs/VideoTab.tsx:122
+msgid "Allow the application to access your camera in System Settings → Privacy & Security → Camera to preview and select devices."
+msgstr ""
 
 #: src/components/modals/tabs/FeatureFlagsTab.tsx:43
 msgid "Allow users to create, install, and manage custom emoji and sticker packs."
@@ -2293,6 +2306,11 @@ msgstr "Uygulama Durumu"
 msgid "App zoom level"
 msgstr "Uygulama yakınlaştırma seviyesi"
 
+#: src/Constants.tsx:148
+#: src/Constants.tsx:149
+msgid "Appearing offline"
+msgstr "Appearing offline"
+
 #: src/components/channel/AutocompleteCommand.tsx:44
 msgid "Appends {content} to your message."
 msgstr "Mesajınıza {content} ekler."
@@ -2300,6 +2318,10 @@ msgstr "Mesajınıza {content} ekler."
 #: src/components/modals/utils/settingsConstants.tsx:117
 msgid "Application"
 msgstr "Uygulama"
+
+#: src/components/icons/AppIcon.tsx:31
+msgid "Application icon"
+msgstr "Application icon"
 
 #: src/components/modals/tabs/ApplicationsTab/application-detail/ApplicationHeader.tsx:56
 msgid "Application ID"
@@ -2317,6 +2339,10 @@ msgstr "Uygulama Adı"
 #: src/components/modals/tabs/ApplicationsTab/application-detail/ApplicationInfoSection.tsx:52
 msgid "Application name is required"
 msgstr "Uygulama adı gerekli"
+
+#: src/components/icons/AppSymbol.tsx:31
+msgid "Application symbol"
+msgstr "Application symbol"
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationDetail.tsx:266
 msgid "Application updated successfully"
@@ -2792,8 +2818,8 @@ msgid "Automatically play GIFs"
 msgstr "GIF'leri otomatik oynat"
 
 #: src/components/modals/tabs/AccessibilityTab/AnimationTab.tsx:102
-msgid "Automatically play GIFs when Fluxer is focused"
-msgstr "Fluxer odaklandığında GIF'leri otomatik oynat"
+msgid "Automatically play GIFs when NePornu is focused"
+msgstr "NePornu odaklandığında GIF'leri otomatik oynat"
 
 #: src/components/modals/guildTabs/GuildModerationTab.tsx:211
 msgid "Automatically screen messages for explicit content in non-NSFW channels."
@@ -3029,6 +3055,10 @@ msgstr "Temel ayarlar ve izin verilen yönlendirme URI'leri."
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:90
 msgid "Basic Text Inputs"
 msgstr "Temel Metin Girişleri"
+
+#: src/Constants.tsx:147
+msgid "Be right back"
+msgstr "Be right back"
 
 #: src/components/modals/guildTabs/GuildAuditLogTab.utils.tsx:451
 msgid "Because {reason}."
@@ -3334,8 +3364,8 @@ msgid "Buying Visionary will cancel your current {currentAccessLabel} immediatel
 msgstr "Visionary satın almak mevcut {currentAccessLabel} aboneliğinizi hemen iptal edecektir. Bu, ömür boyu erişim sağlayan tek seferlik bir satın alma."
 
 #: src/components/modals/AddGuildModal.tsx:356
-msgid "By creating a community, you agree to follow and uphold the <0>Fluxer Community Guidelines</0>."
-msgstr "Bir topluluk oluşturarak, <0>Fluxer Topluluk Kuralları</0>'na uymayı ve onları desteklemeyi kabul etmiş olursunuz."
+msgid "By creating a community, you agree to follow and uphold the <0>NePornu Community Guidelines</0>."
+msgstr "Bir topluluk oluşturarak, <0>NePornu Topluluk Kuralları</0>'na uymayı ve onları desteklemeyi kabul etmiş olursunuz."
 
 #: src/components/modals/components/PurchaseDisclaimer.tsx:39
 msgid "By purchasing, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@fluxer.app</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
@@ -3474,8 +3504,8 @@ msgstr "Kamera Ayarları"
 #: src/components/modals/EmailChangeModal.tsx:262
 #: src/components/modals/EmailChangeModal.tsx:291
 #: src/components/modals/ExternalLinkWarningModal.tsx:94
-#: src/components/modals/FluxerTagChangeModal.tsx:112
-#: src/components/modals/FluxerTagChangeModal.tsx:253
+#: src/components/modals/NePornuTagChangeModal.tsx:112
+#: src/components/modals/NePornuTagChangeModal.tsx:253
 #: src/components/modals/ForwardModal.tsx:359
 #: src/components/modals/guildTabs/GuildBansTab.tsx:101
 #: src/components/modals/guildTabs/GuildRolesTab.tsx:615
@@ -3515,7 +3545,7 @@ msgstr "İptal"
 msgid "Cancel Friend Request"
 msgstr "Arkadaşlık İsteğini İptal Et"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:107
+#: src/components/modals/NePornuTagChangeModal.tsx:107
 msgid "Cancel if you want to choose a different username instead."
 msgstr "Farklı bir kullanıcı adı seçmek istiyorsanız iptal edin."
 
@@ -3647,15 +3677,6 @@ msgstr "E-postayı Değiştir"
 msgid "Change emoji"
 msgstr "Emojiyi değiştir"
 
-#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:52
-#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:62
-msgid "Change FluxerTag"
-msgstr "FluxerTag'ı Değiştir"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:153
-msgid "Change FluxerTag form"
-msgstr "FluxerTag değiştirme formu"
-
 #: src/components/bottomsheets/DMBottomSheet.tsx:435
 #: src/components/uikit/ContextMenu/items/RelationshipMenuItems.tsx:154
 msgid "Change Friend Nickname"
@@ -3712,6 +3733,15 @@ msgstr "Sahibi Değiştir"
 msgid "Change Password"
 msgstr "Parolayı Değiştir"
 
+#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:52
+#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:62
+msgid "Change Tag"
+msgstr "Change Tag"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:153
+msgid "Change Tag form"
+msgstr ""
+
 #: src/components/modals/EmailChangeModal.tsx:184
 msgid "Change your email"
 msgstr "E-postanızı değiştirin"
@@ -3719,10 +3749,6 @@ msgstr "E-postanızı değiştirin"
 #: src/components/modals/utils/settingsSearchIndex.ts:96
 msgid "Change your email address"
 msgstr "E-posta adresinizi değiştirin"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:154
-msgid "Change your FluxerTag"
-msgstr "FluxerTag'ınızı değiştirin"
 
 #: src/components/channel/AutocompleteCommand.tsx:49
 msgid "Change your nickname in this community."
@@ -3739,6 +3765,10 @@ msgstr "Hesabınızı güvende tutmak için şifrenizi değiştirin"
 #: src/components/modals/utils/settingsSearchIndex.ts:45
 msgid "Change your profile picture"
 msgstr "Profil fotoğrafınızı değiştirin"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:154
+msgid "Change your Tag"
+msgstr "Change your Tag"
 
 #: src/components/modals/utils/settingsSearchIndex.ts:59
 msgid "Change your username"
@@ -3935,9 +3965,9 @@ msgstr "Kanal: {0}."
 msgid "Channels"
 msgstr "Kanallar"
 
-#: src/Constants.tsx:143
-msgid "Charged up on 1.21 gigawatts, ready to talk"
-msgstr "1.21 gigawatt ile şarj oldum, konuşmaya hazırım"
+#: src/Constants.tsx:145
+msgid "Charged up, ready to talk"
+msgstr "Charged up, ready to talk"
 
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildEmbedSplashUploadField.tsx:79
 msgid "Chat Embed Background"
@@ -3948,9 +3978,9 @@ msgid "Chat font scaling"
 msgstr "Sohbet yazı tipi ölçekleme"
 
 #: src/components/BootstrapErrorScreen.tsx:57
-#: src/components/NetworkErrorScreen.tsx:45
-msgid "Check our <0>Bluesky (@fluxer.app)</0> for status updates."
-msgstr "Durum güncellemeleri için <0>Bluesky (@fluxer.app)</0> hesabımızı kontrol edin."
+#: src/components/NetworkErrorScreen.tsx:44
+msgid "Check our <0>status page (status.nepornu.cz)</0> for status updates."
+msgstr "Check our <0>status page (status.nepornu.cz)</0> for status updates."
 
 #: src/components/modals/ShareThemeModal.tsx:117
 msgid "Check out my custom theme!"
@@ -4060,8 +4090,8 @@ msgid "Choose what {clientLabel} can do in your community. Uncheck any permissio
 msgstr "{clientLabel}'ın topluluğunuzda neler yapabileceğini seçin. Vermek istemediğiniz izinlerin işaretini kaldırın."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:105
-msgid "Choose what Fluxer remembers about your window between restarts and reloads on this device."
-msgstr "Fluxer'ın bu cihazda yeniden başlatmalar ve yeniden yüklemeler arasında pencereniz hakkında neleri hatırlayacağını seçin."
+msgid "Choose what NePornu remembers about your window between restarts and reloads on this device."
+msgstr "NePornu'ın bu cihazda yeniden başlatmalar ve yeniden yüklemeler arasında pencereniz hakkında neleri hatırlayacağını seçin."
 
 #: src/components/modals/guildTabs/GuildModerationTab.tsx:183
 msgid "Choose what members must have before they can post or DM community members."
@@ -4136,8 +4166,8 @@ msgid "Claim your account to call"
 msgstr "Arama yapmak için hesabınızı talep edin"
 
 #: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:49
-msgid "Claim your account to change your FluxerTag"
-msgstr "FluxerTag'ını değiştirmek için hesabını talep et"
+msgid "Claim your account to change your Tag"
+msgstr "Claim your account to change your Tag"
 
 #: src/components/modals/tabs/ApplicationsTab/index.tsx:146
 msgid "Claim your account to create applications."
@@ -4161,13 +4191,16 @@ msgstr "Sahip olmadığınız ses kanallarına katılmak için hesabınızı tal
 #: src/components/modals/components/plutonium/GiftSection.tsx:61
 #: src/components/modals/components/plutonium/PricingSection.tsx:63
 #: src/components/modals/components/plutonium/VisionarySection.tsx:62
-#: src/components/modals/components/PlutoniumContent.tsx:99
-msgid "Claim your account to purchase Fluxer Plutonium."
-msgstr "Fluxer Plutonium satın almak için hesabını talep et."
+msgid "Claim your account to purchase NePornu Plutonium."
+msgstr "NePornu Plutonium satın almak için hesabını talep et."
 
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:112
-msgid "Claim your account to purchase or redeem Fluxer Plutonium."
-msgstr "Fluxer Plutonium satın almak veya iade etmek için hesabını talep et."
+msgid "Claim your account to purchase or redeem NePornu Plutonium."
+msgstr "NePornu Plutonium satın almak veya iade etmek için hesabını talep et."
+
+#: src/components/modals/components/PlutoniumContent.tsx:99
+msgid "Claim your account to purchase Plutonium."
+msgstr ""
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:239
 msgid "Claim your account to redeem or manage Plutonium gift codes."
@@ -4290,8 +4323,8 @@ msgid "Click \"Create Code\" to generate your first code."
 msgstr "İlk kodunu oluşturmak için \"Kod Oluştur\"a tıkla."
 
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:71
-msgid "Click \"Open Settings\" to open System Settings, then enable Fluxer in Input Monitoring."
-msgstr "Sistem Ayarları'nı açmak için \"Ayarları Aç\"a tıkla, ardından Giriş İzleme'de Fluxer'ı etkinleştir."
+msgid "Click \"Open Settings\" to open System Settings, then enable NePornu in Input Monitoring."
+msgstr "Sistem Ayarları'nı açmak için \"Ayarları Aç\"a tıkla, ardından Giriş İzleme'de NePornu'ı etkinleştir."
 
 #: src/components/modals/tabs/ComponentGalleryTab/ButtonsTab.tsx:58
 msgid "Click any button to see toast notifications with feedback."
@@ -4938,8 +4971,8 @@ msgstr "Bağlam menüleri sol tıkla (düğmelerde) veya sağ tıkla (diğer ö�
 #: src/components/modals/BackupCodesRegenerateModal.tsx:63
 #: src/components/modals/BackupCodesViewModal.tsx:66
 #: src/components/modals/DeviceRevokeModal.tsx:68
-#: src/components/modals/FluxerTagChangeModal.tsx:111
-#: src/components/modals/FluxerTagChangeModal.tsx:256
+#: src/components/modals/NePornuTagChangeModal.tsx:111
+#: src/components/modals/NePornuTagChangeModal.tsx:256
 #: src/components/modals/MfaTotpDisableModal.tsx:78
 #: src/components/modals/MfaTotpEnableModal.tsx:105
 #: src/components/modals/PasswordChangeModal.tsx:99
@@ -5147,10 +5180,9 @@ msgid "Copy File Link"
 msgstr "Dosya Bağlantısını Kopyala"
 
 #: src/components/modals/tabs/BlockedUsersTab.tsx:98
-#: src/components/modals/UserProfileActionsSheet.tsx:208
 #: src/components/modals/UserProfileModal.tsx:1149
-msgid "Copy FluxerTag"
-msgstr "FluxerTag'ı Kopyala"
+msgid "Copy NePornuTag"
+msgstr "NePornuTag'ı Kopyala"
 
 #: src/components/uikit/ContextMenu/MediaContextMenu.tsx:351
 msgid "Copy GIF"
@@ -5207,6 +5239,10 @@ msgstr "Mesaj Bağlantısını Kopyala"
 #: src/components/channel/sticker-picker/VirtualRow.tsx:201
 msgid "Copy Sticker ID"
 msgstr "Sticker Kimliğini Kopyala"
+
+#: src/components/modals/UserProfileActionsSheet.tsx:208
+msgid "Copy Tag"
+msgstr ""
 
 #: src/components/channel/MessageActionBar.tsx:555
 #: src/components/channel/MessageActionBar.tsx:686
@@ -5327,8 +5363,8 @@ msgid "Create and manage applications and bots for your account."
 msgstr "Hesabın için uygulamalar ve botlar oluştur ve yönet."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:119
-msgid "Create and share custom emoji and sticker packs with Fluxer Plutonium."
-msgstr "Fluxer Plutonium ile özel emoji ve sticker paketleri oluştur ve paylaş."
+msgid "Create and share custom emoji and sticker packs with NePornu Plutonium."
+msgstr "NePornu Plutonium ile özel emoji ve sticker paketleri oluştur ve paylaş."
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationCreateModal.tsx:80
 #: src/components/modals/tabs/ApplicationsTab/index.tsx:149
@@ -5437,8 +5473,8 @@ msgid "Create Webhook"
 msgstr "Webhook Oluştur"
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationsList.tsx:43
-msgid "Create your first application to get started with the Fluxer API."
-msgstr "Fluxer API ile çalışmaya başlamak için ilk uygulamanızı oluşturun."
+msgid "Create your first application to get started with the NePornu API."
+msgstr "NePornu API ile çalışmaya başlamak için ilk uygulamanızı oluşturun."
 
 #: src/utils/PermissionUtils.tsx:254
 msgid "Create, edit, or delete channels and categories."
@@ -5597,11 +5633,6 @@ msgstr "Şu anda reddedildi"
 msgid "Currently showing"
 msgstr "Şu anda gösteriliyor"
 
-#: src/Constants.tsx:146
-#: src/Constants.tsx:147
-msgid "Currently stuck in 1885, appearing offline"
-msgstr "Şu anda 1885'te sıkışmış, çevrimdışı görünüyor"
-
 #: src/components/bottomsheets/ChannelBottomSheet.tsx:461
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:1047
 #: src/components/bottomsheets/DMBottomSheet.tsx:608
@@ -5721,7 +5752,7 @@ msgstr "CSS ile özelleştir"
 msgid "Customize your 4-digit tag (#{discriminator}) to your liking with Plutonium"
 msgstr "4 haneli etiketinizi (#{discriminator}) Plutonium ile istediğiniz gibi özelleştirin"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:246
+#: src/components/modals/NePornuTagChangeModal.tsx:246
 msgid "Customize your 4-digit tag or keep it when changing your username"
 msgstr "4 haneli etiketinizi özelleştirin veya kullanıcı adınızı değiştirirken koruyun"
 
@@ -6371,8 +6402,8 @@ msgid "Direct Message"
 msgstr "Doğrudan Mesaj"
 
 #: src/components/channel/dm/DMList.tsx:819
-#: src/components/layout/guild-list/FluxerButton.tsx:65
-#: src/components/layout/guild-list/FluxerButton.tsx:70
+#: src/components/layout/guild-list/AppHomeButton.tsx:65
+#: src/components/layout/guild-list/AppHomeButton.tsx:70
 #: src/components/modals/GuildPrivacySettingsModal.tsx:60
 #: src/components/modals/tabs/PrivacySafetyTab/ConnectionsTab.tsx:182
 #: src/components/modals/utils/settingsSearchIndex.ts:557
@@ -6676,7 +6707,7 @@ msgstr "DM Bildirimleri"
 msgid "DM Settings"
 msgstr "DM Ayarları"
 
-#: src/Constants.tsx:131
+#: src/Constants.tsx:133
 msgid "Do Not Disturb"
 msgstr "Rahatsız Etmeyin"
 
@@ -6779,8 +6810,8 @@ msgstr "Masaüstü Uygulamasını İndir"
 
 #: src/components/layout/guild-list/DownloadButton.tsx:46
 #: src/components/layout/guild-list/DownloadButton.tsx:50
-msgid "Download Fluxer"
-msgstr "Fluxer'ı İndir"
+msgid "Download NePornu"
+msgstr "NePornu'ı İndir"
 
 #: src/components/channel/embeds/media/MediaContainer.tsx:132
 msgid "Download media"
@@ -7500,8 +7531,8 @@ msgid "Enter the 6-digit code sent to your phone."
 msgstr "Telefonunuza gönderilen 6 haneli kodu girin."
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:254
-msgid "Enter the API endpoint of the Fluxer instance you want to connect to."
-msgstr "Bağlanmak istediğiniz Fluxer örneğinin API uç noktasını girin."
+msgid "Enter the API endpoint of the NePornu instance you want to connect to."
+msgstr "Bağlanmak istediğiniz NePornu örneğinin API uç noktasını girin."
 
 #: src/components/pages/ReportPage.tsx:249
 msgid "Enter the code before continuing."
@@ -8412,125 +8443,81 @@ msgstr "Bayraklar"
 msgid "Flexible text channel names"
 msgstr "Esnek metin kanalı adları"
 
-#: src/components/popouts/UserProfileShared.tsx:97
-msgid "Fluxer"
-msgstr "Fluxer"
-
-#: src/components/icons/FluxerIcon.tsx:31
-msgid "Fluxer application icon"
-msgstr "Fluxer uygulama simgesi"
-
-#: src/components/icons/FluxerSymbol.tsx:31
-msgid "Fluxer application symbol"
-msgstr "Fluxer uygulama sembolü"
-
 #: src/components/modals/tabs/NotificationsTab/PushSettings.tsx:37
-msgid "Fluxer avoids sending push notifications to your mobile devices when you are at your computer. Use this setting to control how long you need to be inactive on desktop for before you receive push notifications, ranging from 1 minute to 10 minutes."
-msgstr "Fluxer, bilgisayarınızdayken mobil cihazlarınıza anlık bildirimler göndermekten kaçınır. Anlık bildirimleri almadan önce masaüstünde ne kadar süre hareketsiz kalmanız gerektiğini kontrol etmek için bu ayarı kullanın, süre 1 dakika ile 10 dakika arasında değişir."
+msgid "NePornu avoids sending push notifications to your mobile devices when you are at your computer. Use this setting to control how long you need to be inactive on desktop for before you receive push notifications, ranging from 1 minute to 10 minutes."
+msgstr "NePornu, bilgisayarınızdayken mobil cihazlarınıza anlık bildirimler göndermekten kaçınır. Anlık bildirimleri almadan önce masaüstünde ne kadar süre hareketsiz kalmanız gerektiğini kontrol etmek için bu ayarı kullanın, süre 1 dakika ile 10 dakika arasında değişir."
 
 #: src/components/popouts/UserProfileBadges.tsx:93
-msgid "Fluxer Bug Hunter"
-msgstr "Fluxer Hata Avcısı"
+msgid "NePornu Bug Hunter"
+msgstr "NePornu Hata Avcısı"
 
 #: src/components/popouts/UserProfileBadges.tsx:75
-msgid "Fluxer Community Team"
-msgstr "Fluxer Topluluk Ekibi"
+msgid "NePornu Community Team"
+msgstr "NePornu Topluluk Ekibi"
 
 #: src/components/modals/tabs/DevicesTab.tsx:98
-msgid "Fluxer Desktop"
-msgstr "Fluxer Masaüstü"
-
-#: src/components/BootstrapErrorScreen.tsx:49
-msgid "Fluxer failed to start properly. This could be due to corrupted data or a temporary issue."
-msgstr "Fluxer düzgün başlatılamadı. Bu, bozuk veri veya geçici bir sorundan kaynaklanıyor olabilir."
+msgid "NePornu Desktop"
+msgstr "NePornu Masaüstü"
 
 #: src/stores/NewDeviceMonitoringStore.tsx:186
-msgid "Fluxer has found a new audio input device named <0>{deviceName}</0>. Do you want to switch to it?"
-msgstr "Fluxer, <0>{deviceName}</0> adında yeni bir ses giriş cihazı buldu. Buna geçmek istiyor musun?"
+msgid "NePornu has found a new audio input device named <0>{deviceName}</0>. Do you want to switch to it?"
+msgstr "NePornu, <0>{deviceName}</0> adında yeni bir ses giriş cihazı buldu. Buna geçmek istiyor musun?"
 
 #: src/stores/NewDeviceMonitoringStore.tsx:191
-msgid "Fluxer has found a new audio output device named <0>{deviceName}</0>. Do you want to switch to it?"
-msgstr "Fluxer, <0>{deviceName}</0> adında yeni bir ses çıkış cihazı buldu. Buna geçmek istiyor musun?"
-
-#: src/components/popouts/UserProfileShared.tsx:128
-msgid "Fluxer Member Since"
-msgstr "Fluxer Üyesi Olduğu Tarih"
-
-#: src/components/modals/tabs/VoiceTab.tsx:212
-msgid "Fluxer needs access to list the available microphones and speakers."
-msgstr "Fluxer'ın mevcut mikrofonları ve hoparlörleri listeleyebilmesi için erişime ihtiyacı var."
+msgid "NePornu has found a new audio output device named <0>{deviceName}</0>. Do you want to switch to it?"
+msgstr "NePornu, <0>{deviceName}</0> adında yeni bir ses çıkış cihazı buldu. Buna geçmek istiyor musun?"
 
 #: src/components/alerts/ScreenRecordingPermissionDeniedModal.tsx:31
-msgid "Fluxer needs access to screen recording. Open System Settings → Privacy & Security → Screen Recording, allow Fluxer, and then try again."
-msgstr "Fluxer'ın ekran kaydına erişime ihtiyacı var. Sistem Ayarları → Gizlilik ve Güvenlik → Ekran Kaydı'nı açın, Fluxer'a izin verin ve ardından tekrar deneyin."
-
-#: src/components/modals/tabs/VideoTab.tsx:127
-msgid "Fluxer needs access to your camera before we can list it here."
-msgstr "Fluxer'ın burada listelenebilmesi için kameranıza erişime ihtiyacı var."
+msgid "NePornu needs access to screen recording. Open System Settings → Privacy & Security → Screen Recording, allow NePornu, and then try again."
+msgstr "NePornu'ın ekran kaydına erişime ihtiyacı var. Sistem Ayarları → Gizlilik ve Güvenlik → Ekran Kaydı'nı açın, NePornu'a izin verin ve ardından tekrar deneyin."
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:43
-msgid "Fluxer needs access to your camera to enable video chat. Please grant camera permission in your browser settings and try again."
-msgstr "Fluxer'ın video sohbetini etkinleştirmek için kameranıza erişime ihtiyacı var. Lütfen tarayıcı ayarlarınızda kamera iznini verin ve tekrar deneyin."
+msgid "NePornu needs access to your camera to enable video chat. Please grant camera permission in your browser settings and try again."
+msgstr "NePornu'ın video sohbetini etkinleştirmek için kameranıza erişime ihtiyacı var. Lütfen tarayıcı ayarlarınızda kamera iznini verin ve tekrar deneyin."
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:42
-msgid "Fluxer needs access to your camera. Allow camera access in your operating system privacy settings and restart the app."
-msgstr "Fluxer'ın kameranıza erişime ihtiyacı var. İşletim sistemi gizlilik ayarlarınızda kamera erişimine izin verin ve uygulamayı yeniden başlatın."
+msgid "NePornu needs access to your camera. Allow camera access in your operating system privacy settings and restart the app."
+msgstr "NePornu'ın kameranıza erişime ihtiyacı var. İşletim sistemi gizlilik ayarlarınızda kamera erişimine izin verin ve uygulamayı yeniden başlatın."
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:32
-msgid "Fluxer needs access to your camera. Open System Settings → Privacy & Security → Camera, allow Fluxer, and then restart the app."
-msgstr "Fluxer'ın kameranıza erişime ihtiyacı var. Sistem Ayarları → Gizlilik ve Güvenlik → Kamera'yı açın, Fluxer'a izin verin ve ardından uygulamayı yeniden başlatın."
+msgid "NePornu needs access to your camera. Open System Settings → Privacy & Security → Camera, allow NePornu, and then restart the app."
+msgstr "NePornu'ın kameranıza erişime ihtiyacı var. Sistem Ayarları → Gizlilik ve Güvenlik → Kamera'yı açın, NePornu'a izin verin ve ardından uygulamayı yeniden başlatın."
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:44
-msgid "Fluxer needs access to your microphone to enable voice chat. Please grant microphone permission in your browser settings and try again."
-msgstr "Fluxer'ın sesli sohbeti etkinleştirmek için mikrofonunuza erişime ihtiyacı var. Lütfen tarayıcı ayarlarınızda mikrofon iznini verin ve tekrar deneyin."
+msgid "NePornu needs access to your microphone to enable voice chat. Please grant microphone permission in your browser settings and try again."
+msgstr "NePornu'ın sesli sohbeti etkinleştirmek için mikrofonunuza erişime ihtiyacı var. Lütfen tarayıcı ayarlarınızda mikrofon iznini verin ve tekrar deneyin."
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:43
-msgid "Fluxer needs access to your microphone. Allow microphone access in your operating system privacy settings and restart the app."
-msgstr "Fluxer'ın mikrofonunuza erişime ihtiyacı var. İşletim sistemi gizlilik ayarlarınızda mikrofon erişimine izin verin ve uygulamayı yeniden başlatın."
+msgid "NePornu needs access to your microphone. Allow microphone access in your operating system privacy settings and restart the app."
+msgstr "NePornu'ın mikrofonunuza erişime ihtiyacı var. İşletim sistemi gizlilik ayarlarınızda mikrofon erişimine izin verin ve uygulamayı yeniden başlatın."
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:33
-msgid "Fluxer needs access to your microphone. Open System Settings → Privacy & Security → Microphone, allow Fluxer, and then restart the app."
-msgstr "Fluxer'ın mikrofonunuza erişime ihtiyacı var. Sistem Ayarları → Gizlilik ve Güvenlik → Mikrofon'u açın, Fluxer'a izin verin ve ardından uygulamayı yeniden başlatın."
+msgid "NePornu needs access to your microphone. Open System Settings → Privacy & Security → Microphone, allow NePornu, and then restart the app."
+msgstr "NePornu'ın mikrofonunuza erişime ihtiyacı var. Sistem Ayarları → Gizlilik ve Güvenlik → Mikrofon'u açın, NePornu'a izin verin ve ardından uygulamayı yeniden başlatın."
 
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:64
-msgid "Fluxer needs Input Monitoring permission to keep push-to-talk and global shortcuts working while the window is in the background."
-msgstr "Fluxer'ın penceresi arka plandayken konuşma tuşu ve genel kısayolların çalışmaya devam etmesi için Girdi İzleme iznine ihtiyacı var."
+msgid "NePornu needs Input Monitoring permission to keep push-to-talk and global shortcuts working while the window is in the background."
+msgstr "NePornu'ın penceresi arka plandayken konuşma tuşu ve genel kısayolların çalışmaya devam etmesi için Girdi İzleme iznine ihtiyacı var."
 
 #: src/components/modals/InputMonitoringCTAModal.tsx:76
-msgid "Fluxer needs permission to monitor keyboard and mouse input so that <0>Push-to-Talk</0> and <1>Global Shortcuts</1> work even when you're in another app or game."
-msgstr "Fluxer'ın başka bir uygulamada veya oyundayken bile <0>Konuşma Tuşu</0> ve <1>Genel Kısayolların</1> çalışması için klavye ve fare girişini izleme iznine ihtiyacı var."
+msgid "NePornu needs permission to monitor keyboard and mouse input so that <0>Push-to-Talk</0> and <1>Global Shortcuts</1> work even when you're in another app or game."
+msgstr "NePornu'ın başka bir uygulamada veya oyundayken bile <0>Konuşma Tuşu</0> ve <1>Genel Kısayolların</1> çalışması için klavye ve fare girişini izleme iznine ihtiyacı var."
 
 #: src/components/popouts/UserProfileBadges.tsx:84
-msgid "Fluxer Partner"
-msgstr "Fluxer Partner"
+msgid "NePornu Partner"
+msgstr "NePornu Partner"
 
-#: src/components/modals/components/PlutoniumContent.tsx:193
-#: src/components/modals/PremiumModal.tsx:34
-#: src/components/modals/utils/settingsConstants.tsx:147
 #: src/components/popouts/UserProfileBadges.tsx:99
-msgid "Fluxer Plutonium"
-msgstr "Fluxer Plutonium"
+msgid "NePornu Plutonium"
+msgstr "NePornu Plutonium"
 
 #: src/components/popouts/UserProfileBadges.tsx:66
-msgid "Fluxer Staff"
-msgstr "Fluxer Staff"
+msgid "NePornu Staff"
+msgstr "NePornu Staff"
 
 #: src/components/modals/tabs/NotificationsTab/Notifications.tsx:114
-msgid "Fluxer uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
-msgstr "Fluxer, mobil PWA olarak kurulduğunda anlık bildirimleri kullanır. Kayıt olmak, tarayıcı arka planda olsa bile ağ geçidinin cihazınıza ulaşmasını sağlar."
-
-#: src/components/modals/FluxerTagChangeModal.tsx:170
-#: src/components/modals/tabs/ApplicationsTab/application-detail/BotProfileSection.tsx:104
-msgid "FluxerTag"
-msgstr "FluxerTag"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:97
-msgid "FluxerTag already taken"
-msgstr "FluxerTag zaten alınmış"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:139
-msgid "FluxerTag updated"
-msgstr "FluxerTag güncellendi"
+msgid "NePornu uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
+msgstr "NePornu, mobil PWA olarak kurulduğunda anlık bildirimleri kullanır. Kayıt olmak, tarayıcı arka planda olsa bile ağ geçidinin cihazınıza ulaşmasını sağlar."
 
 #: src/stores/KeybindStore.ts:370
 msgid "Focus Text Area"
@@ -8874,8 +8861,8 @@ msgid "Friend Requests"
 msgstr "Arkadaşlık İstekleri"
 
 #: src/components/channel/dm/AddFriendForm.tsx:160
-msgid "Friend's FluxerTag"
-msgstr "Arkadaşın FluxerTag'ı"
+msgid "Friend's Tag"
+msgstr "Friend's Tag"
 
 #: src/components/channel/dm/DMList.tsx:781
 #: src/utils/quick-switcher/QuickSwitcherModalUtils.tsx:87
@@ -8980,8 +8967,8 @@ msgid "Generate invite link"
 msgstr "Davet bağlantısı oluştur"
 
 #: src/components/modals/tabs/BetaCodesTab.tsx:340
-msgid "Generate up to {MAX_UNCLAIMED_BETA_CODES} unclaimed beta codes to invite friends to Fluxer. You can create 3 codes per week."
-msgstr "Arkadaşlarınızı Fluxer'a davet etmek için en fazla {MAX_UNCLAIMED_BETA_CODES} kullanılmamış beta kodu oluşturun. Haftada 3 kod oluşturabilirsiniz."
+msgid "Generate up to {MAX_UNCLAIMED_BETA_CODES} unclaimed beta codes to invite friends to NePornu. You can create 3 codes per week."
+msgstr "Arkadaşlarınızı NePornu'a davet etmek için en fazla {MAX_UNCLAIMED_BETA_CODES} kullanılmamış beta kodu oluşturun. Haftada 3 kod oluşturabilirsiniz."
 
 #: src/components/auth/HandoffCodeDisplay.tsx:49
 msgid "Generating code..."
@@ -9009,8 +8996,8 @@ msgid "Get desktop app"
 msgstr "Masaüstü uygulamasını edinin"
 
 #: src/components/layout/app-layout/nagbars/MobileDownloadNagbar.tsx:50
-msgid "Get Fluxer on mobile to receive notifications on the go and stay connected with your friends anytime."
-msgstr "Yoldayken bildirim almak ve arkadaşlarınızla her zaman bağlantıda kalmak için Fluxer'ı mobilde edinin."
+msgid "Get NePornu on mobile to receive notifications on the go and stay connected with your friends anytime."
+msgstr "Yoldayken bildirim almak ve arkadaşlarınızla her zaman bağlantıda kalmak için NePornu'ı mobilde edinin."
 
 #: src/stores/KeybindStore.ts:407
 msgid "Get Help"
@@ -9026,7 +9013,7 @@ msgstr "Mesaj aldığınızda bildirim alın. Tarayıcı ayarlarınızda bildiri
 
 #: src/components/alerts/FileSizeTooLargeModal.tsx:46
 #: src/components/modals/BackgroundImageGalleryModal.tsx:677
-#: src/components/modals/FluxerTagChangeModal.tsx:214
+#: src/components/modals/NePornuTagChangeModal.tsx:214
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:58
 #: src/components/modals/tabs/MyProfileTab/AvatarUploader.tsx:122
 #: src/components/modals/tabs/NotificationsTab/Sounds.tsx:82
@@ -9044,7 +9031,7 @@ msgstr "Kendiniz için Plutonium edinin ve daha yüksek limitler ile özel özel
 msgid "Get Plutonium to customize your tag"
 msgstr "Etiketinizi özelleştirmek için Plutonium edinin"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:192
+#: src/components/modals/NePornuTagChangeModal.tsx:192
 msgid "Get Plutonium to customize your tag or keep it when changing your username"
 msgstr "Etiketinizi özelleştirmek veya kullanıcı adınızı değiştirirken onu korumak için Plutonium edinin"
 
@@ -9053,8 +9040,8 @@ msgid "Get prompted when new audio devices are connected"
 msgstr "Yeni ses cihazları bağlandığında uyarı alın"
 
 #: src/components/layout/app-layout/nagbars/DesktopDownloadNagbar.tsx:49
-msgid "Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies."
-msgstr "Sistem genelinde push-to-talk ve birkaç başka güzellik için Fluxer masaüstü uygulamasını edinin."
+msgid "Get the NePornu desktop app for system-wide push-to-talk and a few other goodies."
+msgstr "Get the NePornu desktop app for system-wide push-to-talk and a few other goodies."
 
 #: src/components/modals/MediaModal.tsx:756
 #: src/components/stickers/StickerGridItem.tsx:100
@@ -9656,10 +9643,6 @@ msgstr "Daha yüksek bit hızı = daha iyi kalite ve daha yüksek bant genişli�
 msgid "Hindi"
 msgstr "Hintçe"
 
-#: src/components/modals/components/LogoutModal.tsx:31
-msgid "Hit 88mph"
-msgstr "88mph'a Ulaş"
-
 #: src/components/modals/AddGuildModal.tsx:153
 msgid "Hobby Haven"
 msgstr "Hobi Sığınağı"
@@ -9782,8 +9765,8 @@ msgid "I understand"
 msgstr "Anladım"
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:309
-msgid "I want to use a custom Fluxer instance"
-msgstr "Özel bir Fluxer örneği kullanmak istiyorum"
+msgid "I want to use a custom NePornu instance"
+msgstr "Özel bir NePornu örneği kullanmak istiyorum"
 
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildIconUploadField.tsx:65
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildIconUploadField.tsx:78
@@ -9796,7 +9779,7 @@ msgstr "Simge"
 msgid "Icon file is too large. Please choose a file smaller than 10MB."
 msgstr "Simge dosyası çok büyük. Lütfen 10MB'dan küçük bir dosya seçin."
 
-#: src/Constants.tsx:132
+#: src/Constants.tsx:134
 msgid "Idle"
 msgstr "Boşta"
 
@@ -9952,7 +9935,7 @@ msgstr "bir saniye içinde"
 msgid "In the beginning, there was nothing. Then, there was #{0}. And it was good."
 msgstr "Başlangıçta hiçbir şey yoktu. Sonra #{0} vardı. Ve iyiydi."
 
-#: src/Constants.tsx:144
+#: src/Constants.tsx:146
 msgid "In the zone, please do not disturb"
 msgstr "Odaklanmış durumdayım, lütfen rahatsız etmeyin"
 
@@ -9961,8 +9944,8 @@ msgid "in two days"
 msgstr "iki gün içinde"
 
 #: src/components/modals/tabs/VoiceTab.tsx:142
-msgid "In your browser, Push-to-Talk will only work when the Fluxer tab is focused. For system-wide Push-to-Talk that works even when gaming or using other apps, download the desktop app."
-msgstr "Tarayıcınızda, Konuşma Tuşu yalnızca Fluxer sekmesi odaklandığında çalışır. Oyun oynarken veya diğer uygulamaları kullanırken bile çalışan sistem genelindeki Konuşma Tuşu için masaüstü uygulamasını indirin."
+msgid "In your browser, Push-to-Talk will only work when the application tab is focused. For system-wide Push-to-Talk that works even when gaming or using other apps, download the desktop app."
+msgstr ""
 
 #: src/utils/SearchUtils.ts:269
 msgid "in:"
@@ -10222,7 +10205,7 @@ msgstr "Ters"
 msgid "Inverted button clicked!"
 msgstr "Ters düğme tıklandı!"
 
-#: src/Constants.tsx:133
+#: src/Constants.tsx:135
 msgid "Invisible"
 msgstr "Görünmez"
 
@@ -10492,13 +10475,13 @@ msgstr "Topluluğa Katıl"
 msgid "Join community form"
 msgstr "Topluluğa katılma formu"
 
-#: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:97
-msgid "Join Fluxer HQ"
-msgstr "Fluxer HQ'ya katıl"
-
 #: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:94
-msgid "Join Fluxer HQ to chat with the team and stay up to date on the latest!"
-msgstr "Ekiple sohbet etmek ve en son gelişmelerden haberdar olmak için Fluxer HQ'ya katıl!"
+msgid "Join NePornu HQ"
+msgstr "NePornu HQ'ya katıl"
+
+#: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:91
+msgid "Join NePornu HQ to chat with the team and stay up to date on the latest!"
+msgstr "Ekiple sohbet etmek ve en son gelişmelerden haberdar olmak için NePornu HQ'ya katıl!"
 
 #: src/components/channel/InviteEmbed.tsx:201
 msgid "Join Group"
@@ -10807,8 +10790,8 @@ msgid "Latvia"
 msgstr "Letonya"
 
 #: src/components/modals/tabs/AdvancedTab.tsx:88
-msgid "Launch Fluxer at login"
-msgstr "Fluxer'ı oturum açmada başlat"
+msgid "Launch NePornu at login"
+msgstr "NePornu'ı oturum açmada başlat"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:122
 msgid "Learn about Plutonium"
@@ -11117,6 +11100,7 @@ msgid "Log in with a passkey"
 msgstr "Geçiş anahtarı ile giriş yap"
 
 #: src/components/modals/components/DesktopSettingsView.tsx:346
+#: src/components/modals/components/LogoutModal.tsx:31
 #: src/components/modals/components/MobileSettingsView.tsx:357
 #: src/components/pages/PendingVerificationPage.tsx:151
 msgid "Log Out"
@@ -11315,8 +11299,8 @@ msgid "Manage Subscription"
 msgstr "Aboneliği Yönet"
 
 #: src/components/modals/tabs/AccountSecurityTab/AccountTab.tsx:58
-msgid "Manage the email address you use to sign in to Fluxer"
-msgstr "Fluxer'da oturum açmak için kullandığınız e-posta adresini yönetin"
+msgid "Manage the email address you use to sign in"
+msgstr ""
 
 #: src/utils/PermissionUtils.tsx:284
 #: src/utils/PermissionUtils.tsx:439
@@ -11440,7 +11424,7 @@ msgstr "Üye geçici olarak işaretlendi."
 msgid "Markers Below Slider"
 msgstr "Kaydırıcının Altındaki İşaretçiler"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:182
+#: src/components/modals/NePornuTagChangeModal.tsx:182
 msgid "Marty_McFly"
 msgstr "Marty_McFly"
 
@@ -12357,6 +12341,10 @@ msgstr "Hesaba mı ihtiyacınız var?"
 msgid "Neighborhood Watch"
 msgstr "Mahalle Gözetimi"
 
+#: src/components/BootstrapErrorScreen.tsx:49
+msgid "NePornu failed to start properly. This could be due to corrupted data or a temporary issue."
+msgstr "NePornu failed to start properly. This could be due to corrupted data or a temporary issue."
+
 #: src/components/pages/report/optionDescriptors.ts:102
 msgid "Netherlands"
 msgstr "Hollanda"
@@ -12829,8 +12817,8 @@ msgid "No Timer"
 msgstr "Zamanlayıcı Yok"
 
 #: src/components/channel/dm/AddFriendForm.tsx:93
-msgid "No user found with that FluxerTag."
-msgstr "Bu FluxerTag ile kullanıcı bulunamadı."
+msgid "No user found with that Tag."
+msgstr "No user found with that Tag."
 
 #: src/components/modals/guildTabs/GuildBansTab.tsx:178
 msgid "No users are currently banned from this community."
@@ -13046,7 +13034,7 @@ msgstr "Kapalı"
 
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:287
 #: src/components/channel/ChannelMembers.tsx:108
-#: src/Constants.tsx:134
+#: src/Constants.tsx:136
 #: src/utils/MemberListUtils.ts:150
 #: src/utils/MemberListUtils.ts:188
 msgid "Offline"
@@ -13152,7 +13140,7 @@ msgstr "tek seferlik, ömür boyu"
 #: src/components/channel/ChannelMembers.tsx:106
 #: src/components/channel/dm/DMFriendsView.tsx:168
 #: src/components/channel/friends/views/FriendsList.tsx:95
-#: src/Constants.tsx:130
+#: src/Constants.tsx:132
 #: src/utils/MemberListUtils.ts:143
 #: src/utils/MemberListUtils.ts:182
 msgid "Online"
@@ -13211,6 +13199,10 @@ msgstr "Opaklık"
 msgid "Open {altText} in full view"
 msgstr "{altText} tam görünümde aç"
 
+#: src/components/auth/DesktopDeepLinkPrompt.tsx:102
+msgid "Open app"
+msgstr ""
+
 #: src/components/auth/BrowserLoginHandoffModal.tsx:326
 msgid "Open browser"
 msgstr "Tarayıcıyı aç"
@@ -13252,10 +13244,6 @@ msgstr "DM'ler + Toplulukları Aç"
 msgid "Open DMs Only"
 msgstr "Sadece DM'leri Aç"
 
-#: src/components/auth/DesktopDeepLinkPrompt.tsx:102
-msgid "Open Fluxer"
-msgstr "Fluxer'ı Aç"
-
 #: src/components/channel/embeds/media/EmbedImage.tsx:187
 msgid "Open image in full view"
 msgstr "Resmi tam görünümde aç"
@@ -13269,13 +13257,13 @@ msgstr "Tarayıcıda aç"
 msgid "Open in Community"
 msgstr "Toplulukta Aç"
 
-#: src/components/auth/DesktopDeepLinkPrompt.tsx:89
-msgid "Open in Fluxer for desktop"
-msgstr "Masaüstü için Fluxer'da aç"
-
 #: src/components/channel/embeds/media/EmbedYouTube.tsx:117
 msgid "Open in new tab"
 msgstr "Yeni sekmede aç"
+
+#: src/components/auth/DesktopDeepLinkPrompt.tsx:89
+msgid "Open in the desktop app"
+msgstr ""
 
 #: src/components/uikit/ContextMenu/MediaContextMenu.tsx:309
 msgid "Open Link"
@@ -13901,20 +13889,20 @@ msgstr "Lütfen doğrulama e-postası için gelen kutunuzu kontrol edin."
 
 #: src/components/modals/InputMonitoringCTAModal.tsx:53
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:51
-msgid "Please enable Fluxer in System Settings → Privacy & Security → Input Monitoring."
-msgstr "Lütfen Fluxer'ı Sistem Ayarları → Gizlilik ve Güvenlik → Giriş İzleme'de etkinleştirin."
+msgid "Please enable NePornu in System Settings → Privacy & Security → Input Monitoring."
+msgstr "Lütfen NePornu'ı Sistem Ayarları → Gizlilik ve Güvenlik → Giriş İzleme'de etkinleştirin."
 
 #: src/components/pages/ReportPage.tsx:211
 msgid "Please enter a valid email address."
 msgstr "Lütfen geçerli bir e-posta adresi girin."
 
-#: src/components/channel/dm/AddFriendForm.tsx:97
-msgid "Please enter a valid FluxerTag (Username#0000)."
-msgstr "Lütfen geçerli bir FluxerTag (KullanıcıAdı#0000) girin."
-
 #: src/components/pages/ReportPage.tsx:336
 msgid "Please enter a valid message link URL."
 msgstr "Lütfen geçerli bir mesaj bağlantısı URL'si girin."
+
+#: src/components/channel/dm/AddFriendForm.tsx:97
+msgid "Please enter a valid Tag (Username#0000)."
+msgstr "Please enter a valid Tag (Username#0000)."
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:189
 msgid "Please enter an API endpoint."
@@ -13953,8 +13941,8 @@ msgid "Please try again later."
 msgstr "Lütfen daha sonra tekrar deneyin."
 
 #: src/components/channel/UnknownMessage.tsx:84
-msgid "Please update Fluxer to view this message."
-msgstr "Bu mesajı görüntülemek için lütfen Fluxer'ı güncelleyin."
+msgid "Please update NePornu to view this message."
+msgstr "Bu mesajı görüntülemek için lütfen NePornu'ı güncelleyin."
 
 #: src/components/modals/guildTabs/GuildEmojiTab.tsx:144
 msgid "Please upload JPEG, PNG, WebP, or GIF files only."
@@ -13978,6 +13966,9 @@ msgstr "Lütfen fiyat bilgilerinin yüklenmesini bekleyin."
 #: src/components/channel/dm/DMList.tsx:729
 #: src/components/channel/dm/DMList.tsx:808
 #: src/components/modals/components/FeatureComparisonTable.tsx:41
+#: src/components/modals/components/PlutoniumContent.tsx:193
+#: src/components/modals/PremiumModal.tsx:34
+#: src/components/modals/utils/settingsConstants.tsx:147
 msgid "Plutonium"
 msgstr "Plutonium"
 
@@ -14086,8 +14077,8 @@ msgid "Preview"
 msgstr "Önizleme"
 
 #: src/components/modals/tabs/DeveloperOptionsTab/TypographyTab.tsx:135
-msgid "Preview all available fonts, weights, and styles across different languages supported by Fluxer."
-msgstr "Fluxer tarafından desteklenen farklı dillerdeki tüm mevcut yazı tiplerini, ağırlıkları ve stilleri önizle."
+msgid "Preview all available fonts, weights, and styles across different languages supported by NePornu."
+msgstr "NePornu tarafından desteklenen farklı dillerdeki tüm mevcut yazı tiplerini, ağırlıkları ve stilleri önizle."
 
 #: src/components/modals/tabs/AccessibilityTab.tsx:97
 msgid "Preview Button"
@@ -14259,8 +14250,8 @@ msgid "Provide at least a user ID or a user tag."
 msgstr "En az bir kullanıcı kimliği veya kullanıcı etiket sağlayın."
 
 #: src/components/pages/ReportPage.tsx:354
-msgid "Provide either a user ID or a FluxerTag for the person you are reporting."
-msgstr "Şikayet ettiğiniz kişi için bir kullanıcı kimliği veya FluxerTag sağlayın."
+msgid "Provide either a user ID or a Tag for the person you are reporting."
+msgstr ""
 
 #: src/components/pages/ReportPage.tsx:305
 msgid "Provide your full legal name for the declaration."
@@ -15007,8 +14998,8 @@ msgid "Renews on <0>{renewalDate}</0>."
 msgstr "<0>{renewalDate}</0> tarihinde yenilenir."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:116
-msgid "Reopen in maximized mode if that’s how you last used Fluxer."
-msgstr "Fluxer'ı en son büyütülmüş modda kullandıysanız, bu şekilde yeniden aç."
+msgid "Reopen in maximized mode if that’s how you last used NePornu."
+msgstr "NePornu'ı en son büyütülmüş modda kullandıysanız, bu şekilde yeniden aç."
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:86
 #: src/components/modals/BackgroundImageGalleryModal.tsx:395
@@ -15500,12 +15491,12 @@ msgid "Row"
 msgstr "Satır"
 
 #: src/components/modals/tabs/AdvancedTab.tsx:85
-msgid "Run Fluxer automatically when your computer starts. Or don't. Your choice!"
-msgstr "Bilgisayarın açıldığında Fluxer'ı otomatik çalıştır. Ya da çalıştırma! Seçim senin!"
+msgid "Run NePornu automatically when your computer starts. Or don't. Your choice!"
+msgstr "Bilgisayarın açıldığında NePornu'ı otomatik çalıştır. Ya da çalıştırma! Seçim senin!"
 
 #: src/components/modals/tabs/KeybindsTab.tsx:93
-msgid "Run this shortcut even when Fluxer is not focused."
-msgstr "Bu kısayolu Fluxer odakta olmadığında bile çalıştır."
+msgid "Run this shortcut even when NePornu is not focused."
+msgstr "Bu kısayolu NePornu odakta olmadığında bile çalıştır."
 
 #: src/utils/LocaleUtils.tsx:60
 msgid "Russian"
@@ -17717,6 +17708,19 @@ msgstr "Sistem: Açık tema (sisteminizin koyu/açık tercihiyle otomatik senkro
 msgid "Tables"
 msgstr "Tablolar"
 
+#: src/components/modals/NePornuTagChangeModal.tsx:170
+#: src/components/modals/tabs/ApplicationsTab/application-detail/BotProfileSection.tsx:104
+msgid "Tag"
+msgstr "Tag"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:97
+msgid "Tag already taken"
+msgstr "Tag already taken"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:139
+msgid "Tag updated"
+msgstr "Tag updated"
+
 #. placeholder {0}: tags.length
 #: src/components/modals/meme-form/MemeFormFields.tsx:117
 msgid "Tags ({0}/{MAX_FAVORITE_MEME_TAGS})"
@@ -17811,13 +17815,13 @@ msgstr "Metin Alanı"
 msgid "Thai"
 msgstr "Tayca"
 
-#: src/components/modals/IARModal.tsx:187
-msgid "Thank you for helping keep Fluxer safe. Reports are reviewed by our Safety Team. False reports may result in action against your account."
-msgstr "Fluxer'ı güvende tutmaya yardım ettiğiniz için teşekkür ederiz. Raporlar Güvenlik Ekibimiz tarafından incelenir. Yanlış raporlar hesabınıza karşı işlemle sonuçlanabilir."
-
 #: src/components/pages/report/ReportStepComplete.tsx:37
-msgid "Thank you for helping keep Fluxer safe. We'll review your report as soon as possible."
-msgstr "Fluxer'ı güvende tutmamıza yardımcı olduğunuz için teşekkürler. Şikayetinizi en kısa sürede gözden geçireceğiz."
+msgid "Thank you for helping keep NePornu safe. We'll review your report as soon as possible."
+msgstr "NePornu'ı güvende tutmamıza yardımcı olduğunuz için teşekkürler. Şikayetinizi en kısa sürede gözden geçireceğiz."
+
+#: src/components/modals/IARModal.tsx:187
+msgid "Thank you for helping keep the application safe. Reports are reviewed by our Safety Team. False reports may result in action against your account."
+msgstr ""
 
 #: src/components/form/ColorPickerField.tsx:274
 msgid "That doesn't look like a valid color. Try hex, rgb(), hsl(), or a CSS color name."
@@ -17884,10 +17888,6 @@ msgstr "Yüklemeye çalıştığınız dosya, abone olmayanlar için olan 25 MB'
 msgid "The file you're trying to upload exceeds the maximum size limit of 500 MB for Plutonium subscribers."
 msgstr "Yüklemeye çalıştığınız dosya, Plutonium aboneleri için olan 500 MB'lık maksimum boyut sınırını aşıyor."
 
-#: src/components/modals/FluxerTagChangeModal.tsx:101
-msgid "The FluxerTag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
-msgstr "<0>{fluxerTag}</0> FluxerTag'i zaten alınmış. Devam etmek, ayırıcınızı otomatik olarak yeniden atayacaktır."
-
 #: src/components/modals/tabs/PrivacySafetyTab/DataDeletionTab.tsx:71
 msgid "The job starts 24 hours after you confirm and can be canceled or restarted anytime"
 msgstr "İş, onayladıktan 24 saat sonra başlar ve istediğiniz zaman iptal edilebilir veya yeniden başlatılabilir"
@@ -17916,6 +17916,10 @@ msgstr "<0>\"{roleName}\"</0> rolü şu anda silinemedi. Lütfen tekrar deneyin.
 #: src/components/modals/AddGuildModal.tsx:183
 msgid "The Squad"
 msgstr "Takım"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:101
+msgid "The Tag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
+msgstr "The Tag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
 
 #: src/components/modals/tabs/PrivacySafetyTab/DataDeletionTab.tsx:74
 msgid "The time to complete depends on how many messages you have sent"
@@ -17992,8 +17996,8 @@ msgid "There's nothing more to see here."
 msgstr "Burada görülecek başka bir şey yok."
 
 #: src/components/modals/tabs/AuthorizedAppsTab.tsx:148
-msgid "These applications have been granted access to your Fluxer account."
-msgstr "Bu uygulamalara Fluxer hesabınıza erişim izni verildi."
+msgid "These applications have been granted access to your NePornu account."
+msgstr "Bu uygulamalara NePornu hesabınıza erişim izni verildi."
 
 #: src/components/modals/tabs/VoiceTab.tsx:403
 msgid "These settings use browser-native audio processing to improve call quality. For best results, keep all options enabled."
@@ -18206,8 +18210,8 @@ msgid "This is a custom emoji from a community. Ask the author for an invite to 
 msgstr "Bu, bir topluluktan özel bir emoji. Bu emojiyi kullanmak için yazardan bir davet isteyin."
 
 #: src/components/emojis/EmojiAttributionSubtext.tsx:101
-msgid "This is a default emoji on Fluxer."
-msgstr "Bu, Fluxer'da varsayılan bir emoji."
+msgid "This is a default emoji on NePornu."
+msgstr "Bu, NePornu'da varsayılan bir emoji."
 
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:147
 msgid "This is an error message"
@@ -18613,10 +18617,6 @@ msgstr "Çok fazla istek. Lütfen daha sonra tekrar deneyin."
 msgid "Too Quiet"
 msgstr "Çok Sessiz"
 
-#: src/Constants.tsx:145
-msgid "Took the DeLorean out, but I'll be back in time"
-msgstr "DeLorean'ı çıkardım, ama zamanında geri döneceğim"
-
 #: src/components/modals/tabs/DeveloperOptionsTab/index.tsx:61
 #: src/components/modals/tabs/DeveloperOptionsTab/Inline.tsx:56
 #: src/components/modals/utils/settingsConstants.tsx:316
@@ -18723,7 +18723,7 @@ msgstr "Tekrar dene"
 #: src/components/channel/ChannelSearchResults.tsx:663
 #: src/components/modals/channelTabs/ChannelInvitesTab.tsx:146
 #: src/components/modals/channelTabs/ChannelWebhooksTab.tsx:159
-#: src/components/NetworkErrorScreen.tsx:56
+#: src/components/NetworkErrorScreen.tsx:55
 msgid "Try Again"
 msgstr "Tekrar Dene"
 
@@ -19904,7 +19904,7 @@ msgstr "Kullanıcı Ses Düzeyi"
 msgid "user, bot or webhook"
 msgstr "kullanıcı, bot veya webhook"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:181
+#: src/components/modals/NePornuTagChangeModal.tsx:181
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:101
 #: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:44
 #: src/components/modals/utils/settingsSearchIndex.ts:57
@@ -19935,11 +19935,11 @@ msgstr "Kullanıcı adı en fazla 32 karakter olmalıdır"
 msgid "Username#0000"
 msgstr "KullanıcıAdı#0000"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:163
+#: src/components/modals/NePornuTagChangeModal.tsx:163
 msgid "Usernames can only contain letters (a-z, A-Z), numbers (0-9), and underscores. Usernames are case-insensitive."
 msgstr "Kullanıcı adları yalnızca harfler (a-z, A-Z), sayılar (0-9) ve alt çizgi içerebilir. Kullanıcı adları büyük/küçük harf duyarlı değildir."
 
-#: src/components/modals/FluxerTagChangeModal.tsx:158
+#: src/components/modals/NePornuTagChangeModal.tsx:158
 msgid "Usernames can only contain letters (a-z, A-Z), numbers (0-9), and underscores. Usernames are case-insensitive. You can pick your own 4-digit tag if it's available."
 msgstr "Kullanıcı adları yalnızca harfler (a-z, A-Z), sayılar (0-9) ve alt çizgi içerebilir. Kullanıcı adları büyük/küçük harf duyarlı değildir. Müsaitse kendi 4 haneli etiketini seçebilirsin."
 
@@ -20671,8 +20671,8 @@ msgid "We'll verify your new email with a one-time code."
 msgstr "Yeni e-postanı tek kullanımlık bir kodla doğrulayacağız."
 
 #: src/components/NetworkErrorScreen.tsx:39
-msgid "We're having trouble connecting to Fluxer's servers. This could be a temporary network issue or scheduled maintenance."
-msgstr "Fluxer sunucularına bağlanırken sorun yaşıyoruz. Bu geçici bir ağ sorunu veya planlı bakım olabilir."
+msgid "We're having trouble connecting to NePornu's servers. This could be a temporary network issue or scheduled maintenance."
+msgstr "We're having trouble connecting to NePornu's servers. This could be a temporary network issue or scheduled maintenance."
 
 #: src/components/modals/tabs/BetaCodesTab.tsx:322
 #: src/components/modals/tabs/DevicesTab.tsx:233
@@ -20685,28 +20685,28 @@ msgid "We're indexing this channel for the first time. This might take a little 
 msgstr "Bu kanalı ilk kez dizine ekliyoruz. Bu biraz zaman alabilir..."
 
 #: src/components/modals/RequiredActionModal.tsx:151
-msgid "We've detected suspicious activity on your account. Please reverify your email address or phone number to continue using Fluxer."
-msgstr "Hesabınızda şüpheli bir etkinlik tespit ettik. Fluxer'ı kullanmaya devam etmek için lütfen e-posta adresinizi veya telefon numaranızı yeniden doğrulayın."
+msgid "We've detected suspicious activity on your account. Please reverify your email address or phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:143
-msgid "We've detected suspicious activity on your account. Please reverify your email address to continue using Fluxer."
-msgstr "Hesabınızda şüpheli bir etkinlik tespit ettik. Fluxer'ı kullanmaya devam etmek için lütfen e-posta adresinizi yeniden doğrulayın."
+msgid "We've detected suspicious activity on your account. Please reverify your email address to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:147
-msgid "We've detected suspicious activity on your account. Please reverify your phone number to continue using Fluxer."
-msgstr "Hesabınızda şüpheli bir etkinlik tespit ettik. Fluxer'ı kullanmaya devam etmek için lütfen telefon numaranızı yeniden doğrulayın."
+msgid "We've detected suspicious activity on your account. Please reverify your phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:152
-msgid "We've detected suspicious activity on your account. Please verify your email address or phone number to continue using Fluxer."
-msgstr "Hesabınızda şüpheli bir etkinlik tespit ettik. Fluxer'ı kullanmaya devam etmek için lütfen e-posta adresinizi veya telefon numaranızı doğrulayın."
+msgid "We've detected suspicious activity on your account. Please verify your email address or phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:144
-msgid "We've detected suspicious activity on your account. Please verify your email address to continue using Fluxer."
-msgstr "Hesabınızda şüpheli bir etkinlik tespit ettik. Fluxer'ı kullanmaya devam etmek için lütfen e-posta adresinizi doğrulayın."
+msgid "We've detected suspicious activity on your account. Please verify your email address to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:148
-msgid "We've detected suspicious activity on your account. Please verify your phone number to continue using Fluxer."
-msgstr "Hesabınızda şüpheli bir etkinlik tespit ettik. Fluxer'ı kullanmaya devam etmek için lütfen telefon numaranızı doğrulayın."
+msgid "We've detected suspicious activity on your account. Please verify your phone number to continue."
+msgstr ""
 
 #: src/components/pages/ForgotPasswordPage.tsx:65
 msgid "We've sent password reset instructions to your email address. Please check your inbox and follow the link to reset your password."
@@ -20777,8 +20777,8 @@ msgid "Welcome to Favorites"
 msgstr "Favorilere Hoş Geldin"
 
 #: src/components/layout/app-layout/nagbars/PremiumOnboardingNagbar.tsx:51
-msgid "Welcome to Fluxer Plutonium! Explore your premium features and manage your subscription."
-msgstr "Fluxer Plutonium'a hoş geldin! Premium özelliklerini keşfet ve aboneliğini yönet."
+msgid "Welcome to NePornu Plutonium! Explore your premium features and manage your subscription."
+msgstr "NePornu Plutonium'a hoş geldin! Premium özelliklerini keşfet ve aboneliğini yönet."
 
 #: src/utils/SystemMessageUtils.tsx:46
 msgid "Welcome, {username}! Don't forget to park your DeLorean."
@@ -20837,8 +20837,8 @@ msgid "When enabled, quickly tapping your push-to-talk shortcut will keep your m
 msgstr "Etkinleştirildiğinde, push-to-talk kısayoluna hızlıca dokunmak mikrofonunu tekrar basılana kadar açık tutar."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:140
-msgid "When enabled, reveals debugging menus throughout the app to inspect and copy raw JSON objects of internal data structures like messages, channels, users, and communities. Also includes tools to debug the Fluxer Markdown parser performance and AST for any given message."
-msgstr "Etkinleştirildiğinde, mesajlar, kanallar, kullanıcılar ve topluluklar gibi dahili veri yapılarının ham JSON nesnelerini incelemek ve kopyalamak için uygulama genelinde hata ayıklama menülerini gösterir. Ayrıca herhangi bir mesaj için Fluxer Markdown ayrıştırıcı performansını ve AST'yi hata ayıklamak için araçlar içerir."
+msgid "When enabled, reveals debugging menus throughout the app to inspect and copy raw JSON objects of internal data structures like messages, channels, users, and communities. Also includes tools to debug the NePornu Markdown parser performance and AST for any given message."
+msgstr "Etkinleştirildiğinde, mesajlar, kanallar, kullanıcılar ve topluluklar gibi dahili veri yapılarının ham JSON nesnelerini incelemek ve kopyalamak için uygulama genelinde hata ayıklama menülerini gösterir. Ayrıca herhangi bir mesaj için NePornu Markdown ayrıştırıcı performansını ve AST'yi hata ayıklamak için araçlar içerir."
 
 #: src/components/modals/tabs/AppearanceTab/InterfaceTab.tsx:135
 msgid "When enabled, shortcut badges are hidden in tooltip popups."
@@ -20889,8 +20889,8 @@ msgid "When they hit 88mph, they'll appear right here."
 msgstr "88 mil/saat'e ulaştıklarında, tam burada görünecekler."
 
 #: src/components/modals/tabs/ChatSettingsTab/DisplayTab.tsx:73
-msgid "When uploaded directly to Fluxer"
-msgstr "Doğrudan Fluxer'a yüklendiğinde"
+msgid "When uploaded directly to NePornu"
+msgstr "Doğrudan NePornu'a yüklendiğinde"
 
 #: src/components/shared/ChannelPinsContent.tsx:143
 msgid "Whenever someone pins a message, it'll appear here."
@@ -20950,8 +20950,12 @@ msgid "Write a short bio (max 280 characters)"
 msgstr "Kısa bir biyografi yazın (en fazla 280 karakter)"
 
 #: src/components/modals/tabs/AppearanceTab/ThemeTab.tsx:543
-msgid "Write custom CSS here to override any theme tokens. For example:\n:root { --background-primary: #1E1E2F; }"
-msgstr "Herhangi bir tema belirtecini geçersiz kılmak için özel CSS yazın. Örneğin:\n:root { --background-primary: #1E1E2F; }"
+msgid ""
+"Write custom CSS here to override any theme tokens. For example:\n"
+":root { --background-primary: #1E1E2F; }"
+msgstr ""
+"Herhangi bir tema belirtecini geçersiz kılmak için özel CSS yazın. Örneğin:\n"
+":root { --background-primary: #1E1E2F; }"
 
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:174
 msgid "Write your content here... This textarea expands as you type."
@@ -20993,8 +20997,8 @@ msgid "You already have a group with these users. Do you really want to create a
 msgstr "Bu kullanıcılarla zaten bir grubunuz var. Gerçekten yeni bir tane oluşturmak istiyor musunuz? Bu da iyi!"
 
 #: src/components/modals/ExternalLinkWarningModal.tsx:66
-msgid "You are about to leave Fluxer"
-msgstr "Fluxer'dan ayrılmak üzeresiniz"
+msgid "You are about to leave the application"
+msgstr ""
 
 #. placeholder {0}: targetUser.username
 #: src/components/modals/TransferOwnershipModal.tsx:71
@@ -21022,8 +21026,8 @@ msgid "You are now a developer!"
 msgstr "Artık bir geliştiricisiniz!"
 
 #: src/components/modals/components/plutonium/hooks/useCheckoutActions.tsx:107
-msgid "You are now navigating to Stripe to complete the payment. Return to Fluxer once you've completed it!"
-msgstr "Ödemeyi tamamlamak için Stripe'a yönlendiriliyorsunuz. Tamamladıktan sonra Fluxer'a dönün!"
+msgid "You are now navigating to Stripe to complete the payment. Return to NePornu once you've completed it!"
+msgstr "Ödemeyi tamamlamak için Stripe'a yönlendiriliyorsunuz. Tamamladıktan sonra NePornu'a dönün!"
 
 #. placeholder {0}: Math.max(0, modalLogic.maxSelections - modalLogic.selectedUserIds.length)
 #. placeholder {0}: modalLogic.remainingSlotsCount
@@ -21046,8 +21050,8 @@ msgid "You can add comments before uploading. Hold shift to upload directly."
 msgstr "Yüklemeden önce yorum ekleyebilirsiniz. Doğrudan yüklemek için shift tuşunu basılı tutun."
 
 #: src/components/channel/dm/AddFriendView.tsx:35
-msgid "You can add friends with their FluxerTag."
-msgstr "Arkadaşlarını FluxerTag'leri ile ekleyebilirsin."
+msgid "You can add friends with their NePornuTag."
+msgstr "Arkadaşlarını NePornuTag'leri ile ekleyebilirsin."
 
 #. placeholder {0}: modalLogic.maxSelections
 #: src/components/bottomsheets/CreateDMBottomSheet.tsx:112
@@ -21334,8 +21338,8 @@ msgid "You haven't created any packs yet."
 msgstr "Henüz hiç paket oluşturmadın."
 
 #: src/components/modals/KeyboardModeIntroModal.tsx:46
-msgid "You just pressed Tab. Keyboard Mode is now on so you can navigate Fluxer without a mouse."
-msgstr "Tab tuşuna bastın. Klavye Modu şimdi açık, böylece Fluxer'da fare olmadan gezinebilirsin."
+msgid "You just pressed Tab. Keyboard Mode is now on so you can navigate the application without a mouse."
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:85
 #: src/utils/ExpressionPermissionUtils.tsx:92
@@ -21635,10 +21639,6 @@ msgstr "Mevcut bildirim sesi ayarların korunacak."
 msgid "Your export request will be processed"
 msgstr "Dışa aktarma isteğin işlenecek"
 
-#: src/components/pages/report/ReportStepDetails.tsx:213
-msgid "Your FluxerTag (optional)"
-msgstr "FluxerTag'ın (isteğe bağlı)"
-
 #: src/components/channel/friends/views/FriendsList.tsx:80
 msgid "Your friends are currently stuck in another timeline"
 msgstr "Arkadaşların şu anda başka bir zaman çizelgesinde sıkışmış"
@@ -21735,6 +21735,10 @@ msgstr "Aboneliğin fatura döneminin sonunda iptal edilecek şekilde ayarlandı
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:210
 msgid "Your subscription will cancel on <0>{cancelDate}</0>. You'll lose all <1/> after that date."
 msgstr "Aboneliğin <0>{cancelDate}</0> tarihinde iptal olacak. O tarihten sonra tüm <1/> kaybedersin."
+
+#: src/components/pages/report/ReportStepDetails.tsx:213
+msgid "Your Tag (optional)"
+msgstr ""
 
 #: src/components/modals/guildTabs/GuildVanityURLTab.tsx:118
 msgid "Your vanity URL has been removed."

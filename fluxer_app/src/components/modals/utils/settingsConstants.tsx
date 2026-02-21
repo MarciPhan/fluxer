@@ -17,9 +17,9 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import type {MessageDescriptor} from '@lingui/core';
-import {msg} from '@lingui/core/macro';
-import {Trans} from '@lingui/react/macro';
+import type { MessageDescriptor } from '@lingui/core';
+import { msg } from '@lingui/core/macro';
+import { Trans } from '@lingui/react/macro';
 import {
 	BellIcon,
 	ChatCircleIcon,
@@ -134,18 +134,6 @@ const ALL_TABS_DESCRIPTORS: Array<SettingsTabDescriptor> = [
 		category: 'user_settings',
 		label: msg`Security & Login`,
 		icon: ShieldIcon,
-	},
-	{
-		type: 'beta_codes',
-		category: 'user_settings',
-		label: msg`Early Access`,
-		icon: TicketIcon,
-	},
-	{
-		type: 'plutonium',
-		category: 'user_settings',
-		label: msg`Fluxer Plutonium`,
-		icon: CrownIcon,
 	},
 	{
 		type: 'gift_inventory',
@@ -284,44 +272,44 @@ interface SettingsSubtabDescriptor {
 }
 
 const SETTINGS_SUBTABS_DESCRIPTORS: Array<SettingsSubtabDescriptor> = [
-	{type: 'theme', parentTab: 'appearance', label: msg`Theme`},
-	{type: 'messages', parentTab: 'appearance', label: msg`Messages`},
-	{type: 'interface', parentTab: 'appearance', label: msg`Interface`},
-	{type: 'favorites', parentTab: 'appearance', label: msg`Favorites`},
+	{ type: 'theme', parentTab: 'appearance', label: msg`Theme` },
+	{ type: 'messages', parentTab: 'appearance', label: msg`Messages` },
+	{ type: 'interface', parentTab: 'appearance', label: msg`Interface` },
+	{ type: 'favorites', parentTab: 'appearance', label: msg`Favorites` },
 
-	{type: 'visual', parentTab: 'accessibility', label: msg`Visual`},
-	{type: 'keyboard', parentTab: 'accessibility', label: msg`Keyboard`},
-	{type: 'animation', parentTab: 'accessibility', label: msg`Animation`},
-	{type: 'motion', parentTab: 'accessibility', label: msg`Motion`},
+	{ type: 'visual', parentTab: 'accessibility', label: msg`Visual` },
+	{ type: 'keyboard', parentTab: 'accessibility', label: msg`Keyboard` },
+	{ type: 'animation', parentTab: 'accessibility', label: msg`Animation` },
+	{ type: 'motion', parentTab: 'accessibility', label: msg`Motion` },
 
-	{type: 'display', parentTab: 'chat_settings', label: msg`Display`},
-	{type: 'media', parentTab: 'chat_settings', label: msg`Media`},
-	{type: 'input', parentTab: 'chat_settings', label: msg`Input`},
-	{type: 'interaction', parentTab: 'chat_settings', label: msg`Interaction`},
+	{ type: 'display', parentTab: 'chat_settings', label: msg`Display` },
+	{ type: 'media', parentTab: 'chat_settings', label: msg`Media` },
+	{ type: 'input', parentTab: 'chat_settings', label: msg`Input` },
+	{ type: 'interaction', parentTab: 'chat_settings', label: msg`Interaction` },
 
-	{type: 'voice', parentTab: 'voice_video', label: msg`Audio`},
-	{type: 'video', parentTab: 'voice_video', label: msg`Video`},
+	{ type: 'voice', parentTab: 'voice_video', label: msg`Audio` },
+	{ type: 'video', parentTab: 'voice_video', label: msg`Video` },
 
-	{type: 'connections', parentTab: 'privacy_safety', label: msg`Connections`},
-	{type: 'communication', parentTab: 'privacy_safety', label: msg`Communication`},
+	{ type: 'connections', parentTab: 'privacy_safety', label: msg`Connections` },
+	{ type: 'communication', parentTab: 'privacy_safety', label: msg`Communication` },
 
-	{type: 'account', parentTab: 'account_security', label: msg`Account`},
-	{type: 'security', parentTab: 'account_security', label: msg`Security`},
-	{type: 'danger_zone', parentTab: 'account_security', label: msg`Danger Zone`},
+	{ type: 'account', parentTab: 'account_security', label: msg`Account` },
+	{ type: 'security', parentTab: 'account_security', label: msg`Security` },
+	{ type: 'danger_zone', parentTab: 'account_security', label: msg`Danger Zone` },
 
-	{type: 'general', parentTab: 'developer_options', label: msg`General`},
-	{type: 'account_premium', parentTab: 'developer_options', label: msg`Account & Premium`},
-	{type: 'mocking', parentTab: 'developer_options', label: msg`Mocking`},
-	{type: 'nagbars', parentTab: 'developer_options', label: msg`Nagbars`},
-	{type: 'tools', parentTab: 'developer_options', label: msg`Tools`},
-	{type: 'typography', parentTab: 'developer_options', label: msg`Typography`},
+	{ type: 'general', parentTab: 'developer_options', label: msg`General` },
+	{ type: 'account_premium', parentTab: 'developer_options', label: msg`Account & Premium` },
+	{ type: 'mocking', parentTab: 'developer_options', label: msg`Mocking` },
+	{ type: 'nagbars', parentTab: 'developer_options', label: msg`Nagbars` },
+	{ type: 'tools', parentTab: 'developer_options', label: msg`Tools` },
+	{ type: 'typography', parentTab: 'developer_options', label: msg`Typography` },
 
-	{type: 'buttons', parentTab: 'component_gallery', label: msg`Buttons`},
-	{type: 'inputs', parentTab: 'component_gallery', label: msg`Inputs & Text`},
-	{type: 'selections', parentTab: 'component_gallery', label: msg`Selections`},
-	{type: 'overlays', parentTab: 'component_gallery', label: msg`Overlays & Menus`},
-	{type: 'indicators', parentTab: 'component_gallery', label: msg`Indicators & Status`},
-	{type: 'markdown', parentTab: 'component_gallery', label: msg`Markdown`},
+	{ type: 'buttons', parentTab: 'component_gallery', label: msg`Buttons` },
+	{ type: 'inputs', parentTab: 'component_gallery', label: msg`Inputs & Text` },
+	{ type: 'selections', parentTab: 'component_gallery', label: msg`Selections` },
+	{ type: 'overlays', parentTab: 'component_gallery', label: msg`Overlays & Menus` },
+	{ type: 'indicators', parentTab: 'component_gallery', label: msg`Indicators & Status` },
+	{ type: 'markdown', parentTab: 'component_gallery', label: msg`Markdown` },
 ];
 
 export const getSettingsSubtabs = (t: (msg: MessageDescriptor) => string): Array<SettingsSubtab> => {
@@ -351,63 +339,63 @@ interface SettingsSectionConfigDescriptor {
 }
 
 const SETTINGS_SECTIONS_MAP_DESCRIPTORS: Partial<Record<UserSettingsTabType, Array<SettingsSectionConfigDescriptor>>> =
-	{
-		appearance: [
-			{id: 'theme', label: msg`Theme`, isAdvanced: false},
-			{id: 'messages', label: msg`Messages`, isAdvanced: false},
-			{id: 'interface', label: msg`Interface`, isAdvanced: false},
-			{id: 'favorites', label: msg`Favorites`, isAdvanced: true},
-		],
-		accessibility: [
-			{id: 'visual', label: msg`Visual`, isAdvanced: false},
-			{id: 'keyboard', label: msg`Keyboard`, isAdvanced: false},
-			{id: 'animation', label: msg`Animation`, isAdvanced: false},
-			{id: 'motion', label: msg`Motion`, isAdvanced: true},
-		],
-		chat_settings: [
-			{id: 'display', label: msg`Display`, isAdvanced: false},
-			{id: 'media', label: msg`Media`, isAdvanced: false},
-			{id: 'input', label: msg`Input`, isAdvanced: false},
-			{id: 'interaction', label: msg`Interaction`, isAdvanced: true},
-		],
-		voice_video: [
-			{id: 'voice', label: msg`Audio`, isAdvanced: false},
-			{id: 'video', label: msg`Video`, isAdvanced: false},
-		],
-		privacy_safety: [
-			{id: 'connections', label: msg`Connections`, isAdvanced: false},
-			{id: 'communication', label: msg`Communication`, isAdvanced: false},
-			{id: 'data-export', label: msg`Data Export`, isAdvanced: true},
-			{id: 'data-deletion', label: msg`Data Deletion`, isAdvanced: true},
-		],
-		account_security: [
-			{id: 'account', label: msg`Account`, isAdvanced: false},
-			{id: 'security', label: msg`Security`, isAdvanced: false},
-			{id: 'danger_zone', label: msg`Danger Zone`, isAdvanced: false},
-		],
-		notifications: [
-			{id: 'notifications', label: msg`Notifications`, isAdvanced: false},
-			{id: 'sounds', label: msg`Sounds`, isAdvanced: false},
-			{id: 'push', label: msg`Push Settings`, isAdvanced: false},
-		],
-		developer_options: [
-			{id: 'general', label: msg`General`, isAdvanced: false},
-			{id: 'account_premium', label: msg`Account & Premium`, isAdvanced: false},
-			{id: 'mocking', label: msg`Mocking`, isAdvanced: false},
-			{id: 'nagbars', label: msg`Nagbars`, isAdvanced: false},
-			{id: 'tools', label: msg`Tools`, isAdvanced: false},
-			{id: 'typography', label: msg`Typography`, isAdvanced: false},
-		],
-		component_gallery: [
-			{id: 'buttons', label: msg`Buttons`, isAdvanced: false},
-			{id: 'inputs', label: msg`Inputs & Text`, isAdvanced: false},
-			{id: 'selections', label: msg`Selections`, isAdvanced: false},
-			{id: 'overlays', label: msg`Overlays & Menus`, isAdvanced: false},
-			{id: 'indicators', label: msg`Indicators & Status`, isAdvanced: false},
-			{id: 'status', label: msg`Status Slate`, isAdvanced: false},
-			{id: 'markdown', label: msg`Markdown`, isAdvanced: false},
-		],
-	};
+{
+	appearance: [
+		{ id: 'theme', label: msg`Theme`, isAdvanced: false },
+		{ id: 'messages', label: msg`Messages`, isAdvanced: false },
+		{ id: 'interface', label: msg`Interface`, isAdvanced: false },
+		{ id: 'favorites', label: msg`Favorites`, isAdvanced: true },
+	],
+	accessibility: [
+		{ id: 'visual', label: msg`Visual`, isAdvanced: false },
+		{ id: 'keyboard', label: msg`Keyboard`, isAdvanced: false },
+		{ id: 'animation', label: msg`Animation`, isAdvanced: false },
+		{ id: 'motion', label: msg`Motion`, isAdvanced: true },
+	],
+	chat_settings: [
+		{ id: 'display', label: msg`Display`, isAdvanced: false },
+		{ id: 'media', label: msg`Media`, isAdvanced: false },
+		{ id: 'input', label: msg`Input`, isAdvanced: false },
+		{ id: 'interaction', label: msg`Interaction`, isAdvanced: true },
+	],
+	voice_video: [
+		{ id: 'voice', label: msg`Audio`, isAdvanced: false },
+		{ id: 'video', label: msg`Video`, isAdvanced: false },
+	],
+	privacy_safety: [
+		{ id: 'connections', label: msg`Connections`, isAdvanced: false },
+		{ id: 'communication', label: msg`Communication`, isAdvanced: false },
+		{ id: 'data-export', label: msg`Data Export`, isAdvanced: true },
+		{ id: 'data-deletion', label: msg`Data Deletion`, isAdvanced: true },
+	],
+	account_security: [
+		{ id: 'account', label: msg`Account`, isAdvanced: false },
+		{ id: 'security', label: msg`Security`, isAdvanced: false },
+		{ id: 'danger_zone', label: msg`Danger Zone`, isAdvanced: false },
+	],
+	notifications: [
+		{ id: 'notifications', label: msg`Notifications`, isAdvanced: false },
+		{ id: 'sounds', label: msg`Sounds`, isAdvanced: false },
+		{ id: 'push', label: msg`Push Settings`, isAdvanced: false },
+	],
+	developer_options: [
+		{ id: 'general', label: msg`General`, isAdvanced: false },
+		{ id: 'account_premium', label: msg`Account & Premium`, isAdvanced: false },
+		{ id: 'mocking', label: msg`Mocking`, isAdvanced: false },
+		{ id: 'nagbars', label: msg`Nagbars`, isAdvanced: false },
+		{ id: 'tools', label: msg`Tools`, isAdvanced: false },
+		{ id: 'typography', label: msg`Typography`, isAdvanced: false },
+	],
+	component_gallery: [
+		{ id: 'buttons', label: msg`Buttons`, isAdvanced: false },
+		{ id: 'inputs', label: msg`Inputs & Text`, isAdvanced: false },
+		{ id: 'selections', label: msg`Selections`, isAdvanced: false },
+		{ id: 'overlays', label: msg`Overlays & Menus`, isAdvanced: false },
+		{ id: 'indicators', label: msg`Indicators & Status`, isAdvanced: false },
+		{ id: 'status', label: msg`Status Slate`, isAdvanced: false },
+		{ id: 'markdown', label: msg`Markdown`, isAdvanced: false },
+	],
+};
 
 export function getSectionsForTab(
 	tabType: UserSettingsTabType,

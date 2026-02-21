@@ -17,12 +17,12 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import path, {dirname} from 'node:path';
-import {fileURLToPath} from 'node:url';
-import {CopyRspackPlugin, DefinePlugin, HtmlRspackPlugin, SwcJsMinimizerRspackPlugin} from '@rspack/core';
+import path, { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { CopyRspackPlugin, DefinePlugin, HtmlRspackPlugin, SwcJsMinimizerRspackPlugin } from '@rspack/core';
 import ReactRefreshPlugin from '@rspack/plugin-react-refresh';
-import {createPoFileRule, getLinguiSwcPluginConfig} from './scripts/build/rspack/lingui.mjs';
-import {staticFilesPlugin} from './scripts/build/rspack/static-files.mjs';
+import { createPoFileRule, getLinguiSwcPluginConfig } from './scripts/build/rspack/lingui.mjs';
+import { staticFilesPlugin } from './scripts/build/rspack/static-files.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -33,7 +33,7 @@ const DIST_DIR = path.join(ROOT_DIR, 'dist');
 const PKGS_DIR = path.join(ROOT_DIR, 'pkgs');
 const PUBLIC_DIR = path.join(ROOT_DIR, 'assets');
 
-const CDN_ENDPOINT = 'https://fluxerstatic.com';
+const CDN_ENDPOINT = process.env.FLUXER_CDN_ENDPOINT ?? 'https://fluxerstatic.com';
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = !isProduction;
@@ -135,14 +135,14 @@ export default () => {
 
 				{
 					test: /\.module\.css$/,
-					use: [{loader: 'postcss-loader'}],
+					use: [{ loader: 'postcss-loader' }],
 					type: 'css/module',
-					parser: {namedExports: false},
+					parser: { namedExports: false },
 				},
 				{
 					test: /\.css$/,
 					exclude: /\.module\.css$/,
-					use: [{loader: 'postcss-loader'}],
+					use: [{ loader: 'postcss-loader' }],
 					type: 'css',
 				},
 
@@ -156,8 +156,8 @@ export default () => {
 							loader: 'builtin:swc-loader',
 							options: {
 								jsc: {
-									parser: {syntax: 'typescript', tsx: true},
-									transform: {react: {runtime: 'automatic', development: isDevelopment}},
+									parser: { syntax: 'typescript', tsx: true },
+									transform: { react: { runtime: 'automatic', development: isDevelopment } },
 									target: 'es2015',
 								},
 							},
@@ -172,7 +172,7 @@ export default () => {
 									plugins: [
 										{
 											name: 'preset-default',
-											params: {overrides: {removeViewBox: false}},
+											params: { overrides: { removeViewBox: false } },
 										},
 									],
 								},
@@ -182,7 +182,7 @@ export default () => {
 				},
 				{
 					test: /\.svg$/,
-					resourceQuery: {not: [/react/]},
+					resourceQuery: { not: [/react/] },
 					type: 'asset/resource',
 				},
 
@@ -224,7 +224,7 @@ export default () => {
 				],
 			}),
 
-			staticFilesPlugin({cdnEndpoint: CDN_ENDPOINT}),
+			staticFilesPlugin({ cdnEndpoint: CDN_ENDPOINT }),
 
 			new DefinePlugin({
 				'process.env.NODE_ENV': JSON.stringify(mode),
@@ -250,125 +250,125 @@ export default () => {
 		optimization: {
 			splitChunks: isProduction
 				? {
-						chunks: 'all',
-						maxInitialRequests: 50,
-						cacheGroups: {
-							icons: {
-								test: /[\\/]node_modules[\\/]@phosphor-icons[\\/]/,
-								name: 'icons',
-								priority: 60,
-								reuseExistingChunk: true,
-							},
-							highlight: {
-								test: /[\\/]node_modules[\\/]highlight\.js[\\/]/,
-								name: 'highlight',
-								priority: 55,
-								reuseExistingChunk: true,
-							},
-							livekit: {
-								test: /[\\/]node_modules[\\/](livekit-client|@livekit)[\\/]/,
-								name: 'livekit',
-								priority: 50,
-								reuseExistingChunk: true,
-							},
-							katex: {
-								test: /[\\/]node_modules[\\/]katex[\\/]/,
-								name: 'katex',
-								priority: 48,
-								reuseExistingChunk: true,
-							},
-							animation: {
-								test: /[\\/]node_modules[\\/](framer-motion|motion)[\\/]/,
-								name: 'animation',
-								priority: 45,
-								reuseExistingChunk: true,
-							},
-							mobx: {
-								test: /[\\/]node_modules[\\/](mobx|mobx-react-lite|mobx-persist-store)[\\/]/,
-								name: 'mobx',
-								priority: 43,
-								reuseExistingChunk: true,
-							},
-							sentry: {
-								test: /[\\/]node_modules[\\/]@sentry[\\/]/,
-								name: 'sentry',
-								priority: 41,
-								reuseExistingChunk: true,
-							},
-							reactAria: {
-								test: /[\\/]node_modules[\\/]react-aria-components[\\/]/,
-								name: 'react-aria',
-								priority: 40,
-								reuseExistingChunk: true,
-							},
-							validation: {
-								test: /[\\/]node_modules[\\/](valibot)[\\/]/,
-								name: 'validation',
-								priority: 38,
-								reuseExistingChunk: true,
-							},
-							datetime: {
-								test: /[\\/]node_modules[\\/]luxon[\\/]/,
-								name: 'datetime',
-								priority: 37,
-								reuseExistingChunk: true,
-							},
-							observable: {
-								test: /[\\/]node_modules[\\/]rxjs[\\/]/,
-								name: 'observable',
-								priority: 36,
-								reuseExistingChunk: true,
-							},
-							unicode: {
-								test: /[\\/]node_modules[\\/](idna-uts46-hx|emoji-regex)[\\/]/,
-								name: 'unicode',
-								priority: 35,
-								reuseExistingChunk: true,
-							},
-							dnd: {
-								test: /[\\/]node_modules[\\/](@dnd-kit|react-dnd)[\\/]/,
-								name: 'dnd',
-								priority: 33,
-								reuseExistingChunk: true,
-							},
-							radix: {
-								test: /[\\/]node_modules[\\/]@radix-ui[\\/]/,
-								name: 'radix',
-								priority: 31,
-								reuseExistingChunk: true,
-							},
-							ui: {
-								test: /[\\/]node_modules[\\/](react-select|react-hook-form|react-modal-sheet|react-zoom-pan-pinch|@floating-ui)[\\/]/,
-								name: 'ui',
-								priority: 30,
-								reuseExistingChunk: true,
-							},
-							utils: {
-								test: /[\\/]node_modules[\\/](lodash|clsx|qrcode|thumbhash|bowser|match-sorter)[\\/]/,
-								name: 'utils',
-								priority: 28,
-								reuseExistingChunk: true,
-							},
-							networking: {
-								test: /[\\/]node_modules[\\/](ws|undici)[\\/]/,
-								name: 'networking',
-								priority: 26,
-								reuseExistingChunk: true,
-							},
-							react: {
-								test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-								name: 'react',
-								priority: 25,
-								reuseExistingChunk: true,
-							},
-							vendor: {
-								test: /[\\/]node_modules[\\/]/,
-								name: 'vendor',
-								priority: 10,
-								reuseExistingChunk: true,
-							},
+					chunks: 'all',
+					maxInitialRequests: 50,
+					cacheGroups: {
+						icons: {
+							test: /[\\/]node_modules[\\/]@phosphor-icons[\\/]/,
+							name: 'icons',
+							priority: 60,
+							reuseExistingChunk: true,
 						},
-					}
+						highlight: {
+							test: /[\\/]node_modules[\\/]highlight\.js[\\/]/,
+							name: 'highlight',
+							priority: 55,
+							reuseExistingChunk: true,
+						},
+						livekit: {
+							test: /[\\/]node_modules[\\/](livekit-client|@livekit)[\\/]/,
+							name: 'livekit',
+							priority: 50,
+							reuseExistingChunk: true,
+						},
+						katex: {
+							test: /[\\/]node_modules[\\/]katex[\\/]/,
+							name: 'katex',
+							priority: 48,
+							reuseExistingChunk: true,
+						},
+						animation: {
+							test: /[\\/]node_modules[\\/](framer-motion|motion)[\\/]/,
+							name: 'animation',
+							priority: 45,
+							reuseExistingChunk: true,
+						},
+						mobx: {
+							test: /[\\/]node_modules[\\/](mobx|mobx-react-lite|mobx-persist-store)[\\/]/,
+							name: 'mobx',
+							priority: 43,
+							reuseExistingChunk: true,
+						},
+						sentry: {
+							test: /[\\/]node_modules[\\/]@sentry[\\/]/,
+							name: 'sentry',
+							priority: 41,
+							reuseExistingChunk: true,
+						},
+						reactAria: {
+							test: /[\\/]node_modules[\\/]react-aria-components[\\/]/,
+							name: 'react-aria',
+							priority: 40,
+							reuseExistingChunk: true,
+						},
+						validation: {
+							test: /[\\/]node_modules[\\/](valibot)[\\/]/,
+							name: 'validation',
+							priority: 38,
+							reuseExistingChunk: true,
+						},
+						datetime: {
+							test: /[\\/]node_modules[\\/]luxon[\\/]/,
+							name: 'datetime',
+							priority: 37,
+							reuseExistingChunk: true,
+						},
+						observable: {
+							test: /[\\/]node_modules[\\/]rxjs[\\/]/,
+							name: 'observable',
+							priority: 36,
+							reuseExistingChunk: true,
+						},
+						unicode: {
+							test: /[\\/]node_modules[\\/](idna-uts46-hx|emoji-regex)[\\/]/,
+							name: 'unicode',
+							priority: 35,
+							reuseExistingChunk: true,
+						},
+						dnd: {
+							test: /[\\/]node_modules[\\/](@dnd-kit|react-dnd)[\\/]/,
+							name: 'dnd',
+							priority: 33,
+							reuseExistingChunk: true,
+						},
+						radix: {
+							test: /[\\/]node_modules[\\/]@radix-ui[\\/]/,
+							name: 'radix',
+							priority: 31,
+							reuseExistingChunk: true,
+						},
+						ui: {
+							test: /[\\/]node_modules[\\/](react-select|react-hook-form|react-modal-sheet|react-zoom-pan-pinch|@floating-ui)[\\/]/,
+							name: 'ui',
+							priority: 30,
+							reuseExistingChunk: true,
+						},
+						utils: {
+							test: /[\\/]node_modules[\\/](lodash|clsx|qrcode|thumbhash|bowser|match-sorter)[\\/]/,
+							name: 'utils',
+							priority: 28,
+							reuseExistingChunk: true,
+						},
+						networking: {
+							test: /[\\/]node_modules[\\/](ws|undici)[\\/]/,
+							name: 'networking',
+							priority: 26,
+							reuseExistingChunk: true,
+						},
+						react: {
+							test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+							name: 'react',
+							priority: 25,
+							reuseExistingChunk: true,
+						},
+						vendor: {
+							test: /[\\/]node_modules[\\/]/,
+							name: 'vendor',
+							priority: 10,
+							reuseExistingChunk: true,
+						},
+					},
+				}
 				: false,
 			runtimeChunk: false,
 			chunkSplit: false,
@@ -379,34 +379,34 @@ export default () => {
 				new SwcJsMinimizerRspackPlugin({
 					compress: true,
 					mangle: true,
-					format: {comments: false},
+					format: { comments: false },
 				}),
 			],
 		},
 
 		devServer: isDevelopment
 			? {
-					port: 3000,
-					hot: true,
-					liveReload: false,
-					historyApiFallback: true,
-					allowedHosts: 'all',
-					client: {
-						webSocketURL: 'auto://0.0.0.0:0/ws',
-					},
-					headers: {
-						'Access-Control-Allow-Origin': '*',
-						'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-						'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
-					},
-					static: {
-						directory: DIST_DIR,
-						watch: false,
-					},
-				}
+				port: 3000,
+				hot: true,
+				liveReload: false,
+				historyApiFallback: true,
+				allowedHosts: 'all',
+				client: {
+					webSocketURL: 'auto://0.0.0.0:0/ws',
+				},
+				headers: {
+					'Access-Control-Allow-Origin': '*',
+					'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+					'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
+				},
+				static: {
+					directory: DIST_DIR,
+					watch: false,
+				},
+			}
 			: undefined,
 
-		experiments: {css: true},
+		experiments: { css: true },
 
 		css: {
 			modules: {

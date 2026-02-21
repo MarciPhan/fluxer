@@ -36,26 +36,26 @@ import {
 	Permissions,
 	SystemChannelFlags,
 } from '~/Constants';
-import type {IChannelRepository} from '~/channel/IChannelRepository';
-import type {ChannelService} from '~/channel/services/ChannelService';
-import {AuditLogActionType} from '~/constants/AuditLogActionType';
-import {JoinSourceTypes} from '~/constants/Guild';
-import {InputValidationError, MaxGuildsError, MissingPermissionsError, UnknownGuildError} from '~/Errors';
-import type {GuildCreateRequest, GuildPartialResponse, GuildResponse, GuildUpdateRequest} from '~/guild/GuildModel';
-import {mapGuildToGuildResponse, mapGuildToPartialResponse} from '~/guild/GuildModel';
-import type {IGuildRepository} from '~/guild/IGuildRepository';
-import type {EntityAssetService, PreparedAssetUpload} from '~/infrastructure/EntityAssetService';
-import type {IGatewayService} from '~/infrastructure/IGatewayService';
-import {getMetricsService} from '~/infrastructure/MetricsService';
-import type {SnowflakeService} from '~/infrastructure/SnowflakeService';
-import type {InviteRepository} from '~/invite/InviteRepository';
-import {Logger} from '~/Logger';
-import {getGuildSearchService} from '~/Meilisearch';
-import type {Guild, User} from '~/Models';
-import type {RequestCache} from '~/middleware/RequestCacheMiddleware';
-import type {IUserRepository} from '~/user/IUserRepository';
-import type {IWebhookRepository} from '~/webhook/IWebhookRepository';
-import type {GuildDataHelpers} from './GuildDataHelpers';
+import type { IChannelRepository } from '~/channel/IChannelRepository';
+import type { ChannelService } from '~/channel/services/ChannelService';
+import { AuditLogActionType } from '~/constants/AuditLogActionType';
+import { JoinSourceTypes } from '~/constants/Guild';
+import { InputValidationError, MaxGuildsError, MissingPermissionsError, UnknownGuildError } from '~/Errors';
+import type { GuildCreateRequest, GuildPartialResponse, GuildResponse, GuildUpdateRequest } from '~/guild/GuildModel';
+import { mapGuildToGuildResponse, mapGuildToPartialResponse } from '~/guild/GuildModel';
+import type { IGuildRepository } from '~/guild/IGuildRepository';
+import type { EntityAssetService, PreparedAssetUpload } from '~/infrastructure/EntityAssetService';
+import type { IGatewayService } from '~/infrastructure/IGatewayService';
+import { getMetricsService } from '~/infrastructure/MetricsService';
+import type { SnowflakeService } from '~/infrastructure/SnowflakeService';
+import type { InviteRepository } from '~/invite/InviteRepository';
+import { Logger } from '~/Logger';
+import { getGuildSearchService } from '~/Meilisearch';
+import type { Guild, User } from '~/Models';
+import type { RequestCache } from '~/middleware/RequestCacheMiddleware';
+import type { IUserRepository } from '~/user/IUserRepository';
+import type { IWebhookRepository } from '~/webhook/IWebhookRepository';
+import type { GuildDataHelpers } from './GuildDataHelpers';
 
 interface PreparedGuildAssets {
 	icon: PreparedAssetUpload | null;
@@ -83,10 +83,10 @@ export class GuildOperationsService {
 		private readonly snowflakeService: SnowflakeService,
 		private readonly webhookRepository: IWebhookRepository,
 		private readonly helpers: GuildDataHelpers,
-	) {}
+	) { }
 
-	async getGuild({userId, guildId}: {userId: UserID; guildId: GuildID}): Promise<GuildResponse> {
-		const guild = await this.gatewayService.getGuildData({guildId, userId});
+	async getGuild({ userId, guildId }: { userId: UserID; guildId: GuildID }): Promise<GuildResponse> {
+		const guild = await this.gatewayService.getGuildData({ guildId, userId });
 		if (!guild) throw new UnknownGuildError();
 		return guild;
 	}
@@ -95,8 +95,8 @@ export class GuildOperationsService {
 		const guilds = await this.guildRepository.listUserGuilds(userId);
 		const guildsWithPermissions = await Promise.all(
 			guilds.map(async (guild) => {
-				const permissions = await this.gatewayService.getUserPermissions({guildId: guild.id, userId});
-				return mapGuildToGuildResponse(guild, {permissions});
+				const permissions = await this.gatewayService.getUserPermissions({ guildId: guild.id, userId });
+				return mapGuildToGuildResponse(guild, { permissions });
 			}),
 		);
 		guildsWithPermissions.sort((a, b) => a.id.localeCompare(b.id));
@@ -116,11 +116,11 @@ export class GuildOperationsService {
 	}
 
 	async createGuild(
-		params: {user: User; data: GuildCreateRequest},
+		params: { user: User; data: GuildCreateRequest },
 		_auditLogReason?: string | null,
 	): Promise<GuildResponse> {
 		try {
-			const {user, data} = params;
+			const { user, data } = params;
 			const currentGuildCount = await this.guildRepository.countUserGuilds(user.id);
 			const maxGuilds = user.isPremium() ? MAX_GUILDS_PREMIUM : MAX_GUILDS_NON_PREMIUM;
 			if (currentGuildCount >= maxGuilds) throw new MaxGuildsError(maxGuilds);
@@ -324,30 +324,30 @@ export class GuildOperationsService {
 			]);
 
 			await this.gatewayService.startGuild(guildId);
-			await this.gatewayService.joinGuild({userId: user.id, guildId});
+			await this.gatewayService.joinGuild({ userId: user.id, guildId });
 
 			const guildSearchService = getGuildSearchService();
 			if (guildSearchService) {
 				await guildSearchService.indexGuild(guild).catch((error) => {
-					Logger.error({guildId: guild.id, error}, 'Failed to index guild in search');
+					Logger.error({ guildId: guild.id, error }, 'Failed to index guild in search');
 				});
 			}
 
-			getMetricsService().counter({name: 'guild.create'});
+			getMetricsService().counter({ name: 'guild.create' });
 
 			return mapGuildToGuildResponse(guild);
 		} catch (error) {
-			getMetricsService().counter({name: 'guild.create.error'});
+			getMetricsService().counter({ name: 'guild.create.error' });
 			throw error;
 		}
 	}
 
 	async updateGuild(
-		params: {userId: UserID; guildId: GuildID; data: GuildUpdateRequest; requestCache: RequestCache},
+		params: { userId: UserID; guildId: GuildID; data: GuildUpdateRequest; requestCache: RequestCache },
 		auditLogReason?: string | null,
 	): Promise<GuildResponse> {
-		const {userId, guildId, data} = params;
-		const {checkPermission, guildData} = await this.helpers.getGuildAuthenticated({userId, guildId});
+		const { userId, guildId, data } = params;
+		const { checkPermission, guildData } = await this.helpers.getGuildAuthenticated({ userId, guildId });
 		await checkPermission(Permissions.MANAGE_GUILD);
 
 		const currentGuild = await this.guildRepository.findUnique(guildId);
@@ -372,7 +372,7 @@ export class GuildOperationsService {
 			}
 		}
 
-		const preparedAssets: PreparedGuildAssets = {icon: null, banner: null, splash: null, embed_splash: null};
+		const preparedAssets: PreparedGuildAssets = { icon: null, banner: null, splash: null, embed_splash: null };
 
 		let iconHash = currentGuild.iconHash;
 		if (data.icon !== undefined) {
@@ -509,10 +509,11 @@ export class GuildOperationsService {
 				afkChannelId = createChannelID(data.afk_channel_id);
 				const afkChannel = await this.channelRepository.findUnique(afkChannelId);
 				if (!afkChannel || afkChannel.guildId !== guildId) {
-					throw InputValidationError.create('afk_channel_id', 'AFK channel must be in this guild');
-				}
-				if (afkChannel.type !== ChannelTypes.GUILD_VOICE) {
-					throw InputValidationError.create('afk_channel_id', 'AFK channel must be a voice channel');
+					if (afkChannelId === currentGuild.afkChannelId) afkChannelId = null;
+					else throw InputValidationError.create('afk_channel_id', 'AFK channel must be in this guild');
+				} else if (afkChannel.type !== ChannelTypes.GUILD_VOICE) {
+					if (afkChannelId === currentGuild.afkChannelId) afkChannelId = null;
+					else throw InputValidationError.create('afk_channel_id', 'AFK channel must be a voice channel');
 				}
 			} else {
 				afkChannelId = null;
@@ -525,10 +526,11 @@ export class GuildOperationsService {
 				systemChannelId = createChannelID(data.system_channel_id);
 				const systemChannel = await this.channelRepository.findUnique(systemChannelId);
 				if (!systemChannel || systemChannel.guildId !== guildId) {
-					throw InputValidationError.create('system_channel_id', 'System channel must be in this guild');
-				}
-				if (systemChannel.type !== ChannelTypes.GUILD_TEXT) {
-					throw InputValidationError.create('system_channel_id', 'System channel must be a text channel');
+					if (systemChannelId === currentGuild.systemChannelId) systemChannelId = null;
+					else throw InputValidationError.create('system_channel_id', 'System channel must be in this guild');
+				} else if (systemChannel.type !== ChannelTypes.GUILD_TEXT) {
+					if (systemChannelId === currentGuild.systemChannelId) systemChannelId = null;
+					else throw InputValidationError.create('system_channel_id', 'System channel must be a text channel');
 				}
 			} else {
 				systemChannelId = null;
@@ -604,14 +606,14 @@ export class GuildOperationsService {
 			updatedGuild = await this.guildRepository.upsert(upsertData);
 		} catch (error) {
 			await this.rollbackPreparedAssets(preparedAssets);
-			Logger.error({error, guildId}, 'Guild update failed, rolled back asset uploads');
+			Logger.error({ error, guildId }, 'Guild update failed, rolled back asset uploads');
 			throw error;
 		}
 
 		try {
 			await this.commitPreparedAssets(preparedAssets);
 		} catch (error) {
-			Logger.error({error, guildId}, 'Failed to commit asset changes after successful guild update');
+			Logger.error({ error, guildId }, 'Failed to commit asset changes after successful guild update');
 		}
 
 		await this.helpers.dispatchGuildUpdate(updatedGuild);
@@ -619,7 +621,7 @@ export class GuildOperationsService {
 		const guildSearchService = getGuildSearchService();
 		if (guildSearchService) {
 			await guildSearchService.updateGuild(updatedGuild).catch((error) => {
-				Logger.error({guildId: updatedGuild.id, error}, 'Failed to update guild in search');
+				Logger.error({ guildId: updatedGuild.id, error }, 'Failed to update guild in search');
 			});
 		}
 
@@ -629,7 +631,7 @@ export class GuildOperationsService {
 			action: AuditLogActionType.GUILD_UPDATE,
 			targetId: guildId,
 			auditLogReason: auditLogReason ?? null,
-			metadata: {name: updatedGuild.name},
+			metadata: { name: updatedGuild.name },
 			changes: this.helpers.computeGuildChanges(previousSnapshot, updatedGuild),
 		});
 
@@ -659,26 +661,26 @@ export class GuildOperationsService {
 		const commitPromises: Array<Promise<void>> = [];
 
 		if (assets.icon) {
-			commitPromises.push(this.entityAssetService.commitAssetChange({prepared: assets.icon, deferDeletion: true}));
+			commitPromises.push(this.entityAssetService.commitAssetChange({ prepared: assets.icon, deferDeletion: true }));
 		}
 		if (assets.banner) {
-			commitPromises.push(this.entityAssetService.commitAssetChange({prepared: assets.banner, deferDeletion: true}));
+			commitPromises.push(this.entityAssetService.commitAssetChange({ prepared: assets.banner, deferDeletion: true }));
 		}
 		if (assets.splash) {
-			commitPromises.push(this.entityAssetService.commitAssetChange({prepared: assets.splash, deferDeletion: true}));
+			commitPromises.push(this.entityAssetService.commitAssetChange({ prepared: assets.splash, deferDeletion: true }));
 		}
 		if (assets.embed_splash) {
 			commitPromises.push(
-				this.entityAssetService.commitAssetChange({prepared: assets.embed_splash, deferDeletion: true}),
+				this.entityAssetService.commitAssetChange({ prepared: assets.embed_splash, deferDeletion: true }),
 			);
 		}
 
 		await Promise.all(commitPromises);
 	}
 
-	async deleteGuild(params: {user: User; guildId: GuildID}, _auditLogReason?: string | null): Promise<void> {
-		const {user, guildId} = params;
-		const {guildData} = await this.helpers.getGuildAuthenticated({userId: user.id, guildId});
+	async deleteGuild(params: { user: User; guildId: GuildID }, _auditLogReason?: string | null): Promise<void> {
+		const { user, guildId } = params;
+		const { guildData } = await this.helpers.getGuildAuthenticated({ userId: user.id, guildId });
 		if (!guildData || guildData.owner_id !== user.id.toString()) {
 			throw new MissingPermissionsError();
 		}
@@ -702,12 +704,12 @@ export class GuildOperationsService {
 			await this.gatewayService.dispatchGuild({
 				guildId,
 				event: 'GUILD_DELETE',
-				data: {id: guildId.toString()},
+				data: { id: guildId.toString() },
 			});
 
 			await Promise.all(
 				members.map(async (member) => {
-					await this.gatewayService.leaveGuild({userId: member.userId, guildId});
+					await this.gatewayService.leaveGuild({ userId: member.userId, guildId });
 				}),
 			);
 
@@ -730,13 +732,13 @@ export class GuildOperationsService {
 			const guildSearchService = getGuildSearchService();
 			if (guildSearchService) {
 				await guildSearchService.deleteGuild(guildId).catch((error) => {
-					Logger.error({guildId, error}, 'Failed to delete guild from search');
+					Logger.error({ guildId, error }, 'Failed to delete guild from search');
 				});
 			}
 
-			getMetricsService().counter({name: 'guild.delete'});
+			getMetricsService().counter({ name: 'guild.delete' });
 		} catch (error) {
-			getMetricsService().counter({name: 'guild.delete.error'});
+			getMetricsService().counter({ name: 'guild.delete.error' });
 			throw error;
 		}
 	}

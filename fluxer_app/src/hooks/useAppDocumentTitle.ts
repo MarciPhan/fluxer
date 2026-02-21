@@ -17,9 +17,9 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {useEffect, useRef} from 'react';
+import { useEffect, useRef } from 'react';
 
-const TITLE_PREFIX = 'Fluxer';
+const TITLE_PREFIX = 'NePornu';
 
 type TitlePart = string | null | undefined;
 type TitleInput = TitlePart | Array<TitlePart>;
@@ -34,7 +34,7 @@ interface BadgeState {
 }
 
 let currentBaseTitle = TITLE_PREFIX;
-let currentBadgeState: BadgeState = {mentionCount: 0, hasUnread: false};
+let currentBadgeState: BadgeState = { mentionCount: 0, hasUnread: false };
 
 const normalizeTitleParts = (value?: TitleInput): Array<string> => {
 	if (!value) {
@@ -66,11 +66,11 @@ const updateDocumentTitle = (): void => {
 };
 
 export const updateDocumentTitleBadge = (mentionCount: number, hasUnread: boolean): void => {
-	currentBadgeState = {mentionCount, hasUnread};
+	currentBadgeState = { mentionCount, hasUnread };
 	updateDocumentTitle();
 };
 
-export const useFluxerDocumentTitle = (title?: TitleInput, options?: UseDocumentTitleOptions) => {
+export const useAppDocumentTitle = (title?: TitleInput, options?: UseDocumentTitleOptions) => {
 	const parts = normalizeTitleParts(title);
 	const fullTitle = buildDocumentTitle(parts);
 	const prevTitleRef = useRef<string | undefined>(undefined);

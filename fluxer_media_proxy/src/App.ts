@@ -20,35 +20,35 @@
 import '~/instrument';
 
 import fs from 'node:fs/promises';
-import {serve} from '@hono/node-server';
+import { serve } from '@hono/node-server';
 import * as Sentry from '@sentry/node';
-import {Hono} from 'hono';
-import {HTTPException} from 'hono/http-exception';
-import {logger} from 'hono/logger';
+import { Hono } from 'hono';
+import { HTTPException } from 'hono/http-exception';
+import { logger } from 'hono/logger';
 import * as v from 'valibot';
-import {Config} from '~/Config';
-import {createAttachmentsHandler} from '~/controllers/AttachmentsController';
-import {createExternalMediaHandler} from '~/controllers/ExternalMediaController';
+import { Config } from '~/Config';
+import { createAttachmentsHandler } from '~/controllers/AttachmentsController';
+import { createExternalMediaHandler } from '~/controllers/ExternalMediaController';
 import {
 	createGuildMemberImageRouteHandler,
 	createImageRouteHandler,
 	createSimpleImageRouteHandler,
 } from '~/controllers/ImageController';
-import {handleMetadataRequest} from '~/controllers/MetadataController';
-import {handleStaticProxyRequest} from '~/controllers/StaticProxyController';
-import {createStickerRouteHandler} from '~/controllers/StickerController';
-import {handleThemeRequest} from '~/controllers/ThemeController';
-import {handleThumbnailRequest} from '~/controllers/ThumbnailController';
-import {Logger} from '~/Logger';
-import {CloudflareIPService} from '~/lib/CloudflareIPService';
-import {InMemoryCoalescer} from '~/lib/InMemoryCoalescer';
-import type {HonoEnv} from '~/lib/MediaTypes';
-import {NSFWDetectionService} from '~/lib/NSFWDetectionService';
-import {InternalNetworkRequired} from '~/middleware/AuthMiddleware';
-import {createCloudflareFirewall} from '~/middleware/CloudflareFirewall';
-import {metricsMiddleware} from '~/middleware/MetricsMiddleware';
+import { handleMetadataRequest } from '~/controllers/MetadataController';
+import { handleStaticProxyRequest } from '~/controllers/StaticProxyController';
+import { createStickerRouteHandler } from '~/controllers/StickerController';
+import { handleThemeRequest } from '~/controllers/ThemeController';
+import { handleThumbnailRequest } from '~/controllers/ThumbnailController';
+import { Logger } from '~/Logger';
+import { CloudflareIPService } from '~/lib/CloudflareIPService';
+import { InMemoryCoalescer } from '~/lib/InMemoryCoalescer';
+import type { HonoEnv } from '~/lib/MediaTypes';
+import { NSFWDetectionService } from '~/lib/NSFWDetectionService';
+import { InternalNetworkRequired } from '~/middleware/AuthMiddleware';
+import { createCloudflareFirewall } from '~/middleware/CloudflareFirewall';
+import { metricsMiddleware } from '~/middleware/MetricsMiddleware';
 
-const app = new Hono<HonoEnv>({strict: true});
+const app = new Hono<HonoEnv>({ strict: true });
 app.use(logger(Logger.info.bind(Logger)));
 app.use('*', metricsMiddleware);
 
@@ -75,7 +75,7 @@ process.on('SIGTERM', async () => {
 	try {
 		process.exit(0);
 	} catch (error) {
-		Logger.error({error}, 'Error during shutdown');
+		Logger.error({ error }, 'Error during shutdown');
 		process.exit(1);
 	}
 });
@@ -113,6 +113,8 @@ if (Config.STATIC_MODE) {
 	app.post('/_metadata', InternalNetworkRequired, handleMetadataRequest(coalescer, nsfwDetectionService));
 	app.post('/_thumbnail', InternalNetworkRequired, handleThumbnailRequest);
 
+	// Default avatars (0.png - 5.png) served from CDN bucket
+	app.get('/avatars/:filename{[0-9]+\\.png}', async (ctx) => handleSimpleImageRoute(ctx, 'avatars'));
 	app.get('/avatars/:id/:filename', async (ctx) => handleImageRoute(ctx, 'avatars'));
 	app.get('/icons/:id/:filename', async (ctx) => handleImageRoute(ctx, 'icons'));
 	app.get('/banners/:id/:filename', async (ctx) => handleImageRoute(ctx, 'banners'));
@@ -149,17 +151,17 @@ app.onError((err, ctx) => {
 	}
 
 	if (v.isValiError(err) || err instanceof SyntaxError) {
-		return ctx.text('Bad Request', {status: 400});
+		return ctx.text('Bad Request', { status: 400 });
 	}
 	if (err instanceof HTTPException) {
 		return err.getResponse();
 	}
 	if (isExpectedError) {
-		Logger.warn({err}, 'Expected error occurred');
-		return ctx.text('Bad Request', {status: 400});
+		Logger.warn({ err }, 'Expected error occurred');
+		return ctx.text('Bad Request', { status: 400 });
 	}
-	Logger.error({err}, 'Unhandled error occurred');
-	return ctx.text('Internal Server Error', {status: 500});
+	Logger.error({ err }, 'Unhandled error occurred');
+	return ctx.text('Internal Server Error', { status: 500 });
 });
 
 serve({
@@ -168,4 +170,4 @@ serve({
 	port: Config.PORT,
 });
 
-Logger.info({port: Config.PORT}, `Fluxer Media Proxy listening on http://0.0.0.0:${Config.PORT}`);
+Logger.info({ port: Config.PORT }, `Fluxer Media Proxy listening on http://0.0.0.0:${Config.PORT}`);

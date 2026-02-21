@@ -17,20 +17,20 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans, useLingui} from '@lingui/react/macro';
-import {ArrowRightIcon, WarningIcon} from '@phosphor-icons/react';
-import {observer} from 'mobx-react-lite';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { ArrowRightIcon, WarningIcon } from '@phosphor-icons/react';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import * as ModalActionCreators from '~/actions/ModalActionCreators';
 import * as TrustedDomainActionCreators from '~/actions/TrustedDomainActionCreators';
 import styles from '~/components/modals/ExternalLinkWarningModal.module.css';
 import * as Modal from '~/components/modals/Modal';
-import {Button} from '~/components/uikit/Button/Button';
-import {Checkbox} from '~/components/uikit/Checkbox/Checkbox';
-import {openExternalUrl} from '~/utils/NativeUtils';
+import { Button } from '~/components/uikit/Button/Button';
+import { Checkbox } from '~/components/uikit/Checkbox/Checkbox';
+import { openExternalUrl } from '~/utils/NativeUtils';
 
-export const ExternalLinkWarningModal = observer(({url, hostname}: {url: string; hostname: string}) => {
-	const {t} = useLingui();
+export const ExternalLinkWarningModal = observer(({ url, hostname }: { url: string; hostname: string }) => {
+	const { t } = useLingui();
 	const [trustDomain, setTrustDomain] = React.useState(false);
 	const initialFocusRef = React.useRef<HTMLButtonElement | null>(null);
 
@@ -63,7 +63,7 @@ export const ExternalLinkWarningModal = observer(({url, hostname}: {url: string;
 						</div>
 						<div className={styles.textContainer}>
 							<p className={styles.title}>
-								<Trans>You are about to leave Fluxer</Trans>
+								<Trans>You are about to leave the application</Trans>
 							</p>
 							<p className={styles.description}>
 								<Trans>External links can be dangerous. Please be careful.</Trans>

@@ -17,28 +17,28 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans, useLingui} from '@lingui/react/macro';
-import {clsx} from 'clsx';
-import {observer} from 'mobx-react-lite';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { clsx } from 'clsx';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
-import {Controller, useForm} from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import * as ModalActionCreators from '~/actions/ModalActionCreators';
-import {modal} from '~/actions/ModalActionCreators';
+import { modal } from '~/actions/ModalActionCreators';
 import * as PremiumModalActionCreators from '~/actions/PremiumModalActionCreators';
 import * as ToastActionCreators from '~/actions/ToastActionCreators';
 import * as UserActionCreators from '~/actions/UserActionCreators';
-import {Form} from '~/components/form/Form';
-import {Input} from '~/components/form/Input';
-import {UsernameValidationRules} from '~/components/form/UsernameValidationRules';
-import {ConfirmModal} from '~/components/modals/ConfirmModal';
+import { Form } from '~/components/form/Form';
+import { Input } from '~/components/form/Input';
+import { UsernameValidationRules } from '~/components/form/UsernameValidationRules';
+import { ConfirmModal } from '~/components/modals/ConfirmModal';
 import confirmStyles from '~/components/modals/ConfirmModal.module.css';
 import styles from '~/components/modals/FluxerTagChangeModal.module.css';
 import * as Modal from '~/components/modals/Modal';
-import {Button} from '~/components/uikit/Button/Button';
+import { Button } from '~/components/uikit/Button/Button';
 import FocusRing from '~/components/uikit/FocusRing/FocusRing';
-import {PlutoniumUpsell} from '~/components/uikit/PlutoniumUpsell/PlutoniumUpsell';
-import {Tooltip} from '~/components/uikit/Tooltip/Tooltip';
-import {useFormSubmit} from '~/hooks/useFormSubmit';
+import { PlutoniumUpsell } from '~/components/uikit/PlutoniumUpsell/PlutoniumUpsell';
+import { Tooltip } from '~/components/uikit/Tooltip/Tooltip';
+import { useFormSubmit } from '~/hooks/useFormSubmit';
 import UserStore from '~/stores/UserStore';
 
 interface FormInputs {
@@ -47,7 +47,7 @@ interface FormInputs {
 }
 
 export const FluxerTagChangeModal = observer(() => {
-	const {t} = useLingui();
+	const { t } = useLingui();
 	const user = UserStore.getCurrentUser()!;
 	const usernameRef = React.useRef<HTMLInputElement>(null);
 	const hasPremium = user.isPremium();
@@ -94,12 +94,12 @@ export const FluxerTagChangeModal = observer(() => {
 					ModalActionCreators.push(
 						modal(() => (
 							<ConfirmModal
-								title={t`FluxerTag already taken`}
+								title={t`Tag already taken`}
 								description={
 									<div className={styles.confirmDescription}>
 										<p>
 											<Trans>
-												The FluxerTag <strong>{fluxerTag}</strong> is already taken. Continuing will reroll your
+												The Tag <strong>{fluxerTag}</strong> is already taken. Continuing will reroll your
 												discriminator automatically.
 											</Trans>
 										</p>
@@ -136,12 +136,12 @@ export const FluxerTagChangeModal = observer(() => {
 				skipAvailabilityCheckRef.current = false;
 			}
 			ModalActionCreators.pop();
-			ToastActionCreators.createToast({type: 'success', children: t`FluxerTag updated`});
+			ToastActionCreators.createToast({ type: 'success', children: t`Tag updated` });
 		},
 		[hasPremium, user.username, user.discriminator],
 	);
 
-	const {handleSubmit, isSubmitting} = useFormSubmit({
+	const { handleSubmit, isSubmitting } = useFormSubmit({
 		form,
 		onSubmit,
 		defaultErrorField: 'username',
@@ -150,8 +150,8 @@ export const FluxerTagChangeModal = observer(() => {
 
 	return (
 		<Modal.Root size="small" centered initialFocusRef={usernameRef}>
-			<Form form={form} onSubmit={handleSubmit} aria-label={t`Change FluxerTag form`}>
-				<Modal.Header title={t`Change your FluxerTag`} />
+			<Form form={form} onSubmit={handleSubmit} aria-label={t`Change Tag form`}>
+				<Modal.Header title={t`Change your Tag`} />
 				<Modal.Content className={confirmStyles.content}>
 					<p className={clsx(styles.description, confirmStyles.descriptionText)}>
 						{hasPremium ? (
@@ -167,13 +167,13 @@ export const FluxerTagChangeModal = observer(() => {
 						)}
 					</p>
 					<div className={styles.fluxerTagContainer}>
-						<span className={styles.fluxerTagLabel}>{t`FluxerTag`}</span>
+						<span className={styles.fluxerTagLabel}>{t`Tag`}</span>
 						<div className={styles.fluxerTagInputRow}>
 							<div className={styles.usernameInput}>
 								<Controller
 									name="username"
 									control={form.control}
-									render={({field}) => (
+									render={({ field }) => (
 										<Input
 											{...field}
 											ref={usernameRef}

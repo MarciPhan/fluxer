@@ -31,7 +31,7 @@ import {PendingFriendsView} from '~/components/channel/friends/views/PendingFrie
 import {Input} from '~/components/form/Input';
 import FocusRing from '~/components/uikit/FocusRing/FocusRing';
 import {MentionBadge} from '~/components/uikit/MentionBadge';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import type {RelationshipRecord} from '~/records/RelationshipRecord';
 import FriendsTabStore from '~/stores/FriendsTabStore';
 import MobileLayoutStore from '~/stores/MobileLayoutStore';
@@ -100,7 +100,7 @@ export const DMFriendsView: React.FC = observer(() => {
 		UserProfileActionCreators.openUserProfile(userId);
 	}, []);
 
-	useFluxerDocumentTitle(t`My Friends`);
+	useAppDocumentTitle(t`My Friends`);
 
 	const renderTabContent = () => {
 		const relationshipsRecord = relationships.reduce(

@@ -17,10 +17,10 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans} from '@lingui/react/macro';
+import { Trans } from '@lingui/react/macro';
 import React from 'react';
-import {FluxerIcon} from '~/components/icons/FluxerIcon';
-import {Button} from '~/components/uikit/Button/Button';
+import { Button } from '~/components/uikit/Button/Button';
+import NepornuOfficialLogo from '~/images/nepornu-logo-official.svg';
 import styles from './ErrorFallback.module.css';
 
 export const NetworkErrorScreen: React.FC = () => {
@@ -30,22 +30,21 @@ export const NetworkErrorScreen: React.FC = () => {
 
 	return (
 		<div className={styles.errorFallbackContainer}>
-			<FluxerIcon className={styles.errorFallbackIcon} />
+			<img src={NepornuOfficialLogo} alt="NePornu" style={{ display: 'block', margin: '0 auto 2rem auto', height: '48px' }} />
 			<div className={styles.errorFallbackContent}>
 				<h1 className={styles.errorFallbackTitle}>
 					<Trans>Connection Issue</Trans>
 				</h1>
 				<p className={styles.errorFallbackDescription}>
 					<Trans>
-						We're having trouble connecting to Fluxer's servers. This could be a temporary network issue or scheduled
-						maintenance.
+						We're having trouble connecting to NePornu's servers. This could be a temporary network issue or scheduled maintenance.
 					</Trans>
 				</p>
 				<p className={styles.errorFallbackDescription}>
 					<Trans>
 						Check our{' '}
-						<a href="https://bsky.app/profile/fluxer.app" target="_blank" rel="noopener noreferrer">
-							Bluesky (@fluxer.app)
+						<a href="https://status.nepornu.cz/" target="_blank" rel="noopener noreferrer">
+							status page (status.nepornu.cz)
 						</a>{' '}
 						for status updates.
 					</Trans>

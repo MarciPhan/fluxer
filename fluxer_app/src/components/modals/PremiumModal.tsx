@@ -17,24 +17,25 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans} from '@lingui/react/macro';
-import {observer} from 'mobx-react-lite';
+import { Trans } from '@lingui/react/macro';
+import { observer } from 'mobx-react-lite';
 import * as Modal from '~/components/modals/Modal';
-import {type PremiumModalProps, usePremiumModalLogic} from '~/utils/modals/PremiumModalUtils';
-import {PlutoniumContent} from './components/PlutoniumContent';
+import { type PremiumModalProps, usePremiumModalLogic } from '~/utils/modals/PremiumModalUtils';
+// import { PlutoniumContent } from './components/PlutoniumContent';
 import styles from './PremiumModal.module.css';
 
-export const PremiumModal = observer(({defaultGiftMode = false}: PremiumModalProps) => {
+export const PremiumModal = observer(({ defaultGiftMode = false }: PremiumModalProps) => {
 	const modalLogic = usePremiumModalLogic({
 		defaultGiftMode,
 	});
 
 	return (
 		<Modal.Root size="large">
-			<Modal.Header title={<Trans>Fluxer Plutonium</Trans>} />
+			<Modal.Header title={<Trans>Plutonium</Trans>} />
 			<Modal.Content>
 				<div className={styles.contentContainer}>
-					<PlutoniumContent defaultGiftMode={modalLogic.defaultGiftMode} />
+					{/* <PlutoniumContent defaultGiftMode={modalLogic.defaultGiftMode} /> */}
+					Missing Content
 				</div>
 			</Modal.Content>
 		</Modal.Root>

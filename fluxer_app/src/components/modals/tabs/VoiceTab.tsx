@@ -17,31 +17,31 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans, useLingui} from '@lingui/react/macro';
-import {observer} from 'mobx-react-lite';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import * as ModalActionCreators from '~/actions/ModalActionCreators';
-import {modal} from '~/actions/ModalActionCreators';
+import { modal } from '~/actions/ModalActionCreators';
 import * as VoiceSettingsActionCreators from '~/actions/VoiceSettingsActionCreators';
-import {Select} from '~/components/form/Select';
-import {Switch} from '~/components/form/Switch';
-import {KeybindRecorder} from '~/components/keybinds/KeybindRecorder';
-import {ConfirmModal} from '~/components/modals/ConfirmModal';
-import {InputMonitoringCTAModal} from '~/components/modals/InputMonitoringCTAModal';
-import {Button} from '~/components/uikit/Button/Button';
-import {RadioGroup, type RadioOption} from '~/components/uikit/RadioGroup/RadioGroup';
-import {Slider} from '~/components/uikit/Slider';
-import {WarningAlert} from '~/components/uikit/WarningAlert/WarningAlert';
-import KeybindStore, {getDefaultKeybind} from '~/stores/KeybindStore';
+import { Select } from '~/components/form/Select';
+import { Switch } from '~/components/form/Switch';
+import { KeybindRecorder } from '~/components/keybinds/KeybindRecorder';
+import { ConfirmModal } from '~/components/modals/ConfirmModal';
+import { InputMonitoringCTAModal } from '~/components/modals/InputMonitoringCTAModal';
+import { Button } from '~/components/uikit/Button/Button';
+import { RadioGroup, type RadioOption } from '~/components/uikit/RadioGroup/RadioGroup';
+import { Slider } from '~/components/uikit/Slider';
+import { WarningAlert } from '~/components/uikit/WarningAlert/WarningAlert';
+import KeybindStore, { getDefaultKeybind } from '~/stores/KeybindStore';
 import NativePermissionStore from '~/stores/NativePermissionStore';
 import NewDeviceMonitoringStore from '~/stores/NewDeviceMonitoringStore';
 import type VoiceSettingsStore from '~/stores/VoiceSettingsStore';
 import MediaEngineStore from '~/stores/voice/MediaEngineFacade';
-import {openExternalUrl} from '~/utils/NativeUtils';
-import {hasDeviceLabels, resolveEffectiveDeviceId} from '~/utils/VoiceDeviceManager';
-import {EntranceSoundSection} from './components/EntranceSoundSection';
-import {MicTestSection} from './components/MicTestSection';
-import {useMediaPermission} from './hooks/useMediaPermission';
+import { openExternalUrl } from '~/utils/NativeUtils';
+import { hasDeviceLabels, resolveEffectiveDeviceId } from '~/utils/VoiceDeviceManager';
+import { EntranceSoundSection } from './components/EntranceSoundSection';
+import { MicTestSection } from './components/MicTestSection';
+import { useMediaPermission } from './hooks/useMediaPermission';
 import styles from './VoiceTab.module.css';
 
 type TransmitMode = 'voice_activity' | 'push_to_talk';
@@ -53,8 +53,8 @@ interface VoiceTabProps {
 }
 
 export const VoiceTab: React.FC<VoiceTabProps> = observer(
-	({voiceSettings, hasPremium, autoRequestPermission = true}) => {
-		const {t, i18n} = useLingui();
+	({ voiceSettings, hasPremium, autoRequestPermission = true }) => {
+		const { t, i18n } = useLingui();
 		const {
 			inputDeviceId,
 			outputDeviceId,
@@ -97,24 +97,24 @@ export const VoiceTab: React.FC<VoiceTabProps> = observer(
 		const inputDeviceOptions =
 			inputDevices.length > 0 && inputHasLabels
 				? inputDevices.map((device) => {
-						const shortDeviceId = device.deviceId.slice(0, 8);
-						return {
-							value: device.deviceId,
-							label: device.label || t`Microphone ${shortDeviceId}`,
-						};
-					})
-				: [{value: 'default', label: t`Default`}];
+					const shortDeviceId = device.deviceId.slice(0, 8);
+					return {
+						value: device.deviceId,
+						label: device.label || t`Microphone ${shortDeviceId}`,
+					};
+				})
+				: [{ value: 'default', label: t`Default` }];
 
 		const outputDeviceOptions =
 			outputDevices.length > 0 && outputHasLabels
 				? outputDevices.map((device) => {
-						const shortDeviceId = device.deviceId.slice(0, 8);
-						return {
-							value: device.deviceId,
-							label: device.label || t`Speaker ${shortDeviceId}`,
-						};
-					})
-				: [{value: 'default', label: t`Default`}];
+					const shortDeviceId = device.deviceId.slice(0, 8);
+					return {
+						value: device.deviceId,
+						label: device.label || t`Speaker ${shortDeviceId}`,
+					};
+				})
+				: [{ value: 'default', label: t`Default` }];
 
 		const transmitModeOptions: Array<RadioOption<TransmitMode>> = [
 			{
@@ -140,7 +140,7 @@ export const VoiceTab: React.FC<VoiceTabProps> = observer(
 							description={
 								<p>
 									<Trans>
-										In your browser, Push-to-Talk will only work when the Fluxer tab is focused. For system-wide
+										In your browser, Push-to-Talk will only work when the application tab is focused. For system-wide
 										Push-to-Talk that works even when gaming or using other apps, download the desktop app.
 									</Trans>
 								</p>
@@ -200,16 +200,16 @@ export const VoiceTab: React.FC<VoiceTabProps> = observer(
 								{permissionStatus === 'denied' ? (
 									isNativeDesktop ? (
 										<Trans>
-											Allow Fluxer to access your microphone in System Settings → Privacy &amp; Security → Microphone.
+											Allow the app to access your microphone in System Settings → Privacy &amp; Security → Microphone.
 										</Trans>
 									) : (
 										<Trans>
-											Allow Fluxer to access your microphone. Check your browser address bar or settings to enable
+											Allow the app to access your microphone. Check your browser address bar or settings to enable
 											permissions.
 										</Trans>
 									)
 								) : (
-									<Trans>Fluxer needs access to list the available microphones and speakers.</Trans>
+									<Trans>Access is needed to list the available microphones and speakers.</Trans>
 								)}
 							</p>
 						</div>
@@ -311,13 +311,13 @@ export const VoiceTab: React.FC<VoiceTabProps> = observer(
 								link={
 									!isNativeDesktop
 										? {
-												label: <Trans>Download the desktop app for system-wide Push-to-Talk</Trans>,
-												onClick: () => void openExternalUrl('https://fluxer.app/download'),
-											}
+											label: <Trans>Download the desktop app for system-wide Push-to-Talk</Trans>,
+											onClick: () => void openExternalUrl('https://fluxer.app/download'),
+										}
 										: {
-												label: <Trans>Enable Input Monitoring permission</Trans>,
-												onClick: handleOpenInputMonitoringModal,
-											}
+											label: <Trans>Enable Input Monitoring permission</Trans>,
+											onClick: handleOpenInputMonitoringModal,
+										}
 								}
 							>
 								{!isNativeDesktop ? (
@@ -338,7 +338,7 @@ export const VoiceTab: React.FC<VoiceTabProps> = observer(
 						label={t`Input Device`}
 						value={effectiveInputDeviceId}
 						options={inputDeviceOptions}
-						onChange={(value) => VoiceSettingsActionCreators.update({inputDeviceId: value})}
+						onChange={(value) => VoiceSettingsActionCreators.update({ inputDeviceId: value })}
 					/>
 				</div>
 
@@ -347,7 +347,7 @@ export const VoiceTab: React.FC<VoiceTabProps> = observer(
 						label={t`Output Device`}
 						value={effectiveOutputDeviceId}
 						options={outputDeviceOptions}
-						onChange={(value) => VoiceSettingsActionCreators.update({outputDeviceId: value})}
+						onChange={(value) => VoiceSettingsActionCreators.update({ outputDeviceId: value })}
 					/>
 				</div>
 
@@ -372,7 +372,7 @@ export const VoiceTab: React.FC<VoiceTabProps> = observer(
 						stickToMarkers={false}
 						onMarkerRender={(value) => `${value}%`}
 						onValueRender={(value) => <Trans>{value}%</Trans>}
-						onValueChange={(value) => VoiceSettingsActionCreators.update({inputVolume: value})}
+						onValueChange={(value) => VoiceSettingsActionCreators.update({ inputVolume: value })}
 					/>
 				</div>
 
@@ -390,7 +390,7 @@ export const VoiceTab: React.FC<VoiceTabProps> = observer(
 						stickToMarkers={false}
 						onMarkerRender={(value) => `${value}%`}
 						onValueRender={(value) => <Trans>{value}%</Trans>}
-						onValueChange={(value) => VoiceSettingsActionCreators.update({outputVolume: value})}
+						onValueChange={(value) => VoiceSettingsActionCreators.update({ outputVolume: value })}
 					/>
 				</div>
 
@@ -410,19 +410,19 @@ export const VoiceTab: React.FC<VoiceTabProps> = observer(
 								label={<Trans>Echo Cancellation</Trans>}
 								description={<Trans>Reduces echo and feedback from speakers</Trans>}
 								value={echoCancellation}
-								onChange={(value) => VoiceSettingsActionCreators.update({echoCancellation: value})}
+								onChange={(value) => VoiceSettingsActionCreators.update({ echoCancellation: value })}
 							/>
 							<Switch
 								label={<Trans>Noise Suppression</Trans>}
 								description={<Trans>Filters out background noise like fans and keyboard typing</Trans>}
 								value={noiseSuppression}
-								onChange={(value) => VoiceSettingsActionCreators.update({noiseSuppression: value})}
+								onChange={(value) => VoiceSettingsActionCreators.update({ noiseSuppression: value })}
 							/>
 							<Switch
 								label={<Trans>Auto Gain Control</Trans>}
 								description={<Trans>Automatically adjusts microphone volume for consistent levels</Trans>}
 								value={autoGainControl}
-								onChange={(value) => VoiceSettingsActionCreators.update({autoGainControl: value})}
+								onChange={(value) => VoiceSettingsActionCreators.update({ autoGainControl: value })}
 							/>
 						</div>
 					</div>

@@ -1,30 +1,124 @@
 <!doctype html>
-<html lang="en">
+<html lang="cs">
+
 <head>
-<meta charset="utf-8">
-<title>Fluxer</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
-<meta name="description" content="Fluxer is an open-source, independent instant messaging and VoIP platform. Built for friends, groups, and communities.">
-<link rel="preconnect" href="https://fluxerstatic.com">
-<link rel="stylesheet" href="https://fluxerstatic.com/fonts/ibm-plex.css">
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" type="image/png" sizes="32x32" href="https://fluxerstatic.com/web/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://fluxerstatic.com/web/apple-touch-icon.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Fluxer">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#4641D9">
-<meta name="msapplication-navbutton-color" content="#4641D9">
-<meta name="msapplication-TileColor" content="#4641D9">
-<meta name="msapplication-config" content="https://fluxerstatic.com/web/browserconfig.xml">
-<meta name="format-detection" content="telephone=no">
-<meta name="display" content="standalone">
-<script nonce="{{CSP_NONCE_PLACEHOLDER}}">(function(){try{var loc=window.location;if(loc.pathname==='/'){var target='/channels/@me';if(loc.search)target+=loc.search;if(loc.hash)target+=loc.hash;loc.replace(target);}}catch(e){}})();</script>
-<script nonce="{{CSP_NONCE_PLACEHOLDER}}">(function(){try{var t=localStorage.getItem('theme');if(t){document.documentElement.classList.add('theme-'+t)}}catch{}})()</script>
+    <meta charset="utf-8">
+    <title>NePornu chat</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="NePornu chat — Nebuď na to sám. Bezpečná platforma pro komunikaci a podporu.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="/web/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/web/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="NePornu">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#4641D9">
+    <meta name="msapplication-navbutton-color" content="#4641D9">
+    <meta name="msapplication-TileColor" content="#4641D9">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="display" content="standalone">
+    <script
+        nonce="{{CSP_NONCE_PLACEHOLDER}}">(function () { try { var loc = window.location; if (loc.pathname === '/') { var target = '/channels/@me'; if (loc.search) target += loc.search; if (loc.hash) target += loc.hash; loc.replace(target); } } catch (e) { } })()</script>
+    <script
+        nonce="{{CSP_NONCE_PLACEHOLDER}}">(function () { try { var t = localStorage.getItem('theme'); if (t) { document.documentElement.classList.add('theme-' + t) } } catch { } })()</script>
 </head>
+
 <body>
-<div id="root"></div>
-<noscript>JavaScript is required to use this application.</noscript>
+    <!-- NePornu loading screen - visible before React loads -->
+    <div id="app-loading" style="
+        position: fixed; inset: 0;
+        background: #1e1f22;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        gap: 1.5rem; z-index: 9999;
+        font-family: 'Inter', system-ui, sans-serif;
+    ">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <div class="logo-pulse"></div>
+                <h1
+                    style="color: white; font-size: 3rem; font-weight: 800; margin: 0; font-family: 'Inter', sans-serif;">
+                    NEPORNU</h1>
+            </div>
+            <div class="loader-tagline">Nebuď na to sám</div>
+            <div class="loader-spinner"></div>
+        </div>
+        <style>
+            .loader-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                animation: npPulse 2s ease-in-out infinite;
+            }
+
+            .loader-logo {
+                position: relative;
+            }
+
+            .loader-tagline {
+                font-size: 1.25rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-weight: 500;
+            }
+
+            .loader-spinner {
+                width: 40px;
+                height: 40px;
+                border: 3px solid rgba(70, 65, 217, 0.2);
+                border-top-color: #4641D9;
+                border-radius: 50%;
+                animation: npSpin 0.8s linear infinite;
+                margin-top: 1rem;
+            }
+
+            @keyframes npSpin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            @keyframes npPulse {
+
+                0%,
+                100% {
+                    opacity: 1;
+                }
+
+                50% {
+                    opacity: 0.7;
+                }
+            }
+
+            #app-loading.hidden {
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                pointer-events: none;
+            }
+        </style>
+    </div>
+    <div id="root"></div>
+    <script nonce="{{CSP_NONCE_PLACEHOLDER}}">
+        // Remove loading screen when React mounts
+        var _rootEl = document.getElementById('root');
+        var _loadEl = document.getElementById('app-loading');
+        if (_loadEl && _rootEl) {
+            var _obs = new MutationObserver(function () {
+                if (_rootEl.childElementCount > 0) {
+                    _loadEl.classList.add('hidden');
+                    setTimeout(function () { if (_loadEl && _loadEl.parentNode) _loadEl.parentNode.removeChild(_loadEl); }, 350);
+                    _obs.disconnect();
+                }
+            });
+            _obs.observe(_rootEl, { childList: true });
+        }
+    </script>
+    <noscript>JavaScript is required to use this application.</noscript>
 </body>
+
 </html>

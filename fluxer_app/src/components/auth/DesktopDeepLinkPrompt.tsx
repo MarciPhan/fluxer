@@ -17,14 +17,14 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans} from '@lingui/react/macro';
-import {ArrowSquareOutIcon} from '@phosphor-icons/react';
+import { Trans } from '@lingui/react/macro';
+import { ArrowSquareOutIcon } from '@phosphor-icons/react';
 import type React from 'react';
-import {useEffect, useState} from 'react';
-import {Routes} from '~/Routes';
-import {checkDesktopAvailable, navigateInDesktop} from '~/utils/DesktopRpcClient';
-import {isDesktop} from '~/utils/NativeUtils';
-import {Button} from '../uikit/Button/Button';
+import { useEffect, useState } from 'react';
+import { Routes } from '~/Routes';
+import { checkDesktopAvailable, navigateInDesktop } from '~/utils/DesktopRpcClient';
+import { isDesktop } from '~/utils/NativeUtils';
+import { Button } from '../uikit/Button/Button';
 import styles from './DesktopDeepLinkPrompt.module.css';
 
 interface DesktopDeepLinkPromptProps {
@@ -33,7 +33,7 @@ interface DesktopDeepLinkPromptProps {
 	preferLogin?: boolean;
 }
 
-export const DesktopDeepLinkPrompt: React.FC<DesktopDeepLinkPromptProps> = ({code, kind, preferLogin = false}) => {
+export const DesktopDeepLinkPrompt: React.FC<DesktopDeepLinkPromptProps> = ({ code, kind, preferLogin = false }) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [desktopAvailable, setDesktopAvailable] = useState<boolean | null>(null);
 	const [error, setError] = useState<string | null>(null);
@@ -42,7 +42,7 @@ export const DesktopDeepLinkPrompt: React.FC<DesktopDeepLinkPromptProps> = ({cod
 		if (isDesktop()) return;
 
 		let cancelled = false;
-		checkDesktopAvailable().then(({available}) => {
+		checkDesktopAvailable().then(({ available }) => {
 			if (!cancelled) {
 				setDesktopAvailable(available);
 			}
@@ -86,7 +86,7 @@ export const DesktopDeepLinkPrompt: React.FC<DesktopDeepLinkPromptProps> = ({cod
 		<div className={styles.banner}>
 			<div className={styles.copy}>
 				<p className={styles.title}>
-					<Trans>Open in Fluxer for desktop</Trans>
+					<Trans>Open in the desktop app</Trans>
 				</p>
 				{error ? (
 					<p className={styles.notInstalled}>{error}</p>
@@ -99,7 +99,7 @@ export const DesktopDeepLinkPrompt: React.FC<DesktopDeepLinkPromptProps> = ({cod
 			<Button variant="primary" onClick={handleOpen} className={styles.cta} submitting={isLoading}>
 				<ArrowSquareOutIcon size={18} weight="fill" />
 				<span>
-					<Trans>Open Fluxer</Trans>
+					<Trans>Open app</Trans>
 				</span>
 			</Button>
 		</div>

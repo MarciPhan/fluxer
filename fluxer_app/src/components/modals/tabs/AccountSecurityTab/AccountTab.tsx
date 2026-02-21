@@ -17,20 +17,20 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans, useLingui} from '@lingui/react/macro';
-import {observer} from 'mobx-react-lite';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { observer } from 'mobx-react-lite';
 import type React from 'react';
 import * as ModalActionCreators from '~/actions/ModalActionCreators';
-import {modal} from '~/actions/ModalActionCreators';
-import {openClaimAccountModal} from '~/components/modals/ClaimAccountModal';
-import {EmailChangeModal} from '~/components/modals/EmailChangeModal';
-import {PasswordChangeModal} from '~/components/modals/PasswordChangeModal';
-import {SettingsTabSection} from '~/components/modals/shared/SettingsTabLayout';
-import {Button} from '~/components/uikit/Button/Button';
-import type {UserRecord} from '~/records/UserRecord';
+import { modal } from '~/actions/ModalActionCreators';
+import { openClaimAccountModal } from '~/components/modals/ClaimAccountModal';
+import { EmailChangeModal } from '~/components/modals/EmailChangeModal';
+import { PasswordChangeModal } from '~/components/modals/PasswordChangeModal';
+import { SettingsTabSection } from '~/components/modals/shared/SettingsTabLayout';
+import { Button } from '~/components/uikit/Button/Button';
+import type { UserRecord } from '~/records/UserRecord';
 import * as DateUtils from '~/utils/DateUtils';
-import {EmailVerificationAlert} from '../../components/EmailVerificationAlert';
-import {UnclaimedAccountAlert} from '../../components/UnclaimedAccountAlert';
+import { EmailVerificationAlert } from '../../components/EmailVerificationAlert';
+import { UnclaimedAccountAlert } from '../../components/UnclaimedAccountAlert';
 import styles from './AccountTab.module.css';
 
 const maskEmail = (email: string): string => {
@@ -47,15 +47,15 @@ interface AccountTabProps {
 }
 
 export const AccountTabContent: React.FC<AccountTabProps> = observer(
-	({user, isClaimed, showMaskedEmail, setShowMaskedEmail}) => {
-		const {t, i18n} = useLingui();
+	({ user, isClaimed, showMaskedEmail, setShowMaskedEmail }) => {
+		const { t, i18n } = useLingui();
 		return (
 			<>
 				{!isClaimed && <UnclaimedAccountAlert />}
 
 				<SettingsTabSection
 					title={<Trans>Email Settings</Trans>}
-					description={<Trans>Manage the email address you use to sign in to Fluxer</Trans>}
+					description={<Trans>Manage the email address you use to sign in</Trans>}
 				>
 					{isClaimed ? (
 						<>

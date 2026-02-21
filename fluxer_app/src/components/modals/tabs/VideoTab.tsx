@@ -17,23 +17,23 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans, useLingui} from '@lingui/react/macro';
-import {CrownIcon} from '@phosphor-icons/react';
-import {observer} from 'mobx-react-lite';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { CrownIcon } from '@phosphor-icons/react';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import * as ModalActionCreators from '~/actions/ModalActionCreators';
-import {modal} from '~/actions/ModalActionCreators';
+import { modal } from '~/actions/ModalActionCreators';
 import * as PremiumModalActionCreators from '~/actions/PremiumModalActionCreators';
 import * as VoiceSettingsActionCreators from '~/actions/VoiceSettingsActionCreators';
-import {Select} from '~/components/form/Select';
-import {CameraPreviewModalStandalone} from '~/components/modals/CameraPreviewModal';
+import { Select } from '~/components/form/Select';
+import { CameraPreviewModalStandalone } from '~/components/modals/CameraPreviewModal';
 import styles from '~/components/modals/tabs/VideoTab.module.css';
-import {Button} from '~/components/uikit/Button/Button';
-import type {RadioOption} from '~/components/uikit/RadioGroup/RadioGroup';
-import {RadioGroup} from '~/components/uikit/RadioGroup/RadioGroup';
-import {Slider} from '~/components/uikit/Slider';
+import { Button } from '~/components/uikit/Button/Button';
+import type { RadioOption } from '~/components/uikit/RadioGroup/RadioGroup';
+import { RadioGroup } from '~/components/uikit/RadioGroup/RadioGroup';
+import { Slider } from '~/components/uikit/Slider';
 import type VoiceSettingsStore from '~/stores/VoiceSettingsStore';
-import {useMediaPermission} from './hooks/useMediaPermission';
+import { useMediaPermission } from './hooks/useMediaPermission';
 
 interface VideoTabProps {
 	voiceSettings: typeof VoiceSettingsStore;
@@ -42,9 +42,9 @@ interface VideoTabProps {
 }
 
 export const VideoTab: React.FC<VideoTabProps> = observer(
-	({voiceSettings, hasPremium, autoRequestPermission = true}) => {
-		const {t} = useLingui();
-		const {videoDeviceId, cameraResolution, screenshareResolution, videoFrameRate} = voiceSettings;
+	({ voiceSettings, hasPremium, autoRequestPermission = true }) => {
+		const { t } = useLingui();
+		const { videoDeviceId, cameraResolution, screenshareResolution, videoFrameRate } = voiceSettings;
 
 		const {
 			devices,
@@ -56,32 +56,32 @@ export const VideoTab: React.FC<VideoTabProps> = observer(
 
 		React.useEffect(() => {
 			if (videoDeviceId === 'default' && devices.length > 0) {
-				VoiceSettingsActionCreators.update({videoDeviceId: devices[0].deviceId});
+				VoiceSettingsActionCreators.update({ videoDeviceId: devices[0].deviceId });
 			}
 		}, [devices, videoDeviceId]);
 
 		const videoDeviceOptions =
 			devices.length > 0
 				? devices.map((device) => {
-						const shortDeviceId = device.deviceId.slice(0, 8);
-						return {
-							value: device.deviceId,
-							label: device.label || t`Camera ${shortDeviceId}`,
-						};
-					})
-				: [{value: 'default', label: t`Default`}];
+					const shortDeviceId = device.deviceId.slice(0, 8);
+					return {
+						value: device.deviceId,
+						label: device.label || t`Camera ${shortDeviceId}`,
+					};
+				})
+				: [{ value: 'default', label: t`Default` }];
 
 		const effectiveVideoDeviceId = devices.length === 0 ? 'default' : videoDeviceId;
 
 		const cameraResolutionOptions: ReadonlyArray<RadioOption<'low' | 'medium' | 'high'>> = [
-			{value: 'low', name: t`Low (480p)`, desc: t`Best for slower connections`},
-			{value: 'medium', name: t`Medium (720p)`, desc: t`Balanced quality and bandwidth`},
-			{value: 'high', name: t`High (1080p)`, desc: t`Best quality for camera`},
+			{ value: 'low', name: t`Low (480p)`, desc: t`Best for slower connections` },
+			{ value: 'medium', name: t`Medium (720p)`, desc: t`Balanced quality and bandwidth` },
+			{ value: 'high', name: t`High (1080p)`, desc: t`Best quality for camera` },
 		];
 
 		const screenshareResolutionOptions: ReadonlyArray<RadioOption<'low' | 'medium' | 'high' | 'ultra' | '4k'>> = [
-			{value: 'low', name: t`Low (480p)`, desc: t`Best for slower connections`},
-			{value: 'medium', name: t`Medium (720p)`, desc: t`Balanced quality and bandwidth`},
+			{ value: 'low', name: t`Low (480p)`, desc: t`Best for slower connections` },
+			{ value: 'medium', name: t`Medium (720p)`, desc: t`Balanced quality and bandwidth` },
 			{
 				value: 'high',
 				name: t`High (1080p)`,
@@ -120,11 +120,11 @@ export const VideoTab: React.FC<VideoTabProps> = observer(
 							<p className={styles.deviceNoticeDescription}>
 								{permissionStatus === 'denied' ? (
 									<Trans>
-										Allow Fluxer to access your camera in System Settings → Privacy &amp; Security → Camera to preview
+										Allow the application to access your camera in System Settings → Privacy &amp; Security → Camera to preview
 										and select devices.
 									</Trans>
 								) : (
-									<Trans>Fluxer needs access to your camera before we can list it here.</Trans>
+									<Trans>Access is needed to your camera before we can list it here.</Trans>
 								)}
 							</p>
 						</div>
@@ -145,7 +145,7 @@ export const VideoTab: React.FC<VideoTabProps> = observer(
 						label={t`Camera`}
 						value={effectiveVideoDeviceId}
 						options={videoDeviceOptions}
-						onChange={(value) => VoiceSettingsActionCreators.update({videoDeviceId: value})}
+						onChange={(value) => VoiceSettingsActionCreators.update({ videoDeviceId: value })}
 					/>
 				</div>
 
@@ -164,7 +164,7 @@ export const VideoTab: React.FC<VideoTabProps> = observer(
 						aria-label={t`Camera quality`}
 						options={cameraResolutionOptions}
 						value={cameraResolution}
-						onChange={(value) => VoiceSettingsActionCreators.update({cameraResolution: value})}
+						onChange={(value) => VoiceSettingsActionCreators.update({ cameraResolution: value })}
 					/>
 				</div>
 
@@ -176,7 +176,7 @@ export const VideoTab: React.FC<VideoTabProps> = observer(
 						aria-label={t`Screen sharing quality`}
 						options={screenshareResolutionOptions}
 						value={screenshareResolution}
-						onChange={(value) => VoiceSettingsActionCreators.update({screenshareResolution: value})}
+						onChange={(value) => VoiceSettingsActionCreators.update({ screenshareResolution: value })}
 					/>
 				</div>
 
@@ -215,7 +215,7 @@ export const VideoTab: React.FC<VideoTabProps> = observer(
 						markers={hasPremium ? [15, 24, 30, 60] : [15, 24, 30]}
 						stickToMarkers={true}
 						onMarkerRender={(value) => `${Math.round(value)}fps`}
-						onValueChange={(value) => VoiceSettingsActionCreators.update({videoFrameRate: value})}
+						onValueChange={(value) => VoiceSettingsActionCreators.update({ videoFrameRate: value })}
 					/>
 					{!hasPremium && (
 						<div className={styles.frameRateNote}>

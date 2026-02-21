@@ -17,18 +17,18 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans, useLingui} from '@lingui/react/macro';
-import {observer} from 'mobx-react-lite';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { observer } from 'mobx-react-lite';
 import * as AuthenticationActionCreators from '~/actions/AuthenticationActionCreators';
-import {ConfirmModal} from '~/components/modals/ConfirmModal';
+import { ConfirmModal } from '~/components/modals/ConfirmModal';
 
 export const LogoutModal = observer(() => {
-	const {t} = useLingui();
+	const { t } = useLingui();
 	return (
 		<ConfirmModal
 			title={t`Leaving so soon?`}
 			description={<Trans>Hope to see you back in the future</Trans>}
-			primaryText={t`Hit 88mph`}
+			primaryText={t`Log Out`}
 			secondaryText={t`I changed my mind`}
 			onPrimary={() => AuthenticationActionCreators.logout()}
 		/>

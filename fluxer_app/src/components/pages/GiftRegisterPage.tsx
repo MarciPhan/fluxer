@@ -30,7 +30,7 @@ import {AuthMinimalRegisterFormCore} from '~/components/auth/AuthMinimalRegister
 import sharedStyles from '~/components/auth/AuthPageStyles.module.css';
 import {DesktopDeepLinkPrompt} from '~/components/auth/DesktopDeepLinkPrompt';
 import {GiftHeader} from '~/components/auth/GiftHeader';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import {useParams} from '~/lib/router';
 import {Routes} from '~/Routes';
 import GiftStore from '~/stores/GiftStore';
@@ -39,7 +39,7 @@ const GiftRegisterPage = observer(function GiftRegisterPage() {
 	const {t} = useLingui();
 	const {code} = useParams() as {code: string};
 
-	useFluxerDocumentTitle(t`Claim Gift`);
+	useAppDocumentTitle(t`Claim Gift`);
 
 	const giftState = GiftStore.gifts.get(code) ?? null;
 

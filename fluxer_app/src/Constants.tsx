@@ -17,13 +17,15 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import type {I18n, MessageDescriptor} from '@lingui/core';
-import {msg} from '@lingui/core/macro';
+import type { I18n, MessageDescriptor } from '@lingui/core';
+import { msg } from '@lingui/core/macro';
 
-export const FLUXER_EPOCH = 1420070400000;
+export const APP_EPOCH = 1420070400000;
+export const FLUXER_EPOCH = APP_EPOCH;
 export const ME = '@me';
 export const FAVORITES_GUILD_ID = '1337';
-export const FLUXERBOT_ID = '0';
+export const SYSTEM_BOT_ID = '0';
+export const FLUXERBOT_ID = SYSTEM_BOT_ID;
 
 export const OAuth2Scopes = ['identify', 'email', 'guilds', 'bot', 'applications.commands'] as const;
 export type OAuth2Scope = (typeof OAuth2Scopes)[number];
@@ -142,11 +144,11 @@ export function getStatusTypeLabel(i18n: I18n, statusType: StatusType | string):
 }
 
 const StatusTypeToDescriptionDescriptorsInternal: Record<StatusType, MessageDescriptor> = {
-	[StatusTypes.ONLINE]: msg`Charged up on 1.21 gigawatts, ready to talk`,
+	[StatusTypes.ONLINE]: msg`Charged up, ready to talk`,
 	[StatusTypes.DND]: msg`In the zone, please do not disturb`,
-	[StatusTypes.IDLE]: msg`Took the DeLorean out, but I'll be back in time`,
-	[StatusTypes.INVISIBLE]: msg`Currently stuck in 1885, appearing offline`,
-	[StatusTypes.OFFLINE]: msg`Currently stuck in 1885, appearing offline`,
+	[StatusTypes.IDLE]: msg`Be right back`,
+	[StatusTypes.INVISIBLE]: msg`Appearing offline`,
+	[StatusTypes.OFFLINE]: msg`Appearing offline`,
 };
 
 export function getStatusTypeDescription(i18n: I18n, statusType: StatusType | string): string {
@@ -570,7 +572,7 @@ export const APIErrorCodes = {
 	CANNOT_SEND_FRIEND_REQUEST_TO_BLOCKED_USER: 'CANNOT_SEND_FRIEND_REQUEST_TO_BLOCKED_USER',
 	BOTS_CANNOT_HAVE_FRIENDS: 'BOTS_CANNOT_HAVE_FRIENDS',
 	CANNOT_SEND_FRIEND_REQUEST_TO_SELF: 'CANNOT_SEND_FRIEND_REQUEST_TO_SELF',
-	NO_USERS_WITH_FLUXERTAG_EXIST: 'NO_USERS_WITH_FLUXERTAG_EXIST',
+	NO_USERS_WITH_TAG_EXIST: 'NO_USERS_WITH_TAG_EXIST',
 	ALREADY_FRIENDS: 'ALREADY_FRIENDS',
 	DISCRIMINATOR_REQUIRED: 'DISCRIMINATOR_REQUIRED',
 	TWO_FA_NOT_ENABLED: 'TWO_FA_NOT_ENABLED',

@@ -52,11 +52,7 @@
 	grid-column: 1;
 	grid-row: 1;
 	min-height: 0;
-	height: calc(
-		100% -
-		var(--layout-user-area-reserved-height, 0px) -
-		var(--layout-mobile-bottom-nav-reserved-height, 0px)
-	);
+	height: calc(100% - var(--layout-user-area-reserved-height, 0px) - var(--layout-mobile-bottom-nav-reserved-height, 0px));
 	width: var(--layout-guild-list-width);
 	min-width: 0;
 	overflow-y: auto;
@@ -149,7 +145,7 @@
 	z-index: var(--z-index-elevated-1);
 }
 
-.userAreaWrapper > * {
+.userAreaWrapper>* {
 	pointer-events: auto;
 }
 
@@ -198,6 +194,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+
 	.guildListItem:hover .guildIcon:not(.guildIconNoImage),
 	.guildIcon:hover:not(.guildIconNoImage) {
 		border-radius: 30%;
@@ -219,6 +216,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+
 	.guildListItem:hover .guildIconNoImage,
 	.guildIconNoImage:hover {
 		border-radius: 30%;
@@ -346,24 +344,25 @@
 	composes: guildIcon;
 }
 
-.fluxerButton {
+.appHomeButton {
 	composes: guildListItem;
 }
 
-.fluxerButtonIcon {
+.appHomeButtonIcon {
 	composes: guildIcon;
 	background-color: var(--guilds-layout-item-bg, var(--guild-list-foreground));
 	color: var(--text-primary);
 }
 
-.fluxerButtonIconSelected {
+.appHomeButtonIconSelected {
 	background-color: var(--brand-primary);
 	color: white;
 }
 
 @media (hover: hover) and (pointer: fine) {
-	.fluxerButton:hover .fluxerButtonIcon,
-	.fluxerButtonIcon:hover {
+
+	.appHomeButton:hover .appHomeButtonIcon,
+	.appHomeButtonIcon:hover {
 		background-color: var(--brand-primary);
 		color: white;
 	}
@@ -400,6 +399,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+
 	.addGuildButton:hover .addGuildButtonIcon,
 	.addGuildButtonIcon:hover {
 		border-color: var(--text-primary);
@@ -433,7 +433,7 @@
 	width: 100%;
 }
 
-.fluxerSymbolIcon {
+.appSymbolIcon {
 	height: 3rem;
 	width: 3rem;
 	color: currentColor;

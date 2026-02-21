@@ -7,12 +7,12 @@ RUN corepack enable && corepack prepare pnpm@10.26.0 --activate
 FROM base AS deps
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-		build-essential \
-		gcc \
-		libssl-dev \
-		pkg-config \
-		openssl \
-		libvips-dev && \
+	build-essential \
+	gcc \
+	libssl-dev \
+	pkg-config \
+	openssl \
+	libvips-dev && \
 	rm -rf /var/lib/apt/lists/*
 
 COPY package.json pnpm-lock.yaml ./
@@ -46,3 +46,5 @@ ENV COREPACK_HOME=/usr/src/app/.cache/corepack
 USER nobody
 
 EXPOSE 8080
+
+CMD ["node_modules/.bin/tsx", "src/App.ts"]

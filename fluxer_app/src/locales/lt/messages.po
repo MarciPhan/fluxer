@@ -894,8 +894,8 @@ msgstr "<0/> pradėjo skambutį."
 
 #. placeholder {0}: guild.name
 #: src/components/layout/GuildLayout.tsx:131
-msgid "<0>{0}</0> is currently only accessible to Fluxer staff members"
-msgstr "<0>{0}</0> šiuo metu prieinamas tik Fluxer darbuotojams"
+msgid "<0>{0}</0> is currently only accessible to NePornu staff members"
+msgstr "<0>{0}</0> šiuo metu prieinamas tik NePornu darbuotojams"
 
 #. placeholder {0}: targetUser.tag
 #: src/components/modals/TimeoutMemberSheet.tsx:118
@@ -1201,8 +1201,8 @@ msgstr "30 sekundžių"
 msgid "4 hours"
 msgstr "4 valandos"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:196
-#: src/components/modals/FluxerTagChangeModal.tsx:222
+#: src/components/modals/NePornuTagChangeModal.tsx:196
+#: src/components/modals/NePornuTagChangeModal.tsx:222
 msgid "4-digit tag"
 msgstr "4 skaitmenų žymė"
 
@@ -1382,6 +1382,14 @@ msgstr "Pasiekti kūrėjo įrankius"
 msgid "Access granted"
 msgstr "Prieiga suteikta"
 
+#: src/components/modals/tabs/VoiceTab.tsx:212
+msgid "Access is needed to list the available microphones and speakers."
+msgstr ""
+
+#: src/components/modals/tabs/VideoTab.tsx:127
+msgid "Access is needed to your camera before we can list it here."
+msgstr ""
+
 #: src/components/modals/channelTabs/ChannelPermissionsTab.tsx:723
 #: src/components/modals/channelTabs/ChannelPermissionsTab.tsx:864
 msgid "Access Overrides"
@@ -1416,6 +1424,11 @@ msgstr "Atrodo, kad paskyra egzistuoja tik šlamšto siuntimui"
 #: src/components/modals/ClaimAccountModal.tsx:107
 msgid "Account claimed successfully"
 msgstr "Paskyra sėkmingai perimta"
+
+#: src/components/popouts/UserProfileShared.tsx:97
+#: src/components/popouts/UserProfileShared.tsx:128
+msgid "Account Created"
+msgstr "Account Created"
 
 #: src/components/modals/tabs/DeveloperOptionsTab/AccountPremiumTab.tsx:54
 msgid "Account State Overrides"
@@ -1939,8 +1952,8 @@ msgid "All Status Types"
 msgstr "Visų būsenų tipai"
 
 #: src/components/modals/tabs/LanguageTab.tsx:193
-msgid "All translations are currently LLM-generated with minimal human revision. We'd love to get real people to help us localize Fluxer into your language! To do so, send an email to <0>i18n@fluxer.app</0> and we'll be happy to accept your contributions."
-msgstr "Visos vertimai šiuo metu yra sugeneruoti LLM su minimaliu žmogaus redagavimu. Mes norėtume, kad tikri žmonės padėtų lokalizuoti Fluxer į jūsų kalbą! Tam siųskite el. laišką adresu <0>i18n@fluxer.app</0> ir mes džiaugiamės galėdami priimti jūsų indėlį."
+msgid "All translations are currently LLM-generated with minimal human revision. We'd love to get real people to help us localize NePornu into your language! To do so, send an email to <0>i18n@fluxer.app</0> and we'll be happy to accept your contributions."
+msgstr "Visos vertimai šiuo metu yra sugeneruoti LLM su minimaliu žmogaus redagavimu. Mes norėtume, kad tikri žmonės padėtų lokalizuoti NePornu į jūsų kalbą! Tam siųskite el. laišką adresu <0>i18n@fluxer.app</0> ir mes džiaugiamės galėdami priimti jūsų indėlį."
 
 #: src/components/modals/guildTabs/GuildAuditLogTab.tsx:201
 #: src/components/modals/guildTabs/GuildAuditLogTab.tsx:365
@@ -1999,18 +2012,6 @@ msgstr "Leisti tiesiogines žinutes iš kitų šios bendruomenės narių"
 msgid "Allow Flexible Text Channel Names"
 msgstr "Leisti lankstius teksto kanalų pavadinimus"
 
-#: src/components/modals/tabs/VideoTab.tsx:122
-msgid "Allow Fluxer to access your camera in System Settings → Privacy & Security → Camera to preview and select devices."
-msgstr "Leiskite Fluxer pasiekti jūsų kamerą Sistemos nustatymuose → Privatumas ir saugumas → Kamera, kad peržiūrėtumėte ir pasirinktumėte įrenginius."
-
-#: src/components/modals/tabs/VoiceTab.tsx:202
-msgid "Allow Fluxer to access your microphone in System Settings → Privacy & Security → Microphone."
-msgstr "Leiskite Fluxer pasiekti jūsų mikrofoną Sistemos nustatymuose → Privatumas ir saugumas → Mikrofonas."
-
-#: src/components/modals/tabs/VoiceTab.tsx:206
-msgid "Allow Fluxer to access your microphone. Check your browser address bar or settings to enable permissions."
-msgstr "Leiskite Fluxer pasiekti jūsų mikrofoną. Patikrinkite savo naršyklės adreso juostą arba nustatymus, kad įgalintumėte leidimus."
-
 #: src/components/modals/tabs/PrivacySafetyTab/ConnectionsTab.tsx:96
 msgid "Allow for all communities"
 msgstr "Leisti visoms bendruomenėms"
@@ -2054,6 +2055,18 @@ msgstr "Leisti pasirinkti visą teksto turinį programėlėje."
 #: src/components/modals/tabs/AccessibilityTab/VisualTab.tsx:103
 msgid "Allow selecting all text content in the app. This setting is disabled on mobile to prevent interference with touch interactions."
 msgstr "Leisti pasirinkti visą teksto turinį programėlėje. Šis nustatymas išjungtas mobiliuosiuose įrenginiuose, kad netrukdytų jutikliniams veiksmams."
+
+#: src/components/modals/tabs/VoiceTab.tsx:202
+msgid "Allow the app to access your microphone in System Settings → Privacy & Security → Microphone."
+msgstr ""
+
+#: src/components/modals/tabs/VoiceTab.tsx:206
+msgid "Allow the app to access your microphone. Check your browser address bar or settings to enable permissions."
+msgstr ""
+
+#: src/components/modals/tabs/VideoTab.tsx:122
+msgid "Allow the application to access your camera in System Settings → Privacy & Security → Camera to preview and select devices."
+msgstr ""
 
 #: src/components/modals/tabs/FeatureFlagsTab.tsx:43
 msgid "Allow users to create, install, and manage custom emoji and sticker packs."
@@ -2293,6 +2306,11 @@ msgstr "Programos Būsena"
 msgid "App zoom level"
 msgstr "Programos mastelio lygis"
 
+#: src/Constants.tsx:148
+#: src/Constants.tsx:149
+msgid "Appearing offline"
+msgstr "Appearing offline"
+
 #: src/components/channel/AutocompleteCommand.tsx:44
 msgid "Appends {content} to your message."
 msgstr "Prideda {content} prie jūsų žinutės."
@@ -2300,6 +2318,10 @@ msgstr "Prideda {content} prie jūsų žinutės."
 #: src/components/modals/utils/settingsConstants.tsx:117
 msgid "Application"
 msgstr "Programa"
+
+#: src/components/icons/AppIcon.tsx:31
+msgid "Application icon"
+msgstr "Application icon"
 
 #: src/components/modals/tabs/ApplicationsTab/application-detail/ApplicationHeader.tsx:56
 msgid "Application ID"
@@ -2317,6 +2339,10 @@ msgstr "Programos pavadinimas"
 #: src/components/modals/tabs/ApplicationsTab/application-detail/ApplicationInfoSection.tsx:52
 msgid "Application name is required"
 msgstr "Programos pavadinimas yra privalomas"
+
+#: src/components/icons/AppSymbol.tsx:31
+msgid "Application symbol"
+msgstr "Application symbol"
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationDetail.tsx:266
 msgid "Application updated successfully"
@@ -2792,8 +2818,8 @@ msgid "Automatically play GIFs"
 msgstr "Automatiškai leisti GIF"
 
 #: src/components/modals/tabs/AccessibilityTab/AnimationTab.tsx:102
-msgid "Automatically play GIFs when Fluxer is focused"
-msgstr "Automatiškai leisti GIF, kai Fluxer yra aktyvus"
+msgid "Automatically play GIFs when NePornu is focused"
+msgstr "Automatiškai leisti GIF, kai NePornu yra aktyvus"
 
 #: src/components/modals/guildTabs/GuildModerationTab.tsx:211
 msgid "Automatically screen messages for explicit content in non-NSFW channels."
@@ -3029,6 +3055,10 @@ msgstr "Pagrindiniai nustatymai ir leidžiami nukreipimo URI."
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:90
 msgid "Basic Text Inputs"
 msgstr "Pagrindiniai teksto įvedimai"
+
+#: src/Constants.tsx:147
+msgid "Be right back"
+msgstr "Be right back"
 
 #: src/components/modals/guildTabs/GuildAuditLogTab.utils.tsx:451
 msgid "Because {reason}."
@@ -3334,8 +3364,8 @@ msgid "Buying Visionary will cancel your current {currentAccessLabel} immediatel
 msgstr "Įsigijus Visionary, jūsų dabartinė {currentAccessLabel} bus nedelsiant atšaukta. Tai yra vienkartinis pirkimas su gyvenimo trukmės prieiga."
 
 #: src/components/modals/AddGuildModal.tsx:356
-msgid "By creating a community, you agree to follow and uphold the <0>Fluxer Community Guidelines</0>."
-msgstr "Sukurdami bendruomenę, sutinkate laikytis ir palaikyti <0>Fluxer bendruomenės gairių</0>."
+msgid "By creating a community, you agree to follow and uphold the <0>NePornu Community Guidelines</0>."
+msgstr "Sukurdami bendruomenę, sutinkate laikytis ir palaikyti <0>NePornu bendruomenės gairių</0>."
 
 #: src/components/modals/components/PurchaseDisclaimer.tsx:39
 msgid "By purchasing, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@fluxer.app</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
@@ -3474,8 +3504,8 @@ msgstr "Kameros nustatymai"
 #: src/components/modals/EmailChangeModal.tsx:262
 #: src/components/modals/EmailChangeModal.tsx:291
 #: src/components/modals/ExternalLinkWarningModal.tsx:94
-#: src/components/modals/FluxerTagChangeModal.tsx:112
-#: src/components/modals/FluxerTagChangeModal.tsx:253
+#: src/components/modals/NePornuTagChangeModal.tsx:112
+#: src/components/modals/NePornuTagChangeModal.tsx:253
 #: src/components/modals/ForwardModal.tsx:359
 #: src/components/modals/guildTabs/GuildBansTab.tsx:101
 #: src/components/modals/guildTabs/GuildRolesTab.tsx:615
@@ -3515,7 +3545,7 @@ msgstr "Atšaukti"
 msgid "Cancel Friend Request"
 msgstr "Atšaukti draugų užklausą"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:107
+#: src/components/modals/NePornuTagChangeModal.tsx:107
 msgid "Cancel if you want to choose a different username instead."
 msgstr "Atšauk, jei nori pasirinkti kitą naudotojo vardą."
 
@@ -3647,15 +3677,6 @@ msgstr "Keisti el. paštą"
 msgid "Change emoji"
 msgstr "Keisti emodži"
 
-#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:52
-#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:62
-msgid "Change FluxerTag"
-msgstr "Keisti FluxerTag"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:153
-msgid "Change FluxerTag form"
-msgstr "FluxerTag keitimo forma"
-
 #: src/components/bottomsheets/DMBottomSheet.tsx:435
 #: src/components/uikit/ContextMenu/items/RelationshipMenuItems.tsx:154
 msgid "Change Friend Nickname"
@@ -3712,6 +3733,15 @@ msgstr "Keisti savininką"
 msgid "Change Password"
 msgstr "Keisti slaptažodį"
 
+#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:52
+#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:62
+msgid "Change Tag"
+msgstr "Change Tag"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:153
+msgid "Change Tag form"
+msgstr ""
+
 #: src/components/modals/EmailChangeModal.tsx:184
 msgid "Change your email"
 msgstr "Pakeiskite savo el. paštą"
@@ -3719,10 +3749,6 @@ msgstr "Pakeiskite savo el. paštą"
 #: src/components/modals/utils/settingsSearchIndex.ts:96
 msgid "Change your email address"
 msgstr "Pakeisti savo el. pašto adresą"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:154
-msgid "Change your FluxerTag"
-msgstr "Pakeiskite savo FluxerTag"
 
 #: src/components/channel/AutocompleteCommand.tsx:49
 msgid "Change your nickname in this community."
@@ -3739,6 +3765,10 @@ msgstr "Pakeiskite slaptažodį, kad apsaugotumėte savo paskyrą"
 #: src/components/modals/utils/settingsSearchIndex.ts:45
 msgid "Change your profile picture"
 msgstr "Pakeisti savo profilio paveikslėlį"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:154
+msgid "Change your Tag"
+msgstr "Change your Tag"
 
 #: src/components/modals/utils/settingsSearchIndex.ts:59
 msgid "Change your username"
@@ -3935,9 +3965,9 @@ msgstr "Kanalas: {0}."
 msgid "Channels"
 msgstr "Kanalai"
 
-#: src/Constants.tsx:143
-msgid "Charged up on 1.21 gigawatts, ready to talk"
-msgstr "Įkrautas 1,21 gigavatais, pasiruošęs kalbėti"
+#: src/Constants.tsx:145
+msgid "Charged up, ready to talk"
+msgstr "Charged up, ready to talk"
 
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildEmbedSplashUploadField.tsx:79
 msgid "Chat Embed Background"
@@ -3948,9 +3978,9 @@ msgid "Chat font scaling"
 msgstr "Pokalbių šrifto mastelis"
 
 #: src/components/BootstrapErrorScreen.tsx:57
-#: src/components/NetworkErrorScreen.tsx:45
-msgid "Check our <0>Bluesky (@fluxer.app)</0> for status updates."
-msgstr "Būsenos atnaujinimus patikrinkite mūsų <0>Bluesky (@fluxer.app)</0>."
+#: src/components/NetworkErrorScreen.tsx:44
+msgid "Check our <0>status page (status.nepornu.cz)</0> for status updates."
+msgstr "Check our <0>status page (status.nepornu.cz)</0> for status updates."
 
 #: src/components/modals/ShareThemeModal.tsx:117
 msgid "Check out my custom theme!"
@@ -4060,8 +4090,8 @@ msgid "Choose what {clientLabel} can do in your community. Uncheck any permissio
 msgstr "Pasirinkite, ką {clientLabel} gali daryti jūsų bendruomenėje. Atžymėkite bet kokias leidimus, kurių nenorite suteikti."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:105
-msgid "Choose what Fluxer remembers about your window between restarts and reloads on this device."
-msgstr "Pasirinkite, ką Fluxer prisimena apie jūsų langą tarp perkrovimų ir paleidimų šiame įrenginyje."
+msgid "Choose what NePornu remembers about your window between restarts and reloads on this device."
+msgstr "Pasirinkite, ką NePornu prisimena apie jūsų langą tarp perkrovimų ir paleidimų šiame įrenginyje."
 
 #: src/components/modals/guildTabs/GuildModerationTab.tsx:183
 msgid "Choose what members must have before they can post or DM community members."
@@ -4136,8 +4166,8 @@ msgid "Claim your account to call"
 msgstr "Patvirtinkite savo paskyrą, kad galėtumėte skambinti"
 
 #: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:49
-msgid "Claim your account to change your FluxerTag"
-msgstr "Pareikškite savo paskyrą, kad pakeistumėte savo FluxerTag"
+msgid "Claim your account to change your Tag"
+msgstr "Claim your account to change your Tag"
 
 #: src/components/modals/tabs/ApplicationsTab/index.tsx:146
 msgid "Claim your account to create applications."
@@ -4161,13 +4191,16 @@ msgstr "Patvirtinkite savo paskyrą, kad prisijungtumėte prie balso kanalų, ku
 #: src/components/modals/components/plutonium/GiftSection.tsx:61
 #: src/components/modals/components/plutonium/PricingSection.tsx:63
 #: src/components/modals/components/plutonium/VisionarySection.tsx:62
-#: src/components/modals/components/PlutoniumContent.tsx:99
-msgid "Claim your account to purchase Fluxer Plutonium."
-msgstr "Paimk savo paskyrą, kad įsigytum Fluxer Plutonium."
+msgid "Claim your account to purchase NePornu Plutonium."
+msgstr "Paimk savo paskyrą, kad įsigytum NePornu Plutonium."
 
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:112
-msgid "Claim your account to purchase or redeem Fluxer Plutonium."
-msgstr "Paimk savo paskyrą, kad įsigytum arba išpirktum Fluxer Plutonium."
+msgid "Claim your account to purchase or redeem NePornu Plutonium."
+msgstr "Paimk savo paskyrą, kad įsigytum arba išpirktum NePornu Plutonium."
+
+#: src/components/modals/components/PlutoniumContent.tsx:99
+msgid "Claim your account to purchase Plutonium."
+msgstr ""
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:239
 msgid "Claim your account to redeem or manage Plutonium gift codes."
@@ -4290,8 +4323,8 @@ msgid "Click \"Create Code\" to generate your first code."
 msgstr "Spustelėkite „Sukurti kodą“, kad sugeneruotumėte savo pirmąjį kodą."
 
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:71
-msgid "Click \"Open Settings\" to open System Settings, then enable Fluxer in Input Monitoring."
-msgstr "Spustelėkite „Atidaryti nustatymus“, kad atidarytumėte sistemos nustatymus, tada įjunkite Fluxer įvesties stebėjime."
+msgid "Click \"Open Settings\" to open System Settings, then enable NePornu in Input Monitoring."
+msgstr "Spustelėkite „Atidaryti nustatymus“, kad atidarytumėte sistemos nustatymus, tada įjunkite NePornu įvesties stebėjime."
 
 #: src/components/modals/tabs/ComponentGalleryTab/ButtonsTab.tsx:58
 msgid "Click any button to see toast notifications with feedback."
@@ -4938,8 +4971,8 @@ msgstr "Kontekstiniai meniu gali būti atidaromi kairiuoju paspaudimu (ant mygtu
 #: src/components/modals/BackupCodesRegenerateModal.tsx:63
 #: src/components/modals/BackupCodesViewModal.tsx:66
 #: src/components/modals/DeviceRevokeModal.tsx:68
-#: src/components/modals/FluxerTagChangeModal.tsx:111
-#: src/components/modals/FluxerTagChangeModal.tsx:256
+#: src/components/modals/NePornuTagChangeModal.tsx:111
+#: src/components/modals/NePornuTagChangeModal.tsx:256
 #: src/components/modals/MfaTotpDisableModal.tsx:78
 #: src/components/modals/MfaTotpEnableModal.tsx:105
 #: src/components/modals/PasswordChangeModal.tsx:99
@@ -5147,10 +5180,9 @@ msgid "Copy File Link"
 msgstr "Kopijuoti failo nuorodą"
 
 #: src/components/modals/tabs/BlockedUsersTab.tsx:98
-#: src/components/modals/UserProfileActionsSheet.tsx:208
 #: src/components/modals/UserProfileModal.tsx:1149
-msgid "Copy FluxerTag"
-msgstr "Kopijuoti FluxerTag"
+msgid "Copy NePornuTag"
+msgstr "Kopijuoti NePornuTag"
 
 #: src/components/uikit/ContextMenu/MediaContextMenu.tsx:351
 msgid "Copy GIF"
@@ -5207,6 +5239,10 @@ msgstr "Kopijuoti žinutės nuorodą"
 #: src/components/channel/sticker-picker/VirtualRow.tsx:201
 msgid "Copy Sticker ID"
 msgstr "Kopijuoti lipduko ID"
+
+#: src/components/modals/UserProfileActionsSheet.tsx:208
+msgid "Copy Tag"
+msgstr ""
 
 #: src/components/channel/MessageActionBar.tsx:555
 #: src/components/channel/MessageActionBar.tsx:686
@@ -5327,8 +5363,8 @@ msgid "Create and manage applications and bots for your account."
 msgstr "Kurkite ir tvarkykite programas bei botus savo paskyrai."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:119
-msgid "Create and share custom emoji and sticker packs with Fluxer Plutonium."
-msgstr "Kurkite ir dalinkitės pasirinktiniais emoji bei lipdukų rinkiniais su Fluxer Plutonium."
+msgid "Create and share custom emoji and sticker packs with NePornu Plutonium."
+msgstr "Kurkite ir dalinkitės pasirinktiniais emoji bei lipdukų rinkiniais su NePornu Plutonium."
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationCreateModal.tsx:80
 #: src/components/modals/tabs/ApplicationsTab/index.tsx:149
@@ -5437,8 +5473,8 @@ msgid "Create Webhook"
 msgstr "Sukurti webhook'ą"
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationsList.tsx:43
-msgid "Create your first application to get started with the Fluxer API."
-msgstr "Sukurkite savo pirmąją programėlę, kad pradėtumėte naudoti Fluxer API."
+msgid "Create your first application to get started with the NePornu API."
+msgstr "Sukurkite savo pirmąją programėlę, kad pradėtumėte naudoti NePornu API."
 
 #: src/utils/PermissionUtils.tsx:254
 msgid "Create, edit, or delete channels and categories."
@@ -5597,11 +5633,6 @@ msgstr "Šiuo metu atmestas"
 msgid "Currently showing"
 msgstr "Šiuo metu rodomas"
 
-#: src/Constants.tsx:146
-#: src/Constants.tsx:147
-msgid "Currently stuck in 1885, appearing offline"
-msgstr "Šiuo metu įstrigęs 1885-aisiais, atrodo neprisijungęs"
-
 #: src/components/bottomsheets/ChannelBottomSheet.tsx:461
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:1047
 #: src/components/bottomsheets/DMBottomSheet.tsx:608
@@ -5721,7 +5752,7 @@ msgstr "Tinkinti su CSS"
 msgid "Customize your 4-digit tag (#{discriminator}) to your liking with Plutonium"
 msgstr "Tinkinkite savo 4 skaitmenų žymą (#{discriminator}) pagal savo skonį su Plutonium"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:246
+#: src/components/modals/NePornuTagChangeModal.tsx:246
 msgid "Customize your 4-digit tag or keep it when changing your username"
 msgstr "Tinkinkite savo 4 skaitmenų žymą arba palikite ją keisdami vartotojo vardą"
 
@@ -6371,8 +6402,8 @@ msgid "Direct Message"
 msgstr "Tiesioginė žinutė"
 
 #: src/components/channel/dm/DMList.tsx:819
-#: src/components/layout/guild-list/FluxerButton.tsx:65
-#: src/components/layout/guild-list/FluxerButton.tsx:70
+#: src/components/layout/guild-list/AppHomeButton.tsx:65
+#: src/components/layout/guild-list/AppHomeButton.tsx:70
 #: src/components/modals/GuildPrivacySettingsModal.tsx:60
 #: src/components/modals/tabs/PrivacySafetyTab/ConnectionsTab.tsx:182
 #: src/components/modals/utils/settingsSearchIndex.ts:557
@@ -6676,7 +6707,7 @@ msgstr "Tiesioginių žinučių pranešimai"
 msgid "DM Settings"
 msgstr "DM nustatymai"
 
-#: src/Constants.tsx:131
+#: src/Constants.tsx:133
 msgid "Do Not Disturb"
 msgstr "Netrukdyti"
 
@@ -6779,8 +6810,8 @@ msgstr "Atsisiųsti darbastalio programą"
 
 #: src/components/layout/guild-list/DownloadButton.tsx:46
 #: src/components/layout/guild-list/DownloadButton.tsx:50
-msgid "Download Fluxer"
-msgstr "Atsisiųsti Fluxer"
+msgid "Download NePornu"
+msgstr "Atsisiųsti NePornu"
 
 #: src/components/channel/embeds/media/MediaContainer.tsx:132
 msgid "Download media"
@@ -7500,8 +7531,8 @@ msgid "Enter the 6-digit code sent to your phone."
 msgstr "Įveskite 6 skaitmenų kodą, išsiųstą į jūsų telefoną."
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:254
-msgid "Enter the API endpoint of the Fluxer instance you want to connect to."
-msgstr "Įveskite Fluxer egzemplioriaus API galutinį tašką, prie kurio norite prisijungti."
+msgid "Enter the API endpoint of the NePornu instance you want to connect to."
+msgstr "Įveskite NePornu egzemplioriaus API galutinį tašką, prie kurio norite prisijungti."
 
 #: src/components/pages/ReportPage.tsx:249
 msgid "Enter the code before continuing."
@@ -8412,125 +8443,81 @@ msgstr "Vėliavos"
 msgid "Flexible text channel names"
 msgstr "Lankstūs tekstinių kanalų pavadinimai"
 
-#: src/components/popouts/UserProfileShared.tsx:97
-msgid "Fluxer"
-msgstr "Fluxer"
-
-#: src/components/icons/FluxerIcon.tsx:31
-msgid "Fluxer application icon"
-msgstr "Fluxer programėlės piktograma"
-
-#: src/components/icons/FluxerSymbol.tsx:31
-msgid "Fluxer application symbol"
-msgstr "Fluxer programėlės simbolis"
-
 #: src/components/modals/tabs/NotificationsTab/PushSettings.tsx:37
-msgid "Fluxer avoids sending push notifications to your mobile devices when you are at your computer. Use this setting to control how long you need to be inactive on desktop for before you receive push notifications, ranging from 1 minute to 10 minutes."
-msgstr "Fluxer vengia siųsti pranešimus į jūsų mobiliuosius įrenginius, kai esate prie kompiuterio. Naudokite šį nustatymą, norėdami nustatyti, kiek laiko turite būti neaktyvus prie darbalaukio, kol gausite pranešimus, nuo 1 minutės iki 10 minučių."
+msgid "NePornu avoids sending push notifications to your mobile devices when you are at your computer. Use this setting to control how long you need to be inactive on desktop for before you receive push notifications, ranging from 1 minute to 10 minutes."
+msgstr "NePornu vengia siųsti pranešimus į jūsų mobiliuosius įrenginius, kai esate prie kompiuterio. Naudokite šį nustatymą, norėdami nustatyti, kiek laiko turite būti neaktyvus prie darbalaukio, kol gausite pranešimus, nuo 1 minutės iki 10 minučių."
 
 #: src/components/popouts/UserProfileBadges.tsx:93
-msgid "Fluxer Bug Hunter"
-msgstr "Fluxer Bug Hunter"
+msgid "NePornu Bug Hunter"
+msgstr "NePornu Bug Hunter"
 
 #: src/components/popouts/UserProfileBadges.tsx:75
-msgid "Fluxer Community Team"
-msgstr "Fluxer Community Team"
+msgid "NePornu Community Team"
+msgstr "NePornu Community Team"
 
 #: src/components/modals/tabs/DevicesTab.tsx:98
-msgid "Fluxer Desktop"
-msgstr "Fluxer Desktop"
-
-#: src/components/BootstrapErrorScreen.tsx:49
-msgid "Fluxer failed to start properly. This could be due to corrupted data or a temporary issue."
-msgstr "Fluxer nepavyko tinkamai paleisti. Tai gali būti dėl sugadintų duomenų ar laikinos problemos."
+msgid "NePornu Desktop"
+msgstr "NePornu Desktop"
 
 #: src/stores/NewDeviceMonitoringStore.tsx:186
-msgid "Fluxer has found a new audio input device named <0>{deviceName}</0>. Do you want to switch to it?"
-msgstr "Fluxer rado naują garso įvesties įrenginį pavadinimu <0>{deviceName}</0>. Ar norite perjungti į jį?"
+msgid "NePornu has found a new audio input device named <0>{deviceName}</0>. Do you want to switch to it?"
+msgstr "NePornu rado naują garso įvesties įrenginį pavadinimu <0>{deviceName}</0>. Ar norite perjungti į jį?"
 
 #: src/stores/NewDeviceMonitoringStore.tsx:191
-msgid "Fluxer has found a new audio output device named <0>{deviceName}</0>. Do you want to switch to it?"
-msgstr "Fluxer rado naują garso išvesties įrenginį pavadinimu <0>{deviceName}</0>. Ar norite perjungti į jį?"
-
-#: src/components/popouts/UserProfileShared.tsx:128
-msgid "Fluxer Member Since"
-msgstr "Fluxer narys nuo"
-
-#: src/components/modals/tabs/VoiceTab.tsx:212
-msgid "Fluxer needs access to list the available microphones and speakers."
-msgstr "Fluxer reikia prieigos, kad galėtų išvardyti prieinamus mikrofonus ir garsiakalbius."
+msgid "NePornu has found a new audio output device named <0>{deviceName}</0>. Do you want to switch to it?"
+msgstr "NePornu rado naują garso išvesties įrenginį pavadinimu <0>{deviceName}</0>. Ar norite perjungti į jį?"
 
 #: src/components/alerts/ScreenRecordingPermissionDeniedModal.tsx:31
-msgid "Fluxer needs access to screen recording. Open System Settings → Privacy & Security → Screen Recording, allow Fluxer, and then try again."
-msgstr "Fluxer reikia prieigos prie ekrano įrašymo. Atidarykite Sistemos nustatymai → Privatumas ir saugumas → Ekrano įrašymas, leiskite Fluxer ir bandykite dar kartą."
-
-#: src/components/modals/tabs/VideoTab.tsx:127
-msgid "Fluxer needs access to your camera before we can list it here."
-msgstr "Fluxer reikia prieigos prie jūsų kameros, kad galėtume ją čia išvardyti."
+msgid "NePornu needs access to screen recording. Open System Settings → Privacy & Security → Screen Recording, allow NePornu, and then try again."
+msgstr "NePornu reikia prieigos prie ekrano įrašymo. Atidarykite Sistemos nustatymai → Privatumas ir saugumas → Ekrano įrašymas, leiskite NePornu ir bandykite dar kartą."
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:43
-msgid "Fluxer needs access to your camera to enable video chat. Please grant camera permission in your browser settings and try again."
-msgstr "Fluxer reikia prieigos prie jūsų kameros, kad galėtų įjungti vaizdo pokalbį. Suteikite kameros leidimą naršyklės nustatymuose ir bandykite dar kartą."
+msgid "NePornu needs access to your camera to enable video chat. Please grant camera permission in your browser settings and try again."
+msgstr "NePornu reikia prieigos prie jūsų kameros, kad galėtų įjungti vaizdo pokalbį. Suteikite kameros leidimą naršyklės nustatymuose ir bandykite dar kartą."
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:42
-msgid "Fluxer needs access to your camera. Allow camera access in your operating system privacy settings and restart the app."
-msgstr "Fluxer reikia prieigos prie jūsų kameros. Leiskite prieigą prie kameros operacinės sistemos privatumo nustatymuose ir paleiskite programėlę iš naujo."
+msgid "NePornu needs access to your camera. Allow camera access in your operating system privacy settings and restart the app."
+msgstr "NePornu reikia prieigos prie jūsų kameros. Leiskite prieigą prie kameros operacinės sistemos privatumo nustatymuose ir paleiskite programėlę iš naujo."
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:32
-msgid "Fluxer needs access to your camera. Open System Settings → Privacy & Security → Camera, allow Fluxer, and then restart the app."
-msgstr "Fluxer reikia prieigos prie jūsų kameros. Atidarykite Sistemos nustatymai → Privatumas ir saugumas → Kamera, leiskite Fluxer ir paleiskite programėlę iš naujo."
+msgid "NePornu needs access to your camera. Open System Settings → Privacy & Security → Camera, allow NePornu, and then restart the app."
+msgstr "NePornu reikia prieigos prie jūsų kameros. Atidarykite Sistemos nustatymai → Privatumas ir saugumas → Kamera, leiskite NePornu ir paleiskite programėlę iš naujo."
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:44
-msgid "Fluxer needs access to your microphone to enable voice chat. Please grant microphone permission in your browser settings and try again."
-msgstr "Fluxer reikia prieigos prie jūsų mikrofono, kad galėtų įjungti balso pokalbį. Suteikite mikrofono leidimą naršyklės nustatymuose ir bandykite dar kartą."
+msgid "NePornu needs access to your microphone to enable voice chat. Please grant microphone permission in your browser settings and try again."
+msgstr "NePornu reikia prieigos prie jūsų mikrofono, kad galėtų įjungti balso pokalbį. Suteikite mikrofono leidimą naršyklės nustatymuose ir bandykite dar kartą."
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:43
-msgid "Fluxer needs access to your microphone. Allow microphone access in your operating system privacy settings and restart the app."
-msgstr "Fluxer reikia prieigos prie jūsų mikrofono. Leiskite prieigą prie mikrofono operacinės sistemos privatumo nustatymuose ir paleiskite programėlę iš naujo."
+msgid "NePornu needs access to your microphone. Allow microphone access in your operating system privacy settings and restart the app."
+msgstr "NePornu reikia prieigos prie jūsų mikrofono. Leiskite prieigą prie mikrofono operacinės sistemos privatumo nustatymuose ir paleiskite programėlę iš naujo."
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:33
-msgid "Fluxer needs access to your microphone. Open System Settings → Privacy & Security → Microphone, allow Fluxer, and then restart the app."
-msgstr "Fluxer reikia prieigos prie jūsų mikrofono. Atidarykite Sistemos nustatymai → Privatumas ir saugumas → Mikrofonas, leiskite Fluxer ir paleiskite programėlę iš naujo."
+msgid "NePornu needs access to your microphone. Open System Settings → Privacy & Security → Microphone, allow NePornu, and then restart the app."
+msgstr "NePornu reikia prieigos prie jūsų mikrofono. Atidarykite Sistemos nustatymai → Privatumas ir saugumas → Mikrofonas, leiskite NePornu ir paleiskite programėlę iš naujo."
 
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:64
-msgid "Fluxer needs Input Monitoring permission to keep push-to-talk and global shortcuts working while the window is in the background."
-msgstr "Fluxer reikia Įvesties stebėjimo leidimo, kad spustelėk-kalbėk ir globalūs sparčiuosius klavišus veiktų, kai langas yra fone."
+msgid "NePornu needs Input Monitoring permission to keep push-to-talk and global shortcuts working while the window is in the background."
+msgstr "NePornu reikia Įvesties stebėjimo leidimo, kad spustelėk-kalbėk ir globalūs sparčiuosius klavišus veiktų, kai langas yra fone."
 
 #: src/components/modals/InputMonitoringCTAModal.tsx:76
-msgid "Fluxer needs permission to monitor keyboard and mouse input so that <0>Push-to-Talk</0> and <1>Global Shortcuts</1> work even when you're in another app or game."
-msgstr "Fluxer reikia leidimo stebėti klaviatūros ir pelės įvestį, kad <0>Spustelėk-kalbėk</0> ir <1>Globalūs sparčieji klavišai</1> veiktų net kai esate kitame programoje ar žaidime."
+msgid "NePornu needs permission to monitor keyboard and mouse input so that <0>Push-to-Talk</0> and <1>Global Shortcuts</1> work even when you're in another app or game."
+msgstr "NePornu reikia leidimo stebėti klaviatūros ir pelės įvestį, kad <0>Spustelėk-kalbėk</0> ir <1>Globalūs sparčieji klavišai</1> veiktų net kai esate kitame programoje ar žaidime."
 
 #: src/components/popouts/UserProfileBadges.tsx:84
-msgid "Fluxer Partner"
-msgstr "Fluxer Partneris"
+msgid "NePornu Partner"
+msgstr "NePornu Partneris"
 
-#: src/components/modals/components/PlutoniumContent.tsx:193
-#: src/components/modals/PremiumModal.tsx:34
-#: src/components/modals/utils/settingsConstants.tsx:147
 #: src/components/popouts/UserProfileBadges.tsx:99
-msgid "Fluxer Plutonium"
-msgstr "Fluxer Plutonium"
+msgid "NePornu Plutonium"
+msgstr "NePornu Plutonium"
 
 #: src/components/popouts/UserProfileBadges.tsx:66
-msgid "Fluxer Staff"
-msgstr "Fluxer Personalas"
+msgid "NePornu Staff"
+msgstr "NePornu Personalas"
 
 #: src/components/modals/tabs/NotificationsTab/Notifications.tsx:114
-msgid "Fluxer uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
-msgstr "Fluxer naudoja pranešimus, kai įdiegtas kaip mobilusis PWA. Registracija užtikrina, kad šliuzas gali pasiekti jūsų įrenginį net kai naršyklė yra fone."
-
-#: src/components/modals/FluxerTagChangeModal.tsx:170
-#: src/components/modals/tabs/ApplicationsTab/application-detail/BotProfileSection.tsx:104
-msgid "FluxerTag"
-msgstr "FluxerTag"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:97
-msgid "FluxerTag already taken"
-msgstr "FluxerTag jau užimtas"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:139
-msgid "FluxerTag updated"
-msgstr "FluxerTag atnaujintas"
+msgid "NePornu uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
+msgstr "NePornu naudoja pranešimus, kai įdiegtas kaip mobilusis PWA. Registracija užtikrina, kad šliuzas gali pasiekti jūsų įrenginį net kai naršyklė yra fone."
 
 #: src/stores/KeybindStore.ts:370
 msgid "Focus Text Area"
@@ -8874,8 +8861,8 @@ msgid "Friend Requests"
 msgstr "Draugystės prašymai"
 
 #: src/components/channel/dm/AddFriendForm.tsx:160
-msgid "Friend's FluxerTag"
-msgstr "Draugo FluxerTag"
+msgid "Friend's Tag"
+msgstr "Friend's Tag"
 
 #: src/components/channel/dm/DMList.tsx:781
 #: src/utils/quick-switcher/QuickSwitcherModalUtils.tsx:87
@@ -8980,8 +8967,8 @@ msgid "Generate invite link"
 msgstr "Sukurti kvietimo nuorodą"
 
 #: src/components/modals/tabs/BetaCodesTab.tsx:340
-msgid "Generate up to {MAX_UNCLAIMED_BETA_CODES} unclaimed beta codes to invite friends to Fluxer. You can create 3 codes per week."
-msgstr "Sugeneruokite iki {MAX_UNCLAIMED_BETA_CODES} nepanaudotų beta kodų, kad pakviestumėte draugus į Fluxer. Galite sukurti 3 kodus per savaitę."
+msgid "Generate up to {MAX_UNCLAIMED_BETA_CODES} unclaimed beta codes to invite friends to NePornu. You can create 3 codes per week."
+msgstr "Sugeneruokite iki {MAX_UNCLAIMED_BETA_CODES} nepanaudotų beta kodų, kad pakviestumėte draugus į NePornu. Galite sukurti 3 kodus per savaitę."
 
 #: src/components/auth/HandoffCodeDisplay.tsx:49
 msgid "Generating code..."
@@ -9009,8 +8996,8 @@ msgid "Get desktop app"
 msgstr "Gauti darbalaukio programą"
 
 #: src/components/layout/app-layout/nagbars/MobileDownloadNagbar.tsx:50
-msgid "Get Fluxer on mobile to receive notifications on the go and stay connected with your friends anytime."
-msgstr "Gaukite Fluxer mobiliajame įrenginyje, kad gautumėte pranešimus bėgdami ir liktumėte susiję su draugais bet kuriuo metu."
+msgid "Get NePornu on mobile to receive notifications on the go and stay connected with your friends anytime."
+msgstr "Gaukite NePornu mobiliajame įrenginyje, kad gautumėte pranešimus bėgdami ir liktumėte susiję su draugais bet kuriuo metu."
 
 #: src/stores/KeybindStore.ts:407
 msgid "Get Help"
@@ -9026,7 +9013,7 @@ msgstr "Gaukite pranešimą, kai gaunate žinutes. Gali tekti leisti pranešimus
 
 #: src/components/alerts/FileSizeTooLargeModal.tsx:46
 #: src/components/modals/BackgroundImageGalleryModal.tsx:677
-#: src/components/modals/FluxerTagChangeModal.tsx:214
+#: src/components/modals/NePornuTagChangeModal.tsx:214
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:58
 #: src/components/modals/tabs/MyProfileTab/AvatarUploader.tsx:122
 #: src/components/modals/tabs/NotificationsTab/Sounds.tsx:82
@@ -9044,7 +9031,7 @@ msgstr "Gaukite Plutonium sau ir atrakinkite aukštesnes ribas bei išskirtines 
 msgid "Get Plutonium to customize your tag"
 msgstr "Gaukite Plutonium, kad tinkintumėte savo žymę"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:192
+#: src/components/modals/NePornuTagChangeModal.tsx:192
 msgid "Get Plutonium to customize your tag or keep it when changing your username"
 msgstr "Gaukite Plutonium, kad tinkintumėte savo žymę arba išlaikytumėte ją keisdami vartotojo vardą"
 
@@ -9053,8 +9040,8 @@ msgid "Get prompted when new audio devices are connected"
 msgstr "Gaukite užklausą, kai prijungiami nauji garso įrenginiai"
 
 #: src/components/layout/app-layout/nagbars/DesktopDownloadNagbar.tsx:49
-msgid "Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies."
-msgstr "Gaukite Fluxer darbalaukio programą visos sistemos paspausti-kalbėti funkcijai ir keliems kitiems dalykams."
+msgid "Get the NePornu desktop app for system-wide push-to-talk and a few other goodies."
+msgstr "Get the NePornu desktop app for system-wide push-to-talk and a few other goodies."
 
 #: src/components/modals/MediaModal.tsx:756
 #: src/components/stickers/StickerGridItem.tsx:100
@@ -9656,10 +9643,6 @@ msgstr "Didesnis bitų dažnis = geresnė kokybė ir didesnis pralaidumas."
 msgid "Hindi"
 msgstr "Hindi"
 
-#: src/components/modals/components/LogoutModal.tsx:31
-msgid "Hit 88mph"
-msgstr "Pasiekti 88 mylių per valandą"
-
 #: src/components/modals/AddGuildModal.tsx:153
 msgid "Hobby Haven"
 msgstr "Hobių prieglobstis"
@@ -9782,8 +9765,8 @@ msgid "I understand"
 msgstr "Aš suprantu"
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:309
-msgid "I want to use a custom Fluxer instance"
-msgstr "Noriu naudoti pasirinktinį Fluxer egzempliorių"
+msgid "I want to use a custom NePornu instance"
+msgstr "Noriu naudoti pasirinktinį NePornu egzempliorių"
 
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildIconUploadField.tsx:65
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildIconUploadField.tsx:78
@@ -9796,7 +9779,7 @@ msgstr "Piktograma"
 msgid "Icon file is too large. Please choose a file smaller than 10MB."
 msgstr "Piktogramos failas per didelis. Pasirinkite mažesnį nei 10 MB failą."
 
-#: src/Constants.tsx:132
+#: src/Constants.tsx:134
 msgid "Idle"
 msgstr "Neaktyvus"
 
@@ -9952,7 +9935,7 @@ msgstr "po vienos sekundės"
 msgid "In the beginning, there was nothing. Then, there was #{0}. And it was good."
 msgstr "Pradžioje nieko nebuvo. Tada atsirado #{0}. Ir tai buvo gerai."
 
-#: src/Constants.tsx:144
+#: src/Constants.tsx:146
 msgid "In the zone, please do not disturb"
 msgstr "Įsitraukęs, prašau netrukdyti"
 
@@ -9961,8 +9944,8 @@ msgid "in two days"
 msgstr "po dviejų dienų"
 
 #: src/components/modals/tabs/VoiceTab.tsx:142
-msgid "In your browser, Push-to-Talk will only work when the Fluxer tab is focused. For system-wide Push-to-Talk that works even when gaming or using other apps, download the desktop app."
-msgstr "Naršyklėje mygtukas \"Kalba spaustuką\" veiks tik tada, kai Fluxer skirtukas yra aktyvus. Norėdami naudoti sistemiškai veikiantį mygtuką \"Kalba spaustuką\", kuris veikia net žaidžiant ar naudojant kitas programas, atsisiųskite darbastalio programą."
+msgid "In your browser, Push-to-Talk will only work when the application tab is focused. For system-wide Push-to-Talk that works even when gaming or using other apps, download the desktop app."
+msgstr ""
 
 #: src/utils/SearchUtils.ts:269
 msgid "in:"
@@ -10222,7 +10205,7 @@ msgstr "Apverstas"
 msgid "Inverted button clicked!"
 msgstr "Apverstas mygtukas paspaustas!"
 
-#: src/Constants.tsx:133
+#: src/Constants.tsx:135
 msgid "Invisible"
 msgstr "Nematomas"
 
@@ -10492,13 +10475,13 @@ msgstr "Prisijungti prie bendruomenės"
 msgid "Join community form"
 msgstr "Prisijungimo prie bendruomenės forma"
 
-#: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:97
-msgid "Join Fluxer HQ"
-msgstr "Prisijunk prie Fluxer HQ"
-
 #: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:94
-msgid "Join Fluxer HQ to chat with the team and stay up to date on the latest!"
-msgstr "Prisijunk prie Fluxer HQ, kad pasikalbėtum su komanda ir būtum informuotas apie naujienas!"
+msgid "Join NePornu HQ"
+msgstr "Prisijunk prie NePornu HQ"
+
+#: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:91
+msgid "Join NePornu HQ to chat with the team and stay up to date on the latest!"
+msgstr "Prisijunk prie NePornu HQ, kad pasikalbėtum su komanda ir būtum informuotas apie naujienas!"
 
 #: src/components/channel/InviteEmbed.tsx:201
 msgid "Join Group"
@@ -10807,8 +10790,8 @@ msgid "Latvia"
 msgstr "Latvija"
 
 #: src/components/modals/tabs/AdvancedTab.tsx:88
-msgid "Launch Fluxer at login"
-msgstr "Paleisti Fluxerį prisijungiant"
+msgid "Launch NePornu at login"
+msgstr "Paleisti NePornuį prisijungiant"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:122
 msgid "Learn about Plutonium"
@@ -11117,6 +11100,7 @@ msgid "Log in with a passkey"
 msgstr "Prisijungti su prieigos raktu"
 
 #: src/components/modals/components/DesktopSettingsView.tsx:346
+#: src/components/modals/components/LogoutModal.tsx:31
 #: src/components/modals/components/MobileSettingsView.tsx:357
 #: src/components/pages/PendingVerificationPage.tsx:151
 msgid "Log Out"
@@ -11315,8 +11299,8 @@ msgid "Manage Subscription"
 msgstr "Tvarkyti prenumeratą"
 
 #: src/components/modals/tabs/AccountSecurityTab/AccountTab.tsx:58
-msgid "Manage the email address you use to sign in to Fluxer"
-msgstr "Tvarkykite el. pašto adresą, kurį naudojate prisijungti prie Fluxer"
+msgid "Manage the email address you use to sign in"
+msgstr ""
 
 #: src/utils/PermissionUtils.tsx:284
 #: src/utils/PermissionUtils.tsx:439
@@ -11440,7 +11424,7 @@ msgstr "Pažymėtas narys kaip laikinas."
 msgid "Markers Below Slider"
 msgstr "Žymekliai po slankikliu"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:182
+#: src/components/modals/NePornuTagChangeModal.tsx:182
 msgid "Marty_McFly"
 msgstr "Marty_McFly"
 
@@ -12357,6 +12341,10 @@ msgstr "Reikia paskyros?"
 msgid "Neighborhood Watch"
 msgstr "Kaimynų stebėjimas"
 
+#: src/components/BootstrapErrorScreen.tsx:49
+msgid "NePornu failed to start properly. This could be due to corrupted data or a temporary issue."
+msgstr "NePornu failed to start properly. This could be due to corrupted data or a temporary issue."
+
 #: src/components/pages/report/optionDescriptors.ts:102
 msgid "Netherlands"
 msgstr "Nyderlandai"
@@ -12829,8 +12817,8 @@ msgid "No Timer"
 msgstr "Nėra laikmačio"
 
 #: src/components/channel/dm/AddFriendForm.tsx:93
-msgid "No user found with that FluxerTag."
-msgstr "Nerasta naudotojo su tokiu FluxerTag."
+msgid "No user found with that Tag."
+msgstr "No user found with that Tag."
 
 #: src/components/modals/guildTabs/GuildBansTab.tsx:178
 msgid "No users are currently banned from this community."
@@ -13046,7 +13034,7 @@ msgstr "Išjungta"
 
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:287
 #: src/components/channel/ChannelMembers.tsx:108
-#: src/Constants.tsx:134
+#: src/Constants.tsx:136
 #: src/utils/MemberListUtils.ts:150
 #: src/utils/MemberListUtils.ts:188
 msgid "Offline"
@@ -13152,7 +13140,7 @@ msgstr "vienkartinis, visam laikui"
 #: src/components/channel/ChannelMembers.tsx:106
 #: src/components/channel/dm/DMFriendsView.tsx:168
 #: src/components/channel/friends/views/FriendsList.tsx:95
-#: src/Constants.tsx:130
+#: src/Constants.tsx:132
 #: src/utils/MemberListUtils.ts:143
 #: src/utils/MemberListUtils.ts:182
 msgid "Online"
@@ -13211,6 +13199,10 @@ msgstr "Permatomumas"
 msgid "Open {altText} in full view"
 msgstr "Atidaryti {altText} pilnoje peržiūroje"
 
+#: src/components/auth/DesktopDeepLinkPrompt.tsx:102
+msgid "Open app"
+msgstr ""
+
 #: src/components/auth/BrowserLoginHandoffModal.tsx:326
 msgid "Open browser"
 msgstr "Atidaryti naršyklę"
@@ -13252,10 +13244,6 @@ msgstr "Atidaryti asmenines žinutes + bendruomenes"
 msgid "Open DMs Only"
 msgstr "Atidaryti tik asmenines žinutes"
 
-#: src/components/auth/DesktopDeepLinkPrompt.tsx:102
-msgid "Open Fluxer"
-msgstr "Atidaryti Fluxer"
-
 #: src/components/channel/embeds/media/EmbedImage.tsx:187
 msgid "Open image in full view"
 msgstr "Atidaryti vaizdą pilnoje peržiūroje"
@@ -13269,13 +13257,13 @@ msgstr "Atidaryti naršyklėje"
 msgid "Open in Community"
 msgstr "Atidaryti bendruomenėje"
 
-#: src/components/auth/DesktopDeepLinkPrompt.tsx:89
-msgid "Open in Fluxer for desktop"
-msgstr "Atidaryti Fluxer kompiuteriui"
-
 #: src/components/channel/embeds/media/EmbedYouTube.tsx:117
 msgid "Open in new tab"
 msgstr "Atidaryti naujame skirtuke"
+
+#: src/components/auth/DesktopDeepLinkPrompt.tsx:89
+msgid "Open in the desktop app"
+msgstr ""
 
 #: src/components/uikit/ContextMenu/MediaContextMenu.tsx:309
 msgid "Open Link"
@@ -13901,20 +13889,20 @@ msgstr "Patikrinkite savo el. pašto gautuosius dėl patvirtinimo laiško."
 
 #: src/components/modals/InputMonitoringCTAModal.tsx:53
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:51
-msgid "Please enable Fluxer in System Settings → Privacy & Security → Input Monitoring."
-msgstr "Įjunkite Fluxer sistemos nustatymuose → Privatumas ir saugumas → Įvesties stebėjimas."
+msgid "Please enable NePornu in System Settings → Privacy & Security → Input Monitoring."
+msgstr "Įjunkite NePornu sistemos nustatymuose → Privatumas ir saugumas → Įvesties stebėjimas."
 
 #: src/components/pages/ReportPage.tsx:211
 msgid "Please enter a valid email address."
 msgstr "Prašome įvesti galiojantį el. pašto adresą."
 
-#: src/components/channel/dm/AddFriendForm.tsx:97
-msgid "Please enter a valid FluxerTag (Username#0000)."
-msgstr "Įveskite tinkamą FluxerTag (VartotojoVardas#0000)."
-
 #: src/components/pages/ReportPage.tsx:336
 msgid "Please enter a valid message link URL."
 msgstr "Prašome įvesti galiojantį žinutės nuorodos URL."
+
+#: src/components/channel/dm/AddFriendForm.tsx:97
+msgid "Please enter a valid Tag (Username#0000)."
+msgstr "Please enter a valid Tag (Username#0000)."
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:189
 msgid "Please enter an API endpoint."
@@ -13953,8 +13941,8 @@ msgid "Please try again later."
 msgstr "Bandykite vėliau."
 
 #: src/components/channel/UnknownMessage.tsx:84
-msgid "Please update Fluxer to view this message."
-msgstr "Atnaujinkite Fluxer, kad pamatytumėte šią žinutę."
+msgid "Please update NePornu to view this message."
+msgstr "Atnaujinkite NePornu, kad pamatytumėte šią žinutę."
 
 #: src/components/modals/guildTabs/GuildEmojiTab.tsx:144
 msgid "Please upload JPEG, PNG, WebP, or GIF files only."
@@ -13978,6 +13966,9 @@ msgstr "Palaukite, kol įsikels kainodaros informacija."
 #: src/components/channel/dm/DMList.tsx:729
 #: src/components/channel/dm/DMList.tsx:808
 #: src/components/modals/components/FeatureComparisonTable.tsx:41
+#: src/components/modals/components/PlutoniumContent.tsx:193
+#: src/components/modals/PremiumModal.tsx:34
+#: src/components/modals/utils/settingsConstants.tsx:147
 msgid "Plutonium"
 msgstr "Plutonium"
 
@@ -14086,8 +14077,8 @@ msgid "Preview"
 msgstr "Peržiūra"
 
 #: src/components/modals/tabs/DeveloperOptionsTab/TypographyTab.tsx:135
-msgid "Preview all available fonts, weights, and styles across different languages supported by Fluxer."
-msgstr "Peržiūrėkite visus prieinamus šriftus, storių ir stilius skirtingose Fluxer palaikomose kalbose."
+msgid "Preview all available fonts, weights, and styles across different languages supported by NePornu."
+msgstr "Peržiūrėkite visus prieinamus šriftus, storių ir stilius skirtingose NePornu palaikomose kalbose."
 
 #: src/components/modals/tabs/AccessibilityTab.tsx:97
 msgid "Preview Button"
@@ -14259,8 +14250,8 @@ msgid "Provide at least a user ID or a user tag."
 msgstr "Pateikite bent vartotojo ID arba vartotojo žymą."
 
 #: src/components/pages/ReportPage.tsx:354
-msgid "Provide either a user ID or a FluxerTag for the person you are reporting."
-msgstr "Pateikite vartotojo ID arba FluxerTag asmeniui, kurį pranešate."
+msgid "Provide either a user ID or a Tag for the person you are reporting."
+msgstr ""
 
 #: src/components/pages/ReportPage.tsx:305
 msgid "Provide your full legal name for the declaration."
@@ -15007,8 +14998,8 @@ msgid "Renews on <0>{renewalDate}</0>."
 msgstr "Atnaujinama <0>{renewalDate}</0>."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:116
-msgid "Reopen in maximized mode if that’s how you last used Fluxer."
-msgstr "Atidaryti maksimizuotame režime, jei taip paskutinį kartą naudojai Fluxer."
+msgid "Reopen in maximized mode if that’s how you last used NePornu."
+msgstr "Atidaryti maksimizuotame režime, jei taip paskutinį kartą naudojai NePornu."
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:86
 #: src/components/modals/BackgroundImageGalleryModal.tsx:395
@@ -15500,12 +15491,12 @@ msgid "Row"
 msgstr "Eilė"
 
 #: src/components/modals/tabs/AdvancedTab.tsx:85
-msgid "Run Fluxer automatically when your computer starts. Or don't. Your choice!"
-msgstr "Paleiskite Fluxer automatiškai, kai įsijungia jūsų kompiuteris. Arba ne. Jūsų pasirinkimas!"
+msgid "Run NePornu automatically when your computer starts. Or don't. Your choice!"
+msgstr "Paleiskite NePornu automatiškai, kai įsijungia jūsų kompiuteris. Arba ne. Jūsų pasirinkimas!"
 
 #: src/components/modals/tabs/KeybindsTab.tsx:93
-msgid "Run this shortcut even when Fluxer is not focused."
-msgstr "Vykdykite šį sparčiąją nuorodą net kai Fluxer nėra aktyvus."
+msgid "Run this shortcut even when NePornu is not focused."
+msgstr "Vykdykite šį sparčiąją nuorodą net kai NePornu nėra aktyvus."
 
 #: src/utils/LocaleUtils.tsx:60
 msgid "Russian"
@@ -17717,6 +17708,19 @@ msgstr "Sistema: šviesi tema (automatiškai sinchronizuojama su jūsų sistemos
 msgid "Tables"
 msgstr "Lentelės"
 
+#: src/components/modals/NePornuTagChangeModal.tsx:170
+#: src/components/modals/tabs/ApplicationsTab/application-detail/BotProfileSection.tsx:104
+msgid "Tag"
+msgstr "Tag"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:97
+msgid "Tag already taken"
+msgstr "Tag already taken"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:139
+msgid "Tag updated"
+msgstr "Tag updated"
+
 #. placeholder {0}: tags.length
 #: src/components/modals/meme-form/MemeFormFields.tsx:117
 msgid "Tags ({0}/{MAX_FAVORITE_MEME_TAGS})"
@@ -17811,13 +17815,13 @@ msgstr "Teksto laukas"
 msgid "Thai"
 msgstr "Tajų"
 
-#: src/components/modals/IARModal.tsx:187
-msgid "Thank you for helping keep Fluxer safe. Reports are reviewed by our Safety Team. False reports may result in action against your account."
-msgstr "Ačiū, kad padedate išlaikyti Fluxer saugų. Pranešimus peržiūri mūsų Saugumo komanda. Klaidingi pranešimai gali lemti veiksmų prieš jūsų paskyrą."
-
 #: src/components/pages/report/ReportStepComplete.tsx:37
-msgid "Thank you for helping keep Fluxer safe. We'll review your report as soon as possible."
-msgstr "Ačiū, kad padedate išlaikyti Fluxer saugų. Mes peržiūrėsime jūsų pranešimą kuo greičiau."
+msgid "Thank you for helping keep NePornu safe. We'll review your report as soon as possible."
+msgstr "Ačiū, kad padedate išlaikyti NePornu saugų. Mes peržiūrėsime jūsų pranešimą kuo greičiau."
+
+#: src/components/modals/IARModal.tsx:187
+msgid "Thank you for helping keep the application safe. Reports are reviewed by our Safety Team. False reports may result in action against your account."
+msgstr ""
 
 #: src/components/form/ColorPickerField.tsx:274
 msgid "That doesn't look like a valid color. Try hex, rgb(), hsl(), or a CSS color name."
@@ -17884,10 +17888,6 @@ msgstr "Failas, kurį bandote įkelti, viršija maksimalų 25 MB dydį neprenume
 msgid "The file you're trying to upload exceeds the maximum size limit of 500 MB for Plutonium subscribers."
 msgstr "Failas, kurį bandote įkelti, viršija maksimalų 500 MB dydį Plutonium prenumerantams."
 
-#: src/components/modals/FluxerTagChangeModal.tsx:101
-msgid "The FluxerTag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
-msgstr "FluxerTag <0>{fluxerTag}</0> jau užimtas. Tęsdami jūsų diskriminatorius bus automatiškai pergeneruotas."
-
 #: src/components/modals/tabs/PrivacySafetyTab/DataDeletionTab.tsx:71
 msgid "The job starts 24 hours after you confirm and can be canceled or restarted anytime"
 msgstr "Užduotis prasideda po 24 valandų nuo patvirtinimo ir gali būti atšaukta arba paleista iš naujo bet kuriuo metu"
@@ -17916,6 +17916,10 @@ msgstr "Rolė <0>\"{roleName}\"</0> šiuo metu negali būti ištrinta. Pabandyki
 #: src/components/modals/AddGuildModal.tsx:183
 msgid "The Squad"
 msgstr "Būrys"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:101
+msgid "The Tag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
+msgstr "The Tag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
 
 #: src/components/modals/tabs/PrivacySafetyTab/DataDeletionTab.tsx:74
 msgid "The time to complete depends on how many messages you have sent"
@@ -17992,8 +17996,8 @@ msgid "There's nothing more to see here."
 msgstr "Čia daugiau nieko nėra."
 
 #: src/components/modals/tabs/AuthorizedAppsTab.tsx:148
-msgid "These applications have been granted access to your Fluxer account."
-msgstr "Šios programos gavo prieigą prie jūsų Fluxer paskyros."
+msgid "These applications have been granted access to your NePornu account."
+msgstr "Šios programos gavo prieigą prie jūsų NePornu paskyros."
 
 #: src/components/modals/tabs/VoiceTab.tsx:403
 msgid "These settings use browser-native audio processing to improve call quality. For best results, keep all options enabled."
@@ -18206,8 +18210,8 @@ msgid "This is a custom emoji from a community. Ask the author for an invite to 
 msgstr "Tai yra tinkintas emodži iš bendruomenės. Paprašykite autoriaus pakvietimo, kad naudotumėte šį emodži."
 
 #: src/components/emojis/EmojiAttributionSubtext.tsx:101
-msgid "This is a default emoji on Fluxer."
-msgstr "Tai yra numatytasis emodži Fluxer."
+msgid "This is a default emoji on NePornu."
+msgstr "Tai yra numatytasis emodži NePornu."
 
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:147
 msgid "This is an error message"
@@ -18613,10 +18617,6 @@ msgstr "Per daug užklausų. Bandykite vėliau."
 msgid "Too Quiet"
 msgstr "Per tylu"
 
-#: src/Constants.tsx:145
-msgid "Took the DeLorean out, but I'll be back in time"
-msgstr "Išėjau su DeLorean, bet grįšiu laiku"
-
 #: src/components/modals/tabs/DeveloperOptionsTab/index.tsx:61
 #: src/components/modals/tabs/DeveloperOptionsTab/Inline.tsx:56
 #: src/components/modals/utils/settingsConstants.tsx:316
@@ -18723,7 +18723,7 @@ msgstr "Bandykite dar kartą"
 #: src/components/channel/ChannelSearchResults.tsx:663
 #: src/components/modals/channelTabs/ChannelInvitesTab.tsx:146
 #: src/components/modals/channelTabs/ChannelWebhooksTab.tsx:159
-#: src/components/NetworkErrorScreen.tsx:56
+#: src/components/NetworkErrorScreen.tsx:55
 msgid "Try Again"
 msgstr "Bandykite dar kartą"
 
@@ -19904,7 +19904,7 @@ msgstr "Vartotojo garsumas"
 msgid "user, bot or webhook"
 msgstr "vartotojas, botas ar webhook"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:181
+#: src/components/modals/NePornuTagChangeModal.tsx:181
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:101
 #: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:44
 #: src/components/modals/utils/settingsSearchIndex.ts:57
@@ -19935,11 +19935,11 @@ msgstr "Vartotojo vardas turi būti ne ilgesnis nei 32 simboliai"
 msgid "Username#0000"
 msgstr "Vartotojo vardas#0000"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:163
+#: src/components/modals/NePornuTagChangeModal.tsx:163
 msgid "Usernames can only contain letters (a-z, A-Z), numbers (0-9), and underscores. Usernames are case-insensitive."
 msgstr "Vartotojo vardai gali būti sudaryti tik iš raidžių (a-z, A-Z), skaičių (0-9) ir apatinių brūkšnių. Vartotojo vardai neskiria didžiųjų ir mažųjų raidžių."
 
-#: src/components/modals/FluxerTagChangeModal.tsx:158
+#: src/components/modals/NePornuTagChangeModal.tsx:158
 msgid "Usernames can only contain letters (a-z, A-Z), numbers (0-9), and underscores. Usernames are case-insensitive. You can pick your own 4-digit tag if it's available."
 msgstr "Vartotojo vardai gali būti sudaryti tik iš raidžių (a-z, A-Z), skaičių (0-9) ir apatinių brūkšnių. Vartotojo vardai neskiria didžiųjų ir mažųjų raidžių. Galite pasirinkti savo 4 skaitmenų žymę, jei ji yra laisva."
 
@@ -20671,8 +20671,8 @@ msgid "We'll verify your new email with a one-time code."
 msgstr "Mes patikrinsime jūsų naują el. paštą vienkartiniu kodu."
 
 #: src/components/NetworkErrorScreen.tsx:39
-msgid "We're having trouble connecting to Fluxer's servers. This could be a temporary network issue or scheduled maintenance."
-msgstr "Turime problemų prisijungti prie Fluxer serverių. Tai gali būti laikina tinklo problema arba suplanuota priežiūra."
+msgid "We're having trouble connecting to NePornu's servers. This could be a temporary network issue or scheduled maintenance."
+msgstr "We're having trouble connecting to NePornu's servers. This could be a temporary network issue or scheduled maintenance."
 
 #: src/components/modals/tabs/BetaCodesTab.tsx:322
 #: src/components/modals/tabs/DevicesTab.tsx:233
@@ -20685,28 +20685,28 @@ msgid "We're indexing this channel for the first time. This might take a little 
 msgstr "Pirmą kartą indeksuojame šį kanalą. Tai gali šiek tiek užtrukti..."
 
 #: src/components/modals/RequiredActionModal.tsx:151
-msgid "We've detected suspicious activity on your account. Please reverify your email address or phone number to continue using Fluxer."
-msgstr "Pastebėjome įtartiną veiklą jūsų paskyroje. Prašome dar kartą patvirtinti savo el. pašto adresą arba telefono numerį, kad galėtumėte toliau naudotis Fluxer."
+msgid "We've detected suspicious activity on your account. Please reverify your email address or phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:143
-msgid "We've detected suspicious activity on your account. Please reverify your email address to continue using Fluxer."
-msgstr "Pastebėjome įtartiną veiklą jūsų paskyroje. Prašome dar kartą patvirtinti savo el. pašto adresą, kad galėtumėte toliau naudotis Fluxer."
+msgid "We've detected suspicious activity on your account. Please reverify your email address to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:147
-msgid "We've detected suspicious activity on your account. Please reverify your phone number to continue using Fluxer."
-msgstr "Pastebėjome įtartiną veiklą jūsų paskyroje. Prašome dar kartą patvirtinti savo telefono numerį, kad galėtumėte toliau naudotis Fluxer."
+msgid "We've detected suspicious activity on your account. Please reverify your phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:152
-msgid "We've detected suspicious activity on your account. Please verify your email address or phone number to continue using Fluxer."
-msgstr "Pastebėjome įtartiną veiklą jūsų paskyroje. Prašome patvirtinti savo el. pašto adresą arba telefono numerį, kad galėtumėte toliau naudotis Fluxer."
+msgid "We've detected suspicious activity on your account. Please verify your email address or phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:144
-msgid "We've detected suspicious activity on your account. Please verify your email address to continue using Fluxer."
-msgstr "Pastebėjome įtartiną veiklą jūsų paskyroje. Prašome patvirtinti savo el. pašto adresą, kad galėtumėte toliau naudotis Fluxer."
+msgid "We've detected suspicious activity on your account. Please verify your email address to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:148
-msgid "We've detected suspicious activity on your account. Please verify your phone number to continue using Fluxer."
-msgstr "Pastebėjome įtartiną veiklą jūsų paskyroje. Prašome patvirtinti savo telefono numerį, kad galėtumėte toliau naudotis Fluxer."
+msgid "We've detected suspicious activity on your account. Please verify your phone number to continue."
+msgstr ""
 
 #: src/components/pages/ForgotPasswordPage.tsx:65
 msgid "We've sent password reset instructions to your email address. Please check your inbox and follow the link to reset your password."
@@ -20777,8 +20777,8 @@ msgid "Welcome to Favorites"
 msgstr "Sveiki atvykę į Mėgstamiausius"
 
 #: src/components/layout/app-layout/nagbars/PremiumOnboardingNagbar.tsx:51
-msgid "Welcome to Fluxer Plutonium! Explore your premium features and manage your subscription."
-msgstr "Sveiki atvykę į Fluxer Plutonium! Naršykite savo premium funkcijas ir tvarkykite savo prenumeratą."
+msgid "Welcome to NePornu Plutonium! Explore your premium features and manage your subscription."
+msgstr "Sveiki atvykę į NePornu Plutonium! Naršykite savo premium funkcijas ir tvarkykite savo prenumeratą."
 
 #: src/utils/SystemMessageUtils.tsx:46
 msgid "Welcome, {username}! Don't forget to park your DeLorean."
@@ -20837,8 +20837,8 @@ msgid "When enabled, quickly tapping your push-to-talk shortcut will keep your m
 msgstr "Kai įjungta, greitai paspaudus jūsų 'kalbėti paspaudus' sparčiąją klavišą, jūsų mikrofonas liks įjungtas, kol bus paspausta dar kartą."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:140
-msgid "When enabled, reveals debugging menus throughout the app to inspect and copy raw JSON objects of internal data structures like messages, channels, users, and communities. Also includes tools to debug the Fluxer Markdown parser performance and AST for any given message."
-msgstr "Kai įjungta, atskleidžia derinimo meniu visoje programėlėje, kad galėtumėte apžiūrėti ir nukopijuoti neapdorotus JSON objektus vidinių duomenų struktūrų, tokių kaip žinutės, kanalai, vartotojai ir bendruomenės. Taip pat apima įrankius, skirtus derinti Fluxer Markdown analizatoriaus veikimą ir AST bet kuriai nurodytai žinutei."
+msgid "When enabled, reveals debugging menus throughout the app to inspect and copy raw JSON objects of internal data structures like messages, channels, users, and communities. Also includes tools to debug the NePornu Markdown parser performance and AST for any given message."
+msgstr "Kai įjungta, atskleidžia derinimo meniu visoje programėlėje, kad galėtumėte apžiūrėti ir nukopijuoti neapdorotus JSON objektus vidinių duomenų struktūrų, tokių kaip žinutės, kanalai, vartotojai ir bendruomenės. Taip pat apima įrankius, skirtus derinti NePornu Markdown analizatoriaus veikimą ir AST bet kuriai nurodytai žinutei."
 
 #: src/components/modals/tabs/AppearanceTab/InterfaceTab.tsx:135
 msgid "When enabled, shortcut badges are hidden in tooltip popups."
@@ -20889,8 +20889,8 @@ msgid "When they hit 88mph, they'll appear right here."
 msgstr "Kai jie pasieks 88 mylių per valandą, jie atsiras čia pat."
 
 #: src/components/modals/tabs/ChatSettingsTab/DisplayTab.tsx:73
-msgid "When uploaded directly to Fluxer"
-msgstr "Kai įkelta tiesiogiai į Fluxer"
+msgid "When uploaded directly to NePornu"
+msgstr "Kai įkelta tiesiogiai į NePornu"
 
 #: src/components/shared/ChannelPinsContent.tsx:143
 msgid "Whenever someone pins a message, it'll appear here."
@@ -20950,8 +20950,12 @@ msgid "Write a short bio (max 280 characters)"
 msgstr "Parašykite trumpą biografiją (maks. 280 simbolių)"
 
 #: src/components/modals/tabs/AppearanceTab/ThemeTab.tsx:543
-msgid "Write custom CSS here to override any theme tokens. For example:\n:root { --background-primary: #1E1E2F; }"
-msgstr "Čia parašykite pasirinktinį CSS, kad perrašytumėte bet kuriuos temos žetonus. Pavyzdžiui:\n:root { --background-primary: #1E1E2F; }"
+msgid ""
+"Write custom CSS here to override any theme tokens. For example:\n"
+":root { --background-primary: #1E1E2F; }"
+msgstr ""
+"Čia parašykite pasirinktinį CSS, kad perrašytumėte bet kuriuos temos žetonus. Pavyzdžiui:\n"
+":root { --background-primary: #1E1E2F; }"
 
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:174
 msgid "Write your content here... This textarea expands as you type."
@@ -20993,8 +20997,8 @@ msgid "You already have a group with these users. Do you really want to create a
 msgstr "Jūs jau turite grupę su šiais vartotojais. Ar tikrai norite sukurti naują? Tai taip pat gerai!"
 
 #: src/components/modals/ExternalLinkWarningModal.tsx:66
-msgid "You are about to leave Fluxer"
-msgstr "Jūs ketinate palikti Fluxer"
+msgid "You are about to leave the application"
+msgstr ""
 
 #. placeholder {0}: targetUser.username
 #: src/components/modals/TransferOwnershipModal.tsx:71
@@ -21022,8 +21026,8 @@ msgid "You are now a developer!"
 msgstr "Dabar jūs esate kūrėjas!"
 
 #: src/components/modals/components/plutonium/hooks/useCheckoutActions.tsx:107
-msgid "You are now navigating to Stripe to complete the payment. Return to Fluxer once you've completed it!"
-msgstr "Dabar jūs nukreipiate į Stripe, kad užbaigtumėte mokėjimą. Grįžkite į Fluxer, kai jį užbaigsite!"
+msgid "You are now navigating to Stripe to complete the payment. Return to NePornu once you've completed it!"
+msgstr "Dabar jūs nukreipiate į Stripe, kad užbaigtumėte mokėjimą. Grįžkite į NePornu, kai jį užbaigsite!"
 
 #. placeholder {0}: Math.max(0, modalLogic.maxSelections - modalLogic.selectedUserIds.length)
 #. placeholder {0}: modalLogic.remainingSlotsCount
@@ -21046,8 +21050,8 @@ msgid "You can add comments before uploading. Hold shift to upload directly."
 msgstr "Prieš įkeliant galite pridėti komentarų. Paspauskite shift, kad įkeltumėte tiesiogiai."
 
 #: src/components/channel/dm/AddFriendView.tsx:35
-msgid "You can add friends with their FluxerTag."
-msgstr "Galite pridėti draugų naudodami jų FluxerTag."
+msgid "You can add friends with their NePornuTag."
+msgstr "Galite pridėti draugų naudodami jų NePornuTag."
 
 #. placeholder {0}: modalLogic.maxSelections
 #: src/components/bottomsheets/CreateDMBottomSheet.tsx:112
@@ -21334,8 +21338,8 @@ msgid "You haven't created any packs yet."
 msgstr "Jūs dar nesukūrėte jokių rinkinių."
 
 #: src/components/modals/KeyboardModeIntroModal.tsx:46
-msgid "You just pressed Tab. Keyboard Mode is now on so you can navigate Fluxer without a mouse."
-msgstr "Ką tik paspaudėte Tab. Dabar įjungtas klaviatūros režimas, kad galėtumėte naršyti Fluxer be pelės."
+msgid "You just pressed Tab. Keyboard Mode is now on so you can navigate the application without a mouse."
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:85
 #: src/utils/ExpressionPermissionUtils.tsx:92
@@ -21635,10 +21639,6 @@ msgstr "Tavo esami pranešimų garso nustatymai bus išsaugoti."
 msgid "Your export request will be processed"
 msgstr "Tavo eksporto užklausa bus apdorota"
 
-#: src/components/pages/report/ReportStepDetails.tsx:213
-msgid "Your FluxerTag (optional)"
-msgstr "Tavo FluxerTag (neprivaloma)"
-
 #: src/components/channel/friends/views/FriendsList.tsx:80
 msgid "Your friends are currently stuck in another timeline"
 msgstr "Tavo draugai šiuo metu įstrigę kitoje laiko juostoje"
@@ -21735,6 +21735,10 @@ msgstr "Tavo prenumerata bus nutraukta tavo apmokėjimo laikotarpio pabaigoje."
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:210
 msgid "Your subscription will cancel on <0>{cancelDate}</0>. You'll lose all <1/> after that date."
 msgstr "Tavo prenumerata bus nutraukta <0>{cancelDate}</0>. Prarasi visus <1/> po šios datos."
+
+#: src/components/pages/report/ReportStepDetails.tsx:213
+msgid "Your Tag (optional)"
+msgstr ""
 
 #: src/components/modals/guildTabs/GuildVanityURLTab.tsx:118
 msgid "Your vanity URL has been removed."

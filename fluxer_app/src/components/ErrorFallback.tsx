@@ -21,7 +21,7 @@ import {Trans} from '@lingui/react/macro';
 import {observer} from 'mobx-react-lite';
 import React from 'react';
 import errorFallbackStyles from '~/components/ErrorFallback.module.css';
-import {FluxerIcon} from '~/components/icons/FluxerIcon';
+import {AppIcon} from '~/components/icons/AppIcon';
 import {NativeTitlebar} from '~/components/layout/NativeTitlebar';
 import {Button} from '~/components/uikit/Button/Button';
 import {useNativePlatform} from '~/hooks/useNativePlatform';
@@ -81,7 +81,7 @@ export const ErrorFallback: React.FC<ErrorFallbackProps> = observer(() => {
 	return (
 		<div className={errorFallbackStyles.errorFallbackContainer}>
 			{isNative && !isMacOS && <NativeTitlebar platform={platform} />}
-			<FluxerIcon className={errorFallbackStyles.errorFallbackIcon} />
+			<AppIcon className={errorFallbackStyles.errorFallbackIcon} />
 			<div className={errorFallbackStyles.errorFallbackContent}>
 				<h1 className={errorFallbackStyles.errorFallbackTitle}>
 					<Trans>Whoa, this is heavy.</Trans>

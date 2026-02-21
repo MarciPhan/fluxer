@@ -17,50 +17,50 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans, useLingui} from '@lingui/react/macro';
-import {observer} from 'mobx-react-lite';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import * as IARActionCreators from '~/actions/IARActionCreators';
 import * as ModalActionCreators from '~/actions/ModalActionCreators';
 import * as ToastActionCreators from '~/actions/ToastActionCreators';
-import {MessagePreviewContext} from '~/Constants';
-import {Message} from '~/components/channel/Message';
-import {Textarea} from '~/components/form/Input';
+import { MessagePreviewContext } from '~/Constants';
+import { Message } from '~/components/channel/Message';
+import { Textarea } from '~/components/form/Input';
 import * as Modal from '~/components/modals/Modal';
-import {Button} from '~/components/uikit/Button/Button';
-import {RadioGroup} from '~/components/uikit/RadioGroup/RadioGroup';
+import { Button } from '~/components/uikit/Button/Button';
+import { RadioGroup } from '~/components/uikit/RadioGroup/RadioGroup';
 import {
 	getGuildViolationCategories,
 	getMessageViolationCategories,
 	getUserViolationCategories,
 } from '~/constants/IARConstants';
-import type {GuildRecord} from '~/records/GuildRecord';
-import type {MessageRecord} from '~/records/MessageRecord';
-import type {UserRecord} from '~/records/UserRecord';
+import type { GuildRecord } from '~/records/GuildRecord';
+import type { MessageRecord } from '~/records/MessageRecord';
+import type { UserRecord } from '~/records/UserRecord';
 import ChannelStore from '~/stores/ChannelStore';
 import styles from './IARModal.module.css';
 
 export type IARContext =
 	| {
-			type: 'message';
-			message: MessageRecord;
-	  }
+		type: 'message';
+		message: MessageRecord;
+	}
 	| {
-			type: 'user';
-			user: UserRecord;
-			guildId?: string;
-	  }
+		type: 'user';
+		user: UserRecord;
+		guildId?: string;
+	}
 	| {
-			type: 'guild';
-			guild: GuildRecord;
-	  };
+		type: 'guild';
+		guild: GuildRecord;
+	};
 
 interface IARModalProps {
 	context: IARContext;
 }
 
-export const IARModal: React.FC<IARModalProps> = observer(({context}) => {
-	const {t, i18n} = useLingui();
+export const IARModal: React.FC<IARModalProps> = observer(({ context }) => {
+	const { t, i18n } = useLingui();
 	const [selectedCategory, setSelectedCategory] = React.useState<string>('');
 	const [additionalInfo, setAdditionalInfo] = React.useState('');
 	const [submitting, setSubmitting] = React.useState(false);
@@ -185,8 +185,8 @@ export const IARModal: React.FC<IARModalProps> = observer(({context}) => {
 				<div className={styles.container}>
 					<p className={styles.description}>
 						<Trans>
-							Thank you for helping keep Fluxer safe. Reports are reviewed by our Safety Team. False reports may result
-							in action against your account.
+							Thank you for helping keep the application safe. Reports are reviewed by our Safety Team. False reports
+							may result in action against your account.
 						</Trans>
 					</p>
 					{renderPreview()}

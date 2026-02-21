@@ -22,7 +22,7 @@ import {observer} from 'mobx-react-lite';
 import {AuthBottomLink} from '~/components/auth/AuthBottomLink';
 import sharedStyles from '~/components/auth/AuthPageStyles.module.css';
 import {AuthRegisterFormCore} from '~/components/auth/AuthRegisterFormCore';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import {useLocation} from '~/lib/router';
 
 const RegisterPageContent = observer(function RegisterPageContent() {
@@ -61,7 +61,7 @@ const RegisterPageContent = observer(function RegisterPageContent() {
 
 const RegisterPage = observer(function RegisterPage() {
 	const {t} = useLingui();
-	useFluxerDocumentTitle(t`Register`);
+	useAppDocumentTitle(t`Register`);
 
 	return <RegisterPageContent />;
 });

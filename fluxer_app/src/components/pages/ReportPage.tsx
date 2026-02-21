@@ -17,15 +17,15 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {useLingui} from '@lingui/react/macro';
-import {observer} from 'mobx-react-lite';
+import { useLingui } from '@lingui/react/macro';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import * as ToastActionCreators from '~/actions/ToastActionCreators';
-import type {SelectOption} from '~/components/form/Select';
-import type {RadioOption} from '~/components/uikit/RadioGroup/RadioGroup';
-import {AuthLayoutContext} from '~/contexts/AuthLayoutContext';
-import {Endpoints} from '~/Endpoints';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import type { SelectOption } from '~/components/form/Select';
+import type { RadioOption } from '~/components/uikit/RadioGroup/RadioGroup';
+import { AuthLayoutContext } from '~/contexts/AuthLayoutContext';
+import { Endpoints } from '~/Endpoints';
+import { useAppDocumentTitle } from '~/hooks/useAppDocumentTitle';
 import HttpClient from '~/lib/HttpClient';
 import styles from './ReportPage.module.css';
 import {
@@ -41,8 +41,8 @@ import ReportStepDetails from './report/ReportStepDetails';
 import ReportStepEmail from './report/ReportStepEmail';
 import ReportStepSelection from './report/ReportStepSelection';
 import ReportStepVerification from './report/ReportStepVerification';
-import {createInitialState, reducer} from './report/state';
-import type {FlowStep, FormValues, ReportType} from './report/types';
+import { createInitialState, reducer } from './report/state';
+import type { FlowStep, FormValues, ReportType } from './report/types';
 import {
 	EMAIL_REGEX,
 	formatVerificationCodeInput,
@@ -51,13 +51,13 @@ import {
 	VERIFICATION_CODE_REGEX,
 } from './report/validators';
 
-type ValidationError = {path: string; message: string};
+type ValidationError = { path: string; message: string };
 
 export const ReportPage = observer(() => {
-	const {t} = useLingui();
+	const { t } = useLingui();
 	const authLayout = React.useContext(AuthLayoutContext);
 
-	useFluxerDocumentTitle(t`Report Illegal Content`);
+	useAppDocumentTitle(t`Report Illegal Content`);
 
 	React.useLayoutEffect(() => {
 		if (!authLayout) return;
@@ -70,14 +70,14 @@ export const ReportPage = observer(() => {
 	const parseValidationErrors = React.useCallback(
 		(
 			error: unknown,
-		): {fieldErrors: Partial<Record<keyof FormValues, string>>; generalMessage: string | null} | null => {
-			if (error && typeof error === 'object' && 'body' in error && (error as {body?: unknown}).body) {
-				const body = (error as {body?: any}).body;
+		): { fieldErrors: Partial<Record<keyof FormValues, string>>; generalMessage: string | null } | null => {
+			if (error && typeof error === 'object' && 'body' in error && (error as { body?: unknown }).body) {
+				const body = (error as { body?: any }).body;
 				const pathMap: Record<string, keyof FormValues> = {
 					category: 'category',
 					reporter_full_legal_name: 'reporterFullName',
 					reporter_country_of_residence: 'reporterCountry',
-					reporter_fluxer_tag: 'reporterFluxerTag',
+					reporter_tag: 'reporterTag',
 					message_link: 'messageLink',
 					reported_user_tag: 'messageUserTag',
 					user_id: 'userId',
@@ -102,11 +102,11 @@ export const ReportPage = observer(() => {
 						? null
 						: (errors[0]?.message ?? t`Something went wrong while submitting the report. Please try again.`);
 
-					return {fieldErrors, generalMessage};
+					return { fieldErrors, generalMessage };
 				}
 
 				if (typeof body?.message === 'string') {
-					return {fieldErrors: {}, generalMessage: body.message};
+					return { fieldErrors: {}, generalMessage: body.message };
 				}
 			}
 
@@ -162,7 +162,7 @@ export const ReportPage = observer(() => {
 
 	React.useEffect(() => {
 		if (state.resendCooldownSeconds <= 0) return;
-		const timer = window.setInterval(() => dispatch({type: 'TICK_RESEND_COOLDOWN'}), 1000);
+		const timer = window.setInterval(() => dispatch({ type: 'TICK_RESEND_COOLDOWN' }), 1000);
 		return () => window.clearInterval(timer);
 	}, [state.resendCooldownSeconds, dispatch]);
 
@@ -170,31 +170,31 @@ export const ReportPage = observer(() => {
 		if (state.flowStep === 'selection') return;
 
 		if (!state.selectedType) {
-			dispatch({type: 'GO_TO_SELECTION'});
+			dispatch({ type: 'GO_TO_SELECTION' });
 			return;
 		}
 
 		if (state.flowStep === 'verification' && !state.email.trim()) {
-			dispatch({type: 'GO_TO_EMAIL'});
+			dispatch({ type: 'GO_TO_EMAIL' });
 			return;
 		}
 
 		if (state.flowStep === 'details' && !state.ticket) {
-			dispatch({type: 'GO_TO_EMAIL'});
+			dispatch({ type: 'GO_TO_EMAIL' });
 			return;
 		}
 
 		if (state.flowStep === 'complete' && !state.successReportId) {
-			dispatch({type: 'GO_TO_SELECTION'});
+			dispatch({ type: 'GO_TO_SELECTION' });
 		}
 	}, [state.flowStep, state.selectedType, state.email, state.ticket, state.successReportId]);
 
 	React.useEffect(() => {
-		window.scrollTo({top: 0, behavior: 'smooth'});
+		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}, [state.flowStep]);
 
 	const onSelectType = React.useCallback((type: ReportType) => {
-		dispatch({type: 'SELECT_TYPE', reportType: type});
+		dispatch({ type: 'SELECT_TYPE', reportType: type });
 	}, []);
 
 	const sendVerificationCode = React.useCallback(async () => {
@@ -203,40 +203,40 @@ export const ReportPage = observer(() => {
 		const normalizedEmail = state.email.trim();
 
 		if (!normalizedEmail) {
-			dispatch({type: 'SET_ERROR', message: t`Please provide an email address.`});
+			dispatch({ type: 'SET_ERROR', message: t`Please provide an email address.` });
 			return;
 		}
 
 		if (!EMAIL_REGEX.test(normalizedEmail)) {
-			dispatch({type: 'SET_ERROR', message: t`Please enter a valid email address.`});
+			dispatch({ type: 'SET_ERROR', message: t`Please enter a valid email address.` });
 			return;
 		}
 
-		dispatch({type: 'SET_ERROR', message: null});
-		dispatch({type: 'SENDING_CODE', value: true});
+		dispatch({ type: 'SET_ERROR', message: null });
+		dispatch({ type: 'SENDING_CODE', value: true });
 		if (state.flowStep === 'verification') {
-			dispatch({type: 'START_RESEND_COOLDOWN', seconds: 30});
+			dispatch({ type: 'START_RESEND_COOLDOWN', seconds: 30 });
 		}
 
 		try {
 			await HttpClient.post({
 				url: Endpoints.DSA_REPORT_EMAIL_SEND,
-				body: {email: normalizedEmail},
+				body: { email: normalizedEmail },
 			});
 
-			dispatch({type: 'SET_EMAIL', email: normalizedEmail});
-			dispatch({type: 'GO_TO_VERIFICATION'});
+			dispatch({ type: 'SET_EMAIL', email: normalizedEmail });
+			dispatch({ type: 'GO_TO_VERIFICATION' });
 
 			if (state.flowStep === 'verification') {
-				ToastActionCreators.createToast({type: 'success', children: t`Code resent`});
+				ToastActionCreators.createToast({ type: 'success', children: t`Code resent` });
 			}
 		} catch (_error) {
-			dispatch({type: 'SET_ERROR', message: t`Failed to send verification code. Please try again.`});
+			dispatch({ type: 'SET_ERROR', message: t`Failed to send verification code. Please try again.` });
 			if (state.flowStep === 'verification') {
-				ToastActionCreators.createToast({type: 'error', children: t`Failed to resend code. Please try again.`});
+				ToastActionCreators.createToast({ type: 'error', children: t`Failed to resend code. Please try again.` });
 			}
 		} finally {
-			dispatch({type: 'SENDING_CODE', value: false});
+			dispatch({ type: 'SENDING_CODE', value: false });
 		}
 	}, [state.email, state.isSendingCode, state.isVerifying, state.isSubmitting, state.flowStep, t]);
 
@@ -246,37 +246,37 @@ export const ReportPage = observer(() => {
 		const code = state.verificationCode.trim().toUpperCase();
 
 		if (!code) {
-			dispatch({type: 'SET_ERROR', message: t`Enter the code before continuing.`});
+			dispatch({ type: 'SET_ERROR', message: t`Enter the code before continuing.` });
 			return;
 		}
 
 		if (!VERIFICATION_CODE_REGEX.test(code)) {
-			dispatch({type: 'SET_ERROR', message: t`Enter a code in the format ABCD-1234.`});
+			dispatch({ type: 'SET_ERROR', message: t`Enter a code in the format ABCD-1234.` });
 			return;
 		}
 
 		const normalizedEmail = state.email.trim();
 
 		if (!normalizedEmail || !EMAIL_REGEX.test(normalizedEmail)) {
-			dispatch({type: 'SET_ERROR', message: t`Please go back and enter a valid email address.`});
+			dispatch({ type: 'SET_ERROR', message: t`Please go back and enter a valid email address.` });
 			return;
 		}
 
-		dispatch({type: 'SET_ERROR', message: null});
-		dispatch({type: 'VERIFYING', value: true});
+		dispatch({ type: 'SET_ERROR', message: null });
+		dispatch({ type: 'VERIFYING', value: true });
 
 		try {
-			const response = await HttpClient.post<{ticket: string}>({
+			const response = await HttpClient.post<{ ticket: string }>({
 				url: Endpoints.DSA_REPORT_EMAIL_VERIFY,
-				body: {email: normalizedEmail, code},
+				body: { email: normalizedEmail, code },
 			});
 
-			dispatch({type: 'SET_TICKET', ticket: response.body.ticket});
-			dispatch({type: 'GO_TO_DETAILS'});
+			dispatch({ type: 'SET_TICKET', ticket: response.body.ticket });
+			dispatch({ type: 'GO_TO_DETAILS' });
 		} catch (_error) {
-			dispatch({type: 'SET_ERROR', message: t`The verification code is invalid or expired.`});
+			dispatch({ type: 'SET_ERROR', message: t`The verification code is invalid or expired.` });
 		} finally {
-			dispatch({type: 'VERIFYING', value: false});
+			dispatch({ type: 'VERIFYING', value: false });
 		}
 	}, [state.email, state.verificationCode, state.isSendingCode, state.isVerifying, state.isSubmitting, t]);
 
@@ -285,29 +285,29 @@ export const ReportPage = observer(() => {
 		if (state.isSubmitting || state.isSendingCode || state.isVerifying) return;
 
 		if (!state.ticket) {
-			dispatch({type: 'SET_ERROR', message: t`You must verify your email before submitting a report.`});
+			dispatch({ type: 'SET_ERROR', message: t`You must verify your email before submitting a report.` });
 			return;
 		}
 
-		dispatch({type: 'CLEAR_FIELD_ERRORS'});
+		dispatch({ type: 'CLEAR_FIELD_ERRORS' });
 
 		const reporterFullName = state.formValues.reporterFullName.trim();
 		const reporterCountry = state.formValues.reporterCountry;
-		const reporterFluxerTag = state.formValues.reporterFluxerTag.trim();
+		const reporterTag = state.formValues.reporterTag.trim();
 		const additionalInfo = state.formValues.additionalInfo.trim();
 
 		if (!state.formValues.category) {
-			dispatch({type: 'SET_ERROR', message: t`Select a violation category.`});
+			dispatch({ type: 'SET_ERROR', message: t`Select a violation category.` });
 			return;
 		}
 
 		if (!reporterFullName) {
-			dispatch({type: 'SET_ERROR', message: t`Provide your full legal name for the declaration.`});
+			dispatch({ type: 'SET_ERROR', message: t`Provide your full legal name for the declaration.` });
 			return;
 		}
 
 		if (!reporterCountry) {
-			dispatch({type: 'SET_ERROR', message: t`Select your country of residence.`});
+			dispatch({ type: 'SET_ERROR', message: t`Select your country of residence.` });
 			return;
 		}
 
@@ -319,7 +319,7 @@ export const ReportPage = observer(() => {
 			reporter_country_of_residence: reporterCountry,
 		};
 
-		if (reporterFluxerTag) payload.reporter_fluxer_tag = reporterFluxerTag;
+		if (reporterTag) payload.reporter_tag = reporterTag;
 		if (additionalInfo) payload.additional_info = additionalInfo;
 
 		switch (state.selectedType) {
@@ -328,12 +328,12 @@ export const ReportPage = observer(() => {
 				const normalized = normalizeLikelyUrl(raw);
 
 				if (!raw.trim()) {
-					dispatch({type: 'SET_ERROR', message: t`Please paste the message link you are reporting.`});
+					dispatch({ type: 'SET_ERROR', message: t`Please paste the message link you are reporting.` });
 					return;
 				}
 
 				if (!isValidHttpUrl(normalized)) {
-					dispatch({type: 'SET_ERROR', message: t`Please enter a valid message link URL.`});
+					dispatch({ type: 'SET_ERROR', message: t`Please enter a valid message link URL.` });
 					return;
 				}
 
@@ -351,7 +351,7 @@ export const ReportPage = observer(() => {
 				if (!userId && !userTag) {
 					dispatch({
 						type: 'SET_ERROR',
-						message: t`Provide either a user ID or a FluxerTag for the person you are reporting.`,
+						message: t`Provide either a user ID or a Tag for the person you are reporting.`,
 					});
 					return;
 				}
@@ -366,7 +366,7 @@ export const ReportPage = observer(() => {
 				const inviteCode = state.formValues.inviteCode.trim();
 
 				if (!guildId) {
-					dispatch({type: 'SET_ERROR', message: t`Please include the community (guild) ID you are reporting.`});
+					dispatch({ type: 'SET_ERROR', message: t`Please include the community (guild) ID you are reporting.` });
 					return;
 				}
 
@@ -376,25 +376,25 @@ export const ReportPage = observer(() => {
 			}
 		}
 
-		dispatch({type: 'SET_ERROR', message: null});
-		dispatch({type: 'SUBMITTING', value: true});
+		dispatch({ type: 'SET_ERROR', message: null });
+		dispatch({ type: 'SUBMITTING', value: true });
 
 		try {
-			const response = await HttpClient.post<{report_id: string}>({
+			const response = await HttpClient.post<{ report_id: string }>({
 				url: Endpoints.DSA_REPORT_CREATE,
 				body: payload,
 			});
 
-			dispatch({type: 'SUBMIT_SUCCESS', reportId: response.body.report_id});
+			dispatch({ type: 'SUBMIT_SUCCESS', reportId: response.body.report_id });
 		} catch (_error) {
 			const parsed = parseValidationErrors(_error);
 			if (parsed) {
-				dispatch({type: 'SET_FIELD_ERRORS', errors: parsed.fieldErrors});
-				dispatch({type: 'SET_ERROR', message: parsed.generalMessage});
+				dispatch({ type: 'SET_FIELD_ERRORS', errors: parsed.fieldErrors });
+				dispatch({ type: 'SET_ERROR', message: parsed.generalMessage });
 			} else {
-				dispatch({type: 'SET_ERROR', message: t`Something went wrong while submitting the report. Please try again.`});
+				dispatch({ type: 'SET_ERROR', message: t`Something went wrong while submitting the report. Please try again.` });
 			}
-			dispatch({type: 'SUBMITTING', value: false});
+			dispatch({ type: 'SUBMITTING', value: false });
 		}
 	}, [state, t]);
 
@@ -421,16 +421,16 @@ export const ReportPage = observer(() => {
 	const handleBreadcrumbSelect = (step: FlowStep) => {
 		switch (step) {
 			case 'selection':
-				dispatch({type: 'GO_TO_SELECTION'});
+				dispatch({ type: 'GO_TO_SELECTION' });
 				break;
 			case 'email':
-				dispatch({type: 'GO_TO_EMAIL'});
+				dispatch({ type: 'GO_TO_EMAIL' });
 				break;
 			case 'verification':
-				dispatch({type: 'GO_TO_VERIFICATION'});
+				dispatch({ type: 'GO_TO_VERIFICATION' });
 				break;
 			case 'details':
-				dispatch({type: 'GO_TO_DETAILS'});
+				dispatch({ type: 'GO_TO_DETAILS' });
 				break;
 			default:
 				break;
@@ -454,9 +454,9 @@ export const ReportPage = observer(() => {
 						email={state.email}
 						errorMessage={state.errorMessage}
 						isSending={state.isSendingCode}
-						onEmailChange={(value) => dispatch({type: 'SET_EMAIL', email: value})}
+						onEmailChange={(value) => dispatch({ type: 'SET_EMAIL', email: value })}
 						onSubmit={() => void sendVerificationCode()}
-						onStartOver={() => dispatch({type: 'GO_TO_SELECTION'})}
+						onStartOver={() => dispatch({ type: 'GO_TO_SELECTION' })}
 					/>
 				);
 
@@ -469,13 +469,13 @@ export const ReportPage = observer(() => {
 						isVerifying={state.isVerifying}
 						isResending={state.isSendingCode}
 						resendCooldownSeconds={state.resendCooldownSeconds}
-						onChangeEmail={() => dispatch({type: 'GO_TO_EMAIL'})}
+						onChangeEmail={() => dispatch({ type: 'GO_TO_EMAIL' })}
 						onResend={() => void sendVerificationCode()}
 						onVerify={() => void verifyCode()}
 						onCodeChange={(value) =>
-							dispatch({type: 'SET_VERIFICATION_CODE', code: formatVerificationCodeInput(value)})
+							dispatch({ type: 'SET_VERIFICATION_CODE', code: formatVerificationCodeInput(value) })
 						}
-						onStartOver={() => dispatch({type: 'GO_TO_SELECTION'})}
+						onStartOver={() => dispatch({ type: 'GO_TO_SELECTION' })}
 					/>
 				);
 
@@ -490,10 +490,10 @@ export const ReportPage = observer(() => {
 						errorMessage={state.errorMessage}
 						canSubmit={canSubmit}
 						isSubmitting={state.isSubmitting}
-						onFieldChange={(field, value) => dispatch({type: 'SET_FORM_FIELD', field, value})}
+						onFieldChange={(field, value) => dispatch({ type: 'SET_FORM_FIELD', field, value })}
 						onSubmit={() => void handleSubmit()}
-						onStartOver={() => dispatch({type: 'RESET_ALL'})}
-						onBack={() => dispatch({type: 'GO_TO_VERIFICATION'})}
+						onStartOver={() => dispatch({ type: 'RESET_ALL' })}
+						onBack={() => dispatch({ type: 'GO_TO_VERIFICATION' })}
 						messageLinkOk={messageLinkOk}
 						userTargetOk={userTargetOk}
 						guildTargetOk={guildTargetOk}
@@ -501,7 +501,7 @@ export const ReportPage = observer(() => {
 				);
 
 			case 'complete':
-				return state.successReportId ? <ReportStepComplete onStartOver={() => dispatch({type: 'RESET_ALL'})} /> : null;
+				return state.successReportId ? <ReportStepComplete onStartOver={() => dispatch({ type: 'RESET_ALL' })} /> : null;
 
 			default:
 				return null;

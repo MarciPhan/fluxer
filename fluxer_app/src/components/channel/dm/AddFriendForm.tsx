@@ -17,28 +17,28 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans, useLingui} from '@lingui/react/macro';
-import {WarningCircleIcon} from '@phosphor-icons/react';
-import {clsx} from 'clsx';
-import {observer} from 'mobx-react-lite';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { WarningCircleIcon } from '@phosphor-icons/react';
+import { clsx } from 'clsx';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import * as RelationshipActionCreators from '~/actions/RelationshipActionCreators';
-import {APIErrorCodes} from '~/Constants';
-import {Input} from '~/components/form/Input';
-import {openClaimAccountModal} from '~/components/modals/ClaimAccountModal';
-import {StatusSlate} from '~/components/modals/shared/StatusSlate';
-import {Button} from '~/components/uikit/Button/Button';
+import { APIErrorCodes } from '~/Constants';
+import { Input } from '~/components/form/Input';
+import { openClaimAccountModal } from '~/components/modals/ClaimAccountModal';
+import { StatusSlate } from '~/components/modals/shared/StatusSlate';
+import { Button } from '~/components/uikit/Button/Button';
 import MobileLayoutStore from '~/stores/MobileLayoutStore';
 import UserStore from '~/stores/UserStore';
-import {getApiErrorCode} from '~/utils/ApiErrorUtils';
+import { getApiErrorCode } from '~/utils/ApiErrorUtils';
 import styles from './AddFriendForm.module.css';
 
 interface AddFriendFormProps {
 	onSuccess?: () => void;
 }
 
-export const AddFriendForm: React.FC<AddFriendFormProps> = observer(({onSuccess}) => {
-	const {t} = useLingui();
+export const AddFriendForm: React.FC<AddFriendFormProps> = observer(({ onSuccess }) => {
+	const { t } = useLingui();
 
 	const [input, setInput] = React.useState('');
 	const [isLoading, setIsLoading] = React.useState(false);
@@ -55,7 +55,7 @@ export const AddFriendForm: React.FC<AddFriendFormProps> = observer(({onSuccess}
 				actions={[
 					{
 						text: <Trans>Claim Account</Trans>,
-						onClick: () => openClaimAccountModal({force: true}),
+						onClick: () => openClaimAccountModal({ force: true }),
 						variant: 'primary',
 					},
 				]}
@@ -89,12 +89,12 @@ export const AddFriendForm: React.FC<AddFriendFormProps> = observer(({onSuccess}
 				return t`You cannot send friend requests to bots.`;
 			case APIErrorCodes.CANNOT_SEND_FRIEND_REQUEST_TO_SELF:
 				return t`You cannot send a friend request to yourself.`;
-			case APIErrorCodes.NO_USERS_WITH_FLUXERTAG_EXIST:
-				return t`No user found with that FluxerTag.`;
+			case APIErrorCodes.NO_USERS_WITH_TAG_EXIST:
+				return t`No user found with that Tag.`;
 			case APIErrorCodes.ALREADY_FRIENDS:
 				return t`You are already friends with this user.`;
 			case APIErrorCodes.DISCRIMINATOR_REQUIRED:
-				return t`Please enter a valid FluxerTag (Username#0000).`;
+				return t`Please enter a valid Tag (Username#0000).`;
 			default:
 				return t`Unable to send friend request. Please try again.`;
 		}
@@ -107,7 +107,7 @@ export const AddFriendForm: React.FC<AddFriendFormProps> = observer(({onSuccess}
 
 		if (!username || !discriminator || !/^\d{4}$/.test(discriminator)) {
 			setResultStatus('error');
-			setErrorCode(APIErrorCodes.NO_USERS_WITH_FLUXERTAG_EXIST);
+			setErrorCode(APIErrorCodes.NO_USERS_WITH_TAG_EXIST);
 			return;
 		}
 
@@ -157,7 +157,7 @@ export const AddFriendForm: React.FC<AddFriendFormProps> = observer(({onSuccess}
 						resultStatus === 'error' && styles.inputError,
 					)}
 					disabled={isLoading}
-					aria-label={t`Friend's FluxerTag`}
+					aria-label={t`Friend's Tag`}
 					rightElement={!isMobile ? submitButton : undefined}
 				/>
 				{isMobile && submitButton}

@@ -17,20 +17,20 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {useLingui} from '@lingui/react/macro';
-import {StarIcon} from '@phosphor-icons/react';
-import {clsx} from 'clsx';
-import {AnimatePresence, motion} from 'framer-motion';
-import {observer} from 'mobx-react-lite';
+import { useLingui } from '@lingui/react/macro';
+import { StarIcon } from '@phosphor-icons/react';
+import { clsx } from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import * as ContextMenuActionCreators from '~/actions/ContextMenuActionCreators';
-import {FavoritesGuildContextMenu} from '~/components/uikit/ContextMenu/FavoritesGuildContextMenu';
+import { FavoritesGuildContextMenu } from '~/components/uikit/ContextMenu/FavoritesGuildContextMenu';
 import FocusRing from '~/components/uikit/FocusRing/FocusRing';
-import {Tooltip} from '~/components/uikit/Tooltip/Tooltip';
-import {useHover} from '~/hooks/useHover';
-import {useMergeRefs} from '~/hooks/useMergeRefs';
-import {useLocation} from '~/lib/router';
-import {Routes} from '~/Routes';
+import { Tooltip } from '~/components/uikit/Tooltip/Tooltip';
+import { useHover } from '~/hooks/useHover';
+import { useMergeRefs } from '~/hooks/useMergeRefs';
+import { useLocation } from '~/lib/router';
+import { Routes } from '~/Routes';
 import AccessibilityStore from '~/stores/AccessibilityStore';
 import MobileLayoutStore from '~/stores/MobileLayoutStore';
 import SelectedChannelStore from '~/stores/SelectedChannelStore';
@@ -41,8 +41,8 @@ interface FavoritesButtonProps {
 	className?: string;
 }
 
-export const FavoritesButton = observer(({className}: FavoritesButtonProps = {}) => {
-	const {t} = useLingui();
+export const FavoritesButton = observer(({ className }: FavoritesButtonProps = {}) => {
+	const { t } = useLingui();
 	const [hoverRef, isHovering] = useHover();
 	const buttonRef = React.useRef<HTMLButtonElement | null>(null);
 	const iconRef = React.useRef<HTMLDivElement | null>(null);
@@ -70,7 +70,7 @@ export const FavoritesButton = observer(({className}: FavoritesButtonProps = {})
 	const handleContextMenu = (event: React.MouseEvent) => {
 		event.preventDefault();
 		event.stopPropagation();
-		ContextMenuActionCreators.openFromEvent(event, ({onClose}) => <FavoritesGuildContextMenu onClose={onClose} />);
+		ContextMenuActionCreators.openFromEvent(event, ({ onClose }) => <FavoritesGuildContextMenu onClose={onClose} />);
 	};
 
 	const indicatorHeight = isSelected ? 40 : isHovering ? 20 : 8;
@@ -85,7 +85,7 @@ export const FavoritesButton = observer(({className}: FavoritesButtonProps = {})
 			<FocusRing offset={-2} focusTarget={buttonRef} ringTarget={iconRef}>
 				<button
 					type="button"
-					className={clsx(styles.fluxerButton, className)}
+					className={clsx(styles.appHomeButton, className)}
 					aria-label={t`Favorites`}
 					aria-pressed={isSelected}
 					onClick={handleSelect}
@@ -98,9 +98,9 @@ export const FavoritesButton = observer(({className}: FavoritesButtonProps = {})
 								<motion.span
 									className={styles.guildIndicatorBar}
 									initial={false}
-									animate={{opacity: 1, scale: 1, height: indicatorHeight}}
-									exit={{opacity: 0, scale: 0}}
-									transition={{duration: 0.2, ease: [0.25, 0.1, 0.25, 1]}}
+									animate={{ opacity: 1, scale: 1, height: indicatorHeight }}
+									exit={{ opacity: 0, scale: 0 }}
+									transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
 								/>
 							</div>
 						)}
@@ -108,11 +108,11 @@ export const FavoritesButton = observer(({className}: FavoritesButtonProps = {})
 					<div className={styles.relative}>
 						<motion.div
 							ref={iconRef}
-							className={clsx(styles.fluxerButtonIcon, isSelected && styles.fluxerButtonIconSelected)}
-							animate={{borderRadius: isActive ? '30%' : '50%'}}
+							className={clsx(styles.appHomeButtonIcon, isSelected && styles.appHomeButtonIconSelected)}
+							animate={{ borderRadius: isActive ? '30%' : '50%' }}
 							initial={false}
-							transition={{duration: 0.07, ease: 'easeOut'}}
-							whileHover={{borderRadius: '30%'}}
+							transition={{ duration: 0.07, ease: 'easeOut' }}
+							whileHover={{ borderRadius: '30%' }}
 						>
 							<StarIcon weight="fill" className={styles.favoritesIcon} />
 						</motion.div>

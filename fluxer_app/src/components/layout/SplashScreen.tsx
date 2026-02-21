@@ -17,14 +17,14 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {AnimatePresence, motion} from 'framer-motion';
-import {observer} from 'mobx-react-lite';
+import { AnimatePresence, motion } from 'framer-motion';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
-import {FluxerIcon} from '~/components/icons/FluxerIcon';
 import ConnectionStore from '~/stores/ConnectionStore';
 import DeveloperOptionsStore from '~/stores/DeveloperOptionsStore';
 import InitializationStore from '~/stores/InitializationStore';
-import {NativeDragRegion} from './NativeDragRegion';
+import NepornuOfficialLogo from '~/images/nepornu-logo-official.svg';
+import { NativeDragRegion } from './NativeDragRegion';
 import styles from './SplashScreen.module.css';
 
 const SPLASH_SCREEN_DELAY = 10000;
@@ -52,18 +52,19 @@ export const SplashScreen = observer(() => {
 const SplashScreenContent = observer(() => {
 	return (
 		<motion.div
-			initial={{opacity: 0}}
-			animate={{opacity: 1}}
-			exit={{opacity: 0}}
-			transition={{duration: 0.5}}
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			transition={{ duration: 0.5 }}
 			className={styles.splashOverlay}
 		>
 			<NativeDragRegion className={styles.topDragRegion} />
 			<div className={styles.splashContent}>
 				<div className={styles.iconWrapper}>
 					<div className={styles.iconPulse} />
-					<FluxerIcon className={styles.icon} />
+					<img src={NepornuOfficialLogo} alt="NePornu" className={styles.icon} />
 				</div>
+				<p className={styles.logoTagline}>Nebuď na to sám</p>
 			</div>
 		</motion.div>
 	);

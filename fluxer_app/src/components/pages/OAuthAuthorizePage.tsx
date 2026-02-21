@@ -36,7 +36,7 @@ import {Spinner} from '~/components/uikit/Spinner';
 import {Tooltip} from '~/components/uikit/Tooltip/Tooltip';
 import {useAuthLayoutContext} from '~/contexts/AuthLayoutContext';
 import {Endpoints} from '~/Endpoints';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import FluxerWordmarkMonochrome from '~/images/fluxer-logo-wordmark-monochrome.svg?react';
 import http, {HttpError} from '~/lib/HttpClient';
 import {Logger} from '~/lib/Logger';
@@ -99,7 +99,7 @@ const OAuthAuthorizePage: React.FC = observer(() => {
 
 	const {setShowLogoSide} = useAuthLayoutContext();
 
-	useFluxerDocumentTitle(t`Authorize Application`);
+	useAppDocumentTitle(t`Authorize Application`);
 
 	React.useLayoutEffect(() => {
 		setShowLogoSide(false);

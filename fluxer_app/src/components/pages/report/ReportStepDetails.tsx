@@ -17,13 +17,13 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans, useLingui} from '@lingui/react/macro';
+import { Trans, useLingui } from '@lingui/react/macro';
 import type React from 'react';
-import {Input, Textarea} from '~/components/form/Input';
-import {Select, type SelectOption} from '~/components/form/Select';
-import {Button} from '~/components/uikit/Button/Button';
+import { Input, Textarea } from '~/components/form/Input';
+import { Select, type SelectOption } from '~/components/form/Select';
+import { Button } from '~/components/uikit/Button/Button';
 import styles from '../ReportPage.module.css';
-import type {FormValues, ReportType} from './types';
+import type { FormValues, ReportType } from './types';
 
 type Props = {
 	selectedType: ReportType;
@@ -60,7 +60,7 @@ export const ReportStepDetails: React.FC<Props> = ({
 	userTargetOk,
 	guildTargetOk,
 }) => {
-	const {t} = useLingui();
+	const { t } = useLingui();
 	const hasFieldErrors = Object.values(fieldErrors).some((value) => Boolean(value));
 	const showGeneralError = Boolean(errorMessage && !hasFieldErrors);
 
@@ -210,12 +210,12 @@ export const ReportStepDetails: React.FC<Props> = ({
 					/>
 
 					<Input
-						label={t`Your FluxerTag (optional)`}
+						label={t`Your Tag (optional)`}
 						type="text"
-						value={formValues.reporterFluxerTag}
-						onChange={(e) => onFieldChange('reporterFluxerTag', e.target.value)}
+						value={formValues.reporterTag}
+						onChange={(e) => onFieldChange('reporterTag', e.target.value)}
 						placeholder="username#1234"
-						error={fieldErrors.reporterFluxerTag}
+						error={fieldErrors.reporterTag}
 					/>
 
 					<Textarea

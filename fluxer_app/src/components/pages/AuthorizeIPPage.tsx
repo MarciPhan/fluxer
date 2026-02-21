@@ -26,7 +26,7 @@ import * as AuthenticationActionCreators from '~/actions/AuthenticationActionCre
 import {VerificationResult} from '~/actions/AuthenticationActionCreators';
 import {AuthRouterLink} from '~/components/auth/AuthRouterLink';
 import {Spinner} from '~/components/uikit/Spinner';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import {useHashParam} from '~/hooks/useHashParam';
 import {createVerificationError, type VerificationError, VerificationErrorType} from '~/types/VerificationError';
 import styles from './AuthorizeIPPage.module.css';
@@ -48,7 +48,7 @@ const AuthorizeIPPage = observer(function AuthorizeIPPage() {
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [error, setError] = useState<VerificationError | null>(null);
 
-	useFluxerDocumentTitle(t`Authorize IP`);
+	useAppDocumentTitle(t`Authorize IP`);
 
 	const token = useHashParam('token');
 

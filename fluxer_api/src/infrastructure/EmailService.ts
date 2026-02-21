@@ -1,46 +1,58 @@
-/*
- * Copyright (C) 2026 Fluxer Contributors
- *
- * This file is part of Fluxer.
- *
- * Fluxer is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * Fluxer is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
- */
-
 import sgMail from '@sendgrid/mail';
-import {Config} from '~/Config';
-import type {IEmailService} from '~/infrastructure/IEmailService';
-import {Logger} from '~/Logger';
-import type {IUserRepository} from '~/user/IUserRepository';
-import {EmailI18nService} from './EmailI18nService';
+import nodemailer from 'nodemailer';
+import { Config } from '~/Config';
+import type { IEmailService } from '~/infrastructure/IEmailService';
+import { Logger } from '~/Logger';
+import type { IUserRepository } from '~/user/IUserRepository';
+import { EmailI18nService } from './EmailI18nService';
 
 export class EmailService implements IEmailService {
 	private readonly appBaseUrl: string;
 	private readonly marketingBaseUrl: string;
 	private readonly emailI18n: EmailI18nService;
+	private transporter: nodemailer.Transporter | null = null;
+	private useSendGrid = false;
 
 	constructor(private readonly userRepository: IUserRepository) {
 		this.appBaseUrl = Config.endpoints.webApp;
 		this.marketingBaseUrl = Config.endpoints.marketing;
 		this.emailI18n = new EmailI18nService();
 
-		if (this.isEmailEnabled()) {
-			sgMail.setApiKey(Config.email.apiKey!);
+		const emailCfg = Config.email;
+		const smtp = (emailCfg as any).smtp;
+		Logger.info(
+			{ emailEnabled: emailCfg.enabled, hasApiKey: !!emailCfg.apiKey, smtpHost: smtp?.host, smtpUser: smtp?.user, hasSmtpPass: !!smtp?.pass },
+			'EmailService init — config check',
+		);
+
+		if (emailCfg.enabled) {
+			if (emailCfg.apiKey) {
+				sgMail.setApiKey(emailCfg.apiKey);
+				this.useSendGrid = true;
+				Logger.info('EmailService: Using SendGrid');
+			} else if (smtp?.host) {
+				this.transporter = nodemailer.createTransport({
+					host: smtp.host,
+					port: smtp.port || 587,
+					secure: smtp.secure || false,
+					auth: {
+						user: smtp.user,
+						pass: smtp.pass,
+					},
+					debug: true,
+					logger: true,
+				});
+				Logger.info({ host: smtp.host, port: smtp.port || 587 }, 'EmailService: SMTP transporter created');
+			} else {
+				Logger.warn('EmailService: email enabled but no SendGrid key and no SMTP host configured');
+			}
+		} else {
+			Logger.info({ rawEnabled: emailCfg.enabled }, 'EmailService: email disabled');
 		}
 	}
 
 	private isEmailEnabled(): boolean {
-		return Config.email.enabled && !!(Config.email.apiKey && Config.email.fromEmail);
+		return Config.email.enabled && (this.useSendGrid || !!this.transporter);
 	}
 
 	private async sendEmailWithTemplate(
@@ -51,7 +63,7 @@ export class EmailService implements IEmailService {
 	): Promise<boolean> {
 		if (!this.isEmailEnabled()) {
 			Logger.info(
-				{logContext},
+				{ logContext },
 				`Email service disabled. Would have sent:\nTo: ${email}\nSubject: ${subject}\n\n${body}`,
 			);
 			return true;
@@ -333,38 +345,52 @@ export class EmailService implements IEmailService {
 	}
 
 	private async sendEmail(to: string, subject: string, textBody: string): Promise<boolean> {
-		if (!this.isEmailEnabled()) return false;
-
+		Logger.info({ to, subject }, 'sendEmail: starting send process');
 		const user = await this.userRepository.findByEmail(to);
 		if (user?.emailBounced) {
 			Logger.warn(
-				{email: to, userId: user.id},
+				{ email: to, userId: user.id },
 				'Refusing to send email to bounced address - email marked as hard bounced',
 			);
 			return false;
 		}
 
 		try {
-			const msg: sgMail.MailDataRequired = {
-				to,
-				from: {
-					email: Config.email.fromEmail,
-					name: Config.email.fromName,
-				},
-				subject,
-				text: textBody,
-				trackingSettings: {
-					clickTracking: {
-						enable: false,
-						enableText: false,
-					},
-				},
+			const from = {
+				email: Config.email.fromEmail!,
+				name: Config.email.fromName!,
 			};
-			await sgMail.send(msg);
-			Logger.debug({to}, 'Email sent successfully via SendGrid');
+
+			if (this.useSendGrid) {
+				const msg: sgMail.MailDataRequired = {
+					to,
+					from,
+					subject,
+					text: textBody,
+					trackingSettings: {
+						clickTracking: {
+							enable: false,
+							enableText: false,
+						},
+					},
+				};
+				await sgMail.send(msg);
+				Logger.info({ to }, 'Email sent successfully via SendGrid');
+			} else if (this.transporter) {
+				Logger.info({ to, from: from.email }, 'Attempting to send email via SMTP transporter');
+				await this.transporter.sendMail({
+					from: `"${from.name}" <${from.email}>`,
+					to,
+					subject,
+					text: textBody,
+				});
+				Logger.info({ to }, 'Email sent successfully via SMTP');
+			} else {
+				Logger.error('EmailService: No transporter or SendGrid configured but sendEmail called');
+			}
 			return true;
-		} catch (error) {
-			Logger.error({error}, 'Error sending email via SendGrid');
+		} catch (error: any) {
+			Logger.error({ error: error.message, stack: error.stack, to }, 'Error sending email');
 			return false;
 		}
 	}

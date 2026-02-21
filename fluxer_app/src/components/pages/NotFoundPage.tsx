@@ -19,19 +19,19 @@
 
 import {Trans} from '@lingui/react/macro';
 import {observer} from 'mobx-react-lite';
-import {FluxerIcon} from '~/components/icons/FluxerIcon';
+import {AppIcon} from '~/components/icons/AppIcon';
 import {Button} from '~/components/uikit/Button/Button';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import {Link} from '~/lib/router';
 import {Routes} from '~/Routes';
 import styles from './NotFoundPage.module.css';
 
 export const NotFoundPage = observer(function NotFoundPage() {
-	useFluxerDocumentTitle('Not Found');
+	useAppDocumentTitle('Not Found');
 
 	return (
 		<div className={styles.container}>
-			<FluxerIcon className={styles.icon} />
+			<AppIcon className={styles.icon} />
 			<div className={styles.content}>
 				<h1 className={styles.title}>
 					<Trans>404: Page Not Found</Trans>

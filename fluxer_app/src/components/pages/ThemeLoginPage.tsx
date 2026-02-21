@@ -33,7 +33,7 @@ import {AuthRouterLink} from '~/components/auth/AuthRouterLink';
 import {DesktopDeepLinkPrompt} from '~/components/auth/DesktopDeepLinkPrompt';
 import {HandoffCodeDisplay} from '~/components/auth/HandoffCodeDisplay';
 import MfaScreen from '~/components/auth/MfaScreen';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import type {LoginSuccessPayload} from '~/hooks/useLoginFlow';
 import {useThemeExists} from '~/hooks/useThemeExists';
 import {useLocation, useParams} from '~/lib/router';
@@ -159,7 +159,7 @@ const ThemeLoginPageContainer = observer(() => {
 	const loginState = AuthenticationStore.loginState;
 	const {themeId} = useParams() as {themeId: string};
 
-	useFluxerDocumentTitle(t`Apply Theme`);
+	useAppDocumentTitle(t`Apply Theme`);
 
 	const themeStatus = useThemeExists(themeId);
 

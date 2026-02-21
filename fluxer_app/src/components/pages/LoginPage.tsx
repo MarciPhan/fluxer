@@ -27,7 +27,7 @@ import {AuthLoginLayout} from '~/components/auth/AuthLoginLayout';
 import {AuthRouterLink} from '~/components/auth/AuthRouterLink';
 import {HandoffCodeDisplay} from '~/components/auth/HandoffCodeDisplay';
 import MfaScreen from '~/components/auth/MfaScreen';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import type {LoginSuccessPayload} from '~/hooks/useLoginFlow';
 import {useLocation} from '~/lib/router';
 import AccountManager from '~/stores/AccountManager';
@@ -126,7 +126,7 @@ const LoginPageContainer = observer(() => {
 	const {t} = useLingui();
 	const loginState = AuthenticationStore.loginState;
 
-	useFluxerDocumentTitle(t`Log in`);
+	useAppDocumentTitle(t`Log in`);
 
 	switch (loginState) {
 		case 'default':

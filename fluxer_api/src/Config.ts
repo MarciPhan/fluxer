@@ -19,7 +19,7 @@
 
 import process from 'node:process';
 
-import {z} from '~/Schema';
+import { z } from '~/Schema';
 
 function required(key: string): string {
 	const value = process.env[key];
@@ -156,6 +156,13 @@ const ConfigSchema = z.object({
 		webhookPublicKey: z.string().optional(),
 		fromEmail: z.string(),
 		fromName: z.string(),
+		smtp: z.object({
+			host: z.string().optional(),
+			port: z.number().optional(),
+			user: z.string().optional(),
+			pass: z.string().optional(),
+			secure: z.boolean().optional(),
+		}),
 	}),
 
 	sms: z.object({
@@ -389,8 +396,15 @@ function loadConfig() {
 			enabled: optionalBool('EMAIL_ENABLED'),
 			apiKey: optional('SENDGRID_API_KEY'),
 			webhookPublicKey: optional('SENDGRID_WEBHOOK_PUBLIC_KEY'),
-			fromEmail: optional('SENDGRID_FROM_EMAIL') || 'noreply@fluxer.app',
-			fromName: optional('SENDGRID_FROM_NAME') || 'Fluxer',
+			fromEmail: optional('SENDGRID_FROM_EMAIL') || optional('SMTP_FROM_EMAIL') || 'noreply@nepornu.cz',
+			fromName: optional('SENDGRID_FROM_NAME') || optional('SMTP_FROM_NAME') || 'NePornu',
+			smtp: {
+				host: optional('SMTP_HOST'),
+				port: optionalInt('SMTP_PORT', 587),
+				user: optional('SMTP_USER'),
+				pass: optional('SMTP_PASS'),
+				secure: optionalBool('SMTP_SECURE', false),
+			},
 		},
 
 		sms: {
@@ -406,16 +420,16 @@ function loadConfig() {
 			hcaptcha:
 				optional('HCAPTCHA_SITE_KEY') && optional('HCAPTCHA_SECRET_KEY')
 					? {
-							siteKey: required('HCAPTCHA_SITE_KEY'),
-							secretKey: required('HCAPTCHA_SECRET_KEY'),
-						}
+						siteKey: required('HCAPTCHA_SITE_KEY'),
+						secretKey: required('HCAPTCHA_SECRET_KEY'),
+					}
 					: undefined,
 			turnstile:
 				optional('TURNSTILE_SITE_KEY') && optional('TURNSTILE_SECRET_KEY')
 					? {
-							siteKey: required('TURNSTILE_SITE_KEY'),
-							secretKey: required('TURNSTILE_SECRET_KEY'),
-						}
+						siteKey: required('TURNSTILE_SITE_KEY'),
+						secretKey: required('TURNSTILE_SECRET_KEY'),
+					}
 					: undefined,
 		},
 
@@ -440,19 +454,19 @@ function loadConfig() {
 			webhookSecret: optional('STRIPE_WEBHOOK_SECRET'),
 			prices: optionalBool('STRIPE_ENABLED')
 				? {
-						monthlyUsd: optional('STRIPE_PRICE_ID_MONTHLY_USD'),
-						monthlyEur: optional('STRIPE_PRICE_ID_MONTHLY_EUR'),
-						yearlyUsd: optional('STRIPE_PRICE_ID_YEARLY_USD'),
-						yearlyEur: optional('STRIPE_PRICE_ID_YEARLY_EUR'),
-						visionaryUsd: optional('STRIPE_PRICE_ID_VISIONARY_USD'),
-						visionaryEur: optional('STRIPE_PRICE_ID_VISIONARY_EUR'),
-						giftVisionaryUsd: optional('STRIPE_PRICE_ID_GIFT_VISIONARY_USD'),
-						giftVisionaryEur: optional('STRIPE_PRICE_ID_GIFT_VISIONARY_EUR'),
-						gift1MonthUsd: optional('STRIPE_PRICE_ID_GIFT_1_MONTH_USD'),
-						gift1MonthEur: optional('STRIPE_PRICE_ID_GIFT_1_MONTH_EUR'),
-						gift1YearUsd: optional('STRIPE_PRICE_ID_GIFT_1_YEAR_USD'),
-						gift1YearEur: optional('STRIPE_PRICE_ID_GIFT_1_YEAR_EUR'),
-					}
+					monthlyUsd: optional('STRIPE_PRICE_ID_MONTHLY_USD'),
+					monthlyEur: optional('STRIPE_PRICE_ID_MONTHLY_EUR'),
+					yearlyUsd: optional('STRIPE_PRICE_ID_YEARLY_USD'),
+					yearlyEur: optional('STRIPE_PRICE_ID_YEARLY_EUR'),
+					visionaryUsd: optional('STRIPE_PRICE_ID_VISIONARY_USD'),
+					visionaryEur: optional('STRIPE_PRICE_ID_VISIONARY_EUR'),
+					giftVisionaryUsd: optional('STRIPE_PRICE_ID_GIFT_VISIONARY_USD'),
+					giftVisionaryEur: optional('STRIPE_PRICE_ID_GIFT_VISIONARY_EUR'),
+					gift1MonthUsd: optional('STRIPE_PRICE_ID_GIFT_1_MONTH_USD'),
+					gift1MonthEur: optional('STRIPE_PRICE_ID_GIFT_1_MONTH_EUR'),
+					gift1YearUsd: optional('STRIPE_PRICE_ID_GIFT_1_YEAR_USD'),
+					gift1YearEur: optional('STRIPE_PRICE_ID_GIFT_1_YEAR_EUR'),
+				}
 				: undefined,
 		},
 
@@ -483,7 +497,7 @@ function loadConfig() {
 		auth: {
 			sudoModeSecret: required('SUDO_MODE_SECRET'),
 			passkeys: {
-				rpName: optional('PASSKEY_RP_NAME') || 'Fluxer',
+				rpName: optional('PASSKEY_RP_NAME') || 'NePornu',
 				rpId: optional('PASSKEY_RP_ID') || extractHostname(webAppEndpoint),
 				allowedOrigins: passkeyAllowedOrigins,
 			},

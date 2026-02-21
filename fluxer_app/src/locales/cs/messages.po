@@ -894,8 +894,8 @@ msgstr "<0/> zahájil(a) hovor."
 
 #. placeholder {0}: guild.name
 #: src/components/layout/GuildLayout.tsx:131
-msgid "<0>{0}</0> is currently only accessible to Fluxer staff members"
-msgstr "<0>{0}</0> je momentálně dostupný jen zaměstnancům Fluxeru"
+msgid "<0>{0}</0> is currently only accessible to NePornu staff members"
+msgstr ""
 
 #. placeholder {0}: targetUser.tag
 #: src/components/modals/TimeoutMemberSheet.tsx:118
@@ -1201,8 +1201,8 @@ msgstr "30 sekund"
 msgid "4 hours"
 msgstr "4 hodiny"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:196
-#: src/components/modals/FluxerTagChangeModal.tsx:222
+#: src/components/modals/TagChangeModal.tsx:196
+#: src/components/modals/TagChangeModal.tsx:222
 msgid "4-digit tag"
 msgstr "4místná značka"
 
@@ -1382,6 +1382,14 @@ msgstr "Přístup k vývojářským nástrojům"
 msgid "Access granted"
 msgstr "Přístup povolen"
 
+#: src/components/modals/tabs/VoiceTab.tsx:212
+msgid "Access is needed to list the available microphones and speakers."
+msgstr ""
+
+#: src/components/modals/tabs/VideoTab.tsx:127
+msgid "Access is needed to your camera before we can list it here."
+msgstr ""
+
 #: src/components/modals/channelTabs/ChannelPermissionsTab.tsx:723
 #: src/components/modals/channelTabs/ChannelPermissionsTab.tsx:864
 msgid "Access Overrides"
@@ -1416,6 +1424,11 @@ msgstr "Účet se zdá být vytvořen pouze pro spamování"
 #: src/components/modals/ClaimAccountModal.tsx:107
 msgid "Account claimed successfully"
 msgstr "Účet byl úspěšně nárokován"
+
+#: src/components/popouts/UserProfileShared.tsx:97
+#: src/components/popouts/UserProfileShared.tsx:128
+msgid "Account Created"
+msgstr "Účet vytvořen"
 
 #: src/components/modals/tabs/DeveloperOptionsTab/AccountPremiumTab.tsx:54
 msgid "Account State Overrides"
@@ -1939,8 +1952,8 @@ msgid "All Status Types"
 msgstr "Všechny typy stavů"
 
 #: src/components/modals/tabs/LanguageTab.tsx:193
-msgid "All translations are currently LLM-generated with minimal human revision. We'd love to get real people to help us localize Fluxer into your language! To do so, send an email to <0>i18n@fluxer.app</0> and we'll be happy to accept your contributions."
-msgstr "Všechny překlady jsou aktuálně generovány LLM s minimální lidskou revizí. Rádi bychom získali skutečné lidi, kteří nám pomohou lokalizovat Fluxer do vašeho jazyka! Pokud máte zájem, pošlete e-mail na <0>i18n@fluxer.app</0> a rádi přijmeme vaše příspěvky."
+msgid "All translations are currently LLM-generated with minimal human revision. We'd love to get real people to help us localize NePornu into your language! To do so, send an email to <0>i18n@fluxer.app</0> and we'll be happy to accept your contributions."
+msgstr ""
 
 #: src/components/modals/guildTabs/GuildAuditLogTab.tsx:201
 #: src/components/modals/guildTabs/GuildAuditLogTab.tsx:365
@@ -1999,18 +2012,6 @@ msgstr "Povolit přímé zprávy od ostatních členů této komunity"
 msgid "Allow Flexible Text Channel Names"
 msgstr "Povolit flexibilní názvy textových kanálů"
 
-#: src/components/modals/tabs/VideoTab.tsx:122
-msgid "Allow Fluxer to access your camera in System Settings → Privacy & Security → Camera to preview and select devices."
-msgstr "Povolte Fluxeru přístup ke kameře v Nastavení systému → Soukromí a zabezpečení → Kamera, abyste mohli zobrazit náhled a vybrat zařízení."
-
-#: src/components/modals/tabs/VoiceTab.tsx:202
-msgid "Allow Fluxer to access your microphone in System Settings → Privacy & Security → Microphone."
-msgstr "Povolte Fluxeru přístup k mikrofonu v Nastavení systému → Soukromí a zabezpečení → Mikrofon."
-
-#: src/components/modals/tabs/VoiceTab.tsx:206
-msgid "Allow Fluxer to access your microphone. Check your browser address bar or settings to enable permissions."
-msgstr "Povolte Fluxeru přístup k mikrofonu. Zkontrolujte adresní řádek nebo nastavení pro povolení oprávnění."
-
 #: src/components/modals/tabs/PrivacySafetyTab/ConnectionsTab.tsx:96
 msgid "Allow for all communities"
 msgstr "Povolit pro všechny komunity"
@@ -2054,6 +2055,18 @@ msgstr "Povolit výběr veškerého textového obsahu v aplikaci."
 #: src/components/modals/tabs/AccessibilityTab/VisualTab.tsx:103
 msgid "Allow selecting all text content in the app. This setting is disabled on mobile to prevent interference with touch interactions."
 msgstr "Povolit výběr veškerého textového obsahu v aplikaci. Toto nastavení je na mobilu vypnuto, aby nerušilo dotykové ovládání."
+
+#: src/components/modals/tabs/VoiceTab.tsx:202
+msgid "Allow the app to access your microphone in System Settings → Privacy & Security → Microphone."
+msgstr ""
+
+#: src/components/modals/tabs/VoiceTab.tsx:206
+msgid "Allow the app to access your microphone. Check your browser address bar or settings to enable permissions."
+msgstr ""
+
+#: src/components/modals/tabs/VideoTab.tsx:122
+msgid "Allow the application to access your camera in System Settings → Privacy & Security → Camera to preview and select devices."
+msgstr ""
 
 #: src/components/modals/tabs/FeatureFlagsTab.tsx:43
 msgid "Allow users to create, install, and manage custom emoji and sticker packs."
@@ -2293,6 +2306,11 @@ msgstr "Stav aplikace"
 msgid "App zoom level"
 msgstr "Úroveň přiblížení aplikace"
 
+#: src/Constants.tsx:148
+#: src/Constants.tsx:149
+msgid "Appearing offline"
+msgstr "Zobrazit se jako offline"
+
 #: src/components/channel/AutocompleteCommand.tsx:44
 msgid "Appends {content} to your message."
 msgstr "Přidá {content} k vaší zprávě."
@@ -2300,6 +2318,10 @@ msgstr "Přidá {content} k vaší zprávě."
 #: src/components/modals/utils/settingsConstants.tsx:117
 msgid "Application"
 msgstr "Aplikace"
+
+#: src/components/icons/AppIcon.tsx:31
+msgid "Application icon"
+msgstr "Ikona aplikace"
 
 #: src/components/modals/tabs/ApplicationsTab/application-detail/ApplicationHeader.tsx:56
 msgid "Application ID"
@@ -2317,6 +2339,10 @@ msgstr "Název aplikace"
 #: src/components/modals/tabs/ApplicationsTab/application-detail/ApplicationInfoSection.tsx:52
 msgid "Application name is required"
 msgstr "Název aplikace je povinný"
+
+#: src/components/icons/AppSymbol.tsx:31
+msgid "Application symbol"
+msgstr "Symbol aplikace"
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationDetail.tsx:266
 msgid "Application updated successfully"
@@ -2792,8 +2818,8 @@ msgid "Automatically play GIFs"
 msgstr "Automaticky přehrávat GIFy"
 
 #: src/components/modals/tabs/AccessibilityTab/AnimationTab.tsx:102
-msgid "Automatically play GIFs when Fluxer is focused"
-msgstr "Automaticky přehrávat GIFy, když má Fluxer fokus"
+msgid "Automatically play GIFs when NePornu is focused"
+msgstr ""
 
 #: src/components/modals/guildTabs/GuildModerationTab.tsx:211
 msgid "Automatically screen messages for explicit content in non-NSFW channels."
@@ -3029,6 +3055,10 @@ msgstr "Základní nastavení a povolené přesměrovací URI."
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:90
 msgid "Basic Text Inputs"
 msgstr "Základní textová pole"
+
+#: src/Constants.tsx:147
+msgid "Be right back"
+msgstr "Hned jsem zpět"
 
 #: src/components/modals/guildTabs/GuildAuditLogTab.utils.tsx:451
 msgid "Because {reason}."
@@ -3334,8 +3364,8 @@ msgid "Buying Visionary will cancel your current {currentAccessLabel} immediatel
 msgstr "Nákup Visionary okamžitě zruší váš aktuální {currentAccessLabel}. Je to jednorázový nákup s doživotním přístupem."
 
 #: src/components/modals/AddGuildModal.tsx:356
-msgid "By creating a community, you agree to follow and uphold the <0>Fluxer Community Guidelines</0>."
-msgstr "Vytvořením komunity souhlasíte s dodržováním <0>Pravidel komunity Fluxer</0>."
+msgid "By creating a community, you agree to follow and uphold the <0>NePornu Community Guidelines</0>."
+msgstr ""
 
 #: src/components/modals/components/PurchaseDisclaimer.tsx:39
 msgid "By purchasing, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@fluxer.app</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
@@ -3474,8 +3504,8 @@ msgstr "Nastavení kamery"
 #: src/components/modals/EmailChangeModal.tsx:262
 #: src/components/modals/EmailChangeModal.tsx:291
 #: src/components/modals/ExternalLinkWarningModal.tsx:94
-#: src/components/modals/FluxerTagChangeModal.tsx:112
-#: src/components/modals/FluxerTagChangeModal.tsx:253
+#: src/components/modals/TagChangeModal.tsx:112
+#: src/components/modals/TagChangeModal.tsx:253
 #: src/components/modals/ForwardModal.tsx:359
 #: src/components/modals/guildTabs/GuildBansTab.tsx:101
 #: src/components/modals/guildTabs/GuildRolesTab.tsx:615
@@ -3515,7 +3545,7 @@ msgstr "Zrušit"
 msgid "Cancel Friend Request"
 msgstr "Zrušit žádost o přátelství"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:107
+#: src/components/modals/TagChangeModal.tsx:107
 msgid "Cancel if you want to choose a different username instead."
 msgstr "Zrušit, pokud chcete místo toho vybrat jiné uživatelské jméno."
 
@@ -3647,15 +3677,6 @@ msgstr "Změnit e-mail"
 msgid "Change emoji"
 msgstr "Změnit emoji"
 
-#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:52
-#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:62
-msgid "Change FluxerTag"
-msgstr "Změnit FluxerTag"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:153
-msgid "Change FluxerTag form"
-msgstr "Formulář pro změnu FluxerTagu"
-
 #: src/components/bottomsheets/DMBottomSheet.tsx:435
 #: src/components/uikit/ContextMenu/items/RelationshipMenuItems.tsx:154
 msgid "Change Friend Nickname"
@@ -3712,6 +3733,15 @@ msgstr "Změnit vlastníka"
 msgid "Change Password"
 msgstr "Změnit heslo"
 
+#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:52
+#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:62
+msgid "Change Tag"
+msgstr "Změnit Tag"
+
+#: src/components/modals/TagChangeModal.tsx:153
+msgid "Change Tag form"
+msgstr "Formulář pro změnu Tagu"
+
 #: src/components/modals/EmailChangeModal.tsx:184
 msgid "Change your email"
 msgstr "Změňte svůj e-mail"
@@ -3719,10 +3749,6 @@ msgstr "Změňte svůj e-mail"
 #: src/components/modals/utils/settingsSearchIndex.ts:96
 msgid "Change your email address"
 msgstr "Změnit e-mailovou adresu"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:154
-msgid "Change your FluxerTag"
-msgstr "Změňte svůj FluxerTag"
 
 #: src/components/channel/AutocompleteCommand.tsx:49
 msgid "Change your nickname in this community."
@@ -3739,6 +3765,10 @@ msgstr "Změňte heslo pro zabezpečení účtu"
 #: src/components/modals/utils/settingsSearchIndex.ts:45
 msgid "Change your profile picture"
 msgstr "Změnit profilový obrázek"
+
+#: src/components/modals/TagChangeModal.tsx:154
+msgid "Change your Tag"
+msgstr "Změnit svůj Tag"
 
 #: src/components/modals/utils/settingsSearchIndex.ts:59
 msgid "Change your username"
@@ -3935,9 +3965,9 @@ msgstr "Kanál: {0}."
 msgid "Channels"
 msgstr "Kanály"
 
-#: src/Constants.tsx:143
-msgid "Charged up on 1.21 gigawatts, ready to talk"
-msgstr "Nabitý na 1,21 gigawattu, připraven mluvit"
+#: src/Constants.tsx:145
+msgid "Charged up, ready to talk"
+msgstr "Nabito, připraven mluvit"
 
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildEmbedSplashUploadField.tsx:79
 msgid "Chat Embed Background"
@@ -3948,9 +3978,9 @@ msgid "Chat font scaling"
 msgstr "Měřítko písma chatu"
 
 #: src/components/BootstrapErrorScreen.tsx:57
-#: src/components/NetworkErrorScreen.tsx:45
-msgid "Check our <0>Bluesky (@fluxer.app)</0> for status updates."
-msgstr "Sledujte náš <0>Bluesky (@fluxer.app)</0> pro aktualizace stavu."
+#: src/components/NetworkErrorScreen.tsx:44
+msgid "Check our <0>status page (status.nepornu.cz)</0> for status updates."
+msgstr "Zkontrolujte naši <0>stránku stavu (status.nepornu.cz)</0> pro aktuální informace."
 
 #: src/components/modals/ShareThemeModal.tsx:117
 msgid "Check out my custom theme!"
@@ -4060,8 +4090,8 @@ msgid "Choose what {clientLabel} can do in your community. Uncheck any permissio
 msgstr "Vyberte, co může {clientLabel} dělat ve vaší komunitě. Zrušte zaškrtnutí oprávnění, která nechcete udělit."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:105
-msgid "Choose what Fluxer remembers about your window between restarts and reloads on this device."
-msgstr "Určete, co si Fluxer má pamatovat o tomto okně mezi restartem a obnovením na tomto zařízení."
+msgid "Choose what NePornu remembers about your window between restarts and reloads on this device."
+msgstr ""
 
 #: src/components/modals/guildTabs/GuildModerationTab.tsx:183
 msgid "Choose what members must have before they can post or DM community members."
@@ -4136,8 +4166,8 @@ msgid "Claim your account to call"
 msgstr "Převzte svůj účet pro volání"
 
 #: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:49
-msgid "Claim your account to change your FluxerTag"
-msgstr "Převzmi účet a změň svůj FluxerTag"
+msgid "Claim your account to change your Tag"
+msgstr "Pro změnu Tagu si nejprve ověřte účet"
 
 #: src/components/modals/tabs/ApplicationsTab/index.tsx:146
 msgid "Claim your account to create applications."
@@ -4161,13 +4191,16 @@ msgstr "Převzte svůj účet, abyste se připojili k hlasovým kanálům, kter�
 #: src/components/modals/components/plutonium/GiftSection.tsx:61
 #: src/components/modals/components/plutonium/PricingSection.tsx:63
 #: src/components/modals/components/plutonium/VisionarySection.tsx:62
-#: src/components/modals/components/PlutoniumContent.tsx:99
-msgid "Claim your account to purchase Fluxer Plutonium."
-msgstr "Získejte svůj účet pro nákup Fluxer Plutonium."
+msgid "Claim your account to purchase NePornu Plutonium."
+msgstr ""
 
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:112
-msgid "Claim your account to purchase or redeem Fluxer Plutonium."
-msgstr "Získejte svůj účet pro nákup nebo uplatnění Fluxer Plutonium."
+msgid "Claim your account to purchase or redeem NePornu Plutonium."
+msgstr ""
+
+#: src/components/modals/components/PlutoniumContent.tsx:99
+msgid "Claim your account to purchase Plutonium."
+msgstr ""
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:239
 msgid "Claim your account to redeem or manage Plutonium gift codes."
@@ -4290,8 +4323,8 @@ msgid "Click \"Create Code\" to generate your first code."
 msgstr "Klikni na „Vytvořit kód“ a vygeneruj první kód."
 
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:71
-msgid "Click \"Open Settings\" to open System Settings, then enable Fluxer in Input Monitoring."
-msgstr "Klikni na „Otevřít nastavení“, otevři systémová nastavení a povol Fluxer v monitorování vstupu."
+msgid "Click \"Open Settings\" to open System Settings, then enable NePornu in Input Monitoring."
+msgstr ""
 
 #: src/components/modals/tabs/ComponentGalleryTab/ButtonsTab.tsx:58
 msgid "Click any button to see toast notifications with feedback."
@@ -4695,7 +4728,7 @@ msgstr "Nejprve dokonči výzvu bezpečnostního klíče."
 
 #: src/components/modals/tabs/MyProfileTab/PremiumBadgeSettings.tsx:72
 msgid "Completely hide your Plutonium badge from other users"
-msgstr "Úplně skryj svůj odznak Plutonium před ostatními"
+msgstr "Úplně skryj svůj odznak před ostatními"
 
 #: src/components/modals/utils/settingsSearchIndex.ts:804
 msgid "Component Gallery"
@@ -4938,8 +4971,8 @@ msgstr "Kontextová menu otevřeš levým kliknutím (na tlačítka) nebo pravý
 #: src/components/modals/BackupCodesRegenerateModal.tsx:63
 #: src/components/modals/BackupCodesViewModal.tsx:66
 #: src/components/modals/DeviceRevokeModal.tsx:68
-#: src/components/modals/FluxerTagChangeModal.tsx:111
-#: src/components/modals/FluxerTagChangeModal.tsx:256
+#: src/components/modals/TagChangeModal.tsx:111
+#: src/components/modals/TagChangeModal.tsx:256
 #: src/components/modals/MfaTotpDisableModal.tsx:78
 #: src/components/modals/MfaTotpEnableModal.tsx:105
 #: src/components/modals/PasswordChangeModal.tsx:99
@@ -5147,10 +5180,9 @@ msgid "Copy File Link"
 msgstr "Zkopírovat odkaz na soubor"
 
 #: src/components/modals/tabs/BlockedUsersTab.tsx:98
-#: src/components/modals/UserProfileActionsSheet.tsx:208
 #: src/components/modals/UserProfileModal.tsx:1149
-msgid "Copy FluxerTag"
-msgstr "Zkopírovat FluxerTag"
+msgid "Copy Tag"
+msgstr ""
 
 #: src/components/uikit/ContextMenu/MediaContextMenu.tsx:351
 msgid "Copy GIF"
@@ -5207,6 +5239,10 @@ msgstr "Zkopírovat odkaz na zprávu"
 #: src/components/channel/sticker-picker/VirtualRow.tsx:201
 msgid "Copy Sticker ID"
 msgstr "Zkopírovat ID nálepky"
+
+#: src/components/modals/UserProfileActionsSheet.tsx:208
+msgid "Copy Tag"
+msgstr "Zkopírovat Tag"
 
 #: src/components/channel/MessageActionBar.tsx:555
 #: src/components/channel/MessageActionBar.tsx:686
@@ -5327,8 +5363,8 @@ msgid "Create and manage applications and bots for your account."
 msgstr "Vytvářejte a spravujte aplikace a boty pro svůj účet."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:119
-msgid "Create and share custom emoji and sticker packs with Fluxer Plutonium."
-msgstr "Vytvářejte a sdílejte vlastní balíčky emoji a nálepek s Fluxer Plutonium."
+msgid "Create and share custom emoji and sticker packs with NePornu Plutonium."
+msgstr ""
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationCreateModal.tsx:80
 #: src/components/modals/tabs/ApplicationsTab/index.tsx:149
@@ -5437,8 +5473,8 @@ msgid "Create Webhook"
 msgstr "Vytvořit webhook"
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationsList.tsx:43
-msgid "Create your first application to get started with the Fluxer API."
-msgstr "Vytvořte první aplikaci a začněte s Fluxer API."
+msgid "Create your first application to get started with the NePornu API."
+msgstr ""
 
 #: src/utils/PermissionUtils.tsx:254
 msgid "Create, edit, or delete channels and categories."
@@ -5597,11 +5633,6 @@ msgstr "Momentálně zamítnuto"
 msgid "Currently showing"
 msgstr "Momentálně zobrazeno"
 
-#: src/Constants.tsx:146
-#: src/Constants.tsx:147
-msgid "Currently stuck in 1885, appearing offline"
-msgstr "Aktuálně uvízl v roce 1885, zobrazuje se jako offline"
-
 #: src/components/bottomsheets/ChannelBottomSheet.tsx:461
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:1047
 #: src/components/bottomsheets/DMBottomSheet.tsx:608
@@ -5721,7 +5752,7 @@ msgstr "Přizpůsobit pomocí CSS"
 msgid "Customize your 4-digit tag (#{discriminator}) to your liking with Plutonium"
 msgstr "Přizpůsobte si čtyřmístný tag (#{discriminator}) podle sebe s Plutoniem"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:246
+#: src/components/modals/TagChangeModal.tsx:246
 msgid "Customize your 4-digit tag or keep it when changing your username"
 msgstr "Přizpůsobte si čtyřmístný tag nebo si ho ponechte při změně uživatelského jména"
 
@@ -6371,8 +6402,8 @@ msgid "Direct Message"
 msgstr "Soukromá zpráva"
 
 #: src/components/channel/dm/DMList.tsx:819
-#: src/components/layout/guild-list/FluxerButton.tsx:65
-#: src/components/layout/guild-list/FluxerButton.tsx:70
+#: src/components/layout/guild-list/AppHomeButton.tsx:65
+#: src/components/layout/guild-list/AppHomeButton.tsx:70
 #: src/components/modals/GuildPrivacySettingsModal.tsx:60
 #: src/components/modals/tabs/PrivacySafetyTab/ConnectionsTab.tsx:182
 #: src/components/modals/utils/settingsSearchIndex.ts:557
@@ -6676,7 +6707,7 @@ msgstr "Oznámení soukromých zpráv"
 msgid "DM Settings"
 msgstr "Nastavení DM"
 
-#: src/Constants.tsx:131
+#: src/Constants.tsx:133
 msgid "Do Not Disturb"
 msgstr "Nerušit"
 
@@ -6779,8 +6810,8 @@ msgstr "Stáhnout desktopovou aplikaci"
 
 #: src/components/layout/guild-list/DownloadButton.tsx:46
 #: src/components/layout/guild-list/DownloadButton.tsx:50
-msgid "Download Fluxer"
-msgstr "Stáhnout Fluxer"
+msgid "Download NePornu"
+msgstr ""
 
 #: src/components/channel/embeds/media/MediaContainer.tsx:132
 msgid "Download media"
@@ -7500,8 +7531,8 @@ msgid "Enter the 6-digit code sent to your phone."
 msgstr "Zadejte šestimístný kód zaslaný na váš telefon."
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:254
-msgid "Enter the API endpoint of the Fluxer instance you want to connect to."
-msgstr "Zadejte koncový bod API instance Fluxer, ke které se chcete připojit."
+msgid "Enter the API endpoint of the NePornu instance you want to connect to."
+msgstr ""
 
 #: src/components/pages/ReportPage.tsx:249
 msgid "Enter the code before continuing."
@@ -8412,125 +8443,81 @@ msgstr "Vlajky"
 msgid "Flexible text channel names"
 msgstr "Flexibilní názvy textových kanálů"
 
-#: src/components/popouts/UserProfileShared.tsx:97
-msgid "Fluxer"
-msgstr "Fluxer"
-
-#: src/components/icons/FluxerIcon.tsx:31
-msgid "Fluxer application icon"
-msgstr "Ikona aplikace Fluxer"
-
-#: src/components/icons/FluxerSymbol.tsx:31
-msgid "Fluxer application symbol"
-msgstr "Symbol aplikace Fluxer"
-
 #: src/components/modals/tabs/NotificationsTab/PushSettings.tsx:37
-msgid "Fluxer avoids sending push notifications to your mobile devices when you are at your computer. Use this setting to control how long you need to be inactive on desktop for before you receive push notifications, ranging from 1 minute to 10 minutes."
-msgstr "Fluxer se vyhýbá posílání push oznámení na mobilní zařízení, když jste u počítače. Nastavením určíte, jak dlouho musíte být neaktivní na desktopu, než obdržíte push oznámení, od 1 do 10 minut."
+msgid "NePornu avoids sending push notifications to your mobile devices when you are at your computer. Use this setting to control how long you need to be inactive on desktop for before you receive push notifications, ranging from 1 minute to 10 minutes."
+msgstr ""
 
 #: src/components/popouts/UserProfileBadges.tsx:93
-msgid "Fluxer Bug Hunter"
-msgstr "Fluxer lovec chyb"
+msgid "NePornu Bug Hunter"
+msgstr ""
 
 #: src/components/popouts/UserProfileBadges.tsx:75
-msgid "Fluxer Community Team"
-msgstr "Komunitní tým Fluxer"
+msgid "NePornu Community Team"
+msgstr ""
 
 #: src/components/modals/tabs/DevicesTab.tsx:98
-msgid "Fluxer Desktop"
-msgstr "Fluxer Desktop"
-
-#: src/components/BootstrapErrorScreen.tsx:49
-msgid "Fluxer failed to start properly. This could be due to corrupted data or a temporary issue."
-msgstr "Fluxer se nepodařilo správně spustit. Může jít o poškozená data nebo dočasný problém."
+msgid "NePornu Desktop"
+msgstr ""
 
 #: src/stores/NewDeviceMonitoringStore.tsx:186
-msgid "Fluxer has found a new audio input device named <0>{deviceName}</0>. Do you want to switch to it?"
-msgstr "Fluxer nalezl nové vstupní audio zařízení <0>{deviceName}</0>. Chcete na něj přepnout?"
+msgid "NePornu has found a new audio input device named <0>{deviceName}</0>. Do you want to switch to it?"
+msgstr ""
 
 #: src/stores/NewDeviceMonitoringStore.tsx:191
-msgid "Fluxer has found a new audio output device named <0>{deviceName}</0>. Do you want to switch to it?"
-msgstr "Fluxer nalezl nové výstupní audio zařízení <0>{deviceName}</0>. Chcete na něj přepnout?"
-
-#: src/components/popouts/UserProfileShared.tsx:128
-msgid "Fluxer Member Since"
-msgstr "Člen Fluxer od"
-
-#: src/components/modals/tabs/VoiceTab.tsx:212
-msgid "Fluxer needs access to list the available microphones and speakers."
-msgstr "Fluxer potřebuje přístup k zobrazení dostupných mikrofonů a reproduktorů."
+msgid "NePornu has found a new audio output device named <0>{deviceName}</0>. Do you want to switch to it?"
+msgstr ""
 
 #: src/components/alerts/ScreenRecordingPermissionDeniedModal.tsx:31
-msgid "Fluxer needs access to screen recording. Open System Settings → Privacy & Security → Screen Recording, allow Fluxer, and then try again."
-msgstr "Fluxer potřebuje přístup k nahrávání obrazovky. Otevřete Systémová nastavení → Soukromí a zabezpečení → Nahrávání obrazovky, povolte Fluxer a zkuste to znovu."
-
-#: src/components/modals/tabs/VideoTab.tsx:127
-msgid "Fluxer needs access to your camera before we can list it here."
-msgstr "Fluxer potřebuje přístup k vaší kameře, aby ji zde mohl zobrazit."
+msgid "NePornu needs access to screen recording. Open System Settings → Privacy & Security → Screen Recording, allow NePornu, and then try again."
+msgstr ""
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:43
-msgid "Fluxer needs access to your camera to enable video chat. Please grant camera permission in your browser settings and try again."
-msgstr "Fluxer potřebuje přístup ke kameře, aby zapnul video chat. Udělte prosím oprávnění ke kameře v nastavení prohlížeče a zkuste to znovu."
+msgid "NePornu needs access to your camera to enable video chat. Please grant camera permission in your browser settings and try again."
+msgstr ""
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:42
-msgid "Fluxer needs access to your camera. Allow camera access in your operating system privacy settings and restart the app."
-msgstr "Fluxer potřebuje přístup ke kameře. Povolení kamery nastavte v nastavení soukromí operačního systému a restartujte aplikaci."
+msgid "NePornu needs access to your camera. Allow camera access in your operating system privacy settings and restart the app."
+msgstr ""
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:32
-msgid "Fluxer needs access to your camera. Open System Settings → Privacy & Security → Camera, allow Fluxer, and then restart the app."
-msgstr "Fluxer potřebuje přístup ke kameře. Otevřete Systémová nastavení → Soukromí a zabezpečení → Kamera, povolte Fluxer a restartujte aplikaci."
+msgid "NePornu needs access to your camera. Open System Settings → Privacy & Security → Camera, allow NePornu, and then restart the app."
+msgstr ""
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:44
-msgid "Fluxer needs access to your microphone to enable voice chat. Please grant microphone permission in your browser settings and try again."
-msgstr "Fluxer potřebuje přístup k mikrofonu, aby mohl zapnout hlasový chat. Udělte prosím oprávnění v nastavení prohlížeče a zkuste to znovu."
+msgid "NePornu needs access to your microphone to enable voice chat. Please grant microphone permission in your browser settings and try again."
+msgstr ""
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:43
-msgid "Fluxer needs access to your microphone. Allow microphone access in your operating system privacy settings and restart the app."
-msgstr "Fluxer potřebuje přístup k mikrofonu. Povolení mikrofonu nastavte v nastavení soukromí operačního systému a restartujte aplikaci."
+msgid "NePornu needs access to your microphone. Allow microphone access in your operating system privacy settings and restart the app."
+msgstr ""
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:33
-msgid "Fluxer needs access to your microphone. Open System Settings → Privacy & Security → Microphone, allow Fluxer, and then restart the app."
-msgstr "Fluxer potřebuje přístup k mikrofonu. Otevřete Systémová nastavení → Soukromí a zabezpečení → Mikrofon, povolte Fluxer a restartujte aplikaci."
+msgid "NePornu needs access to your microphone. Open System Settings → Privacy & Security → Microphone, allow NePornu, and then restart the app."
+msgstr ""
 
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:64
-msgid "Fluxer needs Input Monitoring permission to keep push-to-talk and global shortcuts working while the window is in the background."
-msgstr "Fluxer potřebuje oprávnění sledovat vstupy, aby push-to-talk a globální zkratky fungovaly i v pozadí."
+msgid "NePornu needs Input Monitoring permission to keep push-to-talk and global shortcuts working while the window is in the background."
+msgstr ""
 
 #: src/components/modals/InputMonitoringCTAModal.tsx:76
-msgid "Fluxer needs permission to monitor keyboard and mouse input so that <0>Push-to-Talk</0> and <1>Global Shortcuts</1> work even when you're in another app or game."
-msgstr "Fluxer potřebuje oprávnění sledovat klávesnici a myš, aby <0>Push-to-Talk</0> a <1>Globální zkratky</1> fungovaly i v jiné aplikaci nebo hře."
+msgid "NePornu needs permission to monitor keyboard and mouse input so that <0>Push-to-Talk</0> and <1>Global Shortcuts</1> work even when you're in another app or game."
+msgstr ""
 
 #: src/components/popouts/UserProfileBadges.tsx:84
-msgid "Fluxer Partner"
-msgstr "Partner Fluxer"
+msgid "NePornu Partner"
+msgstr ""
 
-#: src/components/modals/components/PlutoniumContent.tsx:193
-#: src/components/modals/PremiumModal.tsx:34
-#: src/components/modals/utils/settingsConstants.tsx:147
 #: src/components/popouts/UserProfileBadges.tsx:99
-msgid "Fluxer Plutonium"
-msgstr "Fluxer Plutonium"
+msgid "NePornu Plutonium"
+msgstr ""
 
 #: src/components/popouts/UserProfileBadges.tsx:66
-msgid "Fluxer Staff"
-msgstr "Tým Fluxer"
+msgid "NePornu Staff"
+msgstr ""
 
 #: src/components/modals/tabs/NotificationsTab/Notifications.tsx:114
-msgid "Fluxer uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
-msgstr "Fluxer používá push oznámení, když je nainstalován jako mobilní PWA. Registrace zajistí, že brána může vaše zařízení kontaktovat i když je prohlížeč v pozadí."
-
-#: src/components/modals/FluxerTagChangeModal.tsx:170
-#: src/components/modals/tabs/ApplicationsTab/application-detail/BotProfileSection.tsx:104
-msgid "FluxerTag"
-msgstr "FluxerTag"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:97
-msgid "FluxerTag already taken"
-msgstr "FluxerTag je již obsazený"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:139
-msgid "FluxerTag updated"
-msgstr "FluxerTag aktualizován"
+msgid "NePornu uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
+msgstr ""
 
 #: src/stores/KeybindStore.ts:370
 msgid "Focus Text Area"
@@ -8874,8 +8861,8 @@ msgid "Friend Requests"
 msgstr "Žádosti o přátelství"
 
 #: src/components/channel/dm/AddFriendForm.tsx:160
-msgid "Friend's FluxerTag"
-msgstr "FluxerTag přítele"
+msgid "Friend's Tag"
+msgstr "Tag přítele"
 
 #: src/components/channel/dm/DMList.tsx:781
 #: src/utils/quick-switcher/QuickSwitcherModalUtils.tsx:87
@@ -8980,8 +8967,8 @@ msgid "Generate invite link"
 msgstr "Vytvořit odkaz na pozvání"
 
 #: src/components/modals/tabs/BetaCodesTab.tsx:340
-msgid "Generate up to {MAX_UNCLAIMED_BETA_CODES} unclaimed beta codes to invite friends to Fluxer. You can create 3 codes per week."
-msgstr "Vygenerujte až {MAX_UNCLAIMED_BETA_CODES} nevyzvednutých beta kódů k pozvání přátel do Fluxeru. Můžete vytvořit 3 kódy týdně."
+msgid "Generate up to {MAX_UNCLAIMED_BETA_CODES} unclaimed beta codes to invite friends to NePornu. You can create 3 codes per week."
+msgstr ""
 
 #: src/components/auth/HandoffCodeDisplay.tsx:49
 msgid "Generating code..."
@@ -9009,8 +8996,8 @@ msgid "Get desktop app"
 msgstr "Stáhnout desktopovou aplikaci"
 
 #: src/components/layout/app-layout/nagbars/MobileDownloadNagbar.tsx:50
-msgid "Get Fluxer on mobile to receive notifications on the go and stay connected with your friends anytime."
-msgstr "Získejte Fluxer na mobilu, abyste dostávali oznámení v pohybu a byli kdykoli ve spojení s přáteli."
+msgid "Get NePornu on mobile to receive notifications on the go and stay connected with your friends anytime."
+msgstr ""
 
 #: src/stores/KeybindStore.ts:407
 msgid "Get Help"
@@ -9026,7 +9013,7 @@ msgstr "Dostávejte oznámení, když obdržíte zprávy. Možná budete muset p
 
 #: src/components/alerts/FileSizeTooLargeModal.tsx:46
 #: src/components/modals/BackgroundImageGalleryModal.tsx:677
-#: src/components/modals/FluxerTagChangeModal.tsx:214
+#: src/components/modals/TagChangeModal.tsx:214
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:58
 #: src/components/modals/tabs/MyProfileTab/AvatarUploader.tsx:122
 #: src/components/modals/tabs/NotificationsTab/Sounds.tsx:82
@@ -9044,7 +9031,7 @@ msgstr "Pořiďte si Plutonium a odemkněte vyšší limity a exkluzivní funkce
 msgid "Get Plutonium to customize your tag"
 msgstr "Získejte Plutonium, abyste si mohli upravit štítek"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:192
+#: src/components/modals/TagChangeModal.tsx:192
 msgid "Get Plutonium to customize your tag or keep it when changing your username"
 msgstr "Získejte Plutonium, abyste si mohli upravit štítek nebo si ho ponechat při změně uživatelského jména"
 
@@ -9053,8 +9040,8 @@ msgid "Get prompted when new audio devices are connected"
 msgstr "Zobrazit výzvu při připojení nových zvukových zařízení"
 
 #: src/components/layout/app-layout/nagbars/DesktopDownloadNagbar.tsx:49
-msgid "Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies."
-msgstr "Získejte Fluxer desktopovou aplikaci pro systémové push-to-talk a pár dalších bonusů."
+msgid "Get the NePornu desktop app for system-wide push-to-talk and a few other goodies."
+msgstr "Získejte desktopovou aplikaci NePornu pro systémové push-to-talk a další vymoženosti."
 
 #: src/components/modals/MediaModal.tsx:756
 #: src/components/stickers/StickerGridItem.tsx:100
@@ -9600,16 +9587,16 @@ msgstr "Skrýt heslo"
 
 #: src/components/modals/tabs/MyProfileTab/PremiumBadgeSettings.tsx:71
 msgid "Hide Plutonium badge entirely"
-msgstr "Zcela skrýt odznak Plutonia"
+msgstr "Zcela skrýt odznak"
 
 #: src/components/modals/tabs/MyProfileTab/PremiumBadgeSettings.tsx:81
 msgid "Hide Plutonium purchase date"
-msgstr "Skrýt datum nákupu Plutonia"
+msgstr "Skrýt datum vytvoření účtu"
 
 #. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
 #: src/components/modals/tabs/MyProfileTab/PremiumBadgeSettings.tsx:80
 msgid "Hide Plutonium purchase date ({0})"
-msgstr "Skrýt datum nákupu Plutonia ({0})"
+msgstr "Skrýt datum vytvoření účtu ({0})"
 
 #: src/components/modals/tabs/AppearanceTab/MessagesTab.tsx:165
 msgid "Hide user avatars"
@@ -9655,10 +9642,6 @@ msgstr "Vyšší bitrate = lepší kvalita a větší náročnost na šířku p�
 #: src/utils/LocaleUtils.tsx:47
 msgid "Hindi"
 msgstr "hindština"
-
-#: src/components/modals/components/LogoutModal.tsx:31
-msgid "Hit 88mph"
-msgstr "Dosáhni 88 mph"
 
 #: src/components/modals/AddGuildModal.tsx:153
 msgid "Hobby Haven"
@@ -9782,8 +9765,8 @@ msgid "I understand"
 msgstr "Chápu"
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:309
-msgid "I want to use a custom Fluxer instance"
-msgstr "Chci použít vlastní instanci Fluxeru"
+msgid "I want to use a custom NePornu instance"
+msgstr ""
 
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildIconUploadField.tsx:65
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildIconUploadField.tsx:78
@@ -9796,7 +9779,7 @@ msgstr "Ikona"
 msgid "Icon file is too large. Please choose a file smaller than 10MB."
 msgstr "Soubor ikony je příliš velký. Zvolte prosím soubor menší než 10 MB."
 
-#: src/Constants.tsx:132
+#: src/Constants.tsx:134
 msgid "Idle"
 msgstr "Neaktivní"
 
@@ -9952,7 +9935,7 @@ msgstr "za jednu sekundu"
 msgid "In the beginning, there was nothing. Then, there was #{0}. And it was good."
 msgstr "Zpočátku nebylo nic. Pak byl #{0}. A bylo to dobré."
 
-#: src/Constants.tsx:144
+#: src/Constants.tsx:146
 msgid "In the zone, please do not disturb"
 msgstr "Jsem v zóně, prosím nerušte"
 
@@ -9961,8 +9944,8 @@ msgid "in two days"
 msgstr "za dva dny"
 
 #: src/components/modals/tabs/VoiceTab.tsx:142
-msgid "In your browser, Push-to-Talk will only work when the Fluxer tab is focused. For system-wide Push-to-Talk that works even when gaming or using other apps, download the desktop app."
-msgstr "V prohlížeči funguje Push-to-Talk jen, když je karta Fluxer aktivní. Pro systémový Push-to-Talk, který funguje i při hraní nebo používání jiných aplikací, si stáhněte desktopovou aplikaci."
+msgid "In your browser, Push-to-Talk will only work when the application tab is focused. For system-wide Push-to-Talk that works even when gaming or using other apps, download the desktop app."
+msgstr ""
 
 #: src/utils/SearchUtils.ts:269
 msgid "in:"
@@ -10222,7 +10205,7 @@ msgstr "Invertované"
 msgid "Inverted button clicked!"
 msgstr "Invertované tlačítko stisknuto!"
 
-#: src/Constants.tsx:133
+#: src/Constants.tsx:135
 msgid "Invisible"
 msgstr "Neviditelný"
 
@@ -10492,13 +10475,13 @@ msgstr "Připojit se ke komunitě"
 msgid "Join community form"
 msgstr "Formulář pro připojení ke komunitě"
 
-#: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:97
-msgid "Join Fluxer HQ"
-msgstr "Připojte se k Fluxer HQ"
-
 #: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:94
-msgid "Join Fluxer HQ to chat with the team and stay up to date on the latest!"
-msgstr "Připojte se k Fluxer HQ, abyste mohli chatovat s týmem a byli v obraze o novinkách!"
+msgid "Join NePornu HQ"
+msgstr ""
+
+#: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:91
+msgid "Join NePornu HQ to chat with the team and stay up to date on the latest!"
+msgstr ""
 
 #: src/components/channel/InviteEmbed.tsx:201
 msgid "Join Group"
@@ -10807,8 +10790,8 @@ msgid "Latvia"
 msgstr "Lotyšsko"
 
 #: src/components/modals/tabs/AdvancedTab.tsx:88
-msgid "Launch Fluxer at login"
-msgstr "Spustit Fluxer při přihlášení"
+msgid "Launch NePornu at login"
+msgstr ""
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:122
 msgid "Learn about Plutonium"
@@ -11117,6 +11100,7 @@ msgid "Log in with a passkey"
 msgstr "Přihlásit se pomocí klíče"
 
 #: src/components/modals/components/DesktopSettingsView.tsx:346
+#: src/components/modals/components/LogoutModal.tsx:31
 #: src/components/modals/components/MobileSettingsView.tsx:357
 #: src/components/pages/PendingVerificationPage.tsx:151
 msgid "Log Out"
@@ -11315,8 +11299,8 @@ msgid "Manage Subscription"
 msgstr "Spravovat předplatné"
 
 #: src/components/modals/tabs/AccountSecurityTab/AccountTab.tsx:58
-msgid "Manage the email address you use to sign in to Fluxer"
-msgstr "Spravovat e-mailovou adresu, kterou používáte k přihlášení do Fluxeru"
+msgid "Manage the email address you use to sign in"
+msgstr ""
 
 #: src/utils/PermissionUtils.tsx:284
 #: src/utils/PermissionUtils.tsx:439
@@ -11440,7 +11424,7 @@ msgstr "Člen označen jako dočasný."
 msgid "Markers Below Slider"
 msgstr "Značky pod posuvníkem"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:182
+#: src/components/modals/TagChangeModal.tsx:182
 msgid "Marty_McFly"
 msgstr "Marty_McFly"
 
@@ -11584,7 +11568,7 @@ msgstr "Role člena aktualizovány"
 
 #: src/components/popouts/UserProfileShared.tsx:93
 msgid "Member Since"
-msgstr "Člen od"
+msgstr "Účet vytvořen"
 
 #: src/constants/AuditLogConstants.tsx:96
 msgid "Member Unbanned"
@@ -12357,6 +12341,10 @@ msgstr "Potřebujete účet?"
 msgid "Neighborhood Watch"
 msgstr "Hlídka sousedství"
 
+#: src/components/BootstrapErrorScreen.tsx:49
+msgid "NePornu failed to start properly. This could be due to corrupted data or a temporary issue."
+msgstr "Aplikaci se nepodařilo správně spustit. Může to být způsobeno poškozenými daty nebo dočasným problémem."
+
 #: src/components/pages/report/optionDescriptors.ts:102
 msgid "Netherlands"
 msgstr "Nizozemsko"
@@ -12829,8 +12817,8 @@ msgid "No Timer"
 msgstr "Žádný časovač"
 
 #: src/components/channel/dm/AddFriendForm.tsx:93
-msgid "No user found with that FluxerTag."
-msgstr "Uživatel s tímto FluxerTagem nebyl nalezen."
+msgid "No user found with that Tag."
+msgstr "Nebyl nalezen žádný uživatel s tímto Tagem."
 
 #: src/components/modals/guildTabs/GuildBansTab.tsx:178
 msgid "No users are currently banned from this community."
@@ -13046,7 +13034,7 @@ msgstr "Vypnuto"
 
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:287
 #: src/components/channel/ChannelMembers.tsx:108
-#: src/Constants.tsx:134
+#: src/Constants.tsx:136
 #: src/utils/MemberListUtils.ts:150
 #: src/utils/MemberListUtils.ts:188
 msgid "Offline"
@@ -13152,7 +13140,7 @@ msgstr "jednorázové, celoživotní"
 #: src/components/channel/ChannelMembers.tsx:106
 #: src/components/channel/dm/DMFriendsView.tsx:168
 #: src/components/channel/friends/views/FriendsList.tsx:95
-#: src/Constants.tsx:130
+#: src/Constants.tsx:132
 #: src/utils/MemberListUtils.ts:143
 #: src/utils/MemberListUtils.ts:182
 msgid "Online"
@@ -13211,6 +13199,10 @@ msgstr "Průhlednost"
 msgid "Open {altText} in full view"
 msgstr "Otevřít {altText} v celoobrazovkovém režimu"
 
+#: src/components/auth/DesktopDeepLinkPrompt.tsx:102
+msgid "Open app"
+msgstr ""
+
 #: src/components/auth/BrowserLoginHandoffModal.tsx:326
 msgid "Open browser"
 msgstr "Otevřít prohlížeč"
@@ -13252,10 +13244,6 @@ msgstr "Otevřít DM + komunity"
 msgid "Open DMs Only"
 msgstr "Otevřít jen DM"
 
-#: src/components/auth/DesktopDeepLinkPrompt.tsx:102
-msgid "Open Fluxer"
-msgstr "Otevřít Fluxer"
-
 #: src/components/channel/embeds/media/EmbedImage.tsx:187
 msgid "Open image in full view"
 msgstr "Otevřít obrázek v celoobrazovkovém zobrazení"
@@ -13269,13 +13257,13 @@ msgstr "Otevřít v prohlížeči"
 msgid "Open in Community"
 msgstr "Otevřít v komunitě"
 
-#: src/components/auth/DesktopDeepLinkPrompt.tsx:89
-msgid "Open in Fluxer for desktop"
-msgstr "Otevřít v desktopovém Fluxeru"
-
 #: src/components/channel/embeds/media/EmbedYouTube.tsx:117
 msgid "Open in new tab"
 msgstr "Otevřít v nové záložce"
+
+#: src/components/auth/DesktopDeepLinkPrompt.tsx:89
+msgid "Open in the desktop app"
+msgstr ""
 
 #: src/components/uikit/ContextMenu/MediaContextMenu.tsx:309
 msgid "Open Link"
@@ -13901,20 +13889,20 @@ msgstr "Zkontrolujte prosím doručenou poštu kvůli ověřovacímu e-mailu."
 
 #: src/components/modals/InputMonitoringCTAModal.tsx:53
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:51
-msgid "Please enable Fluxer in System Settings → Privacy & Security → Input Monitoring."
-msgstr "Povolte prosím Fluxer v systémovém nastavení → Soukromí a zabezpečení → Monitorování vstupu."
+msgid "Please enable NePornu in System Settings → Privacy & Security → Input Monitoring."
+msgstr ""
 
 #: src/components/pages/ReportPage.tsx:211
 msgid "Please enter a valid email address."
 msgstr "Zadejte prosím platnou e-mailovou adresu."
 
-#: src/components/channel/dm/AddFriendForm.tsx:97
-msgid "Please enter a valid FluxerTag (Username#0000)."
-msgstr "Zadejte prosím platný FluxerTag (Uživatelské jméno#0000)."
-
 #: src/components/pages/ReportPage.tsx:336
 msgid "Please enter a valid message link URL."
 msgstr "Zadejte prosím platnou URL odkazu na zprávu."
+
+#: src/components/channel/dm/AddFriendForm.tsx:97
+msgid "Please enter a valid Tag (Username#0000)."
+msgstr "Zadejte platný Tag (Jméno#0000)."
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:189
 msgid "Please enter an API endpoint."
@@ -13953,8 +13941,8 @@ msgid "Please try again later."
 msgstr "Zkuste to prosím později."
 
 #: src/components/channel/UnknownMessage.tsx:84
-msgid "Please update Fluxer to view this message."
-msgstr "Aktualizujte prosím Fluxer, abyste zobrazili tuto zprávu."
+msgid "Please update NePornu to view this message."
+msgstr ""
 
 #: src/components/modals/guildTabs/GuildEmojiTab.tsx:144
 msgid "Please upload JPEG, PNG, WebP, or GIF files only."
@@ -13978,6 +13966,9 @@ msgstr "Počkejte prosím na načtení cenových informací."
 #: src/components/channel/dm/DMList.tsx:729
 #: src/components/channel/dm/DMList.tsx:808
 #: src/components/modals/components/FeatureComparisonTable.tsx:41
+#: src/components/modals/components/PlutoniumContent.tsx:193
+#: src/components/modals/PremiumModal.tsx:34
+#: src/components/modals/utils/settingsConstants.tsx:147
 msgid "Plutonium"
 msgstr "Plutonium"
 
@@ -14086,8 +14077,8 @@ msgid "Preview"
 msgstr "Náhled"
 
 #: src/components/modals/tabs/DeveloperOptionsTab/TypographyTab.tsx:135
-msgid "Preview all available fonts, weights, and styles across different languages supported by Fluxer."
-msgstr "Prohlédněte si všechny dostupné fonty, řezy a styly v různých jazycích podporovaných Fluxerem."
+msgid "Preview all available fonts, weights, and styles across different languages supported by NePornu."
+msgstr ""
 
 #: src/components/modals/tabs/AccessibilityTab.tsx:97
 msgid "Preview Button"
@@ -14259,8 +14250,8 @@ msgid "Provide at least a user ID or a user tag."
 msgstr "Poskytněte alespoň ID uživatele nebo uživatelskou značku."
 
 #: src/components/pages/ReportPage.tsx:354
-msgid "Provide either a user ID or a FluxerTag for the person you are reporting."
-msgstr "Uveďte ID uživatele nebo FluxerTag osoby, kterou hlásíte."
+msgid "Provide either a user ID or a Tag for the person you are reporting."
+msgstr "Uveďte ID uživatele nebo Tag osoby, kterou hlásíte."
 
 #: src/components/pages/ReportPage.tsx:305
 msgid "Provide your full legal name for the declaration."
@@ -14841,7 +14832,7 @@ msgstr "Odstranit timeout"
 
 #: src/components/modals/tabs/MyProfileTab/PremiumBadgeSettings.tsx:83
 msgid "Remove when you first bought Plutonium from your badge"
-msgstr "Odstranit z odznaku, kdy jste poprvé koupili Plutonium"
+msgstr "Odstranit z odznaku, kdy jste poprvé vytvořili účet"
 
 #: src/components/modals/tabs/MyProfileTab/PremiumBadgeSettings.tsx:106
 msgid "Remove your Visionary ID badge"
@@ -15007,8 +14998,8 @@ msgid "Renews on <0>{renewalDate}</0>."
 msgstr "Obnovuje se <0>{renewalDate}</0>."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:116
-msgid "Reopen in maximized mode if that’s how you last used Fluxer."
-msgstr "Znovu otevřít ve maximalizovaném režimu, pokud jste Fluxer naposledy používali takto."
+msgid "Reopen in maximized mode if that’s how you last used NePornu."
+msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:86
 #: src/components/modals/BackgroundImageGalleryModal.tsx:395
@@ -15500,12 +15491,12 @@ msgid "Row"
 msgstr "Řádek"
 
 #: src/components/modals/tabs/AdvancedTab.tsx:85
-msgid "Run Fluxer automatically when your computer starts. Or don't. Your choice!"
-msgstr "Spouštět Fluxer automaticky při startu počítače. Nebo ne. Je to na vás!"
+msgid "Run NePornu automatically when your computer starts. Or don't. Your choice!"
+msgstr ""
 
 #: src/components/modals/tabs/KeybindsTab.tsx:93
-msgid "Run this shortcut even when Fluxer is not focused."
-msgstr "Tento zkratku spusťte i když Fluxer není v popředí."
+msgid "Run this shortcut even when NePornu is not focused."
+msgstr ""
 
 #: src/utils/LocaleUtils.tsx:60
 msgid "Russian"
@@ -17717,6 +17708,19 @@ msgstr "Systém: Světlý motiv (automaticky synchronizuje s preferencí tmavéh
 msgid "Tables"
 msgstr "Tabulky"
 
+#: src/components/modals/TagChangeModal.tsx:170
+#: src/components/modals/tabs/ApplicationsTab/application-detail/BotProfileSection.tsx:104
+msgid "Tag"
+msgstr "Tag"
+
+#: src/components/modals/TagChangeModal.tsx:97
+msgid "Tag already taken"
+msgstr "Tag je již obsazený"
+
+#: src/components/modals/TagChangeModal.tsx:139
+msgid "Tag updated"
+msgstr "Tag byl aktualizován"
+
 #. placeholder {0}: tags.length
 #: src/components/modals/meme-form/MemeFormFields.tsx:117
 msgid "Tags ({0}/{MAX_FAVORITE_MEME_TAGS})"
@@ -17811,13 +17815,13 @@ msgstr "Textové pole"
 msgid "Thai"
 msgstr "Thajština"
 
-#: src/components/modals/IARModal.tsx:187
-msgid "Thank you for helping keep Fluxer safe. Reports are reviewed by our Safety Team. False reports may result in action against your account."
-msgstr "Děkujeme, že pomáháte udržovat Fluxer bezpečný. Nahlášení prověřuje bezpečnostní tým. Nepravdivé reporty mohou vést k zásahu proti vašemu účtu."
-
 #: src/components/pages/report/ReportStepComplete.tsx:37
-msgid "Thank you for helping keep Fluxer safe. We'll review your report as soon as possible."
-msgstr "Děkujeme, že pomáháte udržovat Fluxer v bezpečí. Vaše hlášení zkontrolujeme co nejdříve."
+msgid "Thank you for helping keep NePornu safe. We'll review your report as soon as possible."
+msgstr ""
+
+#: src/components/modals/IARModal.tsx:187
+msgid "Thank you for helping keep the application safe. Reports are reviewed by our Safety Team. False reports may result in action against your account."
+msgstr ""
 
 #: src/components/form/ColorPickerField.tsx:274
 msgid "That doesn't look like a valid color. Try hex, rgb(), hsl(), or a CSS color name."
@@ -17884,10 +17888,6 @@ msgstr "Soubor, který se pokoušíte nahrát, překračuje limit 25 MB pro uži
 msgid "The file you're trying to upload exceeds the maximum size limit of 500 MB for Plutonium subscribers."
 msgstr "Soubor, který se pokoušíte nahrát, překračuje limit 500 MB pro předplatitele Plutonia."
 
-#: src/components/modals/FluxerTagChangeModal.tsx:101
-msgid "The FluxerTag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
-msgstr "FluxerTag <0>{fluxerTag}</0> je již obsazený. Pokračování automaticky přegeneruje váš diskriminátor."
-
 #: src/components/modals/tabs/PrivacySafetyTab/DataDeletionTab.tsx:71
 msgid "The job starts 24 hours after you confirm and can be canceled or restarted anytime"
 msgstr "Úkol začíná 24 hodin po potvrzení a lze ho kdykoli zrušit nebo restartovat"
@@ -17916,6 +17916,10 @@ msgstr "Role <0>\"{roleName}\"</0> momentálně nemohla být smazána. Zkuste to
 #: src/components/modals/AddGuildModal.tsx:183
 msgid "The Squad"
 msgstr "Parta"
+
+#: src/components/modals/TagChangeModal.tsx:101
+msgid "The Tag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
+msgstr "Tag <0>{fluxerTag}</0> je již obsazený. Pokračováním se automaticky změní váš diskriminátor."
 
 #: src/components/modals/tabs/PrivacySafetyTab/DataDeletionTab.tsx:74
 msgid "The time to complete depends on how many messages you have sent"
@@ -17992,8 +17996,8 @@ msgid "There's nothing more to see here."
 msgstr "Tady už není co vidět."
 
 #: src/components/modals/tabs/AuthorizedAppsTab.tsx:148
-msgid "These applications have been granted access to your Fluxer account."
-msgstr "Tyto aplikace získaly přístup k vašemu účtu Fluxer."
+msgid "These applications have been granted access to your NePornu account."
+msgstr ""
 
 #: src/components/modals/tabs/VoiceTab.tsx:403
 msgid "These settings use browser-native audio processing to improve call quality. For best results, keep all options enabled."
@@ -18206,8 +18210,8 @@ msgid "This is a custom emoji from a community. Ask the author for an invite to 
 msgstr "Toto je vlastní emoji z komunity. Požádejte autora o pozvánku, abyste ji mohli používat."
 
 #: src/components/emojis/EmojiAttributionSubtext.tsx:101
-msgid "This is a default emoji on Fluxer."
-msgstr "Toto je výchozí emoji na Fluxer."
+msgid "This is a default emoji on NePornu."
+msgstr ""
 
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:147
 msgid "This is an error message"
@@ -18613,10 +18617,6 @@ msgstr "Příliš mnoho požadavků. Zkuste to prosím později."
 msgid "Too Quiet"
 msgstr "Příliš tiché"
 
-#: src/Constants.tsx:145
-msgid "Took the DeLorean out, but I'll be back in time"
-msgstr "Vyjel jsem DeLoreanem, ale vrátím se včas"
-
 #: src/components/modals/tabs/DeveloperOptionsTab/index.tsx:61
 #: src/components/modals/tabs/DeveloperOptionsTab/Inline.tsx:56
 #: src/components/modals/utils/settingsConstants.tsx:316
@@ -18723,7 +18723,7 @@ msgstr "Zkuste to znovu"
 #: src/components/channel/ChannelSearchResults.tsx:663
 #: src/components/modals/channelTabs/ChannelInvitesTab.tsx:146
 #: src/components/modals/channelTabs/ChannelWebhooksTab.tsx:159
-#: src/components/NetworkErrorScreen.tsx:56
+#: src/components/NetworkErrorScreen.tsx:55
 msgid "Try Again"
 msgstr "Zkuste to znovu"
 
@@ -19904,7 +19904,7 @@ msgstr "Hlasitost uživatele"
 msgid "user, bot or webhook"
 msgstr "uživatel, bot nebo webhook"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:181
+#: src/components/modals/TagChangeModal.tsx:181
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:101
 #: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:44
 #: src/components/modals/utils/settingsSearchIndex.ts:57
@@ -19935,11 +19935,11 @@ msgstr "Uživatelské jméno smí mít nejvýše 32 znaků"
 msgid "Username#0000"
 msgstr "UživatelskéJméno#0000"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:163
+#: src/components/modals/TagChangeModal.tsx:163
 msgid "Usernames can only contain letters (a-z, A-Z), numbers (0-9), and underscores. Usernames are case-insensitive."
 msgstr "Uživatelská jména mohou obsahovat pouze písmena (a-z, A-Z), čísla (0-9) a podtržítka. Na velikosti písmen nezáleží."
 
-#: src/components/modals/FluxerTagChangeModal.tsx:158
+#: src/components/modals/TagChangeModal.tsx:158
 msgid "Usernames can only contain letters (a-z, A-Z), numbers (0-9), and underscores. Usernames are case-insensitive. You can pick your own 4-digit tag if it's available."
 msgstr "Uživatelská jména mohou obsahovat pouze písmena (a-z, A-Z), čísla (0-9) a podtržítka. Na velikosti písmen nezáleží. Pokud je volný, můžete si vybrat vlastní čtyřmístný tag."
 
@@ -20671,8 +20671,8 @@ msgid "We'll verify your new email with a one-time code."
 msgstr "Nový e-mail ověříme pomocí jednorázového kódu."
 
 #: src/components/NetworkErrorScreen.tsx:39
-msgid "We're having trouble connecting to Fluxer's servers. This could be a temporary network issue or scheduled maintenance."
-msgstr "Máme problém připojit se k serverům Fluxer. Může jít o dočasný problém sítě nebo plánovanou údržbu."
+msgid "We're having trouble connecting to NePornu's servers. This could be a temporary network issue or scheduled maintenance."
+msgstr "Máme potíže s připojením k serverům NePornu. Může se jednat o dočasný problém se sítí nebo plánovanou údržbu."
 
 #: src/components/modals/tabs/BetaCodesTab.tsx:322
 #: src/components/modals/tabs/DevicesTab.tsx:233
@@ -20685,28 +20685,28 @@ msgid "We're indexing this channel for the first time. This might take a little 
 msgstr "Tento kanál indexujeme poprvé. Chvíli to potrvá..."
 
 #: src/components/modals/RequiredActionModal.tsx:151
-msgid "We've detected suspicious activity on your account. Please reverify your email address or phone number to continue using Fluxer."
-msgstr "Zjistili jsme podezřelou aktivitu na vašem účtu. Prosím, znovu ověřte svou e-mailovou adresu nebo telefonní číslo, abyste mohli pokračovat v používání Fluxeru."
+msgid "We've detected suspicious activity on your account. Please reverify your email address or phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:143
-msgid "We've detected suspicious activity on your account. Please reverify your email address to continue using Fluxer."
-msgstr "Zjistili jsme podezřelou aktivitu na vašem účtu. Prosím, znovu ověřte svou e-mailovou adresu, abyste mohli pokračovat v používání Fluxeru."
+msgid "We've detected suspicious activity on your account. Please reverify your email address to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:147
-msgid "We've detected suspicious activity on your account. Please reverify your phone number to continue using Fluxer."
-msgstr "Zjistili jsme podezřelou aktivitu na vašem účtu. Prosím, znovu ověřte své telefonní číslo, abyste mohli pokračovat v používání Fluxeru."
+msgid "We've detected suspicious activity on your account. Please reverify your phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:152
-msgid "We've detected suspicious activity on your account. Please verify your email address or phone number to continue using Fluxer."
-msgstr "Zjistili jsme podezřelou aktivitu na vašem účtu. Prosím, ověřte svou e-mailovou adresu nebo telefonní číslo, abyste mohli pokračovat v používání Fluxeru."
+msgid "We've detected suspicious activity on your account. Please verify your email address or phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:144
-msgid "We've detected suspicious activity on your account. Please verify your email address to continue using Fluxer."
-msgstr "Zjistili jsme podezřelou aktivitu na vašem účtu. Prosím, ověřte svou e-mailovou adresu, abyste mohli pokračovat v používání Fluxeru."
+msgid "We've detected suspicious activity on your account. Please verify your email address to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:148
-msgid "We've detected suspicious activity on your account. Please verify your phone number to continue using Fluxer."
-msgstr "Zjistili jsme podezřelou aktivitu na vašem účtu. Prosím, ověřte své telefonní číslo, abyste mohli pokračovat v používání Fluxeru."
+msgid "We've detected suspicious activity on your account. Please verify your phone number to continue."
+msgstr ""
 
 #: src/components/pages/ForgotPasswordPage.tsx:65
 msgid "We've sent password reset instructions to your email address. Please check your inbox and follow the link to reset your password."
@@ -20777,8 +20777,8 @@ msgid "Welcome to Favorites"
 msgstr "Vítej v oblíbených"
 
 #: src/components/layout/app-layout/nagbars/PremiumOnboardingNagbar.tsx:51
-msgid "Welcome to Fluxer Plutonium! Explore your premium features and manage your subscription."
-msgstr "Vítej ve Fluxer Plutonium! Prozkoumej prémiové funkce a spravuj předplatné."
+msgid "Welcome to NePornu Plutonium! Explore your premium features and manage your subscription."
+msgstr ""
 
 #: src/utils/SystemMessageUtils.tsx:46
 msgid "Welcome, {username}! Don't forget to park your DeLorean."
@@ -20837,8 +20837,8 @@ msgid "When enabled, quickly tapping your push-to-talk shortcut will keep your m
 msgstr "Když je zapnuto, rychlé stisknutí zkratky pro tlačítko mluvení nechá mikrofon zapnutý, dokud znovu nestiskneš."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:140
-msgid "When enabled, reveals debugging menus throughout the app to inspect and copy raw JSON objects of internal data structures like messages, channels, users, and communities. Also includes tools to debug the Fluxer Markdown parser performance and AST for any given message."
-msgstr "Po zapnutí odhalí ladicí nabídky v celé aplikaci pro inspekci a kopírování surových objektů JSON interních struktur jako zprávy, kanály, uživatelé a komunity. Obsahuje i nástroje pro ladění výkonu Fluxer Markdown parseru a AST pro libovolnou zprávu."
+msgid "When enabled, reveals debugging menus throughout the app to inspect and copy raw JSON objects of internal data structures like messages, channels, users, and communities. Also includes tools to debug the NePornu Markdown parser performance and AST for any given message."
+msgstr ""
 
 #: src/components/modals/tabs/AppearanceTab/InterfaceTab.tsx:135
 msgid "When enabled, shortcut badges are hidden in tooltip popups."
@@ -20889,8 +20889,8 @@ msgid "When they hit 88mph, they'll appear right here."
 msgstr "Jakmile dosáhnou 88 mph, zobrazí se tady."
 
 #: src/components/modals/tabs/ChatSettingsTab/DisplayTab.tsx:73
-msgid "When uploaded directly to Fluxer"
-msgstr "Když je nahráno přímo na Fluxer"
+msgid "When uploaded directly to NePornu"
+msgstr ""
 
 #: src/components/shared/ChannelPinsContent.tsx:143
 msgid "Whenever someone pins a message, it'll appear here."
@@ -20950,8 +20950,12 @@ msgid "Write a short bio (max 280 characters)"
 msgstr "Napiš krátké bio (max 280 znaků)"
 
 #: src/components/modals/tabs/AppearanceTab/ThemeTab.tsx:543
-msgid "Write custom CSS here to override any theme tokens. For example:\n:root { --background-primary: #1E1E2F; }"
-msgstr "Zde napiš vlastní CSS pro přepsání libovolných tokenů tématu. Například:\n:root { --background-primary: #1E1E2F; }"
+msgid ""
+"Write custom CSS here to override any theme tokens. For example:\n"
+":root { --background-primary: #1E1E2F; }"
+msgstr ""
+"Zde napiš vlastní CSS pro přepsání libovolných tokenů tématu. Například:\n"
+":root { --background-primary: #1E1E2F; }"
 
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:174
 msgid "Write your content here... This textarea expands as you type."
@@ -20993,8 +20997,8 @@ msgid "You already have a group with these users. Do you really want to create a
 msgstr "Už máš skupinu s těmito uživateli. Chceš opravdu vytvořit novou? Klidně!"
 
 #: src/components/modals/ExternalLinkWarningModal.tsx:66
-msgid "You are about to leave Fluxer"
-msgstr "Chystáš se opustit Fluxer"
+msgid "You are about to leave the application"
+msgstr ""
 
 #. placeholder {0}: targetUser.username
 #: src/components/modals/TransferOwnershipModal.tsx:71
@@ -21022,8 +21026,8 @@ msgid "You are now a developer!"
 msgstr "Teď jsi vývojář!"
 
 #: src/components/modals/components/plutonium/hooks/useCheckoutActions.tsx:107
-msgid "You are now navigating to Stripe to complete the payment. Return to Fluxer once you've completed it!"
-msgstr "Nyní přecházíš na Stripe pro dokončení platby. Po dokončení se vrať na Fluxer!"
+msgid "You are now navigating to Stripe to complete the payment. Return to NePornu once you've completed it!"
+msgstr ""
 
 #. placeholder {0}: Math.max(0, modalLogic.maxSelections - modalLogic.selectedUserIds.length)
 #. placeholder {0}: modalLogic.remainingSlotsCount
@@ -21046,8 +21050,8 @@ msgid "You can add comments before uploading. Hold shift to upload directly."
 msgstr "Před nahráním můžeš přidat komentáře. Drž shift pro přímé nahrání."
 
 #: src/components/channel/dm/AddFriendView.tsx:35
-msgid "You can add friends with their FluxerTag."
-msgstr "Přátele můžeš přidat podle jejich FluxerTagu."
+msgid "You can add friends with their Tag."
+msgstr ""
 
 #. placeholder {0}: modalLogic.maxSelections
 #: src/components/bottomsheets/CreateDMBottomSheet.tsx:112
@@ -21334,8 +21338,8 @@ msgid "You haven't created any packs yet."
 msgstr "Ještě jsi nevytvořil(a) žádné balíčky."
 
 #: src/components/modals/KeyboardModeIntroModal.tsx:46
-msgid "You just pressed Tab. Keyboard Mode is now on so you can navigate Fluxer without a mouse."
-msgstr "Právě jsi stiskl(a) Tab. Klávesnicový režim je aktivní, takže Fluxer můžeš ovládat bez myši."
+msgid "You just pressed Tab. Keyboard Mode is now on so you can navigate the application without a mouse."
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:85
 #: src/utils/ExpressionPermissionUtils.tsx:92
@@ -21635,10 +21639,6 @@ msgstr "Stávající nastavení zvuku upozornění zůstane zachováno."
 msgid "Your export request will be processed"
 msgstr "Vaše žádost o export bude zpracována."
 
-#: src/components/pages/report/ReportStepDetails.tsx:213
-msgid "Your FluxerTag (optional)"
-msgstr "Váš FluxerTag (volitelné)"
-
 #: src/components/channel/friends/views/FriendsList.tsx:80
 msgid "Your friends are currently stuck in another timeline"
 msgstr "Vaši přátelé jsou momentálně zaseknutí v jiné časové ose."
@@ -21735,6 +21735,10 @@ msgstr "Vaše předplatné bylo naplánováno k ukončení na konci aktuálního
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:210
 msgid "Your subscription will cancel on <0>{cancelDate}</0>. You'll lose all <1/> after that date."
 msgstr "Vaše předplatné se ukončí dne <0>{cancelDate}</0>. Po tomto datu přijdete o všechny výhody <1/>."
+
+#: src/components/pages/report/ReportStepDetails.tsx:213
+msgid "Your Tag (optional)"
+msgstr "Váš Tag (volitelné)"
 
 #: src/components/modals/guildTabs/GuildVanityURLTab.tsx:118
 msgid "Your vanity URL has been removed."

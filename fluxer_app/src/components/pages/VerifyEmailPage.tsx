@@ -26,7 +26,7 @@ import * as AuthenticationActionCreators from '~/actions/AuthenticationActionCre
 import {VerificationResult} from '~/actions/AuthenticationActionCreators';
 import {AuthRouterLink} from '~/components/auth/AuthRouterLink';
 import {Spinner} from '~/components/uikit/Spinner';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import {useHashParam} from '~/hooks/useHashParam';
 import {createVerificationError, type VerificationError, VerificationErrorType} from '~/types/VerificationError';
 import styles from './VerifyEmailPage.module.css';
@@ -52,7 +52,7 @@ const VerifyPage = observer(function VerifyPage() {
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [error, setError] = useState<VerificationError | null>(null);
 
-	useFluxerDocumentTitle(t`Verify Email`);
+	useAppDocumentTitle(t`Verify Email`);
 
 	const token = useHashParam('token');
 

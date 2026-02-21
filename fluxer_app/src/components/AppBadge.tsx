@@ -22,7 +22,7 @@ import {observer} from 'mobx-react-lite';
 import type React from 'react';
 import {useEffect} from 'react';
 import {RelationshipTypes} from '~/Constants';
-import {updateDocumentTitleBadge} from '~/hooks/useFluxerDocumentTitle';
+import {updateDocumentTitleBadge} from '~/hooks/useAppDocumentTitle';
 import {Logger} from '~/lib/Logger';
 import GuildReadStateStore from '~/stores/GuildReadStateStore';
 import NotificationStore from '~/stores/NotificationStore';

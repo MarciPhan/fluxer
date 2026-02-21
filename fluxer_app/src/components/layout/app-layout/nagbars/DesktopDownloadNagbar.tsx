@@ -17,17 +17,17 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans} from '@lingui/react/macro';
-import {AndroidLogoIcon, AppleLogoIcon, WindowsLogoIcon} from '@phosphor-icons/react';
-import {observer} from 'mobx-react-lite';
+import { Trans } from '@lingui/react/macro';
+import { AndroidLogoIcon, AppleLogoIcon, WindowsLogoIcon } from '@phosphor-icons/react';
+import { observer } from 'mobx-react-lite';
 import * as NagbarActionCreators from '~/actions/NagbarActionCreators';
-import {Nagbar} from '~/components/layout/Nagbar';
-import {NagbarButton} from '~/components/layout/NagbarButton';
-import {NagbarContent} from '~/components/layout/NagbarContent';
-import {openExternalUrl} from '~/utils/NativeUtils';
+import { Nagbar } from '~/components/layout/Nagbar';
+import { NagbarButton } from '~/components/layout/NagbarButton';
+import { NagbarContent } from '~/components/layout/NagbarContent';
+import { openExternalUrl } from '~/utils/NativeUtils';
 import styles from './DesktopDownloadNagbar.module.css';
 
-export const DesktopDownloadNagbar = observer(({isMobile}: {isMobile: boolean}) => {
+export const DesktopDownloadNagbar = observer(({ isMobile }: { isMobile: boolean }) => {
 	const handleDownload = () => {
 		openExternalUrl('https://fluxer.app/download');
 	};
@@ -46,7 +46,7 @@ export const DesktopDownloadNagbar = observer(({isMobile}: {isMobile: boolean}) 
 		>
 			<NagbarContent
 				isMobile={isMobile}
-				message={<Trans>Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies.</Trans>}
+				message={<Trans>Get the NePornu desktop app for system-wide push-to-talk and a few other goodies.</Trans>}
 				actions={
 					<>
 						{isMobile && (

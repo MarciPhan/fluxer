@@ -37,16 +37,16 @@ import KeybindsTab from '../tabs/KeybindsTab';
 import LanguageTab from '../tabs/LanguageTab';
 import MyProfileTab from '../tabs/MyProfileTab';
 import NotificationsTab from '../tabs/NotificationsTab';
-import PlutoniumTab from '../tabs/PlutoniumTab';
+// import PlutoniumTab from '../tabs/PlutoniumTab';
 import PrivacySafetyTab from '../tabs/PrivacySafetyTab';
 import VoiceVideoTab from '../tabs/VoiceVideoTab';
-import type {UserSettingsTabType} from './settingsConstants';
+import type { UserSettingsTabType } from './settingsConstants';
 
 const DESKTOP_TAB_COMPONENTS: Partial<Record<UserSettingsTabType, React.ComponentType<any>>> = {
 	my_profile: MyProfileTab,
 	account_security: AccountSecurityTab,
 	beta_codes: BetaCodesTab,
-	plutonium: PlutoniumTab,
+	// plutonium: PlutoniumTab,
 	gift_inventory: GiftInventoryTab,
 	privacy_safety: PrivacySafetyTab,
 	authorized_apps: AuthorizedAppsTab,

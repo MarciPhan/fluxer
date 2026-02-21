@@ -18,15 +18,15 @@
  */
 
 import React from 'react';
-import {clearPendingBulkDeletionNagbarDismissal} from '~/actions/NagbarActionCreators';
+import { clearPendingBulkDeletionNagbarDismissal } from '~/actions/NagbarActionCreators';
 import AppStorage from '~/lib/AppStorage';
 import DeveloperOptionsStore from '~/stores/DeveloperOptionsStore';
 import NagbarStore from '~/stores/NagbarStore';
 import UserStore from '~/stores/UserStore';
-import {isDesktop} from '~/utils/NativeUtils';
+import { isDesktop } from '~/utils/NativeUtils';
 import * as NotificationUtils from '~/utils/NotificationUtils';
-import {isStandalonePwa} from '~/utils/PwaUtils';
-import {type AppLayoutState, type NagbarConditions, type NagbarState, NagbarType, UPDATE_DISMISS_KEY} from './types';
+import { isStandalonePwa } from '~/utils/PwaUtils';
+import { type AppLayoutState, type NagbarConditions, type NagbarState, NagbarType, UPDATE_DISMISS_KEY } from './types';
 
 export const useAppLayoutState = (): AppLayoutState => {
 	const [isStandalone, setIsStandalone] = React.useState(isStandalonePwa());
@@ -45,7 +45,7 @@ export const useAppLayoutState = (): AppLayoutState => {
 		};
 	}, [isStandalone]);
 
-	return {isStandalone};
+	return { isStandalone };
 };
 
 export const useNagbarConditions = (): NagbarConditions => {
@@ -121,14 +121,6 @@ export const useNagbarConditions = (): NagbarConditions => {
 		return Boolean(user?.hasUnreadGiftInventory && !nagbarState.giftInventoryDismissed);
 	})();
 
-	const canShowPremiumOnboarding = (() => {
-		if (nagbarState.forceHidePremiumOnboarding) return false;
-		if (nagbarState.forcePremiumOnboarding) return true;
-		if (isMockPremium) return false;
-		return Boolean(
-			user?.isPremium() && !user?.hasDismissedPremiumOnboarding && !nagbarState.premiumOnboardingDismissed,
-		);
-	})();
 
 	const isNativeDesktop = isDesktop();
 	const isMobileDevice = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -162,12 +154,6 @@ export const useNagbarConditions = (): NagbarConditions => {
 		pendingBulkDeletion && !nagbarState.hasPendingBulkDeletionDismissed(pendingBulkDeletionKey),
 	);
 
-	const canShowGuildMembershipCta = (() => {
-		if (nagbarState.forceHideGuildMembershipCta) return false;
-		if (nagbarState.forceGuildMembershipCta) return true;
-		if (!user) return false;
-		return !nagbarState.guildMembershipCtaDismissed;
-	})();
 
 	return {
 		userIsUnclaimed: nagbarState.forceHideUnclaimedAccount
@@ -187,12 +173,10 @@ export const useNagbarConditions = (): NagbarConditions => {
 				: shouldShowDesktopNotification && !nagbarState.desktopNotificationDismissed,
 		canShowPremiumGracePeriod,
 		canShowPremiumExpired,
-		canShowPremiumOnboarding,
 		canShowGiftInventory,
 		canShowDesktopDownload,
 		canShowMobileDownload,
 		hasPendingBulkMessageDeletion,
-		canShowGuildMembershipCta,
 	};
 };
 
@@ -216,11 +200,6 @@ export const useActiveNagbars = (conditions: NagbarConditions): Array<NagbarStat
 				visible: conditions.userIsUnclaimed,
 			},
 			{
-				type: NagbarType.GUILD_MEMBERSHIP_CTA,
-				priority: 2,
-				visible: conditions.canShowGuildMembershipCta,
-			},
-			{
 				type: NagbarType.EMAIL_VERIFICATION,
 				priority: 3,
 				visible: conditions.userNeedsVerification,
@@ -234,11 +213,6 @@ export const useActiveNagbars = (conditions: NagbarConditions): Array<NagbarStat
 				type: NagbarType.PREMIUM_EXPIRED,
 				priority: 5,
 				visible: conditions.canShowPremiumExpired,
-			},
-			{
-				type: NagbarType.PREMIUM_ONBOARDING,
-				priority: 6,
-				visible: conditions.canShowPremiumOnboarding,
 			},
 			{
 				type: NagbarType.DESKTOP_NOTIFICATION,

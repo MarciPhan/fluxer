@@ -17,47 +17,46 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {useLingui} from '@lingui/react/macro';
-import {observer} from 'mobx-react-lite';
+import { useLingui } from '@lingui/react/macro';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
-import {useForm} from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import * as GuildMemberActionCreators from '~/actions/GuildMemberActionCreators';
 import * as ToastActionCreators from '~/actions/ToastActionCreators';
 import * as UnsavedChangesActionCreators from '~/actions/UnsavedChangesActionCreators';
 import * as UserActionCreators from '~/actions/UserActionCreators';
 import * as UserProfileActionCreators from '~/actions/UserProfileActionCreators';
-import {GuildMemberProfileFlags, UserPremiumTypes} from '~/Constants';
-import {Form} from '~/components/form/Form';
-import {Input} from '~/components/form/Input';
-import {ExpressionPickerSheet} from '~/components/modals/ExpressionPickerSheet';
+import { GuildMemberProfileFlags, UserPremiumTypes } from '~/Constants';
+import { Form } from '~/components/form/Form';
+import { Input } from '~/components/form/Input';
+import { ExpressionPickerSheet } from '~/components/modals/ExpressionPickerSheet';
 import {
 	SettingsTabContainer,
 	SettingsTabHeader,
 	SettingsTabSection,
 } from '~/components/modals/shared/SettingsTabLayout';
-import {ProfilePreview} from '~/components/profile/ProfilePreview';
-import {Spinner} from '~/components/uikit/Spinner';
-import {useFormSubmit} from '~/hooks/useFormSubmit';
-import {useTextareaAutocomplete} from '~/hooks/useTextareaAutocomplete';
-import {useTextareaEmojiPicker} from '~/hooks/useTextareaEmojiPicker';
-import {useTextareaPaste} from '~/hooks/useTextareaPaste';
-import {useTextareaSegments} from '~/hooks/useTextareaSegments';
-import type {ProfileRecord} from '~/records/ProfileRecord';
+import { ProfilePreview } from '~/components/profile/ProfilePreview';
+import { Spinner } from '~/components/uikit/Spinner';
+import { useFormSubmit } from '~/hooks/useFormSubmit';
+import { useTextareaAutocomplete } from '~/hooks/useTextareaAutocomplete';
+import { useTextareaEmojiPicker } from '~/hooks/useTextareaEmojiPicker';
+import { useTextareaPaste } from '~/hooks/useTextareaPaste';
+import { useTextareaSegments } from '~/hooks/useTextareaSegments';
+import type { ProfileRecord } from '~/records/ProfileRecord';
 import GuildMemberStore from '~/stores/GuildMemberStore';
 import GuildStore from '~/stores/GuildStore';
 import MobileLayoutStore from '~/stores/MobileLayoutStore';
 import UnsavedChangesStore from '~/stores/UnsavedChangesStore';
 import UserStore from '~/stores/UserStore';
-import {applyMarkdownSegments, convertMarkdownToSegments} from '~/utils/MarkdownToSegmentUtils';
-import {UnclaimedAccountAlert} from '../components/UnclaimedAccountAlert';
-import {AccentColorPicker} from './MyProfileTab/AccentColorPicker';
-import {type AvatarMode, AvatarUploader} from './MyProfileTab/AvatarUploader';
-import {type BannerMode, BannerUploader} from './MyProfileTab/BannerUploader';
-import {BioEditor} from './MyProfileTab/BioEditor';
-import {PerGuildPremiumUpsell} from './MyProfileTab/PerGuildPremiumUpsell';
-import {PremiumBadgeSettings} from './MyProfileTab/PremiumBadgeSettings';
-import {ProfileTypeSelector} from './MyProfileTab/ProfileTypeSelector';
-import {UsernameSection} from './MyProfileTab/UsernameSection';
+import { applyMarkdownSegments, convertMarkdownToSegments } from '~/utils/MarkdownToSegmentUtils';
+import { UnclaimedAccountAlert } from '../components/UnclaimedAccountAlert';
+import { AccentColorPicker } from './MyProfileTab/AccentColorPicker';
+import { type AvatarMode, AvatarUploader } from './MyProfileTab/AvatarUploader';
+import { type BannerMode, BannerUploader } from './MyProfileTab/BannerUploader';
+import { BioEditor } from './MyProfileTab/BioEditor';
+import { PerGuildPremiumUpsell } from './MyProfileTab/PerGuildPremiumUpsell';
+import { ProfileTypeSelector } from './MyProfileTab/ProfileTypeSelector';
+import { UsernameSection } from './MyProfileTab/UsernameSection';
 import styles from './MyProfileTab.module.css';
 
 interface FormInputs {
@@ -89,7 +88,7 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 }: {
 	initialGuildId?: string;
 } = {}) {
-	const {t} = useLingui();
+	const { t } = useLingui();
 	const user = UserStore.currentUser;
 	const unsavedChangesStore = UnsavedChangesStore;
 	const mobileLayout = MobileLayoutStore;
@@ -105,7 +104,7 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 
 	const isPerGuildProfile = selectedGuildId !== null;
 
-	const {segmentManagerRef, previousValueRef, displayToActual, insertSegment, handleTextChange} = useTextareaSegments();
+	const { segmentManagerRef, previousValueRef, displayToActual, insertSegment, handleTextChange } = useTextareaSegments();
 
 	const [bioValue, setBioValue] = React.useState('');
 	const [isBioInitialized, setIsBioInitialized] = React.useState(false);
@@ -117,7 +116,7 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 	const [initialAvatarMode, setInitialAvatarMode] = React.useState<AvatarMode>('inherit');
 	const [initialBannerMode, setInitialBannerMode] = React.useState<BannerMode>('inherit');
 
-	const {handleEmojiSelect} = useTextareaEmojiPicker({
+	const { handleEmojiSelect } = useTextareaEmojiPicker({
 		setValue: setBioValue,
 		textareaRef: bioTextareaRef,
 		insertSegment,
@@ -165,10 +164,6 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 			pronouns: null,
 			accent_color: null,
 			nick: null,
-			premium_badge_hidden: false,
-			premium_badge_timestamp_hidden: false,
-			premium_badge_masked: false,
-			premium_badge_sequence_hidden: false,
 		},
 	});
 
@@ -296,11 +291,11 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 		const actualBio = displayToActual(bioValue);
 		const isDirty = actualBio.trim() !== originalBioRef.current.trim();
 
-		form.setValue('bio', actualBio, {shouldDirty: isDirty, shouldTouch: false});
+		form.setValue('bio', actualBio, { shouldDirty: isDirty, shouldTouch: false });
 
 		if (!isDirty && form.formState.dirtyFields.bio) {
 			const currentValues = form.getValues();
-			form.reset({...currentValues, bio: originalBioRef.current}, {keepValues: true});
+			form.reset({ ...currentValues, bio: originalBioRef.current }, { keepValues: true });
 		}
 	}, [bioValue, displayToActual, form, isBioInitialized]);
 
@@ -360,7 +355,7 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 				});
 				setInitialAvatarMode(avatarMode);
 				setInitialBannerMode(bannerMode);
-				ToastActionCreators.createToast({type: 'success', children: t`Community profile updated`});
+				ToastActionCreators.createToast({ type: 'success', children: t`Community profile updated` });
 				if (user?.id) {
 					const updatedProfile = await UserProfileActionCreators.fetch(user.id, selectedGuildId, true);
 					setProfileData(updatedProfile);
@@ -375,22 +370,6 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 					accent_color: data.accent_color,
 				};
 
-				if (data.premium_badge_hidden !== undefined) {
-					updateData.premium_badge_hidden = data.premium_badge_hidden;
-				}
-				if (data.premium_badge_timestamp_hidden !== undefined) {
-					updateData.premium_badge_timestamp_hidden = data.premium_badge_timestamp_hidden;
-				}
-				if (data.premium_badge_masked !== undefined) {
-					updateData.premium_badge_masked = data.premium_badge_masked;
-					if (data.premium_badge_masked) {
-						updateData.premium_badge_sequence_hidden = true;
-					}
-				}
-				if (data.premium_badge_sequence_hidden !== undefined && !data.premium_badge_masked) {
-					updateData.premium_badge_sequence_hidden = data.premium_badge_sequence_hidden;
-				}
-
 				const newUser = await UserActionCreators.update(updateData);
 
 				UserProfileActionCreators.clearCurrentUserProfiles();
@@ -403,12 +382,8 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 					global_name: newUser.global_name || null,
 					pronouns: newUser.pronouns || null,
 					accent_color: typeof newUser.accent_color === 'number' ? newUser.accent_color : null,
-					premium_badge_hidden: newUser.premium_badge_hidden ?? false,
-					premium_badge_timestamp_hidden: newUser.premium_badge_timestamp_hidden ?? false,
-					premium_badge_masked: newUser.premium_badge_masked ?? false,
-					premium_badge_sequence_hidden: newUser.premium_badge_sequence_hidden ?? false,
 				});
-				ToastActionCreators.createToast({type: 'success', children: t`Profile updated`});
+				ToastActionCreators.createToast({ type: 'success', children: t`Profile updated` });
 			}
 
 			setPreviewAvatarUrl(null);
@@ -419,7 +394,7 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 		[form, isPerGuildProfile, selectedGuildId, updateBioFromMarkdown, user, avatarMode, bannerMode],
 	);
 
-	const {handleSubmit: handleSave} = useFormSubmit({
+	const { handleSubmit: handleSave } = useFormSubmit({
 		form,
 		onSubmit,
 		defaultErrorField: 'bio',
@@ -454,10 +429,6 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 				pronouns: user.pronouns || null,
 				accent_color: typeof user.accentColor === 'number' ? user.accentColor : null,
 				nick: null,
-				premium_badge_hidden: user.premiumBadgeHidden ?? false,
-				premium_badge_timestamp_hidden: user.premiumBadgeTimestampHidden ?? false,
-				premium_badge_masked: user.premiumBadgeMasked ?? false,
-				premium_badge_sequence_hidden: user.premiumBadgeSequenceHidden ?? false,
 			});
 
 			setHasCustomAvatar(false);
@@ -483,15 +454,6 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 		initialBannerMode,
 	]);
 
-	const handlePremiumBadgeToggle = React.useCallback(
-		(field: keyof FormInputs, value: boolean) => {
-			form.setValue(field, value, {shouldDirty: true});
-			if (field === 'premium_badge_masked' && value) {
-				form.setValue('premium_badge_sequence_hidden', true, {shouldDirty: true});
-			}
-		},
-		[form],
-	);
 
 	const handleAvatarChange = React.useCallback(
 		(base64: string) => {
@@ -727,7 +689,7 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 										<AccentColorPicker
 											value={form.watch('accent_color') ?? 0}
 											onChange={(value: number) =>
-												form.setValue('accent_color', value === 0 ? null : value, {shouldDirty: true})
+												form.setValue('accent_color', value === 0 ? null : value, { shouldDirty: true })
 											}
 											disabled={isPerGuildProfile && !hasPremium}
 											errorMessage={form.formState.errors.accent_color?.message}
@@ -785,12 +747,7 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 										guildId={selectedGuildId}
 										guildMember={isPerGuildProfile ? guildMember : undefined}
 										guildMemberProfile={isPerGuildProfile ? profileData?.guildMemberProfile : undefined}
-										previewBadgeSettings={{
-											premium_badge_hidden: form.watch('premium_badge_hidden'),
-											premium_badge_timestamp_hidden: form.watch('premium_badge_timestamp_hidden'),
-											premium_badge_masked: form.watch('premium_badge_masked'),
-											premium_badge_sequence_hidden: form.watch('premium_badge_sequence_hidden'),
-										}}
+										previewBadgeSettings={{}}
 										ignoreGuildAvatarInPreview={isPerGuildProfile && avatarMode === 'inherit'}
 										ignoreGuildBannerInPreview={isPerGuildProfile && bannerMode === 'inherit'}
 									/>
@@ -799,18 +756,7 @@ const MyProfileTabComponent = observer(function MyProfileTabComponent({
 						)}
 					</SettingsTabSection>
 
-					{hasPremium && !isPerGuildProfile && (
-						<PremiumBadgeSettings
-							premiumBadgeHidden={form.watch('premium_badge_hidden') ?? false}
-							premiumBadgeTimestampHidden={form.watch('premium_badge_timestamp_hidden') ?? false}
-							premiumBadgeMasked={form.watch('premium_badge_masked') ?? false}
-							premiumBadgeSequenceHidden={form.watch('premium_badge_sequence_hidden') ?? false}
-							onToggle={handlePremiumBadgeToggle}
-							hasLifetimePremium={hasLifetimePremium}
-							premiumSince={user.premiumSince}
-							premiumLifetimeSequence={user.premiumLifetimeSequence}
-						/>
-					)}
+
 				</Form>
 			</SettingsTabContainer>
 

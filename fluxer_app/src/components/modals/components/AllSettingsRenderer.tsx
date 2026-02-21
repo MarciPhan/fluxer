@@ -19,24 +19,24 @@
 
 import './SettingsSearchHighlight.css';
 
-import {Trans} from '@lingui/react/macro';
-import {CaretRightIcon} from '@phosphor-icons/react';
-import {clsx} from 'clsx';
-import {observer} from 'mobx-react-lite';
+import { Trans } from '@lingui/react/macro';
+import { CaretRightIcon } from '@phosphor-icons/react';
+import { clsx } from 'clsx';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import DeveloperModeStore from '~/stores/DeveloperModeStore';
-import {clearHighlights, createRangesForSection, setHighlightRanges} from '~/utils/CSSHighlightSearch';
-import {AccessibilityInlineTab} from '../tabs/AccessibilityTab/Inline';
-import {AccountSecurityInlineTab} from '../tabs/AccountSecurityTab/Inline';
+import { clearHighlights, createRangesForSection, setHighlightRanges } from '~/utils/CSSHighlightSearch';
+import { AccessibilityInlineTab } from '../tabs/AccessibilityTab/Inline';
+import { AccountSecurityInlineTab } from '../tabs/AccountSecurityTab/Inline';
 import AdvancedTab from '../tabs/AdvancedTab';
-import {AppearanceInlineTab} from '../tabs/AppearanceTab/Inline';
+import { AppearanceInlineTab } from '../tabs/AppearanceTab/Inline';
 import ApplicationsTab from '../tabs/ApplicationsTab';
 import AuthorizedAppsTab from '../tabs/AuthorizedAppsTab';
 import BetaCodesTab from '../tabs/BetaCodesTab';
 import BlockedUsersTab from '../tabs/BlockedUsersTab';
-import {ChatSettingsInlineTab} from '../tabs/ChatSettingsTab/Inline';
-import {ComponentGalleryInlineTab} from '../tabs/ComponentGalleryTab/Inline';
-import {DeveloperOptionsInlineTab} from '../tabs/DeveloperOptionsTab/Inline';
+import { ChatSettingsInlineTab } from '../tabs/ChatSettingsTab/Inline';
+import { ComponentGalleryInlineTab } from '../tabs/ComponentGalleryTab/Inline';
+import { DeveloperOptionsInlineTab } from '../tabs/DeveloperOptionsTab/Inline';
 import DevicesTab from '../tabs/DevicesTab';
 import ExpressionPacksTab from '../tabs/ExpressionPacksTab';
 import FeatureFlagsTab from '../tabs/FeatureFlagsTab';
@@ -44,13 +44,13 @@ import GiftInventoryTab from '../tabs/GiftInventoryTab';
 import KeybindsTab from '../tabs/KeybindsTab';
 import LanguageTab from '../tabs/LanguageTab';
 import MyProfileTab from '../tabs/MyProfileTab';
-import {NotificationsInlineTab} from '../tabs/NotificationsTab/Inline';
-import PlutoniumTab from '../tabs/PlutoniumTab';
-import {PrivacySafetyInlineTab} from '../tabs/PrivacySafetyTab/Inline';
-import {VoiceVideoInlineTab} from '../tabs/VoiceVideoTab/Inline';
-import {getSettingsTabComponent} from '../utils/desktopSettingsTabs';
-import type {SettingsTab, UserSettingsTabType} from '../utils/settingsConstants';
-import type {SearchableSettingItem, SettingsSearchResult} from '../utils/settingsSearchIndex';
+import { NotificationsInlineTab } from '../tabs/NotificationsTab/Inline';
+// import PlutoniumTab from '../tabs/PlutoniumTab';
+import { PrivacySafetyInlineTab } from '../tabs/PrivacySafetyTab/Inline';
+import { VoiceVideoInlineTab } from '../tabs/VoiceVideoTab/Inline';
+import { getSettingsTabComponent } from '../utils/desktopSettingsTabs';
+import type { SettingsTab, UserSettingsTabType } from '../utils/settingsConstants';
+import type { SearchableSettingItem, SettingsSearchResult } from '../utils/settingsSearchIndex';
 import styles from './AllSettingsRenderer.module.css';
 
 interface AllSettingsRendererProps {
@@ -73,7 +73,7 @@ const INLINE_TAB_COMPONENTS: Partial<Record<UserSettingsTabType, React.Component
 	my_profile: MyProfileTab,
 	account_security: AccountSecurityInlineTab,
 	beta_codes: BetaCodesTab,
-	plutonium: PlutoniumTab,
+	// plutonium: PlutoniumTab,
 	gift_inventory: GiftInventoryTab,
 	expression_packs: ExpressionPacksTab,
 	privacy_safety: PrivacySafetyInlineTab,
@@ -100,7 +100,7 @@ const getInlineTabComponent = (tab: SettingsTab): React.ComponentType<Record<str
 };
 
 const SettingsSection: React.FC<SettingsSectionProps> = observer(
-	({tab, matchedItems, initialGuildId, isExpanded, onToggleExpand}) => {
+	({ tab, matchedItems, initialGuildId, isExpanded, onToggleExpand }) => {
 		const contentRef = React.useRef<HTMLDivElement>(null);
 
 		React.useEffect(() => {
@@ -148,7 +148,7 @@ const SettingsSection: React.FC<SettingsSectionProps> = observer(
 					<div className={styles.sectionContent}>
 						{React.createElement(
 							InlineComponent,
-							(initialGuildId ? {initialGuildId} : undefined) as Record<string, unknown>,
+							(initialGuildId ? { initialGuildId } : undefined) as Record<string, unknown>,
 						)}
 					</div>
 				)}
@@ -158,7 +158,7 @@ const SettingsSection: React.FC<SettingsSectionProps> = observer(
 );
 
 export const AllSettingsRenderer: React.FC<AllSettingsRendererProps> = observer(
-	({searchQuery, searchResults, initialGuildId}) => {
+	({ searchQuery, searchResults, initialGuildId }) => {
 		const containerRef = React.useRef<HTMLDivElement>(null);
 		const [expandedTabs, setExpandedTabs] = React.useState<Set<UserSettingsTabType>>(new Set());
 		const previousQueryRef = React.useRef<string>('');

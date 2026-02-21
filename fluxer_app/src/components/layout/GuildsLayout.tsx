@@ -57,7 +57,7 @@ import styles from './GuildsLayout.module.css';
 import {AddGuildButton} from './guild-list/AddGuildButton';
 import {DownloadButton} from './guild-list/DownloadButton';
 import {FavoritesButton} from './guild-list/FavoritesButton';
-import {FluxerButton} from './guild-list/FluxerButton';
+import {AppHomeButton} from './guild-list/AppHomeButton';
 import {DMListItem} from './guild-list/GuildListDMItem';
 import {GuildListItem} from './guild-list/GuildListItem';
 import {HelpButton} from './guild-list/HelpButton';
@@ -197,7 +197,7 @@ const GuildList = observer(() => {
 		<div ref={scrollRef} className={styles.guildListScrollContainer} onScroll={handleScroll}>
 			<div className={styles.guildListContent}>
 				<div className={styles.guildListTopSection}>
-					<FluxerButton />
+					<AppHomeButton />
 					<FavoritesButton className={shouldCollapseFavoritesSpacing ? styles.guildListItemNoMargin : undefined} />
 
 					<div className={styles.dmListSection}>

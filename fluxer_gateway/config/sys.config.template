@@ -27,8 +27,8 @@
                 }
             }}
         ]},
-        {inet_dist_use_interface, {0,0,0,0}},
-        {inet_backend, socket},
+        % {inet_dist_use_interface, {0,0,0,0}},
+        % {inet_backend, socket},
         {inet_dist_listen_options, [{reuseaddr, true}]}
     ]},
     {sasl, [

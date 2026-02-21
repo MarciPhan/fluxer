@@ -17,16 +17,13 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {msg} from '@lingui/core/macro';
-import {Trans, useLingui} from '@lingui/react/macro';
-import {CrownIcon} from '@phosphor-icons/react';
-import {observer} from 'mobx-react-lite';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { observer } from 'mobx-react-lite';
+import React from 'react';
 import * as ModalActionCreators from '~/actions/ModalActionCreators';
-import {modal} from '~/actions/ModalActionCreators';
-import * as PremiumModalActionCreators from '~/actions/PremiumModalActionCreators';
-import {FluxerTagChangeModal} from '~/components/modals/FluxerTagChangeModal';
-import {Button} from '~/components/uikit/Button/Button';
-import {Tooltip} from '~/components/uikit/Tooltip/Tooltip';
+import { modal } from '~/actions/ModalActionCreators';
+import { FluxerTagChangeModal } from '~/components/modals/FluxerTagChangeModal';
+import { Button } from '~/components/uikit/Button/Button';
 import styles from './UsernameSection.module.css';
 
 interface UsernameSectionProps {
@@ -35,8 +32,8 @@ interface UsernameSectionProps {
 	discriminator: string;
 }
 
-export const UsernameSection = observer(({isClaimed, hasPremium, discriminator}: UsernameSectionProps) => {
-	const {t} = useLingui();
+export const UsernameSection: React.FC<UsernameSectionProps> = observer(({ isClaimed, hasPremium, discriminator }) => {
+	const { t } = useLingui();
 
 	return (
 		<div>
@@ -45,38 +42,13 @@ export const UsernameSection = observer(({isClaimed, hasPremium, discriminator}:
 			</div>
 
 			<div className={styles.actions}>
-				{!isClaimed ? (
-					<Tooltip text={t(msg`Claim your account to change your FluxerTag`)}>
-						<div>
-							<Button variant="primary" small disabled>
-								<Trans>Change FluxerTag</Trans>
-							</Button>
-						</div>
-					</Tooltip>
-				) : (
-					<Button
-						variant="primary"
-						small
-						onClick={() => ModalActionCreators.push(modal(() => <FluxerTagChangeModal />))}
-					>
-						<Trans>Change FluxerTag</Trans>
-					</Button>
-				)}
-
-				{!hasPremium && (
-					<Tooltip text={t(msg`Customize your 4-digit tag (#${discriminator}) to your liking with Plutonium`)}>
-						<button
-							type="button"
-							onClick={() => {
-								PremiumModalActionCreators.open();
-							}}
-							className={styles.premiumButton}
-							aria-label={t(msg`Get Plutonium to customize your tag`)}
-						>
-							<CrownIcon weight="fill" size={18} />
-						</button>
-					</Tooltip>
-				)}
+				<Button
+					variant="primary"
+					small
+					onClick={() => ModalActionCreators.push(modal(() => <FluxerTagChangeModal />))}
+				>
+					<Trans>Change Tag</Trans>
+				</Button>
 			</div>
 
 			<div className={styles.description}>

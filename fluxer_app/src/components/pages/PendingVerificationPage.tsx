@@ -26,7 +26,7 @@ import * as AuthenticationActionCreators from '~/actions/AuthenticationActionCre
 import FormField from '~/components/auth/FormField';
 import {Button} from '~/components/uikit/Button/Button';
 import {useAuthForm} from '~/hooks/useAuthForm';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import {Routes} from '~/Routes';
 import AuthenticationStore from '~/stores/AuthenticationStore';
 import ConnectionStore from '~/stores/ConnectionStore';
@@ -42,7 +42,7 @@ const PendingVerificationPageContent = observer(function PendingVerificationPage
 	const socket = ConnectionStore.socket;
 	const currentUser = UserStore.currentUser;
 
-	useFluxerDocumentTitle(t`Pending Verification`);
+	useAppDocumentTitle(t`Pending Verification`);
 
 	useEffect(() => {
 		if (token && !socket) {

@@ -23,12 +23,10 @@ export const NagbarType = {
 	DESKTOP_NOTIFICATION: 'desktop-notification',
 	PREMIUM_GRACE_PERIOD: 'premium-grace-period',
 	PREMIUM_EXPIRED: 'premium-expired',
-	PREMIUM_ONBOARDING: 'premium-onboarding',
 	GIFT_INVENTORY: 'gift-inventory',
 	BULK_DELETE_PENDING: 'bulk-delete-pending',
 	DESKTOP_DOWNLOAD: 'desktop-download',
 	MOBILE_DOWNLOAD: 'mobile-download',
-	GUILD_MEMBERSHIP_CTA: 'guild-membership-cta',
 } as const;
 
 export type NagbarType = (typeof NagbarType)[keyof typeof NagbarType];
@@ -49,12 +47,10 @@ export interface NagbarConditions {
 	canShowDesktopNotification: boolean;
 	canShowPremiumGracePeriod: boolean;
 	canShowPremiumExpired: boolean;
-	canShowPremiumOnboarding: boolean;
 	canShowGiftInventory: boolean;
 	canShowDesktopDownload: boolean;
 	canShowMobileDownload: boolean;
 	hasPendingBulkMessageDeletion: boolean;
-	canShowGuildMembershipCta: boolean;
 }
 
 export const UPDATE_DISMISS_KEY = 'fluxer_update_dismissed_until';

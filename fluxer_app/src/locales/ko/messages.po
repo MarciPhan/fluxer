@@ -894,8 +894,8 @@ msgstr "<0/>님이 통화를 시작했습니다."
 
 #. placeholder {0}: guild.name
 #: src/components/layout/GuildLayout.tsx:131
-msgid "<0>{0}</0> is currently only accessible to Fluxer staff members"
-msgstr "<0>{0}</0>는 현재 Fluxer 직원만 접근 가능합니다"
+msgid "<0>{0}</0> is currently only accessible to NePornu staff members"
+msgstr "<0>{0}</0>는 현재 NePornu 직원만 접근 가능합니다"
 
 #. placeholder {0}: targetUser.tag
 #: src/components/modals/TimeoutMemberSheet.tsx:118
@@ -1201,8 +1201,8 @@ msgstr "30초"
 msgid "4 hours"
 msgstr "4시간"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:196
-#: src/components/modals/FluxerTagChangeModal.tsx:222
+#: src/components/modals/NePornuTagChangeModal.tsx:196
+#: src/components/modals/NePornuTagChangeModal.tsx:222
 msgid "4-digit tag"
 msgstr "4자리 태그"
 
@@ -1382,6 +1382,14 @@ msgstr "개발자 도구 접근"
 msgid "Access granted"
 msgstr "접근 허용됨"
 
+#: src/components/modals/tabs/VoiceTab.tsx:212
+msgid "Access is needed to list the available microphones and speakers."
+msgstr ""
+
+#: src/components/modals/tabs/VideoTab.tsx:127
+msgid "Access is needed to your camera before we can list it here."
+msgstr ""
+
 #: src/components/modals/channelTabs/ChannelPermissionsTab.tsx:723
 #: src/components/modals/channelTabs/ChannelPermissionsTab.tsx:864
 msgid "Access Overrides"
@@ -1416,6 +1424,11 @@ msgstr "이 계정은 스팸 용도로만 사용되는 것으로 보입니다."
 #: src/components/modals/ClaimAccountModal.tsx:107
 msgid "Account claimed successfully"
 msgstr "계정이 성공적으로 등록되었습니다."
+
+#: src/components/popouts/UserProfileShared.tsx:97
+#: src/components/popouts/UserProfileShared.tsx:128
+msgid "Account Created"
+msgstr "Account Created"
 
 #: src/components/modals/tabs/DeveloperOptionsTab/AccountPremiumTab.tsx:54
 msgid "Account State Overrides"
@@ -1939,8 +1952,8 @@ msgid "All Status Types"
 msgstr "모든 상태 유형"
 
 #: src/components/modals/tabs/LanguageTab.tsx:193
-msgid "All translations are currently LLM-generated with minimal human revision. We'd love to get real people to help us localize Fluxer into your language! To do so, send an email to <0>i18n@fluxer.app</0> and we'll be happy to accept your contributions."
-msgstr "현재 모든 번역은 최소한의 인간 수정으로 LLM에 의해 생성되었습니다. Fluxer를 귀하의 언어로 현지화하는 데 도움을 줄 실제 사람을 찾고 싶습니다! 그렇게 하려면 <0>i18n@fluxer.app</0>로 이메일을 보내주시면 기꺼이 기여를 받아들입니다."
+msgid "All translations are currently LLM-generated with minimal human revision. We'd love to get real people to help us localize NePornu into your language! To do so, send an email to <0>i18n@fluxer.app</0> and we'll be happy to accept your contributions."
+msgstr "현재 모든 번역은 최소한의 인간 수정으로 LLM에 의해 생성되었습니다. NePornu를 귀하의 언어로 현지화하는 데 도움을 줄 실제 사람을 찾고 싶습니다! 그렇게 하려면 <0>i18n@fluxer.app</0>로 이메일을 보내주시면 기꺼이 기여를 받아들입니다."
 
 #: src/components/modals/guildTabs/GuildAuditLogTab.tsx:201
 #: src/components/modals/guildTabs/GuildAuditLogTab.tsx:365
@@ -1999,18 +2012,6 @@ msgstr "이 커뮤니티 내 다른 구성원의 DM 허용"
 msgid "Allow Flexible Text Channel Names"
 msgstr "유연한 텍스트 채널 이름 허용"
 
-#: src/components/modals/tabs/VideoTab.tsx:122
-msgid "Allow Fluxer to access your camera in System Settings → Privacy & Security → Camera to preview and select devices."
-msgstr "시스템 설정 → 개인정보 보호 및 보안 → 카메라에서 Fluxer가 카메라에 접근하도록 허용하여 미리 보기 및 장치 선택을 해야 합니다."
-
-#: src/components/modals/tabs/VoiceTab.tsx:202
-msgid "Allow Fluxer to access your microphone in System Settings → Privacy & Security → Microphone."
-msgstr "시스템 설정 → 개인정보 보호 및 보안 → 마이크에서 Fluxer가 마이크를 사용할 수 있도록 허용하세요."
-
-#: src/components/modals/tabs/VoiceTab.tsx:206
-msgid "Allow Fluxer to access your microphone. Check your browser address bar or settings to enable permissions."
-msgstr "Fluxer가 마이크에 접근하도록 허용하세요. 브라우저 주소 표시줄이나 설정에서 권한을 활성화할 수 있습니다."
-
 #: src/components/modals/tabs/PrivacySafetyTab/ConnectionsTab.tsx:96
 msgid "Allow for all communities"
 msgstr "모든 커뮤니티에 허용"
@@ -2054,6 +2055,18 @@ msgstr "앱에서 모든 텍스트 콘텐츠 선택을 허용합니다."
 #: src/components/modals/tabs/AccessibilityTab/VisualTab.tsx:103
 msgid "Allow selecting all text content in the app. This setting is disabled on mobile to prevent interference with touch interactions."
 msgstr "앱에서 모든 텍스트 콘텐츠 선택을 허용합니다. 모바일에서는 터치와의 간섭을 막기 위해 이 설정이 비활성화됩니다."
+
+#: src/components/modals/tabs/VoiceTab.tsx:202
+msgid "Allow the app to access your microphone in System Settings → Privacy & Security → Microphone."
+msgstr ""
+
+#: src/components/modals/tabs/VoiceTab.tsx:206
+msgid "Allow the app to access your microphone. Check your browser address bar or settings to enable permissions."
+msgstr ""
+
+#: src/components/modals/tabs/VideoTab.tsx:122
+msgid "Allow the application to access your camera in System Settings → Privacy & Security → Camera to preview and select devices."
+msgstr ""
 
 #: src/components/modals/tabs/FeatureFlagsTab.tsx:43
 msgid "Allow users to create, install, and manage custom emoji and sticker packs."
@@ -2293,6 +2306,11 @@ msgstr "앱 상태"
 msgid "App zoom level"
 msgstr "앱 확대/축소 수준"
 
+#: src/Constants.tsx:148
+#: src/Constants.tsx:149
+msgid "Appearing offline"
+msgstr "Appearing offline"
+
 #: src/components/channel/AutocompleteCommand.tsx:44
 msgid "Appends {content} to your message."
 msgstr "메시지에 {content}를 추가합니다."
@@ -2300,6 +2318,10 @@ msgstr "메시지에 {content}를 추가합니다."
 #: src/components/modals/utils/settingsConstants.tsx:117
 msgid "Application"
 msgstr "애플리케이션"
+
+#: src/components/icons/AppIcon.tsx:31
+msgid "Application icon"
+msgstr "Application icon"
 
 #: src/components/modals/tabs/ApplicationsTab/application-detail/ApplicationHeader.tsx:56
 msgid "Application ID"
@@ -2317,6 +2339,10 @@ msgstr "애플리케이션 이름"
 #: src/components/modals/tabs/ApplicationsTab/application-detail/ApplicationInfoSection.tsx:52
 msgid "Application name is required"
 msgstr "애플리케이션 이름은 필수입니다"
+
+#: src/components/icons/AppSymbol.tsx:31
+msgid "Application symbol"
+msgstr "Application symbol"
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationDetail.tsx:266
 msgid "Application updated successfully"
@@ -2792,8 +2818,8 @@ msgid "Automatically play GIFs"
 msgstr "GIF 자동 재생"
 
 #: src/components/modals/tabs/AccessibilityTab/AnimationTab.tsx:102
-msgid "Automatically play GIFs when Fluxer is focused"
-msgstr "Fluxer가 포커스된 상태에서 GIF를 자동 재생합니다"
+msgid "Automatically play GIFs when NePornu is focused"
+msgstr "NePornu가 포커스된 상태에서 GIF를 자동 재생합니다"
 
 #: src/components/modals/guildTabs/GuildModerationTab.tsx:211
 msgid "Automatically screen messages for explicit content in non-NSFW channels."
@@ -3029,6 +3055,10 @@ msgstr "기본 설정 및 허용된 리디렉션 URI입니다."
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:90
 msgid "Basic Text Inputs"
 msgstr "기본 텍스트 입력"
+
+#: src/Constants.tsx:147
+msgid "Be right back"
+msgstr "Be right back"
 
 #: src/components/modals/guildTabs/GuildAuditLogTab.utils.tsx:451
 msgid "Because {reason}."
@@ -3334,8 +3364,8 @@ msgid "Buying Visionary will cancel your current {currentAccessLabel} immediatel
 msgstr "Visionary를 구매하면 현재의 {currentAccessLabel}가 즉시 취소됩니다. 이는 일회성 구매로 평생 접근할 수 있습니다."
 
 #: src/components/modals/AddGuildModal.tsx:356
-msgid "By creating a community, you agree to follow and uphold the <0>Fluxer Community Guidelines</0>."
-msgstr "커뮤니티를 생성함으로써 <0>Fluxer 커뮤니티 가이드라인</0>을 준수하고 지킬 것에 동의합니다."
+msgid "By creating a community, you agree to follow and uphold the <0>NePornu Community Guidelines</0>."
+msgstr "커뮤니티를 생성함으로써 <0>NePornu 커뮤니티 가이드라인</0>을 준수하고 지킬 것에 동의합니다."
 
 #: src/components/modals/components/PurchaseDisclaimer.tsx:39
 msgid "By purchasing, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@fluxer.app</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
@@ -3474,8 +3504,8 @@ msgstr "카메라 설정"
 #: src/components/modals/EmailChangeModal.tsx:262
 #: src/components/modals/EmailChangeModal.tsx:291
 #: src/components/modals/ExternalLinkWarningModal.tsx:94
-#: src/components/modals/FluxerTagChangeModal.tsx:112
-#: src/components/modals/FluxerTagChangeModal.tsx:253
+#: src/components/modals/NePornuTagChangeModal.tsx:112
+#: src/components/modals/NePornuTagChangeModal.tsx:253
 #: src/components/modals/ForwardModal.tsx:359
 #: src/components/modals/guildTabs/GuildBansTab.tsx:101
 #: src/components/modals/guildTabs/GuildRolesTab.tsx:615
@@ -3515,7 +3545,7 @@ msgstr "취소"
 msgid "Cancel Friend Request"
 msgstr "친구 요청 취소"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:107
+#: src/components/modals/NePornuTagChangeModal.tsx:107
 msgid "Cancel if you want to choose a different username instead."
 msgstr "다른 사용자명을 선택하려면 취소하세요."
 
@@ -3647,15 +3677,6 @@ msgstr "이메일 변경"
 msgid "Change emoji"
 msgstr "이모지 변경"
 
-#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:52
-#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:62
-msgid "Change FluxerTag"
-msgstr "FluxerTag 변경"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:153
-msgid "Change FluxerTag form"
-msgstr "FluxerTag 변경 양식"
-
 #: src/components/bottomsheets/DMBottomSheet.tsx:435
 #: src/components/uikit/ContextMenu/items/RelationshipMenuItems.tsx:154
 msgid "Change Friend Nickname"
@@ -3712,6 +3733,15 @@ msgstr "소유자 변경"
 msgid "Change Password"
 msgstr "비밀번호 변경"
 
+#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:52
+#: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:62
+msgid "Change Tag"
+msgstr "Change Tag"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:153
+msgid "Change Tag form"
+msgstr ""
+
 #: src/components/modals/EmailChangeModal.tsx:184
 msgid "Change your email"
 msgstr "이메일 변경"
@@ -3719,10 +3749,6 @@ msgstr "이메일 변경"
 #: src/components/modals/utils/settingsSearchIndex.ts:96
 msgid "Change your email address"
 msgstr "이메일 주소 변경"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:154
-msgid "Change your FluxerTag"
-msgstr "FluxerTag 변경"
 
 #: src/components/channel/AutocompleteCommand.tsx:49
 msgid "Change your nickname in this community."
@@ -3739,6 +3765,10 @@ msgstr "계정을 안전하게 유지하려면 비밀번호를 변경하세요"
 #: src/components/modals/utils/settingsSearchIndex.ts:45
 msgid "Change your profile picture"
 msgstr "프로필 사진 변경"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:154
+msgid "Change your Tag"
+msgstr "Change your Tag"
 
 #: src/components/modals/utils/settingsSearchIndex.ts:59
 msgid "Change your username"
@@ -3935,9 +3965,9 @@ msgstr "채널: {0}."
 msgid "Channels"
 msgstr "채널"
 
-#: src/Constants.tsx:143
-msgid "Charged up on 1.21 gigawatts, ready to talk"
-msgstr "1.21기가와트로 충전 완료, 대화할 준비됨"
+#: src/Constants.tsx:145
+msgid "Charged up, ready to talk"
+msgstr "Charged up, ready to talk"
 
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildEmbedSplashUploadField.tsx:79
 msgid "Chat Embed Background"
@@ -3948,9 +3978,9 @@ msgid "Chat font scaling"
 msgstr "채팅 글꼴 크기 조절"
 
 #: src/components/BootstrapErrorScreen.tsx:57
-#: src/components/NetworkErrorScreen.tsx:45
-msgid "Check our <0>Bluesky (@fluxer.app)</0> for status updates."
-msgstr "상태 업데이트는 <0>Bluesky (@fluxer.app)</0>를 확인하세요."
+#: src/components/NetworkErrorScreen.tsx:44
+msgid "Check our <0>status page (status.nepornu.cz)</0> for status updates."
+msgstr "Check our <0>status page (status.nepornu.cz)</0> for status updates."
 
 #: src/components/modals/ShareThemeModal.tsx:117
 msgid "Check out my custom theme!"
@@ -4060,8 +4090,8 @@ msgid "Choose what {clientLabel} can do in your community. Uncheck any permissio
 msgstr "{clientLabel}이 커뮤니티에서 수행할 수 있는 권한 선택. 원하지 않는 권한의 체크를 해제하세요."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:105
-msgid "Choose what Fluxer remembers about your window between restarts and reloads on this device."
-msgstr "Fluxer가 기기에서 재시작/리로드 중에 창 정보를 기억할 내용을 선택하세요."
+msgid "Choose what NePornu remembers about your window between restarts and reloads on this device."
+msgstr "NePornu가 기기에서 재시작/리로드 중에 창 정보를 기억할 내용을 선택하세요."
 
 #: src/components/modals/guildTabs/GuildModerationTab.tsx:183
 msgid "Choose what members must have before they can post or DM community members."
@@ -4136,8 +4166,8 @@ msgid "Claim your account to call"
 msgstr "전화를 걸기 위해 계정을 확인하세요."
 
 #: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:49
-msgid "Claim your account to change your FluxerTag"
-msgstr "FluxerTag를 변경하려면 계정을 인증하세요."
+msgid "Claim your account to change your Tag"
+msgstr "Claim your account to change your Tag"
 
 #: src/components/modals/tabs/ApplicationsTab/index.tsx:146
 msgid "Claim your account to create applications."
@@ -4161,13 +4191,16 @@ msgstr "소유하지 않은 음성 채널에 참여하기 위해 계정을 확�
 #: src/components/modals/components/plutonium/GiftSection.tsx:61
 #: src/components/modals/components/plutonium/PricingSection.tsx:63
 #: src/components/modals/components/plutonium/VisionarySection.tsx:62
-#: src/components/modals/components/PlutoniumContent.tsx:99
-msgid "Claim your account to purchase Fluxer Plutonium."
-msgstr "Fluxer Plutonium을 구매하기 위해 계정을 요청하세요."
+msgid "Claim your account to purchase NePornu Plutonium."
+msgstr "NePornu Plutonium을 구매하기 위해 계정을 요청하세요."
 
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:112
-msgid "Claim your account to purchase or redeem Fluxer Plutonium."
-msgstr "Fluxer Plutonium을 구매하거나 사용하기 위해 계정을 요청하세요."
+msgid "Claim your account to purchase or redeem NePornu Plutonium."
+msgstr "NePornu Plutonium을 구매하거나 사용하기 위해 계정을 요청하세요."
+
+#: src/components/modals/components/PlutoniumContent.tsx:99
+msgid "Claim your account to purchase Plutonium."
+msgstr ""
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:239
 msgid "Claim your account to redeem or manage Plutonium gift codes."
@@ -4290,8 +4323,8 @@ msgid "Click \"Create Code\" to generate your first code."
 msgstr "\"코드 생성\"을 클릭하여 첫 번째 코드를 만드세요."
 
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:71
-msgid "Click \"Open Settings\" to open System Settings, then enable Fluxer in Input Monitoring."
-msgstr "\"설정 열기\"를 클릭하여 시스템 설정을 열고 입력 모니터링에서 Fluxer를 활성화하세요."
+msgid "Click \"Open Settings\" to open System Settings, then enable NePornu in Input Monitoring."
+msgstr "\"설정 열기\"를 클릭하여 시스템 설정을 열고 입력 모니터링에서 NePornu를 활성화하세요."
 
 #: src/components/modals/tabs/ComponentGalleryTab/ButtonsTab.tsx:58
 msgid "Click any button to see toast notifications with feedback."
@@ -4938,8 +4971,8 @@ msgstr "상황별 메뉴는 버튼은 왼쪽 클릭, 다른 요소는 오른쪽 
 #: src/components/modals/BackupCodesRegenerateModal.tsx:63
 #: src/components/modals/BackupCodesViewModal.tsx:66
 #: src/components/modals/DeviceRevokeModal.tsx:68
-#: src/components/modals/FluxerTagChangeModal.tsx:111
-#: src/components/modals/FluxerTagChangeModal.tsx:256
+#: src/components/modals/NePornuTagChangeModal.tsx:111
+#: src/components/modals/NePornuTagChangeModal.tsx:256
 #: src/components/modals/MfaTotpDisableModal.tsx:78
 #: src/components/modals/MfaTotpEnableModal.tsx:105
 #: src/components/modals/PasswordChangeModal.tsx:99
@@ -5147,10 +5180,9 @@ msgid "Copy File Link"
 msgstr "파일 링크 복사"
 
 #: src/components/modals/tabs/BlockedUsersTab.tsx:98
-#: src/components/modals/UserProfileActionsSheet.tsx:208
 #: src/components/modals/UserProfileModal.tsx:1149
-msgid "Copy FluxerTag"
-msgstr "FluxerTag 복사"
+msgid "Copy NePornuTag"
+msgstr "NePornuTag 복사"
 
 #: src/components/uikit/ContextMenu/MediaContextMenu.tsx:351
 msgid "Copy GIF"
@@ -5207,6 +5239,10 @@ msgstr "메시지 링크 복사"
 #: src/components/channel/sticker-picker/VirtualRow.tsx:201
 msgid "Copy Sticker ID"
 msgstr "스티커 ID 복사"
+
+#: src/components/modals/UserProfileActionsSheet.tsx:208
+msgid "Copy Tag"
+msgstr ""
 
 #: src/components/channel/MessageActionBar.tsx:555
 #: src/components/channel/MessageActionBar.tsx:686
@@ -5327,8 +5363,8 @@ msgid "Create and manage applications and bots for your account."
 msgstr "계정용 애플리케이션과 봇을 만들고 관리하세요."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:119
-msgid "Create and share custom emoji and sticker packs with Fluxer Plutonium."
-msgstr "Fluxer Plutonium으로 커스텀 이모지와 스티커 팩을 만들고 공유하세요."
+msgid "Create and share custom emoji and sticker packs with NePornu Plutonium."
+msgstr "NePornu Plutonium으로 커스텀 이모지와 스티커 팩을 만들고 공유하세요."
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationCreateModal.tsx:80
 #: src/components/modals/tabs/ApplicationsTab/index.tsx:149
@@ -5437,8 +5473,8 @@ msgid "Create Webhook"
 msgstr "웹훅 만들기"
 
 #: src/components/modals/tabs/ApplicationsTab/ApplicationsList.tsx:43
-msgid "Create your first application to get started with the Fluxer API."
-msgstr "Fluxer API를 시작하려면 첫 애플리케이션을 만들어 보세요."
+msgid "Create your first application to get started with the NePornu API."
+msgstr "NePornu API를 시작하려면 첫 애플리케이션을 만들어 보세요."
 
 #: src/utils/PermissionUtils.tsx:254
 msgid "Create, edit, or delete channels and categories."
@@ -5597,11 +5633,6 @@ msgstr "현재 거부됨"
 msgid "Currently showing"
 msgstr "현재 표시됨"
 
-#: src/Constants.tsx:146
-#: src/Constants.tsx:147
-msgid "Currently stuck in 1885, appearing offline"
-msgstr "지금 1885년에 멈춰 있어서 오프라인으로 보여요"
-
 #: src/components/bottomsheets/ChannelBottomSheet.tsx:461
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:1047
 #: src/components/bottomsheets/DMBottomSheet.tsx:608
@@ -5721,7 +5752,7 @@ msgstr "CSS로 맞춤 설정"
 msgid "Customize your 4-digit tag (#{discriminator}) to your liking with Plutonium"
 msgstr "Plutonium으로 4자리 태그(#{discriminator})를 원하는 대로 바꿔 보세요."
 
-#: src/components/modals/FluxerTagChangeModal.tsx:246
+#: src/components/modals/NePornuTagChangeModal.tsx:246
 msgid "Customize your 4-digit tag or keep it when changing your username"
 msgstr "사용자명을 바꿀 때 4자리 태그를 유지하거나 새로 설정하세요."
 
@@ -6371,8 +6402,8 @@ msgid "Direct Message"
 msgstr "다이렉트 메시지"
 
 #: src/components/channel/dm/DMList.tsx:819
-#: src/components/layout/guild-list/FluxerButton.tsx:65
-#: src/components/layout/guild-list/FluxerButton.tsx:70
+#: src/components/layout/guild-list/AppHomeButton.tsx:65
+#: src/components/layout/guild-list/AppHomeButton.tsx:70
 #: src/components/modals/GuildPrivacySettingsModal.tsx:60
 #: src/components/modals/tabs/PrivacySafetyTab/ConnectionsTab.tsx:182
 #: src/components/modals/utils/settingsSearchIndex.ts:557
@@ -6676,7 +6707,7 @@ msgstr "DM 알림"
 msgid "DM Settings"
 msgstr "다이렉트 메시지 설정"
 
-#: src/Constants.tsx:131
+#: src/Constants.tsx:133
 msgid "Do Not Disturb"
 msgstr "방해 금지"
 
@@ -6779,8 +6810,8 @@ msgstr "데스크톱 앱 다운로드"
 
 #: src/components/layout/guild-list/DownloadButton.tsx:46
 #: src/components/layout/guild-list/DownloadButton.tsx:50
-msgid "Download Fluxer"
-msgstr "Fluxer 다운로드"
+msgid "Download NePornu"
+msgstr "NePornu 다운로드"
 
 #: src/components/channel/embeds/media/MediaContainer.tsx:132
 msgid "Download media"
@@ -7500,8 +7531,8 @@ msgid "Enter the 6-digit code sent to your phone."
 msgstr "전화번호로 전송된 6자리 코드를 입력하세요."
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:254
-msgid "Enter the API endpoint of the Fluxer instance you want to connect to."
-msgstr "연결하려는 Fluxer 인스턴스의 API 엔드포인트를 입력하세요."
+msgid "Enter the API endpoint of the NePornu instance you want to connect to."
+msgstr "연결하려는 NePornu 인스턴스의 API 엔드포인트를 입력하세요."
 
 #: src/components/pages/ReportPage.tsx:249
 msgid "Enter the code before continuing."
@@ -8412,125 +8443,81 @@ msgstr "플래그"
 msgid "Flexible text channel names"
 msgstr "유연한 텍스트 채널 이름"
 
-#: src/components/popouts/UserProfileShared.tsx:97
-msgid "Fluxer"
-msgstr "Fluxer"
-
-#: src/components/icons/FluxerIcon.tsx:31
-msgid "Fluxer application icon"
-msgstr "Fluxer 애플리케이션 아이콘"
-
-#: src/components/icons/FluxerSymbol.tsx:31
-msgid "Fluxer application symbol"
-msgstr "Fluxer 애플리케이션 심볼"
-
 #: src/components/modals/tabs/NotificationsTab/PushSettings.tsx:37
-msgid "Fluxer avoids sending push notifications to your mobile devices when you are at your computer. Use this setting to control how long you need to be inactive on desktop for before you receive push notifications, ranging from 1 minute to 10 minutes."
-msgstr "Fluxer는 컴퓨터 앞에 있을 때 모바일 기기로 푸시 알림을 보내지 않습니다. 이 설정으로 데스크톱에서 비활성 상태가 되어야 푸시 알림을 받을지 1분에서 10분까지 조정할 수 있습니다."
+msgid "NePornu avoids sending push notifications to your mobile devices when you are at your computer. Use this setting to control how long you need to be inactive on desktop for before you receive push notifications, ranging from 1 minute to 10 minutes."
+msgstr "NePornu는 컴퓨터 앞에 있을 때 모바일 기기로 푸시 알림을 보내지 않습니다. 이 설정으로 데스크톱에서 비활성 상태가 되어야 푸시 알림을 받을지 1분에서 10분까지 조정할 수 있습니다."
 
 #: src/components/popouts/UserProfileBadges.tsx:93
-msgid "Fluxer Bug Hunter"
-msgstr "Fluxer 버그 헌터"
+msgid "NePornu Bug Hunter"
+msgstr "NePornu 버그 헌터"
 
 #: src/components/popouts/UserProfileBadges.tsx:75
-msgid "Fluxer Community Team"
-msgstr "Fluxer 커뮤니티 팀"
+msgid "NePornu Community Team"
+msgstr "NePornu 커뮤니티 팀"
 
 #: src/components/modals/tabs/DevicesTab.tsx:98
-msgid "Fluxer Desktop"
-msgstr "Fluxer 데스크톱"
-
-#: src/components/BootstrapErrorScreen.tsx:49
-msgid "Fluxer failed to start properly. This could be due to corrupted data or a temporary issue."
-msgstr "Fluxer가 제대로 시작하지 못했습니다. 손상된 데이터나 일시적인 문제일 수 있습니다."
+msgid "NePornu Desktop"
+msgstr "NePornu 데스크톱"
 
 #: src/stores/NewDeviceMonitoringStore.tsx:186
-msgid "Fluxer has found a new audio input device named <0>{deviceName}</0>. Do you want to switch to it?"
-msgstr "Fluxer가 <0>{deviceName}</0>이라는 새 오디오 입력 장치를 발견했습니다. 해당 장치로 전환하시겠습니까?"
+msgid "NePornu has found a new audio input device named <0>{deviceName}</0>. Do you want to switch to it?"
+msgstr "NePornu가 <0>{deviceName}</0>이라는 새 오디오 입력 장치를 발견했습니다. 해당 장치로 전환하시겠습니까?"
 
 #: src/stores/NewDeviceMonitoringStore.tsx:191
-msgid "Fluxer has found a new audio output device named <0>{deviceName}</0>. Do you want to switch to it?"
-msgstr "Fluxer가 <0>{deviceName}</0>이라는 새 오디오 출력 장치를 발견했습니다. 해당 장치로 전환하시겠습니까?"
-
-#: src/components/popouts/UserProfileShared.tsx:128
-msgid "Fluxer Member Since"
-msgstr "Fluxer 회원 가입일"
-
-#: src/components/modals/tabs/VoiceTab.tsx:212
-msgid "Fluxer needs access to list the available microphones and speakers."
-msgstr "Fluxer가 사용 가능한 마이크와 스피커를 나열하려면 접근 권한이 필요합니다."
+msgid "NePornu has found a new audio output device named <0>{deviceName}</0>. Do you want to switch to it?"
+msgstr "NePornu가 <0>{deviceName}</0>이라는 새 오디오 출력 장치를 발견했습니다. 해당 장치로 전환하시겠습니까?"
 
 #: src/components/alerts/ScreenRecordingPermissionDeniedModal.tsx:31
-msgid "Fluxer needs access to screen recording. Open System Settings → Privacy & Security → Screen Recording, allow Fluxer, and then try again."
-msgstr "Fluxer가 화면 녹화를 사용하려면 권한이 필요합니다. 시스템 설정 → 개인정보 보호 및 보안 → 화면 녹화로 이동해 Fluxer를 허용한 후 다시 시도해 주세요."
-
-#: src/components/modals/tabs/VideoTab.tsx:127
-msgid "Fluxer needs access to your camera before we can list it here."
-msgstr "여기에 카메라를 나열하려면 Fluxer가 카메라 접근 권한을 가져야 합니다."
+msgid "NePornu needs access to screen recording. Open System Settings → Privacy & Security → Screen Recording, allow NePornu, and then try again."
+msgstr "NePornu가 화면 녹화를 사용하려면 권한이 필요합니다. 시스템 설정 → 개인정보 보호 및 보안 → 화면 녹화로 이동해 NePornu를 허용한 후 다시 시도해 주세요."
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:43
-msgid "Fluxer needs access to your camera to enable video chat. Please grant camera permission in your browser settings and try again."
-msgstr "Fluxer가 화상 채팅을 사용하려면 카메라 권한이 필요합니다. 브라우저 설정에서 카메라 권한을 허용한 후 다시 시도해 주세요."
+msgid "NePornu needs access to your camera to enable video chat. Please grant camera permission in your browser settings and try again."
+msgstr "NePornu가 화상 채팅을 사용하려면 카메라 권한이 필요합니다. 브라우저 설정에서 카메라 권한을 허용한 후 다시 시도해 주세요."
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:42
-msgid "Fluxer needs access to your camera. Allow camera access in your operating system privacy settings and restart the app."
-msgstr "Fluxer가 카메라에 접근할 수 있어야 합니다. 운영 체제 개인정보 보호 설정에서 카메라 접근을 허용하고 앱을 재시작해 주세요."
+msgid "NePornu needs access to your camera. Allow camera access in your operating system privacy settings and restart the app."
+msgstr "NePornu가 카메라에 접근할 수 있어야 합니다. 운영 체제 개인정보 보호 설정에서 카메라 접근을 허용하고 앱을 재시작해 주세요."
 
 #: src/components/alerts/CameraPermissionDeniedModal.tsx:32
-msgid "Fluxer needs access to your camera. Open System Settings → Privacy & Security → Camera, allow Fluxer, and then restart the app."
-msgstr "Fluxer가 카메라에 접근하려면 시스템 설정 → 개인정보 보호 및 보안 → 카메라에서 Fluxer를 허용한 후 앱을 재시작해 주세요."
+msgid "NePornu needs access to your camera. Open System Settings → Privacy & Security → Camera, allow NePornu, and then restart the app."
+msgstr "NePornu가 카메라에 접근하려면 시스템 설정 → 개인정보 보호 및 보안 → 카메라에서 NePornu를 허용한 후 앱을 재시작해 주세요."
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:44
-msgid "Fluxer needs access to your microphone to enable voice chat. Please grant microphone permission in your browser settings and try again."
-msgstr "Fluxer가 음성 채팅을 사용하려면 마이크 권한이 필요합니다. 브라우저 설정에서 마이크 권한을 허용한 후 다시 시도해 주세요."
+msgid "NePornu needs access to your microphone to enable voice chat. Please grant microphone permission in your browser settings and try again."
+msgstr "NePornu가 음성 채팅을 사용하려면 마이크 권한이 필요합니다. 브라우저 설정에서 마이크 권한을 허용한 후 다시 시도해 주세요."
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:43
-msgid "Fluxer needs access to your microphone. Allow microphone access in your operating system privacy settings and restart the app."
-msgstr "Fluxer가 마이크에 접근할 수 있어야 합니다. 운영 체제 개인정보 보호 설정에서 마이크 접근을 허용하고 앱을 재시작해 주세요."
+msgid "NePornu needs access to your microphone. Allow microphone access in your operating system privacy settings and restart the app."
+msgstr "NePornu가 마이크에 접근할 수 있어야 합니다. 운영 체제 개인정보 보호 설정에서 마이크 접근을 허용하고 앱을 재시작해 주세요."
 
 #: src/components/alerts/MicrophonePermissionDeniedModal.tsx:33
-msgid "Fluxer needs access to your microphone. Open System Settings → Privacy & Security → Microphone, allow Fluxer, and then restart the app."
-msgstr "Fluxer가 마이크에 접근하려면 시스템 설정 → 개인정보 보호 및 보안 → 마이크에서 Fluxer를 허용한 후 앱을 재시작해 주세요."
+msgid "NePornu needs access to your microphone. Open System Settings → Privacy & Security → Microphone, allow NePornu, and then restart the app."
+msgstr "NePornu가 마이크에 접근하려면 시스템 설정 → 개인정보 보호 및 보안 → 마이크에서 NePornu를 허용한 후 앱을 재시작해 주세요."
 
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:64
-msgid "Fluxer needs Input Monitoring permission to keep push-to-talk and global shortcuts working while the window is in the background."
-msgstr "Fluxer는 창이 백그라운드에 있어도 푸시 투 토크와 글로벌 단축키가 작동하려면 입력 모니터링 권한이 필요합니다."
+msgid "NePornu needs Input Monitoring permission to keep push-to-talk and global shortcuts working while the window is in the background."
+msgstr "NePornu는 창이 백그라운드에 있어도 푸시 투 토크와 글로벌 단축키가 작동하려면 입력 모니터링 권한이 필요합니다."
 
 #: src/components/modals/InputMonitoringCTAModal.tsx:76
-msgid "Fluxer needs permission to monitor keyboard and mouse input so that <0>Push-to-Talk</0> and <1>Global Shortcuts</1> work even when you're in another app or game."
-msgstr "Fluxer는 다른 앱이나 게임 중에도 <0>푸시 투 토크</0>와 <1>글로벌 단축키</1>가 작동하려면 키보드 및 마우스 입력을 모니터링할 권한이 필요합니다."
+msgid "NePornu needs permission to monitor keyboard and mouse input so that <0>Push-to-Talk</0> and <1>Global Shortcuts</1> work even when you're in another app or game."
+msgstr "NePornu는 다른 앱이나 게임 중에도 <0>푸시 투 토크</0>와 <1>글로벌 단축키</1>가 작동하려면 키보드 및 마우스 입력을 모니터링할 권한이 필요합니다."
 
 #: src/components/popouts/UserProfileBadges.tsx:84
-msgid "Fluxer Partner"
-msgstr "Fluxer 파트너"
+msgid "NePornu Partner"
+msgstr "NePornu 파트너"
 
-#: src/components/modals/components/PlutoniumContent.tsx:193
-#: src/components/modals/PremiumModal.tsx:34
-#: src/components/modals/utils/settingsConstants.tsx:147
 #: src/components/popouts/UserProfileBadges.tsx:99
-msgid "Fluxer Plutonium"
-msgstr "Fluxer Plutonium"
+msgid "NePornu Plutonium"
+msgstr "NePornu Plutonium"
 
 #: src/components/popouts/UserProfileBadges.tsx:66
-msgid "Fluxer Staff"
-msgstr "Fluxer 스태프"
+msgid "NePornu Staff"
+msgstr "NePornu 스태프"
 
 #: src/components/modals/tabs/NotificationsTab/Notifications.tsx:114
-msgid "Fluxer uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
-msgstr "Fluxer는 모바일 PWA로 설치되면 푸시 알림을 사용합니다. 등록하면 브라우저가 백그라운드에 있어도 게이트웨이가 기기에 도달할 수 있습니다."
-
-#: src/components/modals/FluxerTagChangeModal.tsx:170
-#: src/components/modals/tabs/ApplicationsTab/application-detail/BotProfileSection.tsx:104
-msgid "FluxerTag"
-msgstr "FluxerTag"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:97
-msgid "FluxerTag already taken"
-msgstr "FluxerTag가 이미 사용 중입니다"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:139
-msgid "FluxerTag updated"
-msgstr "FluxerTag가 업데이트되었습니다"
+msgid "NePornu uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
+msgstr "NePornu는 모바일 PWA로 설치되면 푸시 알림을 사용합니다. 등록하면 브라우저가 백그라운드에 있어도 게이트웨이가 기기에 도달할 수 있습니다."
 
 #: src/stores/KeybindStore.ts:370
 msgid "Focus Text Area"
@@ -8874,8 +8861,8 @@ msgid "Friend Requests"
 msgstr "친구 요청"
 
 #: src/components/channel/dm/AddFriendForm.tsx:160
-msgid "Friend's FluxerTag"
-msgstr "친구의 FluxerTag"
+msgid "Friend's Tag"
+msgstr "Friend's Tag"
 
 #: src/components/channel/dm/DMList.tsx:781
 #: src/utils/quick-switcher/QuickSwitcherModalUtils.tsx:87
@@ -8980,8 +8967,8 @@ msgid "Generate invite link"
 msgstr "초대 링크 생성"
 
 #: src/components/modals/tabs/BetaCodesTab.tsx:340
-msgid "Generate up to {MAX_UNCLAIMED_BETA_CODES} unclaimed beta codes to invite friends to Fluxer. You can create 3 codes per week."
-msgstr "Fluxer에 친구를 초대할 수 있도록 최대 {MAX_UNCLAIMED_BETA_CODES}개의 미사용 베타 코드를 생성하세요. 주당 3개까지만 만들 수 있습니다."
+msgid "Generate up to {MAX_UNCLAIMED_BETA_CODES} unclaimed beta codes to invite friends to NePornu. You can create 3 codes per week."
+msgstr "NePornu에 친구를 초대할 수 있도록 최대 {MAX_UNCLAIMED_BETA_CODES}개의 미사용 베타 코드를 생성하세요. 주당 3개까지만 만들 수 있습니다."
 
 #: src/components/auth/HandoffCodeDisplay.tsx:49
 msgid "Generating code..."
@@ -9009,8 +8996,8 @@ msgid "Get desktop app"
 msgstr "데스크톱 앱 받기"
 
 #: src/components/layout/app-layout/nagbars/MobileDownloadNagbar.tsx:50
-msgid "Get Fluxer on mobile to receive notifications on the go and stay connected with your friends anytime."
-msgstr "모바일에서 Fluxer를 받아 이동 중에도 알림을 받고 언제든 친구들과 연결 상태를 유지하세요."
+msgid "Get NePornu on mobile to receive notifications on the go and stay connected with your friends anytime."
+msgstr "모바일에서 NePornu를 받아 이동 중에도 알림을 받고 언제든 친구들과 연결 상태를 유지하세요."
 
 #: src/stores/KeybindStore.ts:407
 msgid "Get Help"
@@ -9026,7 +9013,7 @@ msgstr "메시지를 받으면 알림을 받아보세요. 브라우저 설정에
 
 #: src/components/alerts/FileSizeTooLargeModal.tsx:46
 #: src/components/modals/BackgroundImageGalleryModal.tsx:677
-#: src/components/modals/FluxerTagChangeModal.tsx:214
+#: src/components/modals/NePornuTagChangeModal.tsx:214
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:58
 #: src/components/modals/tabs/MyProfileTab/AvatarUploader.tsx:122
 #: src/components/modals/tabs/NotificationsTab/Sounds.tsx:82
@@ -9044,7 +9031,7 @@ msgstr "자신을 위해 Plutonium을 얻고 더 높은 한도와 독점 기능�
 msgid "Get Plutonium to customize your tag"
 msgstr "태그를 꾸미려면 Plutonium을 받으세요"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:192
+#: src/components/modals/NePornuTagChangeModal.tsx:192
 msgid "Get Plutonium to customize your tag or keep it when changing your username"
 msgstr "태그를 꾸미거나 사용자 이름을 바꿀 때 유지하려면 Plutonium을 받으세요"
 
@@ -9053,8 +9040,8 @@ msgid "Get prompted when new audio devices are connected"
 msgstr "새 오디오 장치 연결 시 알림 받기"
 
 #: src/components/layout/app-layout/nagbars/DesktopDownloadNagbar.tsx:49
-msgid "Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies."
-msgstr "시스템 전체 푸시 투 토크와 기타 기능을 위해 Fluxer 데스크톱 앱을 받아보세요."
+msgid "Get the NePornu desktop app for system-wide push-to-talk and a few other goodies."
+msgstr "Get the NePornu desktop app for system-wide push-to-talk and a few other goodies."
 
 #: src/components/modals/MediaModal.tsx:756
 #: src/components/stickers/StickerGridItem.tsx:100
@@ -9656,10 +9643,6 @@ msgstr "비트레이트가 높을수록 품질은 좋아지지만 대역폭 사�
 msgid "Hindi"
 msgstr "힌디어"
 
-#: src/components/modals/components/LogoutModal.tsx:31
-msgid "Hit 88mph"
-msgstr "시속 88마일 달성"
-
 #: src/components/modals/AddGuildModal.tsx:153
 msgid "Hobby Haven"
 msgstr "취미의 쉼터"
@@ -9782,8 +9765,8 @@ msgid "I understand"
 msgstr "이해했어요"
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:309
-msgid "I want to use a custom Fluxer instance"
-msgstr "맞춤 Fluxer 인스턴스를 사용하고 싶어요"
+msgid "I want to use a custom NePornu instance"
+msgstr "맞춤 NePornu 인스턴스를 사용하고 싶어요"
 
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildIconUploadField.tsx:65
 #: src/components/modals/guildTabs/GuildOverviewTab/fields/GuildIconUploadField.tsx:78
@@ -9796,7 +9779,7 @@ msgstr "아이콘"
 msgid "Icon file is too large. Please choose a file smaller than 10MB."
 msgstr "아이콘 파일이 너무 큽니다. 10MB 미만 파일을 선택하세요."
 
-#: src/Constants.tsx:132
+#: src/Constants.tsx:134
 msgid "Idle"
 msgstr "유휴"
 
@@ -9952,7 +9935,7 @@ msgstr "1초 후"
 msgid "In the beginning, there was nothing. Then, there was #{0}. And it was good."
 msgstr "처음에는 아무것도 없었어요. 그러다 #{0}이 생겼고, 그것은 좋았어요."
 
-#: src/Constants.tsx:144
+#: src/Constants.tsx:146
 msgid "In the zone, please do not disturb"
 msgstr "집중 모드예요, 방해하지 말아주세요"
 
@@ -9961,8 +9944,8 @@ msgid "in two days"
 msgstr "2일 후"
 
 #: src/components/modals/tabs/VoiceTab.tsx:142
-msgid "In your browser, Push-to-Talk will only work when the Fluxer tab is focused. For system-wide Push-to-Talk that works even when gaming or using other apps, download the desktop app."
-msgstr "브라우저에서는 Fluxer 탭이 포커스되어 있을 때만 푸시 투 토크가 작동해요. 게임이나 다른 앱 사용 중에도 작동하는 시스템 전체 푸시 투 토크를 사용하려면 데스크톱 앱을 다운로드하세요."
+msgid "In your browser, Push-to-Talk will only work when the application tab is focused. For system-wide Push-to-Talk that works even when gaming or using other apps, download the desktop app."
+msgstr ""
 
 #: src/utils/SearchUtils.ts:269
 msgid "in:"
@@ -10222,7 +10205,7 @@ msgstr "반전됨"
 msgid "Inverted button clicked!"
 msgstr "반전된 버튼을 눌렀어요!"
 
-#: src/Constants.tsx:133
+#: src/Constants.tsx:135
 msgid "Invisible"
 msgstr "보이지 않음"
 
@@ -10492,13 +10475,13 @@ msgstr "커뮤니티 참여"
 msgid "Join community form"
 msgstr "커뮤니티 참여 양식"
 
-#: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:97
-msgid "Join Fluxer HQ"
-msgstr "Fluxer 본사에 참여하기"
-
 #: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:94
-msgid "Join Fluxer HQ to chat with the team and stay up to date on the latest!"
-msgstr "팀과 채팅하고 최신 정보를 유지하려면 Fluxer 본사에 참여하세요!"
+msgid "Join NePornu HQ"
+msgstr "NePornu 본사에 참여하기"
+
+#: src/components/layout/app-layout/nagbars/GuildMembershipCtaNagbar.tsx:91
+msgid "Join NePornu HQ to chat with the team and stay up to date on the latest!"
+msgstr "팀과 채팅하고 최신 정보를 유지하려면 NePornu 본사에 참여하세요!"
 
 #: src/components/channel/InviteEmbed.tsx:201
 msgid "Join Group"
@@ -10807,8 +10790,8 @@ msgid "Latvia"
 msgstr "라트비아"
 
 #: src/components/modals/tabs/AdvancedTab.tsx:88
-msgid "Launch Fluxer at login"
-msgstr "Fluxer를 로그인할 때 실행"
+msgid "Launch NePornu at login"
+msgstr "NePornu를 로그인할 때 실행"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:122
 msgid "Learn about Plutonium"
@@ -11117,6 +11100,7 @@ msgid "Log in with a passkey"
 msgstr "패스키로 로그인"
 
 #: src/components/modals/components/DesktopSettingsView.tsx:346
+#: src/components/modals/components/LogoutModal.tsx:31
 #: src/components/modals/components/MobileSettingsView.tsx:357
 #: src/components/pages/PendingVerificationPage.tsx:151
 msgid "Log Out"
@@ -11315,8 +11299,8 @@ msgid "Manage Subscription"
 msgstr "구독 관리"
 
 #: src/components/modals/tabs/AccountSecurityTab/AccountTab.tsx:58
-msgid "Manage the email address you use to sign in to Fluxer"
-msgstr "Fluxer 로그인에 사용하는 이메일 주소 관리"
+msgid "Manage the email address you use to sign in"
+msgstr ""
 
 #: src/utils/PermissionUtils.tsx:284
 #: src/utils/PermissionUtils.tsx:439
@@ -11440,7 +11424,7 @@ msgstr "멤버가 임시로 표시되었습니다."
 msgid "Markers Below Slider"
 msgstr "슬라이더 아래 마커"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:182
+#: src/components/modals/NePornuTagChangeModal.tsx:182
 msgid "Marty_McFly"
 msgstr "Marty_McFly"
 
@@ -12357,6 +12341,10 @@ msgstr "계정이 필요하신가요?"
 msgid "Neighborhood Watch"
 msgstr "이웃 감시"
 
+#: src/components/BootstrapErrorScreen.tsx:49
+msgid "NePornu failed to start properly. This could be due to corrupted data or a temporary issue."
+msgstr "NePornu failed to start properly. This could be due to corrupted data or a temporary issue."
+
 #: src/components/pages/report/optionDescriptors.ts:102
 msgid "Netherlands"
 msgstr "네덜란드"
@@ -12829,8 +12817,8 @@ msgid "No Timer"
 msgstr "타이머 없음"
 
 #: src/components/channel/dm/AddFriendForm.tsx:93
-msgid "No user found with that FluxerTag."
-msgstr "해당 FluxerTag를 가진 사용자를 찾을 수 없음"
+msgid "No user found with that Tag."
+msgstr "No user found with that Tag."
 
 #: src/components/modals/guildTabs/GuildBansTab.tsx:178
 msgid "No users are currently banned from this community."
@@ -13046,7 +13034,7 @@ msgstr "꺼짐"
 
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:287
 #: src/components/channel/ChannelMembers.tsx:108
-#: src/Constants.tsx:134
+#: src/Constants.tsx:136
 #: src/utils/MemberListUtils.ts:150
 #: src/utils/MemberListUtils.ts:188
 msgid "Offline"
@@ -13152,7 +13140,7 @@ msgstr "일회성, 평생"
 #: src/components/channel/ChannelMembers.tsx:106
 #: src/components/channel/dm/DMFriendsView.tsx:168
 #: src/components/channel/friends/views/FriendsList.tsx:95
-#: src/Constants.tsx:130
+#: src/Constants.tsx:132
 #: src/utils/MemberListUtils.ts:143
 #: src/utils/MemberListUtils.ts:182
 msgid "Online"
@@ -13211,6 +13199,10 @@ msgstr "불투명도"
 msgid "Open {altText} in full view"
 msgstr "{altText}을 전체 보기로 열기"
 
+#: src/components/auth/DesktopDeepLinkPrompt.tsx:102
+msgid "Open app"
+msgstr ""
+
 #: src/components/auth/BrowserLoginHandoffModal.tsx:326
 msgid "Open browser"
 msgstr "브라우저 열기"
@@ -13252,10 +13244,6 @@ msgstr "DM + 커뮤니티 열기"
 msgid "Open DMs Only"
 msgstr "DM만 열기"
 
-#: src/components/auth/DesktopDeepLinkPrompt.tsx:102
-msgid "Open Fluxer"
-msgstr "Fluxer 열기"
-
 #: src/components/channel/embeds/media/EmbedImage.tsx:187
 msgid "Open image in full view"
 msgstr "이미지를 전체 보기로 열기"
@@ -13269,13 +13257,13 @@ msgstr "브라우저에서 열기"
 msgid "Open in Community"
 msgstr "커뮤니티에서 열기"
 
-#: src/components/auth/DesktopDeepLinkPrompt.tsx:89
-msgid "Open in Fluxer for desktop"
-msgstr "데스크톱 Fluxer에서 열기"
-
 #: src/components/channel/embeds/media/EmbedYouTube.tsx:117
 msgid "Open in new tab"
 msgstr "새 탭에서 열기"
+
+#: src/components/auth/DesktopDeepLinkPrompt.tsx:89
+msgid "Open in the desktop app"
+msgstr ""
 
 #: src/components/uikit/ContextMenu/MediaContextMenu.tsx:309
 msgid "Open Link"
@@ -13901,20 +13889,20 @@ msgstr "인증 이메일이 받은편지함에 도착했는지 확인하세요."
 
 #: src/components/modals/InputMonitoringCTAModal.tsx:53
 #: src/components/modals/tabs/components/InputMonitoringSection.tsx:51
-msgid "Please enable Fluxer in System Settings → Privacy & Security → Input Monitoring."
-msgstr "시스템 설정 → 개인정보 보호 및 보안 → 입력 모니터링에서 Fluxer를 활성화하세요."
+msgid "Please enable NePornu in System Settings → Privacy & Security → Input Monitoring."
+msgstr "시스템 설정 → 개인정보 보호 및 보안 → 입력 모니터링에서 NePornu를 활성화하세요."
 
 #: src/components/pages/ReportPage.tsx:211
 msgid "Please enter a valid email address."
 msgstr "유효한 이메일 주소를 입력해 주세요."
 
-#: src/components/channel/dm/AddFriendForm.tsx:97
-msgid "Please enter a valid FluxerTag (Username#0000)."
-msgstr "유효한 FluxerTag(사용자명#0000)를 입력하세요."
-
 #: src/components/pages/ReportPage.tsx:336
 msgid "Please enter a valid message link URL."
 msgstr "유효한 메시지 링크 URL을 입력해 주세요."
+
+#: src/components/channel/dm/AddFriendForm.tsx:97
+msgid "Please enter a valid Tag (Username#0000)."
+msgstr "Please enter a valid Tag (Username#0000)."
 
 #: src/components/auth/BrowserLoginHandoffModal.tsx:189
 msgid "Please enter an API endpoint."
@@ -13953,8 +13941,8 @@ msgid "Please try again later."
 msgstr "나중에 다시 시도하세요."
 
 #: src/components/channel/UnknownMessage.tsx:84
-msgid "Please update Fluxer to view this message."
-msgstr "이 메시지를 보려면 Fluxer를 업데이트하세요."
+msgid "Please update NePornu to view this message."
+msgstr "이 메시지를 보려면 NePornu를 업데이트하세요."
 
 #: src/components/modals/guildTabs/GuildEmojiTab.tsx:144
 msgid "Please upload JPEG, PNG, WebP, or GIF files only."
@@ -13978,6 +13966,9 @@ msgstr "가격 정보를 불러올 때까지 기다려 주세요."
 #: src/components/channel/dm/DMList.tsx:729
 #: src/components/channel/dm/DMList.tsx:808
 #: src/components/modals/components/FeatureComparisonTable.tsx:41
+#: src/components/modals/components/PlutoniumContent.tsx:193
+#: src/components/modals/PremiumModal.tsx:34
+#: src/components/modals/utils/settingsConstants.tsx:147
 msgid "Plutonium"
 msgstr "플루토늄"
 
@@ -14086,8 +14077,8 @@ msgid "Preview"
 msgstr "미리 보기"
 
 #: src/components/modals/tabs/DeveloperOptionsTab/TypographyTab.tsx:135
-msgid "Preview all available fonts, weights, and styles across different languages supported by Fluxer."
-msgstr "Fluxer가 지원하는 다양한 언어의 모든 글꼴, 굵기, 스타일을 미리 보세요."
+msgid "Preview all available fonts, weights, and styles across different languages supported by NePornu."
+msgstr "NePornu가 지원하는 다양한 언어의 모든 글꼴, 굵기, 스타일을 미리 보세요."
 
 #: src/components/modals/tabs/AccessibilityTab.tsx:97
 msgid "Preview Button"
@@ -14259,8 +14250,8 @@ msgid "Provide at least a user ID or a user tag."
 msgstr "최소한 사용자 ID 또는 사용자 태그를 제공해 주세요."
 
 #: src/components/pages/ReportPage.tsx:354
-msgid "Provide either a user ID or a FluxerTag for the person you are reporting."
-msgstr "신고하는 사람의 사용자 ID 또는 FluxerTag를 제공하세요."
+msgid "Provide either a user ID or a Tag for the person you are reporting."
+msgstr ""
 
 #: src/components/pages/ReportPage.tsx:305
 msgid "Provide your full legal name for the declaration."
@@ -15007,8 +14998,8 @@ msgid "Renews on <0>{renewalDate}</0>."
 msgstr "<0>{renewalDate}</0>에 갱신됩니다."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:116
-msgid "Reopen in maximized mode if that’s how you last used Fluxer."
-msgstr "마지막에 Fluxer를 최대화한 상태로 사용했다면 다시 최대화된 상태로 열기."
+msgid "Reopen in maximized mode if that’s how you last used NePornu."
+msgstr "마지막에 NePornu를 최대화한 상태로 사용했다면 다시 최대화된 상태로 열기."
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:86
 #: src/components/modals/BackgroundImageGalleryModal.tsx:395
@@ -15500,12 +15491,12 @@ msgid "Row"
 msgstr "행"
 
 #: src/components/modals/tabs/AdvancedTab.tsx:85
-msgid "Run Fluxer automatically when your computer starts. Or don't. Your choice!"
-msgstr "컴퓨터가 시작될 때 Fluxer를 자동으로 실행하거나 아니면 말고. 선택은 당신의 몫이에요!"
+msgid "Run NePornu automatically when your computer starts. Or don't. Your choice!"
+msgstr "컴퓨터가 시작될 때 NePornu를 자동으로 실행하거나 아니면 말고. 선택은 당신의 몫이에요!"
 
 #: src/components/modals/tabs/KeybindsTab.tsx:93
-msgid "Run this shortcut even when Fluxer is not focused."
-msgstr "Fluxer에 포커스가 없어도 이 단축키를 실행합니다."
+msgid "Run this shortcut even when NePornu is not focused."
+msgstr "NePornu에 포커스가 없어도 이 단축키를 실행합니다."
 
 #: src/utils/LocaleUtils.tsx:60
 msgid "Russian"
@@ -17717,6 +17708,19 @@ msgstr "시스템: 라이트 테마(시스템의 다크/라이트 설정과 자�
 msgid "Tables"
 msgstr "표"
 
+#: src/components/modals/NePornuTagChangeModal.tsx:170
+#: src/components/modals/tabs/ApplicationsTab/application-detail/BotProfileSection.tsx:104
+msgid "Tag"
+msgstr "Tag"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:97
+msgid "Tag already taken"
+msgstr "Tag already taken"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:139
+msgid "Tag updated"
+msgstr "Tag updated"
+
 #. placeholder {0}: tags.length
 #: src/components/modals/meme-form/MemeFormFields.tsx:117
 msgid "Tags ({0}/{MAX_FAVORITE_MEME_TAGS})"
@@ -17811,13 +17815,13 @@ msgstr "텍스트 영역"
 msgid "Thai"
 msgstr "태국어"
 
-#: src/components/modals/IARModal.tsx:187
-msgid "Thank you for helping keep Fluxer safe. Reports are reviewed by our Safety Team. False reports may result in action against your account."
-msgstr "Fluxer를 안전하게 지켜줘서 감사합니다. 제보는 안전팀이 검토합니다. 허위 신고는 계정에 조치를 초래할 수 있습니다."
-
 #: src/components/pages/report/ReportStepComplete.tsx:37
-msgid "Thank you for helping keep Fluxer safe. We'll review your report as soon as possible."
-msgstr "Fluxer의 안전을 지키는 데 도움을 주셔서 감사합니다. 가능한 한 빨리 신고를 검토하겠습니다."
+msgid "Thank you for helping keep NePornu safe. We'll review your report as soon as possible."
+msgstr "NePornu의 안전을 지키는 데 도움을 주셔서 감사합니다. 가능한 한 빨리 신고를 검토하겠습니다."
+
+#: src/components/modals/IARModal.tsx:187
+msgid "Thank you for helping keep the application safe. Reports are reviewed by our Safety Team. False reports may result in action against your account."
+msgstr ""
 
 #: src/components/form/ColorPickerField.tsx:274
 msgid "That doesn't look like a valid color. Try hex, rgb(), hsl(), or a CSS color name."
@@ -17884,10 +17888,6 @@ msgstr "업로드하려는 파일이 비구독자 최대 용량 25MB를 초과�
 msgid "The file you're trying to upload exceeds the maximum size limit of 500 MB for Plutonium subscribers."
 msgstr "업로드하려는 파일이 Plutonium 구독자의 최대 용량 500MB를 초과합니다."
 
-#: src/components/modals/FluxerTagChangeModal.tsx:101
-msgid "The FluxerTag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
-msgstr "FluxerTag <0>{fluxerTag}</0>는 이미 사용 중입니다. 계속하면 식별자가 자동으로 다시 결정됩니다."
-
 #: src/components/modals/tabs/PrivacySafetyTab/DataDeletionTab.tsx:71
 msgid "The job starts 24 hours after you confirm and can be canceled or restarted anytime"
 msgstr "작업은 확인 후 24시간 뒤 시작되며 언제든 취소하거나 다시 시작할 수 있습니다"
@@ -17916,6 +17916,10 @@ msgstr "<0>\"{roleName}\"</0> 역할은 현재 삭제할 수 없습니다. 다�
 #: src/components/modals/AddGuildModal.tsx:183
 msgid "The Squad"
 msgstr "더 스쿼드"
+
+#: src/components/modals/NePornuTagChangeModal.tsx:101
+msgid "The Tag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
+msgstr "The Tag <0>{fluxerTag}</0> is already taken. Continuing will reroll your discriminator automatically."
 
 #: src/components/modals/tabs/PrivacySafetyTab/DataDeletionTab.tsx:74
 msgid "The time to complete depends on how many messages you have sent"
@@ -17992,8 +17996,8 @@ msgid "There's nothing more to see here."
 msgstr "더 이상 볼 수 있는 내용이 없습니다."
 
 #: src/components/modals/tabs/AuthorizedAppsTab.tsx:148
-msgid "These applications have been granted access to your Fluxer account."
-msgstr "다음 애플리케이션들이 Fluxer 계정 접근 권한을 받았습니다."
+msgid "These applications have been granted access to your NePornu account."
+msgstr "다음 애플리케이션들이 NePornu 계정 접근 권한을 받았습니다."
 
 #: src/components/modals/tabs/VoiceTab.tsx:403
 msgid "These settings use browser-native audio processing to improve call quality. For best results, keep all options enabled."
@@ -18206,8 +18210,8 @@ msgid "This is a custom emoji from a community. Ask the author for an invite to 
 msgstr "이것은 커뮤니티의 커스텀 이모지입니다. 이 이모지를 사용하려면 작성자에게 초대를 요청하세요."
 
 #: src/components/emojis/EmojiAttributionSubtext.tsx:101
-msgid "This is a default emoji on Fluxer."
-msgstr "이것은 Fluxer 기본 이모지입니다."
+msgid "This is a default emoji on NePornu."
+msgstr "이것은 NePornu 기본 이모지입니다."
 
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:147
 msgid "This is an error message"
@@ -18613,10 +18617,6 @@ msgstr "요청이 너무 많습니다. 나중에 다시 시도하세요."
 msgid "Too Quiet"
 msgstr "너무 조용함"
 
-#: src/Constants.tsx:145
-msgid "Took the DeLorean out, but I'll be back in time"
-msgstr "드로리안을 꺼냈어요. 곧 돌아올게요"
-
 #: src/components/modals/tabs/DeveloperOptionsTab/index.tsx:61
 #: src/components/modals/tabs/DeveloperOptionsTab/Inline.tsx:56
 #: src/components/modals/utils/settingsConstants.tsx:316
@@ -18723,7 +18723,7 @@ msgstr "다시 시도"
 #: src/components/channel/ChannelSearchResults.tsx:663
 #: src/components/modals/channelTabs/ChannelInvitesTab.tsx:146
 #: src/components/modals/channelTabs/ChannelWebhooksTab.tsx:159
-#: src/components/NetworkErrorScreen.tsx:56
+#: src/components/NetworkErrorScreen.tsx:55
 msgid "Try Again"
 msgstr "다시 시도"
 
@@ -19904,7 +19904,7 @@ msgstr "사용자 볼륨"
 msgid "user, bot or webhook"
 msgstr "사용자, 봇 또는 웹훅"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:181
+#: src/components/modals/NePornuTagChangeModal.tsx:181
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:101
 #: src/components/modals/tabs/MyProfileTab/UsernameSection.tsx:44
 #: src/components/modals/utils/settingsSearchIndex.ts:57
@@ -19935,11 +19935,11 @@ msgstr "사용자 이름은 최대 32자여야 해요."
 msgid "Username#0000"
 msgstr "사용자이름#0000"
 
-#: src/components/modals/FluxerTagChangeModal.tsx:163
+#: src/components/modals/NePornuTagChangeModal.tsx:163
 msgid "Usernames can only contain letters (a-z, A-Z), numbers (0-9), and underscores. Usernames are case-insensitive."
 msgstr "사용자 이름은 문자(a-z, A-Z), 숫자(0-9), 밑줄만 사용할 수 있어요. 대소문자를 구분하지 않아요."
 
-#: src/components/modals/FluxerTagChangeModal.tsx:158
+#: src/components/modals/NePornuTagChangeModal.tsx:158
 msgid "Usernames can only contain letters (a-z, A-Z), numbers (0-9), and underscores. Usernames are case-insensitive. You can pick your own 4-digit tag if it's available."
 msgstr "사용자 이름은 문자(a-z, A-Z), 숫자(0-9), 밑줄만 사용할 수 있어요. 대소문자를 구분하지 않으며, 사용 가능하면 원하는 4자리 태그를 선택할 수 있어요."
 
@@ -20671,8 +20671,8 @@ msgid "We'll verify your new email with a one-time code."
 msgstr "새 이메일을 일회용 코드로 인증합니다."
 
 #: src/components/NetworkErrorScreen.tsx:39
-msgid "We're having trouble connecting to Fluxer's servers. This could be a temporary network issue or scheduled maintenance."
-msgstr "Fluxer 서버에 연결하는 데 문제가 있습니다. 일시적인 네트워크 이슈이거나 예정된 점검일 수 있습니다."
+msgid "We're having trouble connecting to NePornu's servers. This could be a temporary network issue or scheduled maintenance."
+msgstr "We're having trouble connecting to NePornu's servers. This could be a temporary network issue or scheduled maintenance."
 
 #: src/components/modals/tabs/BetaCodesTab.tsx:322
 #: src/components/modals/tabs/DevicesTab.tsx:233
@@ -20685,28 +20685,28 @@ msgid "We're indexing this channel for the first time. This might take a little 
 msgstr "이 채널을 처음으로 색인하고 있습니다. 잠시 시간이 걸릴 수 있습니다..."
 
 #: src/components/modals/RequiredActionModal.tsx:151
-msgid "We've detected suspicious activity on your account. Please reverify your email address or phone number to continue using Fluxer."
-msgstr "귀하의 계정에서 의심스러운 활동이 감지되었습니다. 계속 사용하려면 이메일 주소 또는 전화번호를 재확인해 주세요."
+msgid "We've detected suspicious activity on your account. Please reverify your email address or phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:143
-msgid "We've detected suspicious activity on your account. Please reverify your email address to continue using Fluxer."
-msgstr "귀하의 계정에서 의심스러운 활동이 감지되었습니다. 계속 사용하려면 이메일 주소를 재확인해 주세요."
+msgid "We've detected suspicious activity on your account. Please reverify your email address to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:147
-msgid "We've detected suspicious activity on your account. Please reverify your phone number to continue using Fluxer."
-msgstr "귀하의 계정에서 의심스러운 활동이 감지되었습니다. 계속 사용하려면 전화번호를 재확인해 주세요."
+msgid "We've detected suspicious activity on your account. Please reverify your phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:152
-msgid "We've detected suspicious activity on your account. Please verify your email address or phone number to continue using Fluxer."
-msgstr "귀하의 계정에서 의심스러운 활동이 감지되었습니다. 계속 사용하려면 이메일 주소 또는 전화번호를 확인해 주세요."
+msgid "We've detected suspicious activity on your account. Please verify your email address or phone number to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:144
-msgid "We've detected suspicious activity on your account. Please verify your email address to continue using Fluxer."
-msgstr "귀하의 계정에서 의심스러운 활동이 감지되었습니다. 계속 사용하려면 이메일 주소를 확인해 주세요."
+msgid "We've detected suspicious activity on your account. Please verify your email address to continue."
+msgstr ""
 
 #: src/components/modals/RequiredActionModal.tsx:148
-msgid "We've detected suspicious activity on your account. Please verify your phone number to continue using Fluxer."
-msgstr "귀하의 계정에서 의심스러운 활동이 감지되었습니다. 계속 사용하려면 전화번호를 확인해 주세요."
+msgid "We've detected suspicious activity on your account. Please verify your phone number to continue."
+msgstr ""
 
 #: src/components/pages/ForgotPasswordPage.tsx:65
 msgid "We've sent password reset instructions to your email address. Please check your inbox and follow the link to reset your password."
@@ -20777,8 +20777,8 @@ msgid "Welcome to Favorites"
 msgstr "즐겨찾기에 오신 것을 환영합니다"
 
 #: src/components/layout/app-layout/nagbars/PremiumOnboardingNagbar.tsx:51
-msgid "Welcome to Fluxer Plutonium! Explore your premium features and manage your subscription."
-msgstr "Fluxer Plutonium에 오신 것을 환영합니다! 프리미엄 기능을 둘러보고 구독을 관리해 보세요."
+msgid "Welcome to NePornu Plutonium! Explore your premium features and manage your subscription."
+msgstr "NePornu Plutonium에 오신 것을 환영합니다! 프리미엄 기능을 둘러보고 구독을 관리해 보세요."
 
 #: src/utils/SystemMessageUtils.tsx:46
 msgid "Welcome, {username}! Don't forget to park your DeLorean."
@@ -20837,8 +20837,8 @@ msgid "When enabled, quickly tapping your push-to-talk shortcut will keep your m
 msgstr "활성화하면 푸시 투 토크 단축키를 빠르게 눌러도 다시 누를 때까지 마이크가 켜진 채로 유지됩니다."
 
 #: src/components/modals/tabs/AdvancedTab.tsx:140
-msgid "When enabled, reveals debugging menus throughout the app to inspect and copy raw JSON objects of internal data structures like messages, channels, users, and communities. Also includes tools to debug the Fluxer Markdown parser performance and AST for any given message."
-msgstr "활성화하면 앱 전체에서 디버깅 메뉴가 표시되어 메시지, 채널, 사용자, 커뮤니티 같은 내부 데이터 구조의 JSON 객체를 살펴보고 복사할 수 있습니다. 또한 Fluxer 마크다운 파서 성능 및 특정 메시지의 AST를 디버그하는 도구도 포함됩니다."
+msgid "When enabled, reveals debugging menus throughout the app to inspect and copy raw JSON objects of internal data structures like messages, channels, users, and communities. Also includes tools to debug the NePornu Markdown parser performance and AST for any given message."
+msgstr "활성화하면 앱 전체에서 디버깅 메뉴가 표시되어 메시지, 채널, 사용자, 커뮤니티 같은 내부 데이터 구조의 JSON 객체를 살펴보고 복사할 수 있습니다. 또한 NePornu 마크다운 파서 성능 및 특정 메시지의 AST를 디버그하는 도구도 포함됩니다."
 
 #: src/components/modals/tabs/AppearanceTab/InterfaceTab.tsx:135
 msgid "When enabled, shortcut badges are hidden in tooltip popups."
@@ -20889,8 +20889,8 @@ msgid "When they hit 88mph, they'll appear right here."
 msgstr "시속 88마일에 도달하면 바로 여기에 나타납니다."
 
 #: src/components/modals/tabs/ChatSettingsTab/DisplayTab.tsx:73
-msgid "When uploaded directly to Fluxer"
-msgstr "Fluxer에 직접 업로드할 때"
+msgid "When uploaded directly to NePornu"
+msgstr "NePornu에 직접 업로드할 때"
 
 #: src/components/shared/ChannelPinsContent.tsx:143
 msgid "Whenever someone pins a message, it'll appear here."
@@ -20950,8 +20950,12 @@ msgid "Write a short bio (max 280 characters)"
 msgstr "짧은 바이오를 작성해 주세요 (최대 280자)"
 
 #: src/components/modals/tabs/AppearanceTab/ThemeTab.tsx:543
-msgid "Write custom CSS here to override any theme tokens. For example:\n:root { --background-primary: #1E1E2F; }"
-msgstr "여기에 커스텀 CSS를 작성하여 테마 토큰을 재정의할 수 있습니다. 예:\n:root { --background-primary: #1E1E2F; }"
+msgid ""
+"Write custom CSS here to override any theme tokens. For example:\n"
+":root { --background-primary: #1E1E2F; }"
+msgstr ""
+"여기에 커스텀 CSS를 작성하여 테마 토큰을 재정의할 수 있습니다. 예:\n"
+":root { --background-primary: #1E1E2F; }"
 
 #: src/components/modals/tabs/ComponentGalleryTab/InputsTab.tsx:174
 msgid "Write your content here... This textarea expands as you type."
@@ -20993,8 +20997,8 @@ msgid "You already have a group with these users. Do you really want to create a
 msgstr "이 사용자들과 이미 그룹이 있습니다. 새 그룹을 생성하시겠어요? 그래도 괜찮아요!"
 
 #: src/components/modals/ExternalLinkWarningModal.tsx:66
-msgid "You are about to leave Fluxer"
-msgstr "Fluxer를 떠나려고 합니다"
+msgid "You are about to leave the application"
+msgstr ""
 
 #. placeholder {0}: targetUser.username
 #: src/components/modals/TransferOwnershipModal.tsx:71
@@ -21022,8 +21026,8 @@ msgid "You are now a developer!"
 msgstr "이제 개발자가 되셨습니다!"
 
 #: src/components/modals/components/plutonium/hooks/useCheckoutActions.tsx:107
-msgid "You are now navigating to Stripe to complete the payment. Return to Fluxer once you've completed it!"
-msgstr "지금 Stripe로 이동하여 결제를 완료합니다. 완료되면 Fluxer로 돌아와 주세요!"
+msgid "You are now navigating to Stripe to complete the payment. Return to NePornu once you've completed it!"
+msgstr "지금 Stripe로 이동하여 결제를 완료합니다. 완료되면 NePornu로 돌아와 주세요!"
 
 #. placeholder {0}: Math.max(0, modalLogic.maxSelections - modalLogic.selectedUserIds.length)
 #. placeholder {0}: modalLogic.remainingSlotsCount
@@ -21046,8 +21050,8 @@ msgid "You can add comments before uploading. Hold shift to upload directly."
 msgstr "업로드 전에 댓글을 추가할 수 있습니다. Shift를 눌러 직접 업로드하세요."
 
 #: src/components/channel/dm/AddFriendView.tsx:35
-msgid "You can add friends with their FluxerTag."
-msgstr "FluxerTag로 친구를 추가할 수 있습니다."
+msgid "You can add friends with their NePornuTag."
+msgstr "NePornuTag로 친구를 추가할 수 있습니다."
 
 #. placeholder {0}: modalLogic.maxSelections
 #: src/components/bottomsheets/CreateDMBottomSheet.tsx:112
@@ -21334,8 +21338,8 @@ msgid "You haven't created any packs yet."
 msgstr "아직 팩을 만든 적이 없습니다."
 
 #: src/components/modals/KeyboardModeIntroModal.tsx:46
-msgid "You just pressed Tab. Keyboard Mode is now on so you can navigate Fluxer without a mouse."
-msgstr "Tab을 눌렀습니다. 키보드 모드가 활성화되어 마우스 없이 Fluxer를 탐색할 수 있습니다."
+msgid "You just pressed Tab. Keyboard Mode is now on so you can navigate the application without a mouse."
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:85
 #: src/utils/ExpressionPermissionUtils.tsx:92
@@ -21635,10 +21639,6 @@ msgstr "기존 알림음 설정은 유지됩니다."
 msgid "Your export request will be processed"
 msgstr "내보내기 요청이 처리됩니다"
 
-#: src/components/pages/report/ReportStepDetails.tsx:213
-msgid "Your FluxerTag (optional)"
-msgstr "내 FluxerTag (선택 사항)"
-
 #: src/components/channel/friends/views/FriendsList.tsx:80
 msgid "Your friends are currently stuck in another timeline"
 msgstr "친구들이 다른 타임라인에 갇혀 있습니다"
@@ -21735,6 +21735,10 @@ msgstr "청구 기간이 끝나면 구독이 취소되도록 설정되었습니�
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:210
 msgid "Your subscription will cancel on <0>{cancelDate}</0>. You'll lose all <1/> after that date."
 msgstr "구독은 <0>{cancelDate}</0>에 취소됩니다. 해당 날짜 이후에는 모든 <1/>를 잃게 됩니다."
+
+#: src/components/pages/report/ReportStepDetails.tsx:213
+msgid "Your Tag (optional)"
+msgstr ""
 
 #: src/components/modals/guildTabs/GuildVanityURLTab.tsx:118
 msgid "Your vanity URL has been removed."

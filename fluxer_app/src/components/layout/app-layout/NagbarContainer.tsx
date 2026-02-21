@@ -17,28 +17,26 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {observer} from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite';
 import type React from 'react';
 import MobileLayoutStore from '~/stores/MobileLayoutStore';
 import styles from './NagbarContainer.module.css';
-import {DesktopDownloadNagbar} from './nagbars/DesktopDownloadNagbar';
-import {DesktopNotificationNagbar} from './nagbars/DesktopNotificationNagbar';
-import {EmailVerificationNagbar} from './nagbars/EmailVerificationNagbar';
-import {GiftInventoryNagbar} from './nagbars/GiftInventoryNagbar';
-import {GuildMembershipCtaNagbar} from './nagbars/GuildMembershipCtaNagbar';
-import {MobileDownloadNagbar} from './nagbars/MobileDownloadNagbar';
-import {PendingBulkDeletionNagbar} from './nagbars/PendingBulkDeletionNagbar';
-import {PremiumExpiredNagbar} from './nagbars/PremiumExpiredNagbar';
-import {PremiumGracePeriodNagbar} from './nagbars/PremiumGracePeriodNagbar';
-import {PremiumOnboardingNagbar} from './nagbars/PremiumOnboardingNagbar';
-import {UnclaimedAccountNagbar} from './nagbars/UnclaimedAccountNagbar';
-import {type NagbarState, NagbarType} from './types';
+import { DesktopDownloadNagbar } from './nagbars/DesktopDownloadNagbar';
+import { DesktopNotificationNagbar } from './nagbars/DesktopNotificationNagbar';
+import { EmailVerificationNagbar } from './nagbars/EmailVerificationNagbar';
+import { GiftInventoryNagbar } from './nagbars/GiftInventoryNagbar';
+import { MobileDownloadNagbar } from './nagbars/MobileDownloadNagbar';
+import { PendingBulkDeletionNagbar } from './nagbars/PendingBulkDeletionNagbar';
+import { PremiumExpiredNagbar } from './nagbars/PremiumExpiredNagbar';
+import { PremiumGracePeriodNagbar } from './nagbars/PremiumGracePeriodNagbar';
+import { UnclaimedAccountNagbar } from './nagbars/UnclaimedAccountNagbar';
+import { type NagbarState, NagbarType } from './types';
 
 interface NagbarContainerProps {
 	nagbars: Array<NagbarState>;
 }
 
-export const NagbarContainer: React.FC<NagbarContainerProps> = observer(({nagbars}) => {
+export const NagbarContainer: React.FC<NagbarContainerProps> = observer(({ nagbars }) => {
 	const mobileLayout = MobileLayoutStore;
 
 	if (nagbars.length === 0) return null;
@@ -59,16 +57,12 @@ export const NagbarContainer: React.FC<NagbarContainerProps> = observer(({nagbar
 						return <PremiumGracePeriodNagbar key={nagbar.type} isMobile={mobileLayout.enabled} />;
 					case NagbarType.PREMIUM_EXPIRED:
 						return <PremiumExpiredNagbar key={nagbar.type} isMobile={mobileLayout.enabled} />;
-					case NagbarType.PREMIUM_ONBOARDING:
-						return <PremiumOnboardingNagbar key={nagbar.type} isMobile={mobileLayout.enabled} />;
 					case NagbarType.GIFT_INVENTORY:
 						return <GiftInventoryNagbar key={nagbar.type} isMobile={mobileLayout.enabled} />;
 					case NagbarType.DESKTOP_DOWNLOAD:
 						return <DesktopDownloadNagbar key={nagbar.type} isMobile={mobileLayout.enabled} />;
 					case NagbarType.MOBILE_DOWNLOAD:
 						return <MobileDownloadNagbar key={nagbar.type} isMobile={mobileLayout.enabled} />;
-					case NagbarType.GUILD_MEMBERSHIP_CTA:
-						return <GuildMembershipCtaNagbar key={nagbar.type} isMobile={mobileLayout.enabled} />;
 					default:
 						return null;
 				}

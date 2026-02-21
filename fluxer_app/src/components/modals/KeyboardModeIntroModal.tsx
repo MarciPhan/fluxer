@@ -17,18 +17,18 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {useLingui} from '@lingui/react/macro';
+import { useLingui } from '@lingui/react/macro';
 import React from 'react';
 import * as ModalActionCreators from '~/actions/ModalActionCreators';
 import * as Modal from '~/components/modals/Modal';
-import {Button} from '~/components/uikit/Button/Button';
+import { Button } from '~/components/uikit/Button/Button';
 import KeyboardModeStore from '~/stores/KeyboardModeStore';
-import {SHIFT_KEY_SYMBOL} from '~/utils/KeyboardUtils';
-import {isNativeMacOS} from '~/utils/NativeUtils';
+import { SHIFT_KEY_SYMBOL } from '~/utils/KeyboardUtils';
+import { isNativeMacOS } from '~/utils/NativeUtils';
 import styles from './KeyboardModeIntroModal.module.css';
 
 export const KeyboardModeIntroModal: React.FC = () => {
-	const {t} = useLingui();
+	const { t } = useLingui();
 	const initialFocusRef = React.useRef<HTMLButtonElement | null>(null);
 	const title = t`Keyboard Mode`;
 	const commandKeyLabel = isNativeMacOS() ? '⌘' : 'Ctrl';
@@ -43,7 +43,7 @@ export const KeyboardModeIntroModal: React.FC = () => {
 			<Modal.Header title={title} />
 			<Modal.Content className={styles.content}>
 				<p className={styles.description}>
-					{t`You just pressed Tab. Keyboard Mode is now on so you can navigate Fluxer without a mouse.`}
+					{t`You just pressed Tab. Keyboard Mode is now on so you can navigate the application without a mouse.`}
 				</p>
 
 				<ul className={styles.tips}>

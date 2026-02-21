@@ -17,12 +17,12 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans, useLingui} from '@lingui/react/macro';
-import {observer} from 'mobx-react-lite';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { observer } from 'mobx-react-lite';
 import type React from 'react';
-import {useMemo} from 'react';
-import {Select} from '~/components/form/Select';
-import {getCurrentLocale} from '~/utils/LocaleUtils';
+import { useMemo } from 'react';
+import { Select } from '~/components/form/Select';
+import { getCurrentLocale } from '~/utils/LocaleUtils';
 import styles from './DateOfBirthField.module.css';
 
 type DateFieldType = 'month' | 'day' | 'year';
@@ -83,10 +83,12 @@ function NativeDatePicker({
 	onYearChange,
 	error,
 }: NativeDatePickerProps) {
-	const {t} = useLingui();
+	const { t } = useLingui();
 	const dateOfBirthPlaceholder = t`Date of birth`;
 
-	const currentYear = new Date().getFullYear();
+	const currentDate = new Date();
+	const currentYear = currentDate.getFullYear();
+
 	const minDate = `${currentYear - 150}-01-01`;
 	const maxDate = `${currentYear}-12-31`;
 
@@ -147,7 +149,7 @@ export const DateOfBirthField = observer(function DateOfBirthField({
 	onYearChange,
 	error,
 }: DateOfBirthFieldProps) {
-	const {t} = useLingui();
+	const { t } = useLingui();
 	const monthPlaceholder = t`Month`;
 	const dayPlaceholder = t`Day`;
 	const yearPlaceholder = t`Year`;
@@ -159,9 +161,9 @@ export const DateOfBirthField = observer(function DateOfBirthField({
 		const currentDate = new Date();
 		const currentYear = currentDate.getFullYear();
 
-		const allMonths = Array.from({length: 12}, (_, index) => {
+		const months = Array.from({ length: 12 }, (_, index) => {
 			const monthDate = new Date(2000, index, 1);
-			const monthName = new Intl.DateTimeFormat(locale, {month: 'long'}).format(monthDate);
+			const monthName = new Intl.DateTimeFormat(locale, { month: 'long' }).format(monthDate);
 			return {
 				value: String(index + 1),
 				label: monthName,
@@ -176,7 +178,7 @@ export const DateOfBirthField = observer(function DateOfBirthField({
 			});
 		}
 
-		let availableDays = Array.from({length: 31}, (_, i) => ({
+		let availableDays = Array.from({ length: 31 }, (_, i) => ({
 			value: String(i + 1),
 			label: String(i + 1),
 		}));
@@ -189,11 +191,32 @@ export const DateOfBirthField = observer(function DateOfBirthField({
 		}
 
 		return {
-			months: allMonths,
+			months,
 			days: availableDays,
 			years,
 		};
 	}, [selectedYear, selectedMonth, locale]);
+
+	const ageWarning = useMemo(() => {
+		if (!selectedYear || !selectedMonth || !selectedDay) return null;
+
+		const today = new Date();
+		const birthDate = new Date(Number(selectedYear), Number(selectedMonth) - 1, Number(selectedDay));
+
+		let age = today.getFullYear() - birthDate.getFullYear();
+		const monthDiff = today.getMonth() - birthDate.getMonth();
+		const dayDiff = today.getDate() - birthDate.getDate();
+
+		if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+			age--;
+		}
+
+		if (age < 15) {
+			return t`You must be at least 15 years old to create an account`;
+		}
+
+		return null;
+	}, [selectedYear, selectedMonth, selectedDay, t]);
 
 	if (isMobileWebBrowser()) {
 		return (
@@ -291,7 +314,7 @@ export const DateOfBirthField = observer(function DateOfBirthField({
 			</div>
 			<div className={styles.inputsContainer}>
 				<div className={styles.fieldsRow}>{orderedFields}</div>
-				{error && <span className={styles.errorText}>{error}</span>}
+				{(error || ageWarning) && <span className={styles.errorText}>{error || ageWarning}</span>}
 			</div>
 		</fieldset>
 	);

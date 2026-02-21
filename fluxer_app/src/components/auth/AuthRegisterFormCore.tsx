@@ -17,22 +17,22 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {Trans, useLingui} from '@lingui/react/macro';
-import {AnimatePresence} from 'framer-motion';
-import {useId, useMemo, useState} from 'react';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { AnimatePresence } from 'framer-motion';
+import { useId, useMemo, useState } from 'react';
 import * as AuthenticationActionCreators from '~/actions/AuthenticationActionCreators';
-import {DateOfBirthField} from '~/components/auth/DateOfBirthField';
+import { DateOfBirthField } from '~/components/auth/DateOfBirthField';
 import FormField from '~/components/auth/FormField';
-import {type MissingField, SubmitTooltip, shouldDisableSubmit} from '~/components/auth/SubmitTooltip';
-import {UsernameSuggestions} from '~/components/auth/UsernameSuggestions';
-import {ExternalLink} from '~/components/common/ExternalLink';
-import {UsernameValidationRules} from '~/components/form/UsernameValidationRules';
-import {Button} from '~/components/uikit/Button/Button';
-import {Checkbox} from '~/components/uikit/Checkbox/Checkbox';
-import {useAuthForm} from '~/hooks/useAuthForm';
-import {useUsernameSuggestions} from '~/hooks/useUsernameSuggestions';
-import {MODE} from '~/lib/env';
-import {Routes} from '~/Routes';
+import { type MissingField, SubmitTooltip, shouldDisableSubmit } from '~/components/auth/SubmitTooltip';
+import { UsernameSuggestions } from '~/components/auth/UsernameSuggestions';
+import { ExternalLink } from '~/components/common/ExternalLink';
+import { UsernameValidationRules } from '~/components/form/UsernameValidationRules';
+import { Button } from '~/components/uikit/Button/Button';
+import { Checkbox } from '~/components/uikit/Checkbox/Checkbox';
+import { useAuthForm } from '~/hooks/useAuthForm';
+import { useUsernameSuggestions } from '~/hooks/useUsernameSuggestions';
+import { MODE } from '~/lib/env';
+import { Routes } from '~/Routes';
 import styles from './AuthPageStyles.module.css';
 
 interface FieldConfig {
@@ -47,7 +47,7 @@ interface AuthRegisterFormCoreProps {
 	fields?: FieldConfig;
 	submitLabel: React.ReactNode;
 	redirectPath: string;
-	onRegister?: (response: {token: string; user_id: string}) => Promise<void>;
+	onRegister?: (response: { token: string; user_id: string }) => Promise<void>;
 	inviteCode?: string;
 	extraContent?: React.ReactNode;
 }
@@ -60,12 +60,12 @@ export function AuthRegisterFormCore({
 	inviteCode,
 	extraContent,
 }: AuthRegisterFormCoreProps) {
-	const {t} = useLingui();
+	const { t } = useLingui();
 	const {
 		showEmail = false,
 		showPassword = false,
 		showUsernameValidation = false,
-		requireBetaCode = MODE !== 'development',
+		requireBetaCode = false,
 	} = fields;
 
 	const emailId = useId();
@@ -115,14 +115,14 @@ export function AuthRegisterFormCore({
 		}
 	};
 
-	const {form, isLoading, fieldErrors} = useAuthForm({
+	const { form, isLoading, fieldErrors } = useAuthForm({
 		initialValues,
 		onSubmit: handleRegisterSubmit,
 		redirectPath,
 		firstFieldName: showEmail ? 'email' : 'global_name',
 	});
 
-	const {suggestions} = useUsernameSuggestions({
+	const { suggestions } = useUsernameSuggestions({
 		globalName: form.getValue('global_name'),
 		username: form.getValue('username'),
 	});
@@ -130,16 +130,16 @@ export function AuthRegisterFormCore({
 	const missingFields = useMemo(() => {
 		const missing: Array<MissingField> = [];
 		if (showEmail && !form.getValue('email')) {
-			missing.push({key: 'email', label: t`Email`});
+			missing.push({ key: 'email', label: t`Email` });
 		}
 		if (showPassword && !form.getValue('password')) {
-			missing.push({key: 'password', label: t`Password`});
+			missing.push({ key: 'password', label: t`Password` });
 		}
 		if (!selectedMonth || !selectedDay || !selectedYear) {
-			missing.push({key: 'date_of_birth', label: t`Date of birth`});
+			missing.push({ key: 'date_of_birth', label: t`Date of birth` });
 		}
 		if (requireBetaCode && !form.getValue('betaCode')) {
-			missing.push({key: 'betaCode', label: t`Beta code`});
+			missing.push({ key: 'betaCode', label: t`Beta code` });
 		}
 		return missing;
 	}, [form, selectedMonth, selectedDay, selectedYear, showEmail, showPassword, requireBetaCode]);

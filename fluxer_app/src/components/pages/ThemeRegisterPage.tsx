@@ -30,7 +30,7 @@ import {AuthMinimalRegisterFormCore} from '~/components/auth/AuthMinimalRegister
 import {AuthPageHeader} from '~/components/auth/AuthPageHeader';
 import sharedStyles from '~/components/auth/AuthPageStyles.module.css';
 import {DesktopDeepLinkPrompt} from '~/components/auth/DesktopDeepLinkPrompt';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import {useThemeExists} from '~/hooks/useThemeExists';
 import {useParams} from '~/lib/router';
 import {Routes} from '~/Routes';
@@ -51,7 +51,7 @@ const ThemeRegisterPage = observer(function ThemeRegisterPage() {
 		[themeId, i18n],
 	);
 
-	useFluxerDocumentTitle(t`Apply Theme`);
+	useAppDocumentTitle(t`Apply Theme`);
 
 	if (themeStatus === 'loading') {
 		return <AuthLoadingState />;

@@ -39,7 +39,7 @@ import {Button} from '~/components/uikit/Button/Button';
 import {VoiceCallView} from '~/components/voice/VoiceCallView';
 import {useChannelMemberListVisibility} from '~/hooks/useChannelMemberListVisibility';
 import {useChannelSearchVisibility} from '~/hooks/useChannelSearchVisibility';
-import {useFluxerDocumentTitle} from '~/hooks/useFluxerDocumentTitle';
+import {useAppDocumentTitle} from '~/hooks/useAppDocumentTitle';
 import {useMemberListVisible} from '~/hooks/useMemberListVisible';
 import {useLocation} from '~/lib/router';
 import ChannelStore from '~/stores/ChannelStore';
@@ -108,7 +108,7 @@ export const GuildChannelView = observer(({channelId, guildId, messageId}: Guild
 		? `${channel.type === ChannelTypes.GUILD_VOICE ? '' : '#'}${channel.name ?? ''}`
 		: null;
 	const guildTitlePart = guild ? guild.name : null;
-	useFluxerDocumentTitle(channel ? [channelTitlePart, guildTitlePart] : undefined);
+	useAppDocumentTitle(channel ? [channelTitlePart, guildTitlePart] : undefined);
 
 	if (!(guild && channel)) {
 		return null;

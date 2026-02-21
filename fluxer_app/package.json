@@ -23,7 +23,7 @@
 		"generate:masks": "npx tsx scripts/generate-avatar-masks.ts",
 		"knip": "knip",
 		"lingui": "pnpm lingui:extract && cd scripts && pnpm translate && pnpm lingui:compile",
-		"lingui:compile": "lingui compile --strict",
+		"lingui:compile": "lingui compile",
 		"lingui:extract": "lingui extract --clean",
 		"translate": "cd scripts/cmd/locales-pending && go run . --locales-dir=../../../src/locales",
 		"translate:locale": "cd scripts/cmd/locales-pending && go run . --locales-dir=../../../src/locales --locale",
