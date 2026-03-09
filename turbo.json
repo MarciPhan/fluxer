@@ -68,11 +68,11 @@
 			"cache": false
 		},
 		"i18n:auto": {
-			"dependsOn": ["i18n:extract"],
+			"dependsOn": [],
 			"cache": false
 		},
 		"i18n:compile": {
-			"dependsOn": ["i18n:auto"],
+			"dependsOn": [],
 			"cache": false
 		},
 		"build": {

@@ -1,0 +1,168 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: fluxer-postgres-1
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=fluxer
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  redis:
+    image: valkey/valkey:latest
+    container_name: fluxer-redis-1
+    volumes:
+      - ./data/redis:/data
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.25.0
+    container_name: fluxer-meilisearch-1
+    environment:
+      - MEILI_MASTER_KEY=masterKey
+      - MEILI_HTTP_ADDR=0.0.0.0:7700
+    volumes:
+      - ./data/meili:/meili_data
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.8
+    container_name: fluxer-clickhouse-1
+    volumes:
+      - ./data/clickhouse:/var/lib/clickhouse
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  cassandra:
+    image: scylladb/scylla:latest
+    container_name: fluxer-cassandra-1
+    volumes:
+      - ./data/scylla:/var/lib/scylla
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  minio:
+    image: minio/minio
+    container_name: fluxer-minio-1
+    command: server /data
+    volumes:
+      - ./data/minio:/data
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  api:
+    image: fluxer-api
+    container_name: fluxer-api-1
+    env_file: .env
+    volumes:
+      - /tmp:/tmp
+    depends_on:
+      - postgres
+      - redis
+      - cassandra
+      - clickhouse
+      - minio
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  gateway:
+    image: fluxer-gateway
+    container_name: fluxer-gateway-1
+    env_file: .env
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  media:
+    image: fluxer-media
+    container_name: fluxer-media-1
+    env_file: .env
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  worker:
+    image: fluxer-worker
+    container_name: fluxer-worker-1
+    env_file: .env
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  admin:
+    image: fluxer-admin
+    container_name: fluxer-admin-1
+    env_file: .env
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  marketing:
+    image: fluxer-marketing
+    container_name: fluxer-marketing-1
+    env_file: .env
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  fluxer-app:
+    image: fluxer-app:latest
+    container_name: fluxer-app-1
+    env_file: .env
+    environment:
+      - FLUXER_CONFIG__SERVICES__APP_PROXY__HOST=0.0.0.0
+      - FLUXER_CONFIG__SERVICES__APP_PROXY__PORT=8080
+      - FLUXER_SERVER_HOST=0.0.0.0
+      - FLUXER_SERVER_PORT=8080
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  caddy:
+    image: fluxer-caddy
+    container_name: fluxer-caddy-1
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - fluxer_caddy_data:/data
+      - fluxer_caddy_config:/config
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+  livekit:
+    image: livekit/livekit-server:latest
+    container_name: fluxer-livekit-1
+    command: --config /etc/livekit/livekit.yaml
+    volumes:
+      - ./config/livekit.yaml:/etc/livekit/livekit.yaml:ro
+    ports:
+      - "7880-7881:7880-7881/tcp"
+      - "7882:7882/udp"
+    restart: unless-stopped
+    networks:
+      - fluxer_default
+
+networks:
+  fluxer_default:
+    external: true
+
+volumes:
+  fluxer_caddy_data:
+  fluxer_caddy_config:

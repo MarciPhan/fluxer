@@ -1,0 +1,35 @@
+{
+    email support@fluxer.app
+}
+
+# Fluxer Service
+chat.nepornu.cz {
+    handle /api/* {
+        reverse_proxy api:8080
+    }
+
+    handle /gateway {
+        reverse_proxy gateway:8080
+    }
+
+    handle /media/* {
+        reverse_proxy media:8080
+    }
+
+    handle /admin/* {
+        reverse_proxy admin:8080
+    }
+
+    handle /livekit/* {
+        reverse_proxy livekit:7880
+    }
+
+    handle /* {
+        reverse_proxy marketing:8080
+    }
+}
+
+# Discourse Forum
+forum.nepornu.cz {
+    reverse_proxy app:80
+}
