@@ -186,12 +186,16 @@ async function createSession(
 		try {
 			const client = new cassandra.Client({
 				contactPoints: [`${host}:${port}`],
-				localDataCenter: 'dc1',
+				localDataCenter: process.env['CASSANDRA_LOCAL_DC'] ?? 'datacenter1',
 				credentials: {username, password},
 				socketOptions: {connectTimeout: 60000},
 			});
 
 			await client.connect();
+
+			// Ensure keyspace and migration table exist before proceeding
+			await client.execute(`CREATE KEYSPACE IF NOT EXISTS ${MIGRATION_KEYSPACE} WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};`);
+			await client.execute(`CREATE TABLE IF NOT EXISTS ${MIGRATION_KEYSPACE}.${MIGRATION_TABLE} (filename text PRIMARY KEY, applied_at timestamp, checksum text);`);
 
 			return client;
 		} catch (e) {

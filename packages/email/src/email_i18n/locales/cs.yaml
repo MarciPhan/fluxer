@@ -1,30 +1,30 @@
 account_disabled_suspicious:
-  subject: Tvůj účet Fluxer byl dočasně deaktivován
+  subject: Tvůj Discord účet byl dočasně pozastaven
   body: |-
     Ahoj {username},
 
-    Tvůj účet Fluxer jsme dočasně deaktivovali, protože jsme zaznamenali podezřelou aktivitu.
+    Tvůj přístup na náš Discord server jsme dočasně pozastavili, protože jsme zaznamenali podezřelou aktivitu spojenou s tvým účtem.
 
     {reason, select,
       null {}
       other {Důvod: {reason}}
     }
 
-    Pro obnovení přístupu ke svému účtu si musíš resetovat heslo:
+    Pro obnovení přístupu k účtu a serveru si musíš resetovat heslo:
 
     {forgotUrl}
 
-    Jakmile heslo resetuješ, budeš se moct znovu přihlásit.
+    Jakmile heslo resetuješ, budeš se moct znovu připojit.
 
-    Pokud si myslíš, že je to omyl, ozvi se prosím na naši podporu.
+    Pokud si myslíš, že je to omyl, ozvi se prosím naši moderaci.
 
-    – Bezpečnostní tým Fluxeru
+    – Moderační tým Discordu
 account_scheduled_deletion:
-  subject: Tvůj účet Fluxer bude smazán
+  subject: Tvůj Discord účet bude trvale smazán
   body: |-
     Ahoj {username},
 
-    Tvůj účet Fluxer byl označen k trvalému smazání, protože jsi porušil/a naše podmínky používání nebo pravidla komunity.
+    Tvůj přístup na náš Discord server byl označen k trvalému smazání, protože jsi porušil/a naše pravidla komunity nebo podmínky používání.
 
     Datum plánovaného smazání: {deletionDate, date, full} {deletionDate, time, short}
 
@@ -33,7 +33,7 @@ account_scheduled_deletion:
       other {Důvod: {reason}}
     }
 
-    Jde o závažné opatření. Data k účtu budou v uvedeném termínu nenávratně smazána.
+    Jde o závažné opatření. Všechna data k tvému profilu budou v uvedeném termínu nenávratně smazána.
 
     Projdi si prosím:
     - Podmínky používání: {termsUrl}
@@ -43,18 +43,18 @@ account_scheduled_deletion:
     Pokud se domníváš, že je toto rozhodnutí chybné nebo neopodstatněné, můžeš do 60 dnů podat odvolání na appeals@fluxer.app, a to z této e-mailové adresy.
 
     V odvolání prosím:
-    - Jasně popiš, proč si myslíš, že je rozhodnutí chybné nebo neopodstatněné
+    - Jasně popiš, proč si myslíš, že je rozhodnutí chybné
     - Přilož, pokud je to možné, relevantní důkazy nebo dodatečný kontext
 
-    Člen bezpečnostního týmu Fluxeru odvolání posoudí a může plánované smazání pozastavit až do vydání konečného rozhodnutí.
+    Člen moderačního týmu odvolání posoudí a může smazání pozastavit až do vydání konečného rozhodnutí.
 
-    – Bezpečnostní tým Fluxeru
+    – Moderační tým Discordu
 account_temp_banned:
-  subject: Tvůj účet Fluxer byl dočasně pozastaven
+  subject: Tvůj přístup na Discord server byl dočasně pozastaven
   body: |-
     Ahoj {username},
 
-    Tvůj účet Fluxer byl dočasně pozastaven, protože jsi porušil/a naše podmínky používání nebo pravidla komunity.
+    Tvůj přístup na náš Discord server byl dočasně pozastaven, protože jsi porušil/a naše pravidla komunity nebo podmínky používání.
 
     Doba trvání: {durationHours, plural,
       one {# hodina}
@@ -68,21 +68,21 @@ account_temp_banned:
       other {Důvod: {reason}}
     }
 
-    Po tuto dobu se ke svému účtu nedostaneš.
+    Po tuto dobu se na server a ke svému profilu nedostaneš.
 
     Projdi si prosím:
     - Podmínky používání: {termsUrl}
     - Pravidla komunity: {guidelinesUrl}
 
-    Pokud se domníváš, že je toto rozhodnutí chybné nebo neopodstatněné, můžeš podat odvolání na appeals@fluxer.app, a to z této e-mailové adresy. Jasně popiš, proč si myslíš, že je rozhodnutí chybné. Odvolání prověříme a ozveme se s výsledkem.
+    Pokud se domníváš, že je toto rozhodnutí chybné, můžeš podat odvolání na appeals@fluxer.app. Jasně popiš své důvody. Odvolání prověříme a ozveme se s výsledkem.
 
-    – Bezpečnostní tým Fluxeru
+    – Moderační tým Discordu
 donation_confirmation:
-  subject: Děkujeme za příspěvek na Fluxer
+  subject: Děkujeme za podporu našeho Discordu
   body: |-
     Ahoj,
 
-    Děkujeme za příspěvek na Fluxer! Tvůj {interval, select,
+    Děkujeme, že podporuješ náš Discord server! Tvůj {interval, select,
       month {opakovaný příspěvek}
       year {opakovaný příspěvek}
       other {jednorázový příspěvek}
@@ -101,17 +101,13 @@ donation_confirmation:
 
     Stripe ti brzy zašle samostatný e-mail s účtenkou a fakturou ve formátu PDF. Obsahuje všechny platební údaje a lze ji použít pro daňové účely.
 
-    Kdykoli si můžeš prohlédnout historii příspěvků, stáhnout faktury{interval, select,
-      month { a spravovat nebo zrušit předplatné}
-      year { a spravovat nebo zrušit předplatné}
-      other { a spravovat budoucí příspěvky}
-    } pomocí tohoto odkazu:
+    Kdykoli si můžeš prohlédnout historii příspěvků a spravovat své členství pomocí tohoto odkazu:
 
     {manageUrl}
 
-    Tvá podpora pomáhá Fluxeru fungovat. Děkujeme!
+    Tvá podpora nám pomáhá udržovat náš Discord v chodu a dál se rozvíjet. Děkujeme!
 
-    – tým Fluxeru
+    – Tým našeho Discordu
 donation_magic_link:
   subject: Spravuj své příspěvky na Fluxer
   body: |-
@@ -295,33 +291,33 @@ password_reset:
 
     – Tým Fluxeru
 registration_approved:
-  subject: Tvoje registrace do Fluxeru byla schválena
+  subject: Tvá žádost o přístup na Discord byla schválena
   body: |-
     Ahoj {username},
 
-    Dobrá zpráva – tvoje registrace do Fluxeru byla schválena.
+    Dobrá zpráva – tvoje žádost o přístup na náš Discord server byla schválena.
 
-    Teď se můžeš přihlásit do aplikace Fluxer tady:
+    Teď se můžeš zapojit do diskuse a prohlížet kanály zde:
     {channelsUrl}
 
-    Vítej v komunitě Fluxeru.
+    Vítej v naší Discord komunitě.
 
-    – Tým Fluxeru
+    – Tým našeho Discordu
 report_resolved:
-  subject: Tvoje hlášení na Fluxeru bylo zkontrolováno
+  subject: Tvé hlášení z Discordu bylo vyřízeno
   body: |-
     Ahoj {username},
 
-    Tvoje hlášení (ID: {reportId}) prověřil náš bezpečnostní tým.
+    Tvoje hlášení (ID: {reportId}) prověřil náš moderační tým.
 
-    Odpověď od bezpečnostního týmu:
+    Odpověď od moderátorů:
     {publicComment}
 
-    Díky, že pomáháš udržet Fluxer bezpečný pro všechny. Všechna hlášení bereme vážně a vážíme si tvého příspěvku komunitě.
+    Díky, že nám pomáháš udržovat náš Discord server bezpečný pro všechny. Všechna hlášení bereme vážně.
 
-    Pokud máš k výsledku dotazy nebo připomínky, napiš na safety@fluxer.app.
+    Pokud máš k výsledku dotazy, napiš nám na safety@fluxer.app.
 
-    – Bezpečnostní tým Fluxeru
+    – Moderační tým Discordu
 scheduled_deletion_notification:
   subject: Tvůj účet Fluxer bude smazán
   body: |-
